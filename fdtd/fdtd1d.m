@@ -29,10 +29,10 @@ set(0,'DefaultLegendAutoUpdate','off');
 %close all;
 clear all;
 
-animate = 1;
+animate = 0;
 
-eps0 = 8.854e-12; %permittivity of free space
-mu0  = pi*4e-7; %permeability of free space
+eps0 = 8.854e-12; % permittivity of free space
+mu0  = pi*4e-7;   % permeability of free space
 run = 1;
 
 if run == 0
@@ -41,19 +41,21 @@ if run == 0
     xg = Lx;
     Niter = 600; % # of iterations to perform
 end
+
 if run == 1
     profile = 1;
     source  = 1;
     Lx  = 5;       % Domain length in meters
     Nx  = 500;     % Spatial samples in domain
+    ixb = Nx/2;
     fs = 300e6;   % Source frequency in Hz
     fstr = '300 MHz';
-    Niter = 600;  % Number of iterations to perform
-    ip = Nx/2 + 2; % Index of probe
+    Niter = 500;  % Number of iterations to perform
+    ip = Nx/2 - 2; % Index of probe
     ylims = [-3, 3];
 end
 
-ds = Lx/Nx;   % spatial step in meters
+ds = Lx/Nx; % spatial step in meters
 dt = ds/fs; % "magic time step"
 % See https://my.ece.utah.edu/~simpson/ECE5340/Taflove%20Chpt.%202.pdf
 % for definition of magic time step.
@@ -64,10 +66,10 @@ am = ones(Nx,1)*dt/(ds*mu0);
 as = ones(Nx,1);
 
 % Create grid of epsilon, mu, sigma.
-[epsr,mur,sigma] = fdtd_profile(profile, Nx);
+[epsr,mur,sigma] = fdtd_profile(profile, Nx, ixb);
 
 figure(1);
-fdtd_profile_plot(profile, Nx);
+fdtd_profile_plot(profile, Nx, ixb);
 
 ae = ae./epsr;
 am = am./mur;
@@ -86,12 +88,15 @@ figure(2);clf
     plot(377*Hz,'r','LineWidth',2);
     set(gca,'YLim',ylims); 
 
+c = sqrt(1/eps0/mu0);
 fprintf('-------------------------\n')
 fprintf('Nx = %d\n',Nx);
 fprintf('Lx = %.1f [m]\n',Lx);
 fprintf('dx = Lx/Nx = %.1e [m]\n',ds);
 fprintf('fs = %.1e [Hz]\n',fs);
 fprintf('dt = ds/fs = %.1e [s]\n',dt);
+fprintf('i_lamda = %.1f\n',Nx*c/fs/Lx);
+fprintf('lamda   = %.2e [m]\n',c/fs/Lx);
 fprintf('max(sigma)*2*pi*f/epsilon_o = %.1e\n',max(sigma)*2*pi*fs/eps0);
 fprintf('-------------------------\n')
 
@@ -150,28 +155,4 @@ for iter=1:Niter
 end
 fprintf('\n');
 
-figure(3);clf;hold on;box on;grid on;
-    plot(Ey,'LineWidth',3);     % Ey1
-    plot([1,1],'LineWidth',2);  % Placeholder for Ey1+
-    plot([1,1],'LineWidth',2);  % Placeholder for Ey1-
-    plot([1,1],'LineWidth',3);  % Placeholder for Ey2
-    title(sprintf('i_t = %03d; f = %s [Hz]; L_x = %.1f [m]',...
-        iter,fstr,Lx));
-    xlabel('i_x');
-    ylabel('[V/m]','Rotation',0,'HorizontalAlignment','Right');
-    legend('E_{y1}','E_{y1}^{+}','E_{y1}^{-}','E_{y2}');
-    fdtd1d_annotate;
-    fstr = sprintf('HW8_2.pdf');
-    print(fstr,'-bestfit','-dpdf');
-
-figure(4);clf;hold on;box on;grid on;
-    plot(Ey_ip,'b','LineWidth',2);
-    plot(377*Hz_ip,'r','LineWidth',2);
-    xlabel('i_t');
-    legend('E_y','377H_z','Location','NorthWest')
-    title(sprintf('At i_{probe} = %d',ip));
-    ylims = get(gca,'YLim');
-    drawnow
-    fstr = sprintf('figures/fdtd1d_run-%d_profile-%d_vs_time_ip_%03d.pdf',run,profile,ip);
-    print(fstr,'-bestfit','-dpdf');
-
+fdtd1d_plot;

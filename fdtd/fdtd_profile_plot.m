@@ -1,6 +1,6 @@
-function fdtd_profile_plot(profile, N, varargin)
+function fdtd_profile_plot(profile, N, b, varargin)
 
-[epsr,mur,sigma] = fdtd_profile(profile, N, varargin);
+[epsr,mur,sigma] = fdtd_profile(profile, N, b, varargin);
 
 ms = 1; % Marker (dot) size.
 if N < 10
@@ -20,3 +20,4 @@ subplot(2,1,2);grid on;hold on;box on;
     set(get(gca,'YLabel'),'Rotation',0,'HorizontalAlignment','Right');
     xlabel('i_x');
 drawnow
+

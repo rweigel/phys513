@@ -149,6 +149,8 @@ Save your as a file with name <code>HW1_1.ext</code>, where <code>ext</code> is 
 
 # HW 2
 
+Due Saturday, September 10th at 3pm.
+
 ## 1--D 
 
 A large conducting plate in the $x=0$ plane is grounded. A large conducting plate in the $x=d$ plane is held at $V_o$. In the $x=x'$ plane ($0<x'<d$), there is a large uniformly charged sheet.

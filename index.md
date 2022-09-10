@@ -31,7 +31,8 @@ HWs: [HW #1](hw.html#hw-1) | [HW #2](hw.html#hw-2)
 * Introductions
 * Syllabus
 * Cover [HW #1](hw.html#hw-1) topics
-    * Solving for $\mathbf{E}$ and $V$ for a parallel plate capacitor and long coaxial cylinders given potentials on conducting surfaces: Using (1) Gauss' law (assume $\pm Q$ on each conductor, find $\mathbf{E}$, and eliminate $Q$ using $V_o=-\int Edl$) and using the Boundary Value method 
+    * Solving for $\mathbf{E}$ and $V$ for a parallel plate capacitor and long coaxial cylinders given potentials on conducting surfaces: Using (1) Gauss' law (assume $\pm Q$ on each conductor, find $\mathbf{E}$, and eliminate $Q$ using $V_o=-\int Edl$) and (2) using the Boundary Value method.
+    * The interpretation and calculation of capacitance.
 
 
 # Syllabus

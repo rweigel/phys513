@@ -171,4 +171,54 @@ A large conducting plate in the $x=0$ plane is grounded. A large conducting plat
 ## Laplace' Equation in Two Dimensions -- Numerical
 
 1. Verify the numbers in the Step 1 column of Table 1.20 of the textbook. Show your calculations on a piece of paper. (In class, we will start the development of a program to compute the potentials in the other columns.)
-2. Find the equation for the exact potential for this problem if all of the sides are set to have zero potential except the side at $80\text{ V}$. Ideally you would derive the equation, but if you are not able to, cite your source. 
+2. Find the equation for the exact potential for this problem if all of the sides are set to have zero potential except the side at $80\text{ V}$. Ideally you would derive the equation, but if you are not able to, cite your source.
+
+# HW 3
+
+## Laplace' Equation in 1--D Spherical -- Numerical
+
+In Section 1.20 of the texbook, a derivation is given for a numerical algorithm for solving Laplace's equation in 2--D cartesian.
+
+1. Use similar steps to derive an algorithm for solving numerically solving Laplace's equation in 1--D spherical, which is
+
+    $$
+    \nabla^2\Phi(r)=
+    {1 \over r^{2}}{\partial \over \partial r}\left(r^{2}{\partial \Phi \over \partial r}\right)=0
+    $$
+
+    If $r\ne 0$, then
+
+    $$
+    \nabla^2\Phi=
+    {\partial \over \partial r}\left(r^{2}{\partial \Phi \over \partial r}\right)=0
+    $$
+    
+    Using the product rule, we can write 
+    
+    $$
+    \nabla^2\Phi=
+    2r{\partial \Psi \over \partial r} + r^{2}{\partial^2 \Psi \over \partial r^2}=0
+    $$
+    
+2. If $\Phi(r=2)=1$ and $\Phi(r=1)=0$, use your algorithm from 1. to find the potential at $r=1.5$. (Use a grid with points at $r=1$, $r=1.5$, and $r=2$.)
+3. Repeat 2. using a grid with points at $r=1$, $r=4/3$, $r=5/3$, and $r=2$.
+
+Save your solution as `HW3_1.pdf` and upload to your repository.
+
+## Interpretation of Bound Surface Charges
+
+In Example 4.3 of Griffiths 4th Edition, he models a polarized sphere by using two uniformly charged spheres with centers that are separated by a small distance $d$. The potential found is the same as that found in Example 4.2 found by computing the bound surface charge density for a sphere with polarization $\mathbf{P}=P_o\zhat$.
+
+In this problem, a polarized slab will be modeled using two slabs of charge with uniform and opposite charge density that are offset by a small distance $d$.
+
+1. Find $\mathbf{E}(y)$ for the slab with uniform charge density $\rho_o$ shown in the following figure. Assume that the slab is infinite in extent in the $\pm z$ and $\pm x$ directions so that Gauss's law can be used. (This slab can be thought of as being composed of thin sheets of charge stacked together and so an alternative to using Gauss's law is to sum the electric field due to sheets of charge.)
+
+   <img src="https://rweigel.github.io/phys305/figures/Gausss_Law_Uniform_Slab.svg"/>
+
+2. Plot $\mathbf{E}(y)$ vs $y$.
+
+3. Next, compute and plot $\mathbf{E}(y)$ for the same slab if it had charge density of $-\rho_o$ and was shifted by $-d$ in the $y$--direction. Assume that $d\ll t$.
+
+4. Compute $\mathbf{E}$ in the region of overlap of the $+\rho_o$ and $-\rho_o$ slabs.
+
+Save your solution as `HW3_2.pdf` and upload to your repository. If you use code, save it as `HW3_2.ext`, where `ext` is the program extension (e.g., `m`, `py`, etc.).

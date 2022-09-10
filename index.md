@@ -11,9 +11,16 @@ Subtitle: Applied Electromagnetic Theory
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
-HWs: [HW #1](hw.html#hw-1) | [HW #2](hw.html#hw-2)
+HWs: [HW #1](hw.html#hw-1) | [HW #2](hw.html#hw-2) | [HW #3](hw.html#hw-3)
 
 # Schedule
+
+## Thursday, September 8th
+
+* Discuss [HW #2](hw.html#hw-2)
+* Cover dielectrics
+    * Fundamental dielectric example
+    * Discuss why capacitance increases when a dielectric is used
 
 ## Thursday, September 1st
 

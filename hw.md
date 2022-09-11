@@ -175,6 +175,8 @@ A large conducting plate in the $x=0$ plane is grounded. A large conducting plat
 
 # HW 3
 
+Due Saturday, September 17th at 3 pm.
+
 ## Laplace' Equation in 1--D Spherical -- Numerical
 
 In Section 1.20 of the texbook, a derivation is given for a numerical algorithm for solving Laplace's equation in 2--D cartesian.

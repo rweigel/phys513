@@ -199,7 +199,7 @@ In Section 1.20 of the texbook, a derivation is given for a numerical algorithm 
     
     $$
     \nabla^2\Phi=
-    2r{\partial \Psi \over \partial r} + r^{2}{\partial^2 \Psi \over \partial r^2}=0
+    2r{\partial \Phi \over \partial r} + r^{2}{\partial^2 \Phi \over \partial r^2}=0
     $$
     
 2. If $\Phi(r=2)=1$ and $\Phi(r=1)=0$, use your algorithm from 1. to find the potential at $r=1.5$. (Use a grid with points at $r=1$, $r=1.5$, and $r=2$.)

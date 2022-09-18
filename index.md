@@ -11,9 +11,11 @@ Subtitle: Applied Electromagnetic Theory
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
-HWs: [HW #1](hw.html#hw-1) | [HW #2](hw.html#hw-2) | [HW #3](hw.html#hw-3)
+HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3)  | [4](hw.html#hw-4)
 
 # Schedule
+
+## Thursday, September 15th
 
 ## Thursday, September 8th
 
@@ -21,6 +23,7 @@ HWs: [HW #1](hw.html#hw-1) | [HW #2](hw.html#hw-2) | [HW #3](hw.html#hw-3)
 * Cover dielectrics
     * Fundamental dielectric example
     * Discuss why capacitance increases when a dielectric is used
+    * Example of computing potential between plates of a capacitor that is half-filled with a dielectric using (1) Gauss's law and (2) BV method.
 
 ## Thursday, September 1st
 

@@ -1,17 +1,17 @@
 # HW 1
 
-Due on Saturday, September 3rd at 3pm. During class on Thrusday, September 1st, I will explain how I would like any code used for your homework assignments turned in.
+Due on Saturday, September 3rd at 3pm. During class on Thursday, September 1st, I will explain how I would like any code used for your homework assignments turned in.
 
 ## 1--D Problems
 
 In class, I showed how to find the electric field and potential between two infinite conducting plates and two long coaxial conducting cylinders when the conductors are held at different potentials. I used two methods:
 
-1. Assume a net charge $\pm Q$ appears on the conductors, use the equation that results from application Gauss' law to find the electric field, and then use $\ds V(b)-V(a)=-\int_a^b E dl$ to find the potential.
+1. Assume a net charge $\pm Q$ appears on the conductors, use the equation that results from the application of Gauss' law to find the electric field, and then use $\ds V(b)-V(a)=-\int_a^b E dl$ to find the potential.
 
 
 2. Find the general solution to $\ds \nabla^2V=0$ and use the given conductor potentials to find the potential between the conductors.
 
-Repeat the process that I used for the two problems in class for the case of two concentric spheres of radius $a$ and $b$ (with $b > a$) held at potentials of $0$ and $V_o$, respectively. That is, solve for $E$ and $V$ for this problem using the two approaches described above.
+Repeat the process I used for the two problems in class for the case of two concentric spheres of radius $a$ and $b$ (with $b > a$) held at potentials of $0$ and $V_o$, respectively. That is, solve for $E$ and $V$ for this problem using the two approaches described above.
 
 ## Continuous Charge Distribution Approximation
 
@@ -157,7 +157,7 @@ A large conducting plate in the $x=0$ plane is grounded. A large conducting plat
 
 1. Find the potential.
 2. Find the surface charge densities on each conductor and the sum of the surface charge densities on the three surfaces.
-3. If instead of a charged sheet, there is a large thick slab that fills the space between $0 < x < d/2$, find the potential.
+3. If, instead of a charged sheet, a large thick slab fills the space between $0 < x < d/2$, find the potential.
 
 ## Continuous Charge Distributions
 
@@ -227,6 +227,8 @@ Save your solution as `HW3_2.pdf` and upload to your repository. If you use code
 
 # HW 4
 
+Due Saturday, September 25th at 6 pm.
+
 ## Capactor with Dielectrics -- Analytical
 
 A large parallel plate capacitor is half--filled with two linear dielectrics with permittivities of $\epsilon_1$ and $\epsilon_2$. Assume that the capacitor is large enough that the potential only varies in the $x$--direction. In the diagram, the dotted rectangle is the cross--section of a Gaussian cylinder referenced in parts 4. and 5.
@@ -243,9 +245,12 @@ Using your answer to 1.,
 4. show that Gauss's law $\oint \mathbf{E}\bfcdot d\mathbf{a}=\sigma/\epsilon_o$ is satisfied for the Gaussian cylinder shown on the diagram ($\sigma$ in this equation is all charges: bound and free); and
 5. show that Gauss's law for dielectrics, $\oint \mathbf{D}\bfcdot d\mathbf{a}=\sigma_{\text {free}}$ is satisfied for the Gaussian cylinder shown on the diagram ($\sigma_{\text {free}}$ in this equation is all non--bound charges).
 
+Save your answer in a file named `HW4_1.pdf`.
+
 ## Capactor with Dielectrics -- Numerical
 
 Find a numerical approximation of the (1--D) potential for the previous problem. Do this using the "Simple Averaging Method" described in Example 1.20 of the textbook. Use grid points at $x=0, d/2, d, 3d/2$, and $2d$. You only need to find the approximation using one step of the simple averaging method.
 
 Hint: For any grid point that is not at $x=d$, the potential is simply the average of the potentials to the left and right. For a grid point at $x=d$, you will need to find an equation that numerically implements the condition $D_1(d)=D_2(d)$. If your grid points are at $x=0, d$, and $2d$, the only equation that you will solve is the equation for the condition $D_1(d)=D_2(d)$. Try this version of the problem first. Does it give a sensible result when $\chi_{e2}\rightarrow \infty$ or if $\epsilon_1=\epsilon_2$?
 
+Save your derivation and numerical values for the potential in a file named `HW4_2.pdf` and any code as `HW4_2.ext`, where ext is the file name extension for the language, e.g., `m` or `py`.

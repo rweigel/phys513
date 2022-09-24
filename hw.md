@@ -298,7 +298,7 @@ Save your derivation and numerical values for the potential in a file named `HW4
 
 # HW 5
 
-The background for this homework is covered in Chapter 2 of the texbook and Chapter 4 of Griffiths. Ramo starts off with $\mathbf{H}$ instead of $\mathbf{B}$.
+The background for this homework is covered in Chapter 2 of the texbook and Chapter 4 of Griffiths.
 
 Due Saturday, October 1st at 3:00 pm.
 

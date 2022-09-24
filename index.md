@@ -11,9 +11,11 @@ Subtitle: Applied Electromagnetic Theory
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
-HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3)  | [4](hw.html#hw-4)
+HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3) | [4](hw.html#hw-4) | [5](hw.html#hw-5)
 
 # Schedule
+
+## Thursday, September 22nd
 
 ## Thursday, September 15th
 

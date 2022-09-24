@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <title>PHYS 513</title>
   <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22100%22>📖</text></svg>">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" />
   <style>
     #toc>ol ol {
       display: none
@@ -94,10 +93,6 @@
 
     #display .block>.comment {
       display: none;
-    }
-
-    #display .block.inline-html {
-      display: block;
     }
 
     #display .hr {
@@ -275,12 +270,32 @@
       width: 100%;
     }
 
+    #display ol.compact li {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+    }
+
+    #display ol.loose li {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    #display ul.compact li {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+    }
+
+    #display ul.loose li {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
     #display li p {
       width: 100%;
       display: block;
     }
 
-    #display li .block:first-of-type p {
+    #display li>.block:first-of-type p {
       width: 100%;
       display: block;
       margin-top: 0em;
@@ -324,6 +339,19 @@
       border: 1px solid black;
       padding: 1em;
       border-radius: 0.5em;
+    }
+
+    .solutionsfalse {
+      display: block;
+    }
+
+    .solutionstrue {
+      display: block;
+    }
+
+    .inline {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
     }
 
     .katex {
@@ -494,6 +522,11 @@
         </a>
         <ol class="toc" style="display: none;">
           <li>
+            <a href="#thursday-september-22nd" class="highlighted">
+              <span class="toctext">Thursday, September 22nd</span>
+            </a>
+          </li>
+          <li>
             <a href="#thursday-september-15th">
               <span class="toctext">Thursday, September 15th</span>
             </a>
@@ -585,7 +618,7 @@
         <p class="subtitle">Applied Electromagnetic Theory</p>
       </div>
       <div class="block">
-        <ul>
+        <ul class="compact">
           <li>
             <div class="block">
               <p>Day and Time: Thursday from 4:30 – 7:10 pm</p>
@@ -624,7 +657,7 @@
         </ul>
       </div>
       <div class="block">
-        <p>HWs: <a href="hw.html#hw-1">1</a> | <a href="hw.html#hw-2">2</a> | <a href="hw.html#hw-3">3</a> | <a href="hw.html#hw-4">4</a></p>
+        <p>HWs: <a href="hw.html#hw-1">1</a> | <a href="hw.html#hw-2">2</a> | <a href="hw.html#hw-3">3</a> | <a href="hw.html#hw-4">4</a> | <a href="hw.html#hw-5">5</a></p>
       </div>
     </div>
     <div class="section">
@@ -634,15 +667,20 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="thursday-september-15th" number="1.1" class="hanchor" href="#thursday-september-15th"><span class="hnumber">1.1</span>&nbsp;<span class="htext">Thursday, September 15th</span></a></h2>
+        <h2 class="highlighted"><a name="thursday-september-22nd" number="1.1" class="hanchor" href="#thursday-september-22nd"><span class="hnumber">1.1</span>&nbsp;<span class="htext">Thursday, September 22nd</span></a></h2>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="thursday-september-8th" number="1.2" class="hanchor" href="#thursday-september-8th"><span class="hnumber">1.2</span>&nbsp;<span class="htext">Thursday, September 8th</span></a></h2>
+        <h2><a name="thursday-september-15th" number="1.2" class="hanchor" href="#thursday-september-15th"><span class="hnumber">1.2</span>&nbsp;<span class="htext">Thursday, September 15th</span></a></h2>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h2><a name="thursday-september-8th" number="1.3" class="hanchor" href="#thursday-september-8th"><span class="hnumber">1.3</span>&nbsp;<span class="htext">Thursday, September 8th</span></a></h2>
       </div>
       <div class="block">
-        <ul>
+        <ul class="compact">
           <li>
             <div class="block">
               <p>Discuss <a href="hw.html#hw-2">HW #2</a></p>
@@ -653,7 +691,7 @@
               <p>Cover dielectrics</p>
             </div>
             <div class="block">
-              <ul>
+              <ul class="compact">
                 <li>
                   <div class="block">
                     <p>Fundamental dielectric example</p>
@@ -677,16 +715,16 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="thursday-september-1st" number="1.3" class="hanchor" href="#thursday-september-1st"><span class="hnumber">1.3</span>&nbsp;<span class="htext">Thursday, September 1st</span></a></h2>
+        <h2><a name="thursday-september-1st" number="1.4" class="hanchor" href="#thursday-september-1st"><span class="hnumber">1.4</span>&nbsp;<span class="htext">Thursday, September 1st</span></a></h2>
       </div>
       <div class="block">
-        <ul>
+        <ul class="compact">
           <li>
             <div class="block">
               <p>Discuss <a href="hw.html#hw-1">HW #1</a>, which is due on Saturday, September 3rd at 3pm.</p>
             </div>
             <div class="block">
-              <ul>
+              <ul class="compact">
                 <li>
                   <div class="block">
                     <p>Student presentation of their problem #1</p>
@@ -710,10 +748,10 @@
               <p>Cover <a href="hw.html#hw-2">HW #2</a> topics</p>
             </div>
             <div class="block">
-              <ul>
+              <ul class="compact">
                 <li>
                   <div class="block">
-                    <p>Discuss an approach to problem #1 on <a href="hw.html#hw-2">HW #2</a> (find <span len="3" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> due to sheet of charge at <span len="5" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mord">/2</span></span></span></span> first, then generalize for sheet at <span len="4" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7519em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span>, then use that <span len="3" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> and superposition)</p>
+                    <p>Discuss an approach to problem #1 on <a href="hw.html#hw-2">HW #2</a> (find $V$ due to sheet of charge at $d/2$ first, then generalize for sheet at $x’$, then use that $V$ and superposition)</p>
                   </div>
                 </li>
                 <li>
@@ -734,10 +772,10 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="thursday-august-25th" number="1.4" class="hanchor" href="#thursday-august-25th"><span class="hnumber">1.4</span>&nbsp;<span class="htext">Thursday, August 25th</span></a></h2>
+        <h2><a name="thursday-august-25th" number="1.5" class="hanchor" href="#thursday-august-25th"><span class="hnumber">1.5</span>&nbsp;<span class="htext">Thursday, August 25th</span></a></h2>
       </div>
       <div class="block">
-        <ul>
+        <ul class="compact">
           <li>
             <div class="block">
               <p>Introductions</p>
@@ -753,10 +791,10 @@
               <p>Cover <a href="hw.html#hw-1">HW #1</a> topics</p>
             </div>
             <div class="block">
-              <ul>
+              <ul class="compact">
                 <li>
                   <div class="block">
-                    <p>Solving for <span len="12" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span></span></span></span> and <span len="3" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> for a parallel plate capacitor and long coaxial cylinders given potentials on conducting surfaces: Using (1) Gauss’ law (assume <span len="7" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">±</span><span class="mord mathnormal">Q</span></span></span></span> on each conductor, find <span len="12" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span></span></span></span>, and eliminate <span len="3" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span> using <span len="15" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1111em;vertical-align:-0.3061em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0006em;">∫</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span>) and (2) using the Boundary Value method.</p>
+                    <p>Solving for $\mathbf{E}$ and $V$ for a parallel plate capacitor and long coaxial cylinders given potentials on conducting surfaces: Using (1) Gauss’ law (assume $\pm Q$ on each conductor, find $\mathbf{E}$, and eliminate $Q$ using $V_o=-\int Edl$) and (2) using the Boundary Value method.</p>
                   </div>
                 </li>
                 <li>
@@ -797,7 +835,7 @@
         <p>The homework assignments will have two parts:</p>
       </div>
       <div class="block">
-        <ol>
+        <ol class="compact">
           <li>
             <div class="block">
               <p>Basic problems that cover topics that have not been discussed in class. These problems are intended to prepare the students for the lecture on the topic.</p>
@@ -819,7 +857,7 @@
         <h2><a name="grading" number="2.3" class="hanchor" href="#grading"><span class="hnumber">2.3</span>&nbsp;<span class="htext">Grading</span></a></h2>
       </div>
       <div class="block">
-        <ul>
+        <ul class="compact">
           <li>
             <div class="block">
               <p>Homework: 30%</p>
@@ -857,7 +895,7 @@
         <h3><a name="mathematical" number="2.4.1" class="hanchor" href="#mathematical"><span class="hnumber">2.4.1</span>&nbsp;<span class="htext">Mathematical</span></a></h3>
       </div>
       <div class="block">
-        <ul>
+        <ul class="compact">
           <li>
             <div class="block">
               <p>A<a href="https://www.amazon.com/introduction-Fourier-methods-Laplace-transformation/dp/B0007HQ89I">n Introduction to Fourier Methods and the Laplace Transformation but Philip Franklin</a>. This short book has many examples related to Maxwell’s equations and transmission lines.</p>
@@ -876,7 +914,7 @@
         <h3><a name="undergraduate-level" number="2.4.2" class="hanchor" href="#undergraduate-level"><span class="hnumber">2.4.2</span>&nbsp;<span class="htext">Undergraduate-level</span></a></h3>
       </div>
       <div class="block">
-        <ul>
+        <ul class="compact">
           <li>
             <div class="block">
               <p>Introduction to Electrodynamics by David J. Griffiths - the most commonly used junior-level undergraduate textbook for physics majors.</p>
@@ -923,7 +961,7 @@
         <p>Two textbooks that cover applied E&amp;M topics in detail are</p>
       </div>
       <div class="block">
-        <ul>
+        <ul class="compact">
           <li>
             <div class="block">
               <p>Microwave Engineering by David M. Pozar.</p>
@@ -945,7 +983,7 @@
         <p>Textbooks that cover advanced E&amp;M theory are</p>
       </div>
       <div class="block">
-        <ul>
+        <ul class="compact">
           <li>
             <div class="block">
               <p>Classical Electrodynamics by David J. Jackson - the most commonly used graduate-level textbook for physics students</p>
@@ -975,7 +1013,7 @@
         <p><a href="http://universitypolicy.gmu.edu/">http://universitypolicy.gmu.edu/</a></p>
       </div>
       <div class="block">
-        <ul>
+        <ul class="compact">
           <li>
             <div class="block">
               <p>Last class Thursday, December 1st.</p>

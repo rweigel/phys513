@@ -159,14 +159,55 @@ A large conducting plate in the $x=0$ plane is grounded. A large conducting plat
 2. Find the surface charge densities on each conductor and the sum of the surface charge densities on the three surfaces.
 3. If, instead of a charged sheet, a large thick slab fills the space between $0 < x < d/2$, find the potential.
 
+**Answers**
+
+1. If both plates are grounded, 
+
+   $\displaystyle\psi_l=\frac{\sigma'}{\epsilon_o}\left(1-\frac{x'}{w}\right)x$
+   
+   $\displaystyle\psi_r=\frac{\sigma'}{\epsilon_o}\left(1-\frac{x}{w}\right)x'$
+
+   If right plate is at $V_o$, we need to add $V_ox/d$ to both.
+
+2. $\sigma_l=\epsilon_o\mathbf{E}\bfcdot\hat{\mathbf{n}}$ with $\hat{\mathbf{n}}=\xhat$ on plate at $x=0$ and $\hat{\mathbf{n}}=-\xhat$ on plate at $x=d$. Using $E=-d\psi/dx$ gives
+
+   $\sigma_l=$
+   
+   $\sigma_r=$
+
+3. If both plates are grounded
+
+   $$\psi_l(x)=-\frac{1}{2}\frac{\rho}{\epsilon_o}x^2+\frac{3}{8}\frac{\rho d}{\epsilon_o}x$$
+
+   $$\psi_r(x)=\frac{1}{8}\frac{\rho d}{\epsilon_o} (d-x)$$
+
+   If right plate is at $V_o$, we need to add $V_ox/d$ to both.
+
 ## Continuous Charge Distributions
 
 1. Use Gauss' law to compute the electric field near the center and just above or below the surface of a finite square of charge of side length $w$ and charge density $\sigma_o$.
+
+   **Answer**: See any intro textbook.
+
 2. Show how the exact answer
 
-    $$E_z(z)=\frac{\sigma_o}{\pi \epsilon_o}\tan^{-1}\left[\frac{w^2}{4z}\frac{1}{\sqrt{z^2+w^2/2}}\right]$$
+   $$E_z(z)=\frac{\sigma_o}{\pi \epsilon_o}\tan^{-1}\left[\frac{w^2}{4z}\frac{1}{\sqrt{z^2+w^2/2}}\right]$$
 
-    matches the Gauss' law result when $z/w \ll 1$.
+   matches the Gauss' law result when $z/w \ll 1$.
+
+   **Answer**: For $z\ll w$, the argument to the inverse tangent is
+
+   $$\frac{w^2}{4z}\frac{1}{\sqrt{z^2+w^2/2}}\simeq \frac{w}{z}\frac{\sqrt{2}}{4}$$
+
+   so for $z \gt 0$ and $z\ll w$
+
+   $$E_z(z)\rightarrow\frac{\sigma_o}{\pi\epsilon_o}\tan^{-1}(+\infty) = \frac{\sigma_o}{2\epsilon_o}$$
+
+   For $z \lt 0$ and $z\ll w$
+
+   $$E_z(z)\rightarrow\frac{\sigma_o}{\pi\epsilon_o}\tan^{-1}(-\infty) = -\frac{\sigma_o}{2\epsilon_o}$$
+
+   and so the solution matches that for an infinite sheet of charge. Another problem one could ask is to show that for $z\gg w$, $E_z\rightarrow k\sigma_ow^2/z^2$ (far away, the sheet of charge appears as a charge $\sigma_ow^2$ at the origin). To show this, one would need to Taylor series expand the argument of the inverse tangent for small $w/z$.
 
 ## Laplace' Equation in Two Dimensions -- Numerical
 
@@ -227,7 +268,7 @@ Save your solution as `HW3_2.pdf` and upload to your repository. If you use code
 
 # HW 4
 
-Due Saturday, September 25th at 6 pm.
+Due Saturday, September 24th at 6 pm.
 
 ## Capactor with Dielectrics -- Analytical
 
@@ -254,3 +295,38 @@ Find a numerical approximation of the (1--D) potential for the previous problem.
 Hint: For any grid point that is not at $x=d$, the potential is simply the average of the potentials to the left and right. For a grid point at $x=d$, you will need to find an equation that numerically implements the condition $D_1(d)=D_2(d)$. If your grid points are at $x=0, d$, and $2d$, the only equation that you will solve is the equation for the condition $D_1(d)=D_2(d)$. Try this version of the problem first. Does it give a sensible result when $\chi_{e2}\rightarrow \infty$ or if $\epsilon_1=\epsilon_2$?
 
 Save your derivation and numerical values for the potential in a file named `HW4_2.pdf` and any code as `HW4_2.ext`, where ext is the file name extension for the language, e.g., `m` or `py`.
+
+# HW 5
+
+The background for this homework is covered in Chapter 2 of the texbook and Chapter 4 of Griffiths. Ramo starts off with $\mathbf{H}$ instead of $\mathbf{B}$.
+
+Due Saturday, October 1st at 3:00 pm.
+
+## Force on electrons in a wire
+
+Solve problem 2.2a of Ramo
+
+Save your answer in a file named `HW5_1.pdf`.
+
+## The Hall effect
+
+Solve problem 2.2b of Ramo
+
+Save your answer in a file named `HW5_2.pdf`.
+
+## Axial current on a long coaxial cable
+
+Solve problem 2.2c of Ramo
+
+Save your answer in a file named `HW5_3.pdf`.
+
+## Inductance
+
+Find the inductance per unit length of an infinitely long solenoid of radius $a$. Do this
+
+1. using formula (1) of section 2.5 and
+2. formula (1) of section 2.16 of the textbook.
+
+Assume $\mu=\mu_o$.
+
+Save your answer in a file named `HW5_4.pdf`.

@@ -316,7 +316,7 @@ Save your answer in a file named `HW5_2.pdf`.
 
 ## Axial current on a long coaxial cable
 
-Solve problem 2.2c of Ramo
+Solve problem ~2.2c~ 2.4a of Ramo
 
 Save your answer in a file named `HW5_3.pdf`.
 

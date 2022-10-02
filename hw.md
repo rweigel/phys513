@@ -13,6 +13,8 @@ In class, I showed how to find the electric field and potential between two infi
 
 Repeat the process I used for the two problems in class for the case of two concentric spheres of radius $a$ and $b$ (with $b > a$) held at potentials of $0$ and $V_o$, respectively. That is, solve for $E$ and $V$ for this problem using the two approaches described above.
 
+**Answer**: Covered in class
+
 ## Continuous Charge Distribution Approximation
 
 In E&M, we often assume that point charges are continuously distributed. This problem addresses the accuracy of this approximation.
@@ -26,6 +28,8 @@ $$\left|\frac{E_{ye}(0,L)-E_{ya}(0,L)}{E_{ye}(0,L)}\right|\le 0.01\;?$$
 where the exact solution is given by $E_{ye}$. 
 
 You may look up the exact solution, but cite your source. You may use any program or a calculator to solve this problem. Save your program as a file with name <code>HW1_2.ext</code>, where <code>ext</code> is the file extension for your program, e.g., <code>m</code>, <code>py</code>, etc. If you use a spreadsheet, follow the instructions for the following problem.
+
+**Answer**: 51
 
 ## Field Lines
 
@@ -169,11 +173,7 @@ A large conducting plate in the $x=0$ plane is grounded. A large conducting plat
 
    If right plate is at $V_o$, we need to add $V_ox/d$ to both.
 
-2. $\sigma_l=\epsilon_o\mathbf{E}\bfcdot\hat{\mathbf{n}}$ with $\hat{\mathbf{n}}=\xhat$ on plate at $x=0$ and $\hat{\mathbf{n}}=-\xhat$ on plate at $x=d$. Using $E=-d\psi/dx$ gives
-
-   $\sigma_l=$
-   
-   $\sigma_r=$
+2. $\sigma_l=\epsilon_o\mathbf{E}\bfcdot\hat{\mathbf{n}}$ with $\hat{\mathbf{n}}=\xhat$ on plate at $x=0$ and $\hat{\mathbf{n}}=-\xhat$ on plate at $x=d$, and $E=-d\psi/dx$. The sum should be zero because a Gaussian cylinder with end caps in the conductors will have zero flux and so should have zero enclosed charge.
 
 3. If both plates are grounded
 
@@ -213,6 +213,8 @@ A large conducting plate in the $x=0$ plane is grounded. A large conducting plat
 
 1. Verify the numbers in the Step 1 column of Table 1.20 of the textbook. Show your calculations on a piece of paper. (In class, we will start the development of a program to compute the potentials in the other columns.)
 2. Find the equation for the exact potential for this problem if all of the sides are set to have zero potential except the side at $80\text{ V}$. Ideally you would derive the equation, but if you are not able to, cite your source.
+
+**Answers** Covered in class.
 
 # HW 3
 
@@ -330,3 +332,86 @@ Find the inductance per unit length of an infinitely long solenoid of radius $a$
 Assume $\mu=\mu_o$.
 
 Save your answer in a file named `HW5_4.pdf`.
+
+# HW 6
+
+Due on Saturday, October 8th at 3 pm. Save the answers to the written parts as `HW6_1.pdf`, `HW6_2.pdf`, and `HW6_3.pdf`.
+
+## Computing Magnetic Field and Flux
+
+1. Write a function that returns the magnetic field computed using a discrete approximation to the Biot-Savart integral. The inputs to the function should be a 3-D location in space, an arbitrary number of 3-D points on a wire, and the current in the wire. Assume that the given points on the wire are connected by straight wire segments of length \(L\) and treat these segments as the differential lengths in the Biot-Savart integrand. That is, the magnetic field for each segment \(i\) should be computed as
+
+   $$
+   \mathbf{B}_i = \frac{\mu_oI}{4\pi}\frac{\mathbf{L}_i\times \mathbf{R}}{R^3}
+   $$
+   
+   where the notation is that used on page 74 of the textbook. As an example, in MATLAB notation, I should be able to call your function as in the following script
+
+   ```matlab
+   p = [0, 0, 0];
+   % Each row of XYZ is a point on a wire.
+   XYZ = [1,  1, 0;
+         -1,  1, 0;
+         -1, -1, 0;
+          1, -1, 0];
+
+   I = 1;
+ 
+   B = HW4_BiotSavart(p, XYZ, I)
+
+   % B is an array with three elements corresponding to Bx, By, and Bz at
+   (x, y, z) = (0, 0, 0)
+   ``` 
+
+Name the function ```HW6_BiotSavart``` and save it in a file named ```HW6_BiotSavart.ext```. 
+
+2. You want to convince me that your program is correctly implementing the Biot-Savart formula and can be used to approximate the magnetic field for an arbitrarily shaped wire provided that enough points on the wire are given. Create a script named ```HW6_Check.ext``` that generates tables and/or plots that make the case.
+
+3. Consider two circular current loops of radius 1 m. One is centered on the origin, carries a current of 1 A, and lies in the $z=0$ plane. The other is in the $z=2$ m plane and the $z$-axis passes through its center. Compute the magnetic flux through the shifted current loop using the function created in part 1. Create a script named ```HW4_Flux.ext``` that prints the magnetic flux.
+
+In class, I will ask you to give a brief summary of your solution.
+
+## Inductance of a Rectangular Duct
+
+A rectangular duct carries a net current of $I_1 = K_1l$ in the direction shown. A series of current supplies along the gap is driving the current. The duct has a small enough thickness that the current can be treated as flowing on a sheet.
+
+1. Assuming $w \gg h_1$ and $l \gg h_1$, use Ampere's law to find the magnetic field inside and outside of the duct. Show the Amperian loop and justify your steps.
+
+2. The duct has only an external self-inductance. (External inductance means inductance due to flux through a cross-section where there is no current.) The external self-inductance is due to the magnetic flux through the cross-sectional area $A_1=h_1w$. The electromotive force across the gap is due to a change in magnetic flux
+
+    $$\mathcal{E}_1 = -\frac{\partial \Phi_m}{\partial t}$$
+
+    where $\Phi_m$ is the magnetic flux. Compute this magnetic flux and re-write this equation in the form of
+
+    $$\mathcal{E_1} = -L_1 \frac{\partial I_1}{\partial t}$$
+
+    so as to find $L_1$ in terms of $\mu_o$, $l$, and the cross-sectional area $A_1=h_1w$. 
+3. Show that the $L_1$ computed in 2. is the same as that using the methods of HW 5.4
+
+## Faraday's Law and Ampere's Law
+
+Faraday's law in integral form in terms of magnetic flux $\Phi_B$ is
+
+$$
+\oint\mathbf{E}\cdot d\mathbf{l} = -\frac{\partial \Phi_B}{\partial t}
+$$
+
+The generalized form of Ampere's law (see sections 3.4 and 3.5 of the textbook) when $\mathbf{J}=0$ in terms of the electric flux $\Phi_E$ is
+
+$$
+\oint\mathbf{B}\cdot d\mathbf{l} = {1\over c^2}\frac{\partial \Phi_E}{\partial t}
+$$
+
+On the following diagram, two rectangles labeled e. and b. are shown. In this region of space, the electric field was measured to be
+
+<img src="figures/Two_Planes.svg">
+
+$$
+\mathbf{E}=E_{ox}\cos(k_zz-\omega t)\hat{\mathbf{x}}
+$$
+
+1. Find the magnetic field $\mathbf{B}$ that must exist using $\boldsymbol{\nabla}\times \mathbf{E}=-{\partial \mathbf{B}}/{\partial t}$.
+
+2. Show that $\mathbf{E}$ satisfies Faraday's law in the form given above when the path of integration is along rectangle $e$. Draw the path of integration that you used.
+
+3. Show that this $\mathbf{B}$ satisfies Ampere's law in the form given above when the path of integration is along rectangle $b$. Draw the path of integration that you used.

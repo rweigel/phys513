@@ -373,19 +373,22 @@ In class, I will ask you to give a brief summary of your solution.
 
 ## Inductance of a Rectangular Duct
 
-A rectangular duct carries a net current of $I_1 = K_1l$ in the direction shown. A series of current supplies along the gap is driving the current. The duct has a small enough thickness that the current can be treated as flowing on a sheet.
+A rectangular duct carries a net current of $I_1 = K_1l$ in the direction shown. A series of current supplies along the infinitesimal gap is driving the current. The duct has a small enough thickness that the current can be treated as flowing on a sheet.
+
+<img src="figures/Rectangular_Duct.svg">
 
 1. Assuming $w \gg h_1$ and $l \gg h_1$, use Ampere's law to find the magnetic field inside and outside of the duct. Show the Amperian loop and justify your steps.
 
 2. The duct has only an external self-inductance. (External inductance means inductance due to flux through a cross-section where there is no current.) The external self-inductance is due to the magnetic flux through the cross-sectional area $A_1=h_1w$. The electromotive force across the gap is due to a change in magnetic flux
 
-    $$\mathcal{E}_1 = -\frac{\partial \Phi_m}{\partial t}$$
+   $$\mathcal{E}_1 = -\frac{\partial \Phi_m}{\partial t}$$
 
-    where $\Phi_m$ is the magnetic flux. Compute this magnetic flux and re-write this equation in the form of
+   where $\Phi_m$ is the magnetic flux. Compute this magnetic flux and re-write this equation in the form of
 
-    $$\mathcal{E_1} = -L_1 \frac{\partial I_1}{\partial t}$$
+   $$\mathcal{E_1} = -L_1 \frac{\partial I_1}{\partial t}$$
 
-    so as to find $L_1$ in terms of $\mu_o$, $l$, and the cross-sectional area $A_1=h_1w$. 
+   so as to find $L_1$ in terms of $\mu_o$, $l$, and the cross-sectional area $A_1=h_1w$. 
+
 3. Show that the $L_1$ computed in 2. is the same as that using the methods of HW 5.4
 
 ## Faraday's Law and Ampere's Law

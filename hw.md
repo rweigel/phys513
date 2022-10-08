@@ -342,7 +342,7 @@ Due on Saturday, October 8th at 3 pm. Save the answers to the written parts as `
 1. Write a function that returns the magnetic field computed using a discrete approximation to the Biot-Savart integral. The inputs to the function should be a 3-D location in space, an arbitrary number of 3-D points on a wire, and the current in the wire. Assume that the given points on the wire are connected by straight wire segments of length \(L\) and treat these segments as the differential lengths in the Biot-Savart integrand. That is, the magnetic field for each segment \(i\) should be computed as
 
    $$
-   \mathbf{B}_i = \frac{\mu_oI}{4\pi}\frac{\mathbf{L}_i\times \mathbf{R}}{R^3}
+   \mathbf{B}_i = \frac{\mu_oI}{4\pi}\frac{\mathbf{L}_i\times \mathbf{R}_i}{R_i^3}
    $$
    
    where the notation is that used on page 74 of the textbook. As an example, in MATLAB notation, I should be able to call your function as in the following script
@@ -405,16 +405,33 @@ $$
 \oint\mathbf{B}\cdot d\mathbf{l} = {1\over c^2}\frac{\partial \Phi_E}{\partial t}
 $$
 
-On the following diagram, two rectangles labeled e. and b. are shown. In this region of space, the electric field was measured to be
+On the following diagram, two rectangles labeled e. and b. are shown. In this region of space, the electric field was measured to be $\mathbf{E}=E_{ox}\cos(k_zz-\omega t)\hat{\mathbf{x}}$
 
 <img src="figures/Two_Planes.svg">
 
-$$
-\mathbf{E}=E_{ox}\cos(k_zz-\omega t)\hat{\mathbf{x}}
-$$
 
 1. Find the magnetic field $\mathbf{B}$ that must exist using $\boldsymbol{\nabla}\times \mathbf{E}=-{\partial \mathbf{B}}/{\partial t}$.
 
 2. Show that $\mathbf{E}$ satisfies Faraday's law in the form given above when the path of integration is along rectangle $e$. Draw the path of integration that you used.
 
 3. Show that this $\mathbf{B}$ satisfies Ampere's law in the form given above when the path of integration is along rectangle $b$. Draw the path of integration that you used.
+
+# Midterm
+
+Due Saturday, Octover 15th at 3 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.
+
+----
+
+The space between two concentric conducting spherical shells of radius $a$ and $3a$ is filled with a thick shell of uniformly charged material for $a\lt r \le 2a$ and a thick shell of dielectric material for $2a\lt r\lt 3a$.
+
+<img src="figures/Sphere_with_Dielectric_and_Charge_Density.svg"/>
+
+The sphere at $r=a$ is grounded and the sphere at $r=3a$ is held at $V_o$; $a=1\text{ m}$, $V_o=1\text{ Volt}$, $\rho_o=V_o\epsilon_o/a^2$, and $\epsilon=2\epsilon_o$.
+   
+1. Find the exact value of the potential for all $r$.
+
+2. Use the "Simple Averaging" method to find the potential for $a\le r\le 3a$.
+
+   Use a grid spacing of $a/3$ and iterate until the maximum absolute change in potential at any grid point is $1$%.
+
+3. Plot your solutions to 1. and 2. on the same axes.

@@ -16,6 +16,8 @@
 %are functions of x. Try changing the value of "profile".
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% RSW: Added annotations for plots and comments in code. Original code
+% is fdtd1d_original.m.
 set(0,'DefaultFigureWindowStyle','docked');
 set(0,'DefaultAxesFontName','Times');
 set(0,'DefaultAxesTitleFontWeight','normal');

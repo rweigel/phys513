@@ -416,6 +416,34 @@ On the following diagram, two rectangles labeled e. and b. are shown. In this re
 
 3. Show that this $\mathbf{B}$ satisfies Ampere's law in the form given above when the path of integration is along rectangle $b$. Draw the path of integration that you used.
 
+# HW 7
+
+## Plane Wave Incident on Conductor
+
+Read 3.14--3.17 of the textbook.
+
+The program `fdtd1d.m` in the fdtd directory at https://github.com/rweigel/phys513/ uses the Finite Difference Time Domain method to solve the equations
+
+$$\boldsymbol{\nabla}\times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$$
+
+$$\boldsymbol{\nabla}\times \mathbf{H} = \sigma_c\mathbf{E}+\frac{\partial\mathbf{D}}{\partial t}$$
+
+for the case where $\mathbf{E}=E_y(x,t)\hat{\mathbf{y}}$ and $\mathbf{H}=H_z(x,t)\hat{\mathbf{y}}$. In Section 3.16 of the textbook, the analytical solution is given for the case where the ${\partial\mathbf{D}}/{\partial t}$ is omitted.
+
+Imagine that you are given this program and are asked to determine how well the numerical solution matches the theoretical (and approximate) solution for the problem where the electric field is known at the surface of an infinite slab with constant conductivity and the displacement term is ignored.
+
+Come up with at least three ways of comparing the theoretical result with the numerical result. Create three plots that show a line associated with one of the equations given in Section 3.16 versus the output of the simulation. Keep in mind that both the theoretical solution and the numerical solution are approximate.
+
+Clearly label your plots. Upload your plots to your GitHub account and label them <code>HW7_1_1.pdf</code>, <code>HW7_1_2.pdf</code>, and <code>HW7_1_3.pdf</code>. I will show these plots during class and ask you to provide an interpretation.
+
+For now, you do not need to explain the features outside of the conducting region. This is covered in Chapter 5. You also do not need to understand the details of how the simulation is performed. Instead, treat it as a black box from which measurements are extracted.
+
+## Textbook Problems
+
+Solve problems 4.3b, 4.3c, 4.3d., and 4.6e.
+
+Save your answers in a single file named <code>HW7_2.pdf</code>.
+
 # Midterm
 
 Due Saturday, Octover 15th at 3 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.

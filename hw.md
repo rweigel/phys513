@@ -428,7 +428,9 @@ $$\boldsymbol{\nabla}\times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$
 
 $$\boldsymbol{\nabla}\times \mathbf{H} = \sigma_c\mathbf{E}+\frac{\partial\mathbf{D}}{\partial t}$$
 
-for the case where $\mathbf{E}=E_y(x,t)\hat{\mathbf{y}}$ and $\mathbf{H}=H_z(x,t)\hat{\mathbf{y}}$. In Section 3.16 of the textbook, the analytical solution is given for the case where the ${\partial\mathbf{D}}/{\partial t}$ is omitted.
+for the case where $\mathbf{E}=E_y(x,t)\hat{\mathbf{y}}$ and $\mathbf{H}=H_z(x,t)\hat{\mathbf{y}}$. (This code was based on `fdtd1d_original.m` and I made several modifications and generalizations.)
+
+In Section 3.16 of the textbook, the analytical solution is given for the case where the ${\partial\mathbf{D}}/{\partial t}$ is omitted.
 
 Imagine that you are given this program and are asked to determine how well the numerical solution matches the theoretical (and approximate) solution for the problem where the electric field is known at the surface of an infinite slab with constant conductivity and the displacement term is ignored.
 

@@ -434,7 +434,11 @@ In Section 3.16 of the textbook, the analytical solution is given for the case w
 
 Imagine that you are given this program and are asked to determine how well the numerical solution matches the theoretical (and approximate) solution for the problem where the electric field is known at the surface of an infinite slab with constant conductivity and the displacement term is ignored.
 
-Come up with at least three ways of comparing the theoretical result with the numerical result. Create three plots that show a line associated with one of the equations given in Section 3.16 versus the output of the simulation. Keep in mind that both the theoretical solution and the numerical solution are approximate.
+When you execute this program, an animation is shown of a monochromatic wave propagating in a region of space with $\epsilon=\epsilon_o, \mu=\mu_o$, and $\sigma_c=0$. Some time later, the wave encounters a region where $\sigma$ becomes non--zero and $\epsilon=\epsilon_o, \mu=\mu_o$. At the end of the run, a figure is shown that has the amplitudes of $E_z$ and $B_y$ at $i_x=249$, which corresponds to just outside the conductor. (Note that the factor of $377$ arises because $\mu_o c\approx 377$.)
+
+The variable $i_x$ is the position index and is $dx$. The variable $i_t$ is the time index and is in units of $dt$. The values for $dx$ and $dt$ are printed to the screen when you execute the program.
+
+Come up with at least three ways of comparing the theoretical result with the numerical result. Create three plots that show a line (or annotation) associated with one of the equations given in Section 3.16 versus the output of the simulation. Keep in mind that both the theoretical solution and the numerical solution are approximate.
 
 Clearly label your plots. Upload your plots to your GitHub account and label them <code>HW7_1_1.pdf</code>, <code>HW7_1_2.pdf</code>, and <code>HW7_1_3.pdf</code>. I will show these plots during class and ask you to provide an interpretation.
 

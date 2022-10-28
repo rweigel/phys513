@@ -105,9 +105,26 @@
     }
 
     #display a {
-      text-decoration: none black;
-      text-underline-offset: 2px;
+      text-decoration-line: none;
+      text-decoration-color: black;
       color: darkblue;
+    }
+
+    #display a.broken-internal-link {
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-underline-offset: 2px;
+      text-decoration-color: red;
+    }
+
+    #display span.broken-internal-link {
+      font-size: 0.75em;
+      color: red;
+    }
+
+    #display a:focus-visible {
+      outline: none;
+      background-color: yellow;
     }
 
     #display p {
@@ -351,9 +368,7 @@
       display: none;
     }
 
-    .solutionstrue {
-      display: block;
-    }
+    .solutionstrue {}
 
     .inline {
       margin-top: 0.5em;
@@ -381,11 +396,6 @@
     .katex-display.fleqn>.katex {
       padding-left: 0em;
       margin: 0em;
-    }
-
-    a:focus-visible {
-      outline: none;
-      background-color: yellow;
     }
 
     @media print {
@@ -493,40 +503,6 @@
       }
     }
   </style>
-  <script>
-    function tocClickListen() {
-      // No jQuery b/c also used in stand-alone HTML.
-      let hs = document.querySelectorAll('#toc > ol ol');
-      let el, ns;
-      for (let i = 0; i < hs.length; i++) {
-        if (hs[i].previousElementSibling) {
-          el = hs[i].previousElementSibling.firstElementChild;
-          if (el.length == 0) {
-            continue;
-          }
-          el.addEventListener('click', event => {
-            ns = event.target.parentNode.nextElementSibling;
-            if (!ns) return;
-            if (nsns.style.display === 'none') {
-    ns.style.display = 'block';
-            }
-            else {
-    ns.style.display = 'none';
-            }
-          });
-        }
-      }
-    }
-    if (
-        document.readyState === "complete" ||
-        (document.readyState !== "loading" && 
-          !document.documentElement.doScroll)
-    ) {
-      tocClickListen();
-    } else {
-      document.addEventListener("DOMContentLoaded", tocClickListen);
-    }
-  </script>
 </head>
 
 <body class="body">
@@ -670,14 +646,14 @@
             </a>
           </li>
           <li>
-            <a href="#textbook-problems" raw="## Textbook Problems" lo="443" lf="443">
+            <a href="#textbook-problems" raw="## Textbook Problems" lo="447">
               <span class="toctext">Textbook Problems</span>
             </a>
           </li>
         </ol>
       </li>
       <li>
-        <a href="#midterm" raw="# Midterm" lo="449" class="" lf="449">
+        <a href="#midterm" raw="# Midterm" lo="453">
           <span class="toctext">Midterm</span>
         </a>
       </li>
@@ -688,7 +664,7 @@
     </div>
     <div class="section">
       <div class="block">
-        <h1><a name="hw-1" class="hanchor" href="#hw-1"><span class="hnumber">1</span>&nbsp;<span class="htext">HW 1</span></a></h1>
+        <h1><a name="hw-1" class="anchor hanchor" href="#hw-1"><span class="hnumber">1</span>&nbsp;<span class="htext">HW 1</span></a></h1>
       </div>
       <div class="block">
         <p>Due on Saturday, September 3rd at 3pm. During class on Thursday, September 1st, I will explain how I would like any code used for your homework assignments turned in.</p>
@@ -696,7 +672,7 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="1-d-problems" class="hanchor" href="#1-d-problems"><span class="hnumber">1.1</span>&nbsp;<span class="htext">1–D Problems</span></a></h2>
+        <h2><a name="1-d-problems" class="anchor hanchor" href="#1-d-problems"><span class="hnumber">1.1</span>&nbsp;<span class="htext">1–D Problems</span></a></h2>
       </div>
       <div class="block">
         <p>In class, I showed how to find the electric field and potential between two infinite conducting plates and two long coaxial conducting cylinders when the conductors are held at different potentials. I used two methods:</p>
@@ -728,7 +704,7 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="continuous-charge-distribution-approximation" class="hanchor" href="#continuous-charge-distribution-approximation"><span class="hnumber">1.2</span>&nbsp;<span class="htext">Continuous Charge Distribution Approximation</span></a></h2>
+        <h2><a name="continuous-charge-distribution-approximation" class="anchor hanchor" href="#continuous-charge-distribution-approximation"><span class="hnumber">1.2</span>&nbsp;<span class="htext">Continuous Charge Distribution Approximation</span></a></h2>
       </div>
       <div class="block">
         <p>In E&amp;M, we often assume that point charges are continuously distributed. This problem addresses the accuracy of this approximation.</p>
@@ -758,7 +734,7 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="field-lines" class="hanchor" href="#field-lines"><span class="hnumber">1.3</span>&nbsp;<span class="htext">Field Lines</span></a></h2>
+        <h2><a name="field-lines" class="anchor hanchor" href="#field-lines"><span class="hnumber">1.3</span>&nbsp;<span class="htext">Field Lines</span></a></h2>
       </div>
       <div class="block">
         <p>Many students have never actually written a program to draw field lines. In doing so, you’ll gain a bit of insight into how the field line drawings you see in books are created. In addition, you’ll appreciate some of the limitations of field lines. In the development of the theory of electricity and magnetism, the concept of a field line was central. (They were introduced by Faraday and Maxwell referred to and used them extensively.) In addition, the textbook emphasizes field lines and “tubes of flux”.</p>
@@ -887,7 +863,7 @@ M1001 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h1><a name="hw-2" class="hanchor" href="#hw-2"><span class="hnumber">2</span>&nbsp;<span class="htext">HW 2</span></a></h1>
+        <h1><a name="hw-2" class="anchor hanchor" href="#hw-2"><span class="hnumber">2</span>&nbsp;<span class="htext">HW 2</span></a></h1>
       </div>
       <div class="block">
         <p>Due Saturday, September 10th at 3pm.</p>
@@ -895,7 +871,7 @@ M1001 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="1-d" class="hanchor" href="#1-d"><span class="hnumber">2.1</span>&nbsp;<span class="htext">1–D</span></a></h2>
+        <h2><a name="1-d" class="anchor hanchor" href="#1-d"><span class="hnumber">2.1</span>&nbsp;<span class="htext">1–D</span></a></h2>
       </div>
       <div class="block">
         <p>A large conducting plate in the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> plane is grounded. A large conducting plate in the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span> plane is held at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>. In the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7519em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> plane (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6835em;vertical-align:-0.0391em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.791em;vertical-align:-0.0391em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>), there is a large uniformly charged sheet.</p>
@@ -962,7 +938,7 @@ M1001 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="continuous-charge-distributions" class="hanchor" href="#continuous-charge-distributions"><span class="hnumber">2.2</span>&nbsp;<span class="htext">Continuous Charge Distributions</span></a></h2>
+        <h2><a name="continuous-charge-distributions" class="anchor hanchor" href="#continuous-charge-distributions"><span class="hnumber">2.2</span>&nbsp;<span class="htext">Continuous Charge Distributions</span></a></h2>
       </div>
       <div class="block">
         <ol class="loose">
@@ -1048,7 +1024,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="laplace-equation-in-two-dimensions-numerical" class="hanchor" href="#laplace-equation-in-two-dimensions-numerical"><span class="hnumber">2.3</span>&nbsp;<span class="htext">Laplace’ Equation in Two Dimensions – Numerical</span></a></h2>
+        <h2><a name="laplace-equation-in-two-dimensions-numerical" class="anchor hanchor" href="#laplace-equation-in-two-dimensions-numerical"><span class="hnumber">2.3</span>&nbsp;<span class="htext">Laplace’ Equation in Two Dimensions – Numerical</span></a></h2>
       </div>
       <div class="block">
         <ol class="compact">
@@ -1070,7 +1046,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h1><a name="hw-3" class="hanchor" href="#hw-3"><span class="hnumber">3</span>&nbsp;<span class="htext">HW 3</span></a></h1>
+        <h1><a name="hw-3" class="anchor hanchor" href="#hw-3"><span class="hnumber">3</span>&nbsp;<span class="htext">HW 3</span></a></h1>
       </div>
       <div class="block">
         <p>Due Saturday, September 17th at 3 pm.</p>
@@ -1078,7 +1054,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="laplace-equation-in-1-d-spherical-numerical" class="hanchor" href="#laplace-equation-in-1-d-spherical-numerical"><span class="hnumber">3.1</span>&nbsp;<span class="htext">Laplace’ Equation in 1–D Spherical – Numerical</span></a></h2>
+        <h2><a name="laplace-equation-in-1-d-spherical-numerical" class="anchor hanchor" href="#laplace-equation-in-1-d-spherical-numerical"><span class="hnumber">3.1</span>&nbsp;<span class="htext">Laplace’ Equation in 1–D Spherical – Numerical</span></a></h2>
       </div>
       <div class="block">
         <p>In Section 1.20 of the texbook, a derivation is given for a numerical algorithm for solving Laplace’s equation in 2–D cartesian.</p>
@@ -1123,7 +1099,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="interpretation-of-bound-surface-charges" class="hanchor" href="#interpretation-of-bound-surface-charges"><span class="hnumber">3.2</span>&nbsp;<span class="htext">Interpretation of Bound Surface Charges</span></a></h2>
+        <h2><a name="interpretation-of-bound-surface-charges" class="anchor hanchor" href="#interpretation-of-bound-surface-charges"><span class="hnumber">3.2</span>&nbsp;<span class="htext">Interpretation of Bound Surface Charges</span></a></h2>
       </div>
       <div class="block">
         <p>In Example 4.3 of Griffiths 4th Edition, he models a polarized sphere by using two uniformly charged spheres with centers that are separated by a small distance <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span>. The potential found is the same as that found in Example 4.2 found by computing the bound surface charge density for a sphere with polarization <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8579em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7079em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf">z</span></span><span style="top:-3.0134em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1944em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span>.</p>
@@ -1166,7 +1142,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h1><a name="hw-4" class="hanchor" href="#hw-4"><span class="hnumber">4</span>&nbsp;<span class="htext">HW 4</span></a></h1>
+        <h1><a name="hw-4" class="anchor hanchor" href="#hw-4"><span class="hnumber">4</span>&nbsp;<span class="htext">HW 4</span></a></h1>
       </div>
       <div class="block">
         <p>Due Saturday, September 24th at 6 pm.</p>
@@ -1174,7 +1150,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="capactor-with-dielectrics-analytical" class="hanchor" href="#capactor-with-dielectrics-analytical"><span class="hnumber">4.1</span>&nbsp;<span class="htext">Capactor with Dielectrics – Analytical</span></a></h2>
+        <h2><a name="capactor-with-dielectrics-analytical" class="anchor hanchor" href="#capactor-with-dielectrics-analytical"><span class="hnumber">4.1</span>&nbsp;<span class="htext">Capactor with Dielectrics – Analytical</span></a></h2>
       </div>
       <div class="block">
         <p>A large parallel plate capacitor is half–filled with two linear dielectrics with permittivities of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>. Assume that the capacitor is large enough that the potential only varies in the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>–direction. In the diagram, the dotted rectangle is the cross–section of a Gaussian cylinder referenced in parts 4. and 5.</p>
@@ -1231,7 +1207,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="capactor-with-dielectrics-numerical" class="hanchor" href="#capactor-with-dielectrics-numerical"><span class="hnumber">4.2</span>&nbsp;<span class="htext">Capactor with Dielectrics – Numerical</span></a></h2>
+        <h2><a name="capactor-with-dielectrics-numerical" class="anchor hanchor" href="#capactor-with-dielectrics-numerical"><span class="hnumber">4.2</span>&nbsp;<span class="htext">Capactor with Dielectrics – Numerical</span></a></h2>
       </div>
       <div class="block">
         <p>Find a numerical approximation of the (1–D) potential for the previous problem. Do this using the “Simple Averaging Method” described in Example 1.20 of the textbook. Use grid points at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mord">/2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">3</span><span class="mord mathnormal">d</span><span class="mord">/2</span></span></span></span>, and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">2</span><span class="mord mathnormal">d</span></span></span></span>. You only need to find the approximation using one step of the simple averaging method.</p>
@@ -1245,7 +1221,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h1><a name="hw-5" class="hanchor" href="#hw-5"><span class="hnumber">5</span>&nbsp;<span class="htext">HW 5</span></a></h1>
+        <h1><a name="hw-5" class="anchor hanchor" href="#hw-5"><span class="hnumber">5</span>&nbsp;<span class="htext">HW 5</span></a></h1>
       </div>
       <div class="block">
         <p>The background for this homework is covered in Chapter 2 of the texbook and Chapter 4 of Griffiths.</p>
@@ -1256,7 +1232,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="force-on-electrons-in-a-wire" class="hanchor" href="#force-on-electrons-in-a-wire"><span class="hnumber">5.1</span>&nbsp;<span class="htext">Force on electrons in a wire</span></a></h2>
+        <h2><a name="force-on-electrons-in-a-wire" class="anchor hanchor" href="#force-on-electrons-in-a-wire"><span class="hnumber">5.1</span>&nbsp;<span class="htext">Force on electrons in a wire</span></a></h2>
       </div>
       <div class="block">
         <p>Solve problem 2.2a of Ramo</p>
@@ -1267,7 +1243,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="the-hall-effect" class="hanchor" href="#the-hall-effect"><span class="hnumber">5.2</span>&nbsp;<span class="htext">The Hall effect</span></a></h2>
+        <h2><a name="the-hall-effect" class="anchor hanchor" href="#the-hall-effect"><span class="hnumber">5.2</span>&nbsp;<span class="htext">The Hall effect</span></a></h2>
       </div>
       <div class="block">
         <p>Solve problem 2.2b of Ramo</p>
@@ -1278,7 +1254,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="axial-current-on-a-long-coaxial-cable" class="hanchor" href="#axial-current-on-a-long-coaxial-cable"><span class="hnumber">5.3</span>&nbsp;<span class="htext">Axial current on a long coaxial cable</span></a></h2>
+        <h2><a name="axial-current-on-a-long-coaxial-cable" class="anchor hanchor" href="#axial-current-on-a-long-coaxial-cable"><span class="hnumber">5.3</span>&nbsp;<span class="htext">Axial current on a long coaxial cable</span></a></h2>
       </div>
       <div class="block">
         <p>Solve problem <del>2.2c</del> 2.4a of Ramo</p>
@@ -1289,7 +1265,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="inductance" class="hanchor" href="#inductance"><span class="hnumber">5.4</span>&nbsp;<span class="htext">Inductance</span></a></h2>
+        <h2><a name="inductance" class="anchor hanchor" href="#inductance"><span class="hnumber">5.4</span>&nbsp;<span class="htext">Inductance</span></a></h2>
       </div>
       <div class="block">
         <p>Find the inductance per unit length of an infinitely long solenoid of radius <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span>. Do this</p>
@@ -1317,7 +1293,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h1><a name="hw-6" class="hanchor" href="#hw-6"><span class="hnumber">6</span>&nbsp;<span class="htext">HW 6</span></a></h1>
+        <h1><a name="hw-6" class="anchor hanchor" href="#hw-6"><span class="hnumber">6</span>&nbsp;<span class="htext">HW 6</span></a></h1>
       </div>
       <div class="block">
         <p>Due on Saturday, October 8th at 3 pm. Save the answers to the written parts as <code>HW6_1.pdf</code>, <code>HW6_2.pdf</code>, and <code>HW6_3.pdf</code>.</p>
@@ -1325,7 +1301,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="computing-magnetic-field-and-flux" class="hanchor" href="#computing-magnetic-field-and-flux"><span class="hnumber">6.1</span>&nbsp;<span class="htext">Computing Magnetic Field and Flux</span></a></h2>
+        <h2><a name="computing-magnetic-field-and-flux" class="anchor hanchor" href="#computing-magnetic-field-and-flux"><span class="hnumber">6.1</span>&nbsp;<span class="htext">Computing Magnetic Field and Flux</span></a></h2>
       </div>
       <div class="block">
         <ol class="loose">
@@ -1368,7 +1344,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="inductance-of-a-rectangular-duct" class="hanchor" href="#inductance-of-a-rectangular-duct"><span class="hnumber">6.2</span>&nbsp;<span class="htext">Inductance of a Rectangular Duct</span></a></h2>
+        <h2><a name="inductance-of-a-rectangular-duct" class="anchor hanchor" href="#inductance-of-a-rectangular-duct"><span class="hnumber">6.2</span>&nbsp;<span class="htext">Inductance of a Rectangular Duct</span></a></h2>
       </div>
       <div class="block">
         <p>A rectangular duct carries a net current of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span> in the direction shown. A series of current supplies along the infinitesimal gap is driving the current. The duct has a small enough thickness that the current can be treated as flowing on a sheet.</p>
@@ -1412,7 +1388,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="faraday-s-law-and-ampere-s-law" class="hanchor" href="#faraday-s-law-and-ampere-s-law"><span class="hnumber">6.3</span>&nbsp;<span class="htext">Faraday’s Law and Ampere’s Law</span></a></h2>
+        <h2><a name="faraday-s-law-and-ampere-s-law" class="anchor hanchor" href="#faraday-s-law-and-ampere-s-law"><span class="hnumber">6.3</span>&nbsp;<span class="htext">Faraday’s Law and Ampere’s Law</span></a></h2>
       </div>
       <div class="block">
         <p>Faraday’s law in integral form in terms of magnetic flux <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord">Φ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is</p>
@@ -1456,36 +1432,42 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h1><a name="hw-7" class="hanchor" href="#hw-7"><span class="hnumber">7</span>&nbsp;<span class="htext">HW 7</span></a></h1>
+        <h1><a name="hw-7" class="anchor hanchor" href="#hw-7"><span class="hnumber">7</span>&nbsp;<span class="htext">HW 7</span></a></h1>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h2 class=""><a name="plane-wave-incident-on-conductor" class="hanchor" href="#plane-wave-incident-on-conductor"><span class="hnumber">7.1</span>&nbsp;<span class="htext">Plane Wave Incident on Conductor</span></a></h2>
+        <h2 class=""><a name="plane-wave-incident-on-conductor" class="anchor hanchor" href="#plane-wave-incident-on-conductor"><span class="hnumber">7.1</span>&nbsp;<span class="htext">Plane Wave Incident on Conductor</span></a></h2>
       </div>
       <div class="block">
         <p>Read 3.14–3.17 of the textbook.</p>
       </div>
       <div class="block">
-        <p class="">The program <code>fdtd1d.m</code> in the fdtd directory at <a href="https://github.com/rweigel/phys513/">https://github.com/rweigel/phys513/</a> uses the Finite Difference Time Domain method to solve the equations</p>
+        <p>The program <code>fdtd1d.m</code> in the fdtd directory at <a href="https://github.com/rweigel/phys513/">https://github.com/rweigel/phys513/</a> uses the Finite Difference Time Domain method to solve the equations</p>
       </div>
       <div class="block">
-        <p class=""><span class="katex-display fleqn"><span class="katex katex-display" style="display: block"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7694em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathbf">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+        <p><span class="katex-display fleqn"><span class="katex katex-display" style="display: block"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7694em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathbf">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
       </div>
       <div class="block">
         <p><span class="katex-display fleqn"><span class="katex katex-display" style="display: block"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7694em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">∇</span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">H</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8361em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathbf">E</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathbf">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
       </div>
       <div class="block">
-        <p class="">for the case where <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7079em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.0134em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1944em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">H</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7079em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.0134em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1944em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span></span></span></span>. (This code was based on <code>fdtd1d_original.m</code> and I made several modifications and generalizations.)</p>
+        <p>for the case where <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7079em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.0134em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1944em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">H</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7079em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathbf" style="margin-right:0.01597em;">y</span></span><span style="top:-3.0134em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1944em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span></span></span></span>. (This code was based on <code>fdtd1d_original.m</code> and I made several modifications and generalizations.)</p>
       </div>
       <div class="block">
-        <p class="">In Section 3.16 of the textbook, the analytical solution is given for the case where the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathbf">D</span></span><span class="mord">/</span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">t</span></span></span></span></span> is omitted.</p>
+        <p>In Section 3.16 of the textbook, the analytical solution is given for the case where the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathbf">D</span></span><span class="mord">/</span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">t</span></span></span></span></span> is omitted.</p>
       </div>
       <div class="block">
         <p>Imagine that you are given this program and are asked to determine how well the numerical solution matches the theoretical (and approximate) solution for the problem where the electric field is known at the surface of an infinite slab with constant conductivity and the displacement term is ignored.</p>
       </div>
       <div class="block">
-        <p>Come up with at least three ways of comparing the theoretical result with the numerical result. Create three plots that show a line associated with one of the equations given in Section 3.16 versus the output of the simulation. Keep in mind that both the theoretical solution and the numerical solution are approximate.</p>
+        <p class="">When you execute this program, an animation is shown of a monochromatic wave propagating in a region of space with <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ϵ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">μ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>. Some time later, the wave encounters a region where <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span></span></span></span> becomes non–zero and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ϵ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">μ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>. At the end of the run, a figure is shown that has the amplitudes of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8095em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">i</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">249</span></span></span></span>, which corresponds to just outside the conductor. (Note that the factor of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">377</span></span></span></span> arises because <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6776em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">377</span></span></span></span>.)</p>
+      </div>
+      <div class="block">
+        <p class="">The variable <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8095em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">i</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is the position index and is <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span></span></span></span>. The variable <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8095em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">i</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is the time index and is in units of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">t</span></span></span></span>. The values for <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">t</span></span></span></span> are printed to the screen when you execute the program.</p>
+      </div>
+      <div class="block">
+        <p class="">Come up with at least three ways of comparing the theoretical result with the numerical result. Create three plots that show a line (or annotation) associated with one of the equations given in Section 3.16 versus the output of the simulation. Keep in mind that both the theoretical solution and the numerical solution are approximate.</p>
       </div>
       <div class="block">
         <p>Clearly label your plots. Upload your plots to your GitHub account and label them <code>HW7_1_1.pdf</code>, <code>HW7_1_2.pdf</code>, and <code>HW7_1_3.pdf</code>. I will show these plots during class and ask you to provide an interpretation.</p>
@@ -1496,7 +1478,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h2><a name="textbook-problems" class="hanchor" href="#textbook-problems"><span class="hnumber">7.2</span>&nbsp;<span class="htext">Textbook Problems</span></a></h2>
+        <h2><a name="textbook-problems" class="anchor hanchor" href="#textbook-problems"><span class="hnumber">7.2</span>&nbsp;<span class="htext">Textbook Problems</span></a></h2>
       </div>
       <div class="block">
         <p>Solve problems 4.3b, 4.3c, 4.3d., and 4.6e.</p>
@@ -1507,7 +1489,7 @@ M834 80h400000v40h-400000z"></path>
     </div>
     <div class="section">
       <div class="block">
-        <h1 class=""><a name="midterm" class="hanchor" href="#midterm"><span class="hnumber">8</span>&nbsp;<span class="htext">Midterm</span></a></h1>
+        <h1><a name="midterm" class="anchor hanchor" href="#midterm"><span class="hnumber">8</span>&nbsp;<span class="htext">Midterm</span></a></h1>
       </div>
       <div class="block">
         <p>Due Saturday, Octover 15th at 3 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.</p>
@@ -1533,7 +1515,7 @@ M834 80h400000v40h-400000z"></path>
               <p>Find the exact value of the potential for all <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span>.</p>
             </div>
           </li>
-          <li markerlength="3" lo="463" lf="466">
+          <li markerlength="3" lo="467" lf="470">
             <div class="block">
               <p>Use the “Simple Averaging” method to find the potential for <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mord mathnormal">a</span></span></span></span>.</p>
             </div>
@@ -1541,7 +1523,7 @@ M834 80h400000v40h-400000z"></path>
               <p>Use a grid spacing of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord">/3</span></span></span></span> and iterate until the maximum absolute change in potential at any grid point is <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>%.</p>
             </div>
           </li>
-          <li markerlength="3" lo="467" lf="468">
+          <li markerlength="3" lo="471" lf="472">
             <div class="block">
               <p>Plot your solutions to 1. and 2. on the same axes.</p>
             </div>
@@ -1550,6 +1532,40 @@ M834 80h400000v40h-400000z"></path>
       </div>
     </div>
   </div>
+  <script>
+    function tocClickListen() {
+      // No jQuery b/c also used in stand-alone HTML.
+      let hs = document.querySelectorAll('#toc > ol ol');
+      let el, ns;
+      for (let i = 0; i < hs.length; i++) {
+        if (hs[i].previousElementSibling) {
+          el = hs[i].previousElementSibling.firstElementChild;
+          if (el.length == 0) {
+            continue;
+          }
+          el.addEventListener('click', event => {
+            ns = event.target.parentNode.nextElementSibling;
+            if (!ns) return;
+            if (ns.style.display === 'none') {
+    ns.style.display = 'block';
+            }
+            else {
+    ns.style.display = 'none';
+            }
+          });
+        }
+      }
+    }
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && 
+          !document.documentElement.doScroll)
+    ) {
+      tocClickListen();
+    } else {
+      document.addEventListener("DOMContentLoaded", tocClickListen);
+    }
+  </script>
 </body>
 
 </html>

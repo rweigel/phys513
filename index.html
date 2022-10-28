@@ -105,9 +105,26 @@
     }
 
     #display a {
-      text-decoration: none black;
-      text-underline-offset: 2px;
+      text-decoration-line: none;
+      text-decoration-color: black;
       color: darkblue;
+    }
+
+    #display a.broken-internal-link {
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-underline-offset: 2px;
+      text-decoration-color: red;
+    }
+
+    #display span.broken-internal-link {
+      font-size: 0.75em;
+      color: red;
+    }
+
+    #display a:focus-visible {
+      outline: none;
+      background-color: yellow;
     }
 
     #display p {
@@ -274,46 +291,34 @@
       padding-left: 0.5em;
     }
 
-    #display>.section>.block>ol.compact {
-      margin-top: 0.25em;
-      margin-bottom: 0.25em;
-    }
-
     #display>.section>.block>ol.loose {
       margin-top: 0.5em;
       margin-bottom: 0.5em;
     }
 
-    #display ol.compact>li {
+    #display>.section>.block>ol.compact {
       margin-top: 0.25em;
       margin-bottom: 0.25em;
     }
 
-    #display ol.loose>li {
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
-    }
-
-    #display ul.compact li {
+    #display ol.compact p {
       margin-top: 0.25em;
       margin-bottom: 0.25em;
     }
 
-    #display ul.loose li {
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
+    #display ol.loose p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
     }
 
-    #display li p {
-      width: 100%;
-      display: block;
+    #display ul.compact p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
     }
 
-    #display li>.block:first-of-type p {
-      width: 100%;
-      display: block;
-      margin-top: 0em;
-      margin-bottom: 0em;
+    #display ul.loose p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
     }
 
     .inline-html .block .block-info {
@@ -363,9 +368,7 @@
       display: none;
     }
 
-    .solutionstrue {
-      display: block;
-    }
+    .solutionstrue {}
 
     .inline {
       margin-top: 0.5em;
@@ -500,6 +503,522 @@
       }
     }
   </style>
+</head>
+
+<body class="body">
+  <div id="toc" style="min-width: 5em;">
+    <ol>
+      <li>
+        <a href="#schedule" raw="# Schedule" lo="17" class="">
+          <span class="toctext">Schedule</span>
+        </a>
+        <ol class="toc" style="display: none;">
+          <li>
+            <a href="#thursday-september-8th" raw="## Thursday, September 8th" lo="19">
+              <span class="toctext">Thursday, September 8th</span>
+            </a>
+          </li>
+          <li>
+            <a href="#thursday-september-1st" raw="## Thursday, September 1st" lo="27">
+              <span class="toctext">Thursday, September 1st</span>
+            </a>
+          </li>
+          <li>
+            <a href="#thursday-august-25th" raw="## Thursday, August 25th" lo="38">
+              <span class="toctext">Thursday, August 25th</span>
+            </a>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <a href="#syllabus" raw="# Syllabus" lo="47">
+          <span class="toctext">Syllabus</span>
+        </a>
+        <ol class="toc" style="display: none;">
+          <li>
+            <a href="#catalog-description" raw="## Catalog Description" lo="49">
+              <span class="toctext">Catalog Description</span>
+            </a>
+          </li>
+          <li>
+            <a href="#format" raw="## Format" lo="53">
+              <span class="toctext">Format</span>
+            </a>
+          </li>
+          <li>
+            <a href="#grading" raw="## Grading" lo="66">
+              <span class="toctext">Grading</span>
+            </a>
+          </li>
+          <li>
+            <a href="#textbook-and-references" raw="## Textbook and References" lo="74">
+              <span class="toctext">Textbook and References</span>
+            </a>
+            <ol class="toc" style="display: none;">
+              <li>
+                <a href="#mathematical" raw="### Mathematical" lo="80">
+                  <span class="toctext">Mathematical</span>
+                </a>
+              </li>
+              <li>
+                <a href="#undergraduate-level" raw="### Undergraduate-level" lo="85">
+                  <span class="toctext">Undergraduate-level</span>
+                </a>
+              </li>
+              <li>
+                <a href="#graduate-level" raw="### Graduate-level" lo="95">
+                  <span class="toctext">Graduate-level</span>
+                </a>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <a href="#academic-calendar-and-university-policy" raw="## Academic Calendar and University Policy" lo="107">
+              <span class="toctext">Academic Calendar and University Policy</span>
+            </a>
+          </li>
+          <li>
+            <a href="#disability-accommodations" raw="## Disability Accommodations" lo="116">
+              <span class="toctext">Disability Accommodations</span>
+            </a>
+          </li>
+          <li>
+            <a href="#counseling-and-student-support" raw="## Counseling and Student Support" lo="122">
+              <span class="toctext">Counseling and Student Support</span>
+            </a>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+  <div id="display">
+    <div class="section">
+      <div class="block">
+        <p class="title">PHYS 513</p>
+      </div>
+      <div class="block">
+        <p class="subtitle">Applied Electromagnetic Theory</p>
+      </div>
+      <div class="block">
+        <ul class="compact">
+          <li markerlength="2">
+            <div class="block">
+              <p>Day and Time: Thursday from 4:30 – 7:10 pm</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="7" lf="7">
+            <div class="block">
+              <p>Location: 1004 Exploratory Hall</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="8" lf="8">
+            <div class="block">
+              <p>Instructor: Bob Weigel</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="9" lf="9">
+            <div class="block">
+              <p>Email: <a href="mailto:rweigel@gmu.edu">rweigel@gmu.edu</a></p>
+            </div>
+          </li>
+          <li markerlength="2" lo="10" lf="10">
+            <div class="block">
+              <p>Office Hour: Thursday from 3:30 – 4:30 pm</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="11" lf="11">
+            <div class="block">
+              <p>Office: 259 Planetary Hall</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="12" lf="14">
+            <div class="block">
+              <p>Course URL: <a href="https://rweigel.github.io/phys513">https://rweigel.github.io/phys513</a></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="block">
+        <p>HWs: <a href="hw.html#hw-1">1</a> | <a href="hw.html#hw-2">2</a> | <a href="hw.html#hw-3">3</a> | <a href="hw.html#hw-4">4</a> | <a href="hw.html#hw-5">5</a> | <a href="hw.html#hw-6">6</a> | <a href="hw.html#hw-7">7</a></p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h1 class=""><a name="schedule" class="anchor hanchor" href="#schedule"><span class="hnumber">1</span>&nbsp;<span class="htext">Schedule</span></a></h1>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h2><a name="thursday-september-8th" class="anchor hanchor" href="#thursday-september-8th"><span class="hnumber">1.1</span>&nbsp;<span class="htext">Thursday, September 8th</span></a></h2>
+      </div>
+      <div class="block">
+        <ul class="compact">
+          <li markerlength="2">
+            <div class="block">
+              <p>Discuss <a href="hw.html#hw-2">HW #2</a></p>
+            </div>
+          </li>
+          <li markerlength="2" lo="22" lf="27">
+            <div class="block">
+              <p>Cover dielectrics</p>
+            </div>
+            <div class="block">
+              <ul class="compact">
+                <li markerlength="2">
+                  <div class="block">
+                    <p>Fundamental dielectric example</p>
+                  </div>
+                </li>
+                <li markerlength="2" lo="24" lf="24">
+                  <div class="block">
+                    <p>Discuss why capacitance increases when a dielectric is used</p>
+                  </div>
+                </li>
+                <li markerlength="2" lo="25" lf="27">
+                  <div class="block">
+                    <p>Example of computing potential between plates of a capacitor that is half-filled with a dielectric using (1) Gauss’s law and (2) BV method.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h2><a name="thursday-september-1st" class="anchor hanchor" href="#thursday-september-1st"><span class="hnumber">1.2</span>&nbsp;<span class="htext">Thursday, September 1st</span></a></h2>
+      </div>
+      <div class="block">
+        <ul class="compact">
+          <li markerlength="2">
+            <div class="block">
+              <p>Discuss <a href="hw.html#hw-1">HW #1</a>, which is due on Saturday, September 3rd at 3pm.</p>
+            </div>
+            <div class="block">
+              <ul class="compact">
+                <li markerlength="2">
+                  <div class="block">
+                    <p>Student presentation of their problem #1</p>
+                  </div>
+                </li>
+                <li markerlength="2" lo="31" lf="31">
+                  <div class="block">
+                    <p>Partial derivation of equation needed for problem #2</p>
+                  </div>
+                </li>
+                <li markerlength="2" lo="32" lf="32">
+                  <div class="block">
+                    <p>Discussion of field lines expected for problem #2 and also general methods of sketching field lines</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li markerlength="2" lo="33" lf="38">
+            <div class="block">
+              <p>Cover <a href="hw.html#hw-2">HW #2</a> topics</p>
+            </div>
+            <div class="block">
+              <ul class="compact">
+                <li markerlength="2">
+                  <div class="block">
+                    <p>Discuss an approach to problem #1 on <a href="hw.html#hw-2">HW #2</a> (find <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> due to sheet of charge at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mord">/2</span></span></span></span> first, then generalize for sheet at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7519em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span>, then use that <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> and superposition)</p>
+                  </div>
+                </li>
+                <li markerlength="2" lo="35" lf="35">
+                  <div class="block">
+                    <p>Review solutions of Laplace’s equation for 2–D cartesian</p>
+                  </div>
+                </li>
+                <li markerlength="2" lo="36" lf="38">
+                  <div class="block">
+                    <p>Solve boundary value problem for long duct with three sides grounded</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h2><a name="thursday-august-25th" class="anchor hanchor" href="#thursday-august-25th"><span class="hnumber">1.3</span>&nbsp;<span class="htext">Thursday, August 25th</span></a></h2>
+      </div>
+      <div class="block">
+        <ul class="compact">
+          <li markerlength="2">
+            <div class="block">
+              <p>Introductions</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="41" lf="41">
+            <div class="block">
+              <p>Syllabus</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="42" lf="47">
+            <div class="block">
+              <p>Cover <a href="hw.html#hw-1">HW #1</a> topics</p>
+            </div>
+            <div class="block">
+              <ul class="compact">
+                <li markerlength="2">
+                  <div class="block">
+                    <p>Solving for <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> for a parallel plate capacitor and long coaxial cylinders given potentials on conducting surfaces: Using (1) Gauss’ law (assume <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">±</span><span class="mord mathnormal">Q</span></span></span></span> on each conductor, find <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span></span></span></span>, and eliminate <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span> using <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1111em;vertical-align:-0.3061em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0006em;">∫</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span>) and (2) using the Boundary Value method.</p>
+                  </div>
+                </li>
+                <li markerlength="2" lo="44" lf="47">
+                  <div class="block">
+                    <p>The interpretation and calculation of capacitance.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h1><a name="syllabus" class="anchor hanchor" href="#syllabus"><span class="hnumber">2</span>&nbsp;<span class="htext">Syllabus</span></a></h1>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h2><a name="catalog-description" class="anchor hanchor" href="#catalog-description"><span class="hnumber">2.1</span>&nbsp;<span class="htext">Catalog Description</span></a></h2>
+      </div>
+      <div class="block">
+        <p>Classical electromagnetic theory with applications. Topics include electrostatics, magnetic fields and materials, electromagnetic wave propagation, waveguides, transmission lines, radiation, and antennas.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h2><a name="format" class="anchor hanchor" href="#format"><span class="hnumber">2.2</span>&nbsp;<span class="htext">Format</span></a></h2>
+      </div>
+      <div class="block">
+        <p>My primary objective for this course is for students to be able to solve and present advanced electricity and magnetism problems related to the topics given in the catalog description. I will cover topics in chapters 1-6 of <a href="http://www.amazon.ca/Fields-Waves-Communication-Electronics-Simon/dp/0471585513">Fields and Waves in Communication Electronics, third edition by Simon Ramo, John R. Whinnery, Theodore Van Duzer, Wiley, 1994</a>.</p>
+      </div>
+      <div class="block">
+        <p>Approximately 1/2 of class time will be a lecture. The rest of the time will be spent with students working on problems or presenting problems using the whiteboard.</p>
+      </div>
+      <div class="block">
+        <p>The homework assignments will have two parts:</p>
+      </div>
+      <div class="block">
+        <ol class="compact">
+          <li markerlength="3">
+            <div class="block">
+              <p>Basic problems that cover topics that have not been discussed in class. These problems are intended to prepare the students for the lecture on the topic.</p>
+            </div>
+          </li>
+          <li markerlength="3" lo="62" lf="64">
+            <div class="block">
+              <p>Advanced problems that cover topics on the previous HWs basic problems and the lecture.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="block">
+        <p>Homework assignments are due at 11:59 pm on Thursday so you have 3 hours to revise them after class is finished.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h2><a name="grading" class="anchor hanchor" href="#grading"><span class="hnumber">2.3</span>&nbsp;<span class="htext">Grading</span></a></h2>
+      </div>
+      <div class="block">
+        <ul class="compact">
+          <li markerlength="2">
+            <div class="block">
+              <p>Homework: 30%</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="69" lf="69">
+            <div class="block">
+              <p>Mid-term (take-home): 35%</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="70" lf="72">
+            <div class="block">
+              <p>Final (take-home): 35%</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="block">
+        <p>The course letter grade is nominally determined using &gt; 97: A+, 93 to 96.999: A-, 90 to 92.999: A-, 87 to 89.999: B+, 83 to 86.999: B, 80 to 82.999: B-, 70 to 70.999, 60, to 69.999: D, &lt; 60: F. It is quite likely that these grade cut-offs will change downwards.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h2><a name="textbook-and-references" class="anchor hanchor" href="#textbook-and-references"><span class="hnumber">2.4</span>&nbsp;<span class="htext">Textbook and References</span></a></h2>
+      </div>
+      <div class="block">
+        <p>The textbook for this course is <a href="http://www.amazon.ca/Fields-Waves-Communication-Electronics-Simon/dp/0471585513">Fields and Waves in Communication Electronics, 3rd edition by Simon Ramo, John R. Whinnery, Theodore Van Duzer, Wiley, 1994</a>.</p>
+      </div>
+      <div class="block">
+        <p>You will likely need to reference other textbooks in this course. The following is a partial list of books that you may find useful.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h3><a name="mathematical" class="anchor hanchor" href="#mathematical"><span class="hnumber">2.4.1</span>&nbsp;<span class="htext">Mathematical</span></a></h3>
+      </div>
+      <div class="block">
+        <ul class="compact">
+          <li markerlength="2">
+            <div class="block">
+              <p>A<a href="https://www.amazon.com/introduction-Fourier-methods-Laplace-transformation/dp/B0007HQ89I">n Introduction to Fourier Methods and the Laplace Transformation but Philip Franklin</a>. This short book has many examples related to Maxwell’s equations and transmission lines.</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="83" lf="85">
+            <div class="block">
+              <p><a href="https://www.roe.ac.uk/&nbsp;jap/teaching">Fourier Analysis class notes by Peakcock</a>; the <a href="https://www.roe.ac.uk/japwww/teaching/fourier/fourier1415.pdf">Chapter 12 lecture notes</a> provides a review of the mathematical background and justification for solving ODEs using what Ramo calls “the phasor method”.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h3><a name="undergraduate-level" class="anchor hanchor" href="#undergraduate-level"><span class="hnumber">2.4.2</span>&nbsp;<span class="htext">Undergraduate-level</span></a></h3>
+      </div>
+      <div class="block">
+        <ul class="compact">
+          <li markerlength="2">
+            <div class="block">
+              <p>Introduction to Electrodynamics by David J. Griffiths - the most commonly used junior-level undergraduate textbook for physics majors.</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="88" lf="88">
+            <div class="block">
+              <p>Field and Wave Electromagnetics by David K. Cheng - a commonly used junior-level undergraduate textbook for engineering majors.</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="89" lf="89">
+            <div class="block">
+              <p>Elements of Electromagnetics by Matthew N. O. Sadiku - a commonly used junior-level undergraduate textbook for engineering majors.</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="90" lf="90">
+            <div class="block">
+              <p>Electricity and Magnetism (3rd Edition) by Edward M. Purcell and David J. Morin covers the same topics as Griffiths at the same level. If you are looking for an alternative explanation, this textbook will be helpful. The book contains far more examples, discussion, and content than Griffiths. It also includes solutions.</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="91" lf="91">
+            <div class="block">
+              <p>Schaum’s outline of theory and problems of electromagnetics by Joseph A. Edminister is a useful reference for problems with full solutions and summaries of topics. <a href="https://www.amazon.com/Schaums-Outline-Electromagnetics-4th-Outlines/dp/0071831479/">The 4th edition</a> contains chapters on transmission lines and waveguides.</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="92" lf="92">
+            <div class="block">
+              <p>Div, Grad, Curl, and All That: An Informal Text on Vector Calculus (4th Edition) by H. M. Schey is an excellent reference for the mathematical background that you need to understand for this course. The book contains a concise and clear review of topics that are covered in a vector calculus course (usually “Calculus III”).</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="93" lf="95">
+            <div class="block">
+              <p>The Feynman Lectures on Physics: Mainly Electromagnetism and Matter, Volume 2, 1977 contains excellent lecture-style expositions on Electricity and Magnetism. The full volume is <a href="http://www.feynmanlectures.caltech.edu/II_toc.html">available online</a>.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h3><a name="graduate-level" class="anchor hanchor" href="#graduate-level"><span class="hnumber">2.4.3</span>&nbsp;<span class="htext">Graduate-level</span></a></h3>
+      </div>
+      <div class="block">
+        <p>Two textbooks that cover applied E&amp;M topics in detail are</p>
+      </div>
+      <div class="block">
+        <ul class="compact">
+          <li markerlength="2">
+            <div class="block">
+              <p>Microwave Engineering by David M. Pozar.</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="99" lf="99">
+            <div class="block">
+              <p><a href="https://ocw.mit.edu/resources/res-6-001-electromagnetic-fields-and-energy-spring-2008/front-end-matter/">Electromagnetic Fields and Energy by Hermann Haus and James Melcher. RES.6-001, Spring 2008.</a></p>
+            </div>
+          </li>
+          <li markerlength="2" lo="100" lf="102">
+            <div class="block">
+              <p><a href="https://www.ece.rutgers.edu/&nbsp;orfanidi/ewa/ewa-2up.pdf">Electromagnetic Waves and Antennas by Sophocles J. Orfanidis</a>. This book is dense and comprehensive, but a supplement such as the course textbook and Microwave Engineering by Pozar is probably needed as a primary reference initially.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="block">
+        <p>Textbooks that cover advanced E&amp;M theory are</p>
+      </div>
+      <div class="block">
+        <ul class="compact">
+          <li markerlength="2">
+            <div class="block">
+              <p>Classical Electrodynamics by David J. Jackson - the most commonly used graduate-level textbook for physics students</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="104" lf="104">
+            <div class="block">
+              <p>Classical Electricity and Magnetism: Second Edition (Dover Books on Physics) by Wolfgang K. H. Panofsky and Melba Phillips, 2005</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="105" lf="107">
+            <div class="block">
+              <p>Classical Electromagnetism by Richard Fitzpatrick</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h2><a name="academic-calendar-and-university-policy" class="anchor hanchor" href="#academic-calendar-and-university-policy"><span class="hnumber">2.5</span>&nbsp;<span class="htext">Academic Calendar and University Policy</span></a></h2>
+      </div>
+      <div class="block">
+        <p><a href="https://www2.gmu.edu/academics/academic-calendar">https://www2.gmu.edu/academics/academic-calendar</a></p>
+      </div>
+      <div class="block">
+        <p><a href="http://universitypolicy.gmu.edu/">http://universitypolicy.gmu.edu/</a></p>
+      </div>
+      <div class="block">
+        <ul class="compact">
+          <li markerlength="2">
+            <div class="block">
+              <p>Last class Thursday, December 1st.</p>
+            </div>
+          </li>
+          <li markerlength="2" lo="114" lf="116">
+            <div class="block">
+              <p>Sunday, December 11th at 11:59 pm.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h2><a name="disability-accommodations" class="anchor hanchor" href="#disability-accommodations"><span class="hnumber">2.6</span>&nbsp;<span class="htext">Disability Accommodations</span></a></h2>
+      </div>
+      <div class="block">
+        <p>Disability Services at George Mason University is committed to upholding the letter and spirit of the laws that ensure equal treatment of people with disabilities. Under the administration of University Life, Disability Services implements and coordinates reasonable accommodations and disability-related services that afford equal access to university programs and activities. Students can begin the registration process with Disability Services at any time during their enrollment at George Mason University. If you are seeking accommodations, please visit <a href="http://ds.gmu.edu/">http://ds.gmu.edu/</a> for detailed information about the Disability Services registration process. Disability Services is located in Student Union Building I (SUB I), Suite 2500 | <a href="mailto:ods@gmu.edu">ods@gmu.edu</a> | Phone: (703) 993-2474.</p>
+      </div>
+      <div class="block">
+        <p>If you have a learning disability or other condition that may affect academic performance, please: a) make sure documentation is on file with the Office of Disability Services to determine the accommodations you need; and b) talk with me to discuss your accommodation needs.</p>
+      </div>
+    </div>
+    <div class="section">
+      <div class="block">
+        <h2><a name="counseling-and-student-support" class="anchor hanchor" href="#counseling-and-student-support"><span class="hnumber">2.7</span>&nbsp;<span class="htext">Counseling and Student Support</span></a></h2>
+      </div>
+      <div class="block">
+        <p>Counseling and Psychological Services provides confidential psychological services, including 24/7 crisis intervention and consultation to faculty and staff: <a href="http://caps.gmu.edu/">http://caps.gmu.edu/</a>.</p>
+      </div>
+    </div>
+  </div>
   <script>
     function tocClickListen() {
       // No jQuery b/c also used in stand-alone HTML.
@@ -513,6 +1032,7 @@
           }
           el.addEventListener('click', event => {
             ns = event.target.parentNode.nextElementSibling;
+            if (!ns) return;
             if (ns.style.display === 'none') {
     ns.style.display = 'block';
             }
@@ -533,522 +1053,6 @@
       document.addEventListener("DOMContentLoaded", tocClickListen);
     }
   </script>
-</head>
-
-<body class="body">
-  <div id="toc" style="min-width: 5em;">
-    <ol>
-      <li>
-        <a href="#schedule" raw="# Schedule" lo="16" class="highlighted">
-          <span class="toctext">Schedule</span>
-        </a>
-        <ol class="toc" style="display: none;">
-          <li>
-            <a href="#thursday-september-8th" raw="## Thursday, September 8th" lo="18" lf="18">
-              <span class="toctext">Thursday, September 8th</span>
-            </a>
-          </li>
-          <li>
-            <a href="#thursday-september-1st" raw="## Thursday, September 1st" lo="26" lf="26">
-              <span class="toctext">Thursday, September 1st</span>
-            </a>
-          </li>
-          <li>
-            <a href="#thursday-august-25th" raw="## Thursday, August 25th" lo="37" lf="37">
-              <span class="toctext">Thursday, August 25th</span>
-            </a>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <a href="#syllabus" raw="# Syllabus" lo="46" lf="46">
-          <span class="toctext">Syllabus</span>
-        </a>
-        <ol class="toc" style="display: none;">
-          <li>
-            <a href="#catalog-description" raw="## Catalog Description" lo="48" lf="48">
-              <span class="toctext">Catalog Description</span>
-            </a>
-          </li>
-          <li>
-            <a href="#format" raw="## Format" lo="52" lf="52">
-              <span class="toctext">Format</span>
-            </a>
-          </li>
-          <li>
-            <a href="#grading" raw="## Grading" lo="65" lf="65">
-              <span class="toctext">Grading</span>
-            </a>
-          </li>
-          <li>
-            <a href="#textbook-and-references" raw="## Textbook and References" lo="73" lf="73">
-              <span class="toctext">Textbook and References</span>
-            </a>
-            <ol class="toc" style="display: none;">
-              <li>
-                <a href="#mathematical" raw="### Mathematical" lo="79" lf="79">
-                  <span class="toctext">Mathematical</span>
-                </a>
-              </li>
-              <li>
-                <a href="#undergraduate-level" raw="### Undergraduate-level" lo="84" lf="84">
-                  <span class="toctext">Undergraduate-level</span>
-                </a>
-              </li>
-              <li>
-                <a href="#graduate-level" raw="### Graduate-level" lo="94" lf="94">
-                  <span class="toctext">Graduate-level</span>
-                </a>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <a href="#academic-calendar-and-university-policy" raw="## Academic Calendar and University Policy" lo="106" lf="106">
-              <span class="toctext">Academic Calendar and University Policy</span>
-            </a>
-          </li>
-          <li>
-            <a href="#disability-accommodations" raw="## Disability Accommodations" lo="115" lf="115">
-              <span class="toctext">Disability Accommodations</span>
-            </a>
-          </li>
-          <li>
-            <a href="#counseling-and-student-support" raw="## Counseling and Student Support" lo="121" lf="121">
-              <span class="toctext">Counseling and Student Support</span>
-            </a>
-          </li>
-        </ol>
-      </li>
-    </ol>
-  </div>
-  <div id="display">
-    <div class="section">
-      <div class="block">
-        <p class="title">PHYS 513</p>
-      </div>
-      <div class="block">
-        <p class="subtitle">Applied Electromagnetic Theory</p>
-      </div>
-      <div class="block">
-        <ul class="compact">
-          <li markerlength="2" padlength="0">
-            <div class="block">
-              <p padlength="0">Day and Time: Thursday from 4:30 – 7:10 pm</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="7" lf="7">
-            <div class="block">
-              <p padlength="0">Location: 1004 Exploratory Hall</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="8" lf="8">
-            <div class="block">
-              <p padlength="0">Instructor: Bob Weigel</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="9" lf="9">
-            <div class="block">
-              <p padlength="0">Email: <a href="mailto:rweigel@gmu.edu">rweigel@gmu.edu</a></p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="10" lf="10">
-            <div class="block">
-              <p padlength="0">Office Hour: Thursday from 3:30 – 4:30 pm</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="11" lf="11">
-            <div class="block">
-              <p padlength="0">Office: 259 Planetary Hall</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="12" lf="14">
-            <div class="block">
-              <p padlength="0">Course URL: <a href="https://rweigel.github.io/phys513">https://rweigel.github.io/phys513</a></p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="block">
-        <p padlength="0">HWs: <a href="hw.html#hw-1">1</a> | <a href="hw.html#hw-2">2</a> | <a href="hw.html#hw-3">3</a> | <a href="hw.html#hw-4">4</a> | <a href="hw.html#hw-5">5</a> | <a href="hw.html#hw-6">6</a></p>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h1 class="highlighted"><a name="schedule" number="1" class="hanchor" href="#schedule"><span class="hnumber">1</span>&nbsp;<span class="htext">Schedule</span></a></h1>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h2 class=""><a name="thursday-september-8th" number="1.1" class="hanchor" href="#thursday-september-8th"><span class="hnumber">1.1</span>&nbsp;<span class="htext">Thursday, September 8th</span></a></h2>
-      </div>
-      <div class="block">
-        <ul class="compact">
-          <li markerlength="2" padlength="0">
-            <div class="block">
-              <p padlength="0">Discuss <a href="hw.html#hw-2">HW #2</a></p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="21" lf="26">
-            <div class="block">
-              <p padlength="0">Cover dielectrics</p>
-            </div>
-            <div class="block">
-              <ul class="compact">
-                <li markerlength="2" padlength="2">
-                  <div class="block">
-                    <p padlength="0">Fundamental dielectric example</p>
-                  </div>
-                </li>
-                <li markerlength="2" padlength="2" lo="23" lf="23">
-                  <div class="block">
-                    <p padlength="0">Discuss why capacitance increases when a dielectric is used</p>
-                  </div>
-                </li>
-                <li markerlength="2" padlength="2" lo="24" lf="26">
-                  <div class="block">
-                    <p padlength="0">Example of computing potential between plates of a capacitor that is half-filled with a dielectric using (1) Gauss’s law and (2) BV method.</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h2><a name="thursday-september-1st" number="1.2" class="hanchor" href="#thursday-september-1st"><span class="hnumber">1.2</span>&nbsp;<span class="htext">Thursday, September 1st</span></a></h2>
-      </div>
-      <div class="block">
-        <ul class="compact">
-          <li markerlength="2" padlength="0">
-            <div class="block">
-              <p padlength="0">Discuss <a href="hw.html#hw-1">HW #1</a>, which is due on Saturday, September 3rd at 3pm.</p>
-            </div>
-            <div class="block">
-              <ul class="compact">
-                <li markerlength="2" padlength="2">
-                  <div class="block">
-                    <p padlength="0">Student presentation of their problem #1</p>
-                  </div>
-                </li>
-                <li markerlength="2" padlength="2" lo="30" lf="30">
-                  <div class="block">
-                    <p padlength="0">Partial derivation of equation needed for problem #2</p>
-                  </div>
-                </li>
-                <li markerlength="2" padlength="2" lo="31" lf="31">
-                  <div class="block">
-                    <p padlength="0">Discussion of field lines expected for problem #2 and also general methods of sketching field lines</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="32" lf="37">
-            <div class="block">
-              <p padlength="0">Cover <a href="hw.html#hw-2">HW #2</a> topics</p>
-            </div>
-            <div class="block">
-              <ul class="compact">
-                <li markerlength="2" padlength="2">
-                  <div class="block">
-                    <p padlength="0">Discuss an approach to problem #1 on <a href="hw.html#hw-2">HW #2</a> (find <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> due to sheet of charge at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mord">/2</span></span></span></span> first, then generalize for sheet at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7519em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span>, then use that <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> and superposition)</p>
-                  </div>
-                </li>
-                <li markerlength="2" padlength="2" lo="34" lf="34">
-                  <div class="block">
-                    <p padlength="0">Review solutions of Laplace’s equation for 2–D cartesian</p>
-                  </div>
-                </li>
-                <li markerlength="2" padlength="2" lo="35" lf="37">
-                  <div class="block">
-                    <p padlength="0">Solve boundary value problem for long duct with three sides grounded</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h2><a name="thursday-august-25th" number="1.3" class="hanchor" href="#thursday-august-25th"><span class="hnumber">1.3</span>&nbsp;<span class="htext">Thursday, August 25th</span></a></h2>
-      </div>
-      <div class="block">
-        <ul class="compact">
-          <li markerlength="2" padlength="0">
-            <div class="block">
-              <p padlength="0">Introductions</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="40" lf="40">
-            <div class="block">
-              <p padlength="0">Syllabus</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="41" lf="46">
-            <div class="block">
-              <p padlength="0">Cover <a href="hw.html#hw-1">HW #1</a> topics</p>
-            </div>
-            <div class="block">
-              <ul class="compact">
-                <li markerlength="2" padlength="2">
-                  <div class="block">
-                    <p padlength="0">Solving for <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> for a parallel plate capacitor and long coaxial cylinders given potentials on conducting surfaces: Using (1) Gauss’ law (assume <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">±</span><span class="mord mathnormal">Q</span></span></span></span> on each conductor, find <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span></span></span></span>, and eliminate <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span> using <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1111em;vertical-align:-0.3061em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0006em;">∫</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span>) and (2) using the Boundary Value method.</p>
-                  </div>
-                </li>
-                <li markerlength="2" padlength="2" lo="43" lf="46">
-                  <div class="block">
-                    <p padlength="0">The interpretation and calculation of capacitance.</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h1><a name="syllabus" number="2" class="hanchor" href="#syllabus"><span class="hnumber">2</span>&nbsp;<span class="htext">Syllabus</span></a></h1>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h2><a name="catalog-description" number="2.1" class="hanchor" href="#catalog-description"><span class="hnumber">2.1</span>&nbsp;<span class="htext">Catalog Description</span></a></h2>
-      </div>
-      <div class="block">
-        <p padlength="0">Classical electromagnetic theory with applications. Topics include electrostatics, magnetic fields and materials, electromagnetic wave propagation, waveguides, transmission lines, radiation, and antennas.</p>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h2><a name="format" number="2.2" class="hanchor" href="#format"><span class="hnumber">2.2</span>&nbsp;<span class="htext">Format</span></a></h2>
-      </div>
-      <div class="block">
-        <p padlength="0">My primary objective for this course is for students to be able to solve and present advanced electricity and magnetism problems related to the topics given in the catalog description. I will cover topics in chapters 1-6 of <a href="http://www.amazon.ca/Fields-Waves-Communication-Electronics-Simon/dp/0471585513">Fields and Waves in Communication Electronics, third edition by Simon Ramo, John R. Whinnery, Theodore Van Duzer, Wiley, 1994</a>.</p>
-      </div>
-      <div class="block">
-        <p padlength="0">Approximately 1/2 of class time will be a lecture. The rest of the time will be spent with students working on problems or presenting problems using the whiteboard.</p>
-      </div>
-      <div class="block">
-        <p padlength="0">The homework assignments will have two parts:</p>
-      </div>
-      <div class="block">
-        <ol class="compact">
-          <li markerlength="3" padlength="0">
-            <div class="block">
-              <p padlength="0">Basic problems that cover topics that have not been discussed in class. These problems are intended to prepare the students for the lecture on the topic.</p>
-            </div>
-          </li>
-          <li markerlength="3" padlength="0" lo="61" lf="63">
-            <div class="block">
-              <p padlength="0">Advanced problems that cover topics on the previous HWs basic problems and the lecture.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-      <div class="block">
-        <p padlength="0">Homework assignments are due at 11:59 pm on Thursday so you have 3 hours to revise them after class is finished.</p>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h2><a name="grading" number="2.3" class="hanchor" href="#grading"><span class="hnumber">2.3</span>&nbsp;<span class="htext">Grading</span></a></h2>
-      </div>
-      <div class="block">
-        <ul class="compact">
-          <li markerlength="2" padlength="0">
-            <div class="block">
-              <p padlength="0">Homework: 30%</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="68" lf="68">
-            <div class="block">
-              <p padlength="0">Mid-term (take-home): 35%</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="69" lf="71">
-            <div class="block">
-              <p padlength="0">Final (take-home): 35%</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="block">
-        <p padlength="0">The course letter grade is nominally determined using &gt; 97: A+, 93 to 96.999: A-, 90 to 92.999: A-, 87 to 89.999: B+, 83 to 86.999: B, 80 to 82.999: B-, 70 to 70.999, 60, to 69.999: D, &lt; 60: F. It is quite likely that these grade cut-offs will change downwards.</p>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h2><a name="textbook-and-references" number="2.4" class="hanchor" href="#textbook-and-references"><span class="hnumber">2.4</span>&nbsp;<span class="htext">Textbook and References</span></a></h2>
-      </div>
-      <div class="block">
-        <p padlength="0">The textbook for this course is <a href="http://www.amazon.ca/Fields-Waves-Communication-Electronics-Simon/dp/0471585513">Fields and Waves in Communication Electronics, 3rd edition by Simon Ramo, John R. Whinnery, Theodore Van Duzer, Wiley, 1994</a>.</p>
-      </div>
-      <div class="block">
-        <p padlength="0">You will likely need to reference other textbooks in this course. The following is a partial list of books that you may find useful.</p>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h3><a name="mathematical" number="2.4.1" class="hanchor" href="#mathematical"><span class="hnumber">2.4.1</span>&nbsp;<span class="htext">Mathematical</span></a></h3>
-      </div>
-      <div class="block">
-        <ul class="compact">
-          <li markerlength="2" padlength="0">
-            <div class="block">
-              <p padlength="0">A<a href="https://www.amazon.com/introduction-Fourier-methods-Laplace-transformation/dp/B0007HQ89I">n Introduction to Fourier Methods and the Laplace Transformation but Philip Franklin</a>. This short book has many examples related to Maxwell’s equations and transmission lines.</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="82" lf="84">
-            <div class="block">
-              <p padlength="0"><a href="https://www.roe.ac.uk/~jap/teaching">Fourier Analysis class notes by Peakcock</a>; the <a href="https://www.roe.ac.uk/japwww/teaching/fourier/fourier1415.pdf">Chapter 12 lecture notes</a> provides a review of the mathematical background and justification for solving ODEs using what Ramo calls “the phasor method”.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h3><a name="undergraduate-level" number="2.4.2" class="hanchor" href="#undergraduate-level"><span class="hnumber">2.4.2</span>&nbsp;<span class="htext">Undergraduate-level</span></a></h3>
-      </div>
-      <div class="block">
-        <ul class="compact">
-          <li markerlength="2" padlength="0">
-            <div class="block">
-              <p padlength="0">Introduction to Electrodynamics by David J. Griffiths - the most commonly used junior-level undergraduate textbook for physics majors.</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="87" lf="87">
-            <div class="block">
-              <p padlength="0">Field and Wave Electromagnetics by David K. Cheng - a commonly used junior-level undergraduate textbook for engineering majors.</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="88" lf="88">
-            <div class="block">
-              <p padlength="0">Elements of Electromagnetics by Matthew N. O. Sadiku - a commonly used junior-level undergraduate textbook for engineering majors.</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="89" lf="89">
-            <div class="block">
-              <p padlength="0">Electricity and Magnetism (3rd Edition) by Edward M. Purcell and David J. Morin covers the same topics as Griffiths at the same level. If you are looking for an alternative explanation, this textbook will be helpful. The book contains far more examples, discussion, and content than Griffiths. It also includes solutions.</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="90" lf="90">
-            <div class="block">
-              <p padlength="0">Schaum’s outline of theory and problems of electromagnetics by Joseph A. Edminister is a useful reference for problems with full solutions and summaries of topics. <a href="https://www.amazon.com/Schaums-Outline-Electromagnetics-4th-Outlines/dp/0071831479/">The 4th edition</a> contains chapters on transmission lines and waveguides.</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="91" lf="91">
-            <div class="block">
-              <p padlength="0">Div, Grad, Curl, and All That: An Informal Text on Vector Calculus (4th Edition) by H. M. Schey is an excellent reference for the mathematical background that you need to understand for this course. The book contains a concise and clear review of topics that are covered in a vector calculus course (usually “Calculus III”).</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="92" lf="94">
-            <div class="block">
-              <p padlength="0">The Feynman Lectures on Physics: Mainly Electromagnetism and Matter, Volume 2, 1977 contains excellent lecture-style expositions on Electricity and Magnetism. The full volume is <a href="http://www.feynmanlectures.caltech.edu/II_toc.html">available online</a>.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h3><a name="graduate-level" number="2.4.3" class="hanchor" href="#graduate-level"><span class="hnumber">2.4.3</span>&nbsp;<span class="htext">Graduate-level</span></a></h3>
-      </div>
-      <div class="block">
-        <p padlength="0">Two textbooks that cover applied E&amp;M topics in detail are</p>
-      </div>
-      <div class="block">
-        <ul class="compact">
-          <li markerlength="2" padlength="0">
-            <div class="block">
-              <p padlength="0">Microwave Engineering by David M. Pozar.</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="98" lf="98">
-            <div class="block">
-              <p padlength="0"><a href="https://ocw.mit.edu/resources/res-6-001-electromagnetic-fields-and-energy-spring-2008/front-end-matter/">Electromagnetic Fields and Energy by Hermann Haus and James Melcher. RES.6-001, Spring 2008.</a></p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="99" lf="101">
-            <div class="block">
-              <p padlength="0"><a href="https://www.ece.rutgers.edu/~orfanidi/ewa/ewa-2up.pdf">Electromagnetic Waves and Antennas by Sophocles J. Orfanidis</a>. This book is dense and comprehensive, but a supplement such as the course textbook and Microwave Engineering by Pozar is probably needed as a primary reference initially.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="block">
-        <p padlength="0">Textbooks that cover advanced E&amp;M theory are</p>
-      </div>
-      <div class="block">
-        <ul class="compact">
-          <li markerlength="2" padlength="0">
-            <div class="block">
-              <p padlength="0">Classical Electrodynamics by David J. Jackson - the most commonly used graduate-level textbook for physics students</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="103" lf="103">
-            <div class="block">
-              <p padlength="0">Classical Electricity and Magnetism: Second Edition (Dover Books on Physics) by Wolfgang K. H. Panofsky and Melba Phillips, 2005</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="104" lf="106">
-            <div class="block">
-              <p padlength="0">Classical Electromagnetism by Richard Fitzpatrick</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h2><a name="academic-calendar-and-university-policy" number="2.5" class="hanchor" href="#academic-calendar-and-university-policy"><span class="hnumber">2.5</span>&nbsp;<span class="htext">Academic Calendar and University Policy</span></a></h2>
-      </div>
-      <div class="block">
-        <p padlength="0"><a href="https://www2.gmu.edu/academics/academic-calendar">https://www2.gmu.edu/academics/academic-calendar</a></p>
-      </div>
-      <div class="block">
-        <p padlength="0"><a href="http://universitypolicy.gmu.edu/">http://universitypolicy.gmu.edu/</a></p>
-      </div>
-      <div class="block">
-        <ul class="compact">
-          <li markerlength="2" padlength="0">
-            <div class="block">
-              <p padlength="0">Last class Thursday, December 1st.</p>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="113" lf="115">
-            <div class="block">
-              <p padlength="0">Sunday, December 11th at 11:59 pm.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h2><a name="disability-accommodations" number="2.6" class="hanchor" href="#disability-accommodations"><span class="hnumber">2.6</span>&nbsp;<span class="htext">Disability Accommodations</span></a></h2>
-      </div>
-      <div class="block">
-        <p padlength="0">Disability Services at George Mason University is committed to upholding the letter and spirit of the laws that ensure equal treatment of people with disabilities. Under the administration of University Life, Disability Services implements and coordinates reasonable accommodations and disability-related services that afford equal access to university programs and activities. Students can begin the registration process with Disability Services at any time during their enrollment at George Mason University. If you are seeking accommodations, please visit <a href="http://ds.gmu.edu/">http://ds.gmu.edu/</a> for detailed information about the Disability Services registration process. Disability Services is located in Student Union Building I (SUB I), Suite 2500 | <a href="mailto:ods@gmu.edu">ods@gmu.edu</a> | Phone: (703) 993-2474.</p>
-      </div>
-      <div class="block">
-        <p padlength="0">If you have a learning disability or other condition that may affect academic performance, please: a) make sure documentation is on file with the Office of Disability Services to determine the accommodations you need; and b) talk with me to discuss your accommodation needs.</p>
-      </div>
-    </div>
-    <div class="section">
-      <div class="block">
-        <h2><a name="counseling-and-student-support" number="2.7" class="hanchor" href="#counseling-and-student-support"><span class="hnumber">2.7</span>&nbsp;<span class="htext">Counseling and Student Support</span></a></h2>
-      </div>
-      <div class="block">
-        <p padlength="0">Counseling and Psychological Services provides confidential psychological services, including 24/7 crisis intervention and consultation to faculty and staff: <a href="http://caps.gmu.edu/">http://caps.gmu.edu/</a>.</p>
-      </div>
-    </div>
-  </div>
 </body>
 
 </html>

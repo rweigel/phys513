@@ -31,7 +31,7 @@ set(0,'DefaultLegendAutoUpdate','off');
 %close all;
 clear all;
 
-animate = 0;
+animate = 1;
 
 eps0 = 8.854e-12; % permittivity of free space
 mu0  = pi*4e-7;   % permeability of free space
@@ -45,20 +45,20 @@ if run == 0
 end
 
 if run == 1
-    profile = 1;
+    profile = 3;
     source  = 1;
     Lx  = 5;       % Domain length in meters
     Nx  = 500;     % Spatial samples in domain
     ixb = Nx/2;
-    fs = 300e6;   % Source frequency in Hz
+    fs = 300e6;    % Source frequency in Hz
     fstr = '300 MHz';
-    Niter = 500;  % Number of iterations to perform
-    ip = Nx/2 - 2; % Index of probe
+    Niter = 400;   % Number of iterations to perform
+    ip = ixb - 1;  % Index of probe
     ylims = [-3, 3];
 end
 
 ds = Lx/Nx; % spatial step in meters
-dt = ds/fs; % "magic time step"
+dt = ds/fs; % "magic" time step
 % See https://my.ece.utah.edu/~simpson/ECE5340/Taflove%20Chpt.%202.pdf
 % for definition of magic time step.
 
@@ -72,6 +72,8 @@ as = ones(Nx,1);
 
 figure(1);
 fdtd_profile_plot(profile, Nx, ixb);
+fstr = sprintf('figures/fdtd1d_run-%d_profile-%d.pdf', profile);
+print(fstr, '-dpdf');
 
 ae = ae./epsr;
 am = am./mur;
@@ -97,9 +99,9 @@ fprintf('Lx = %.1f [m]\n',Lx);
 fprintf('dx = Lx/Nx = %.1e [m]\n',ds);
 fprintf('fs = %.1e [Hz]\n',fs);
 fprintf('dt = ds/fs = %.1e [s]\n',dt);
-fprintf('i_lamda = %.1f\n',Nx*c/fs/Lx);
 fprintf('lamda   = %.2e [m]\n',c/fs/Lx);
-fprintf('max(sigma)*2*pi*f/epsilon_o = %.1e\n',max(sigma)*2*pi*fs/eps0);
+fprintf('i_lamda = %.1f\n',Nx*c/fs/Lx);
+fprintf('max(sigma)/(2*pi*f*epsilon_o) = %.1e\n',max(sigma)/(2*pi*fs*eps0));
 fprintf('-------------------------\n')
 
 for iter=1:Niter
@@ -134,11 +136,13 @@ for iter=1:Niter
             plot(377*Hz,'r','LineWidth',2);
             title(sprintf('i_t = %03d; f = %s [Hz]; L_x = %.1f [m]',...
                 iter,fstr,Lx));
-            if 1
-                text(1,ylims(2),sprintf('E_y [V/m] (blue)\n377 H_z [T] (red)'),...
+            if animate && iter < Niter
+                text(1,ylims(2),...
+                    sprintf('E_y [V/m] (blue)\n377 H_z [T] (red)'),...
                     'VerticalAlignment','Top');
             else
-                legend('E_y [V/m]','377H_z [T]') % Slows down rendering
+                % Slows down rendering
+                legend('E_y [V/m]','377H_z [T]') 
             end
             xlabel('i_x');
             fdtd1d_annotate;
@@ -155,6 +159,18 @@ for iter=1:Niter
     end
 
 end
+fstr = sprintf('figures/fdtd1d_run-%d_profile-%d_vs_x_it-%d.pdf', run, profile, iter);
+print(fstr, '-dpdf');
+
 fprintf('\n');
 
-fdtd1d_plot;
+figure(3);clf;
+    plot(Ey_ip,'r','LineWidth',2);hold on;
+    plot(377*Hz_ip,'b','LineWidth',2);
+    xlabel('i_t');
+    title(sprintf('At i_x = %d', ip))
+    legend('E_y [V/m]','377H_z [T]', 'Location','NorthWest') 
+    grid on;
+    fstr = sprintf('figures/fdtd1d_run-%d_profile-%d_vs_t_ip-%d.pdf', run, profile, ip)
+    print(fstr, '-dpdf')
+    %fdtd1d_plot;

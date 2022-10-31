@@ -371,6 +371,18 @@ Name the function ```HW6_BiotSavart``` and save it in a file named ```HW6_BiotSa
 
 In class, I will ask you to give a brief summary of your solution.
 
+**Answer**
+
+My code is located at https://github.com/rweigel/phys513/tree/master/hw (files with names that start with `HW4`).
+
+I looked up the [analytic answer](http://www.netdenizen.com/emagnet/offaxis/iloopoffaxis.htm) for the off-axis magnetic field of a circular current loop . The off-axis field requires an integration of an elliptic integral.
+
+To compute the flux, I considered the integral that I would set up to compute the exact answer. To do this, I need $B_z(s_i,0,z)$ at $z=2$ and $s=ds, 2ds, ..., 1$. The flux through an annulus of radius $s_i$ with width $ds$ is then
+
+$$\Phi_M^i = 2\pi s_i ds B_z(s_i)$$
+
+As the number of annuli increases, the flux should approach the exact answer. This is how one would compute the flux using ordinary integration.
+
 ## Inductance of a Rectangular Duct
 
 A rectangular duct carries a net current of $I_1 = K_1l$ in the direction shown. A series of current supplies along the infinitesimal gap is driving the current. The duct has a small enough thickness that the current can be treated as flowing on a sheet.
@@ -434,11 +446,7 @@ In Section 3.16 of the textbook, the analytical solution is given for the case w
 
 Imagine that you are given this program and are asked to determine how well the numerical solution matches the theoretical (and approximate) solution for the problem where the electric field is known at the surface of an infinite slab with constant conductivity and the displacement term is ignored.
 
-When you execute this program, an animation is shown of a monochromatic wave propagating in a region of space with $\epsilon=\epsilon_o, \mu=\mu_o$, and $\sigma_c=0$. Some time later, the wave encounters a region where $\sigma$ becomes non--zero and $\epsilon=\epsilon_o, \mu=\mu_o$. At the end of the run, a figure is shown that has the amplitudes of $E_z$ and $B_y$ at $i_x=249$, which corresponds to just outside the conductor. (Note that the factor of $377$ arises because $\mu_o c\approx 377$.)
-
-The variable $i_x$ is the position index and is $dx$. The variable $i_t$ is the time index and is in units of $dt$. The values for $dx$ and $dt$ are printed to the screen when you execute the program.
-
-Come up with at least three ways of comparing the theoretical result with the numerical result. Create three plots that show a line (or annotation) associated with one of the equations given in Section 3.16 versus the output of the simulation. Keep in mind that both the theoretical solution and the numerical solution are approximate.
+Come up with at least three ways of comparing the theoretical result with the numerical result. Create three plots that show a line associated with one of the equations given in Section 3.16 versus the output of the simulation. Keep in mind that both the theoretical solution and the numerical solution are approximate.
 
 Clearly label your plots. Upload your plots to your GitHub account and label them <code>HW7_1_1.pdf</code>, <code>HW7_1_2.pdf</code>, and <code>HW7_1_3.pdf</code>. I will show these plots during class and ask you to provide an interpretation.
 
@@ -449,6 +457,108 @@ For now, you do not need to explain the features outside of the conducting regio
 Solve problems 4.3b, 4.3c, 4.3d., and 4.6e.
 
 Save your answers in a single file named <code>HW7_2.pdf</code>.
+
+# HW 8
+
+## Wave Superposition
+
+An antenna can create a plane wave in the form
+
+$$E_x=A\cos(\omega t-kx+\delta)$$
+
+where $A$ and $\delta$ are adjustable.
+
+By trial-and-error, it is found that two antenna can create a desired signal for certain settings of $A$ and $\delta$ on each. By superposition, the plane wave can be written as
+
+$$E_x=A_1\cos(\omega t-kx+\delta_1) + A_2\cos(\omega t-kx+\delta_2)$$
+
+It is desired to create this plane wave with one antenna, that is,
+
+$$E_x=A_3\cos(\omega t-kx+\delta_3)$$
+
+If possible, what should the values of $A_3$ and $\delta_3$ be in terms of $A_1$, $A_2$, $\delta_1$ and $\delta_2$ in order to create the same same waveform as the two antenna?
+
+## Wave Equation Derivation
+
+If $\mathbf{E}=E_{ox}(x,t)\hat{\mathbf{x}}+E_{oy}(x,t)\hat{\mathbf{y}}+E_{oz}(x,t)\hat{\mathbf{z}}$ and $\mathbf{B}=B_{ox}(x,t)\hat{\mathbf{x}}+B_{oy}(x,t)\hat{\mathbf{y}}+B_{oz}(x,t)\hat{\mathbf{z}}$, show that
+
+1. $E_y(x,t)$, $E_z(x,t)$, $B_y(x,t)$, and $B_z(x,t)$ each individually obey a wave equation of the form
+
+   $${\partial ^2 f\over \partial u^2} = {1 \over c^2}{\partial ^2 f\over \partial t^2}$$
+
+   where $u$ is a placeholder for one of the cartesian variables and $f$ is any one of $E_y(x,t)$, $E_z(x,t)$, $B_y(x,t)$, and $B_z(x,t)$. 
+
+2. Does it follow that $E_x(x,t)=B_x(x,t)=0$? Justify your answer.
+
+3. Show explicitly how your answer to 1. is consistent with
+
+  $$\boldsymbol \nabla^2 \mathbf{E} = {1 \over c^2}{\partial ^2 \mathbf{E}\over \partial t^2}\qquad\boldsymbol \nabla^2 \mathbf{B} = {1 \over c^2}{\partial ^2 \mathbf{B}\over \partial t^2}$$
+
+  Provide a very brief justification for each step used to show this.
+
+## Wave Equation Solutions
+
+1. Show that 
+
+   $$\mathbf{E}=E_{ox}\cos(k_zz-\omega t + \delta_x)\hat{\mathbf{x}}$$
+
+   satisfies
+
+   $$\boldsymbol \nabla^2 \mathbf{E} = {1 \over c^2}{\partial ^2 \mathbf{E}\over \partial t^2}$$
+
+   and
+
+   $$\mathbf{B}=B_{ox}\cos(k\_zz-\omega t + \delta'\_x)\hat{\mathbf{x}}+B_{oy}\cos(k\_zz-\omega t + \delta'\_y)\hat{\mathbf{y}}$$
+
+   satisfies
+
+   $$\boldsymbol \nabla^2 \mathbf{B} = {1 \over c^2}{\partial ^2 \mathbf{B}\over \partial t^2}$$
+
+   Provided that one or more of the constants $k_z$, $\omega$, $E_{ox}$, $B_{ox}$, $B_{oy}$, $\delta_x$, $\delta'_x$, and $\delta'_y$ are related. State the required relationships.
+
+2. Show that one or more of the constants $k_z$, $\omega$, $E_{ox}$, $B_{ox}$, $B_{oy}$, $\delta_x$, $\delta'_x$, and $\delta'_y$ must be either related to each other or zero in order for the both $\mathbf{B}$ and $\mathbf{E}$ given above to be consistent with Maxwell's equations.
+
+3. If $\mathbf{E}$ is instead given by (the $\hat{\mathbf{x}}$ below should be $\hat{\mathbf{y}}$. If you have not started this problem, use $\hat{\mathbf{y}}$; I'll accept answers for either choice.).
+
+   $$\mathbf{E}=E_{oy}\cos(k_zz-\omega t + \delta_y)\hat{\mathbf{x}}$$
+
+   show that one or more of the constants $k_z$, $\omega$, $E_{oy}$, $B_{ox}$, $B_{oy}$, $\delta_y$, $\delta'_x$, and $\delta'_y$ must be either related to each other or zero in order for the both $\mathbf{B}$ and $\mathbf{E}$ to be consistent with Maxwell's equations.
+
+4. Using the definition
+
+   $$\mathbf{k}=k_x\hat{\mathbf{x}} + k_y\hat{\mathbf{y}}+k_z\hat{\mathbf{z}}$$
+
+   show that your results from 2. and 3. are consistent with
+
+   $$\mathbf{B}={1 \over c}\hat{\mathbf{k}}\times \mathbf{E}$$
+
+## Complex Form
+
+Using the definitions
+
+$$\mathbf{E}\equiv \text{Re}\left[\widetilde{\mathbf{E}}e^{-i(\omega t-\mathbf{k}\cdot\mathbf{r})}\right]$$
+
+$$\mathbf{B}\equiv \text{Re}\left[\widetilde{\mathbf{B}}e^{-i(\omega t-\mathbf{k}\cdot\mathbf{r})}\right]$$
+
+$$\mathbf{k}\equiv k_x\hat{\mathbf{x}} + k_y\hat{\mathbf{y}}+k_z\hat{\mathbf{z}}$$
+
+$$\mathbf{r}\equiv x\hat{\mathbf{x}} + y\hat{\mathbf{y}} + z\hat{\mathbf{z}}\,,$$
+
+where $\widetilde{\mathbf{E}}$ and $\widetilde{\mathbf{B}}$ are vectors with complex constants as components,
+
+show that it follows from $\boldsymbol{\nabla}\times \mathbf{E}=-{\partial \mathbf{B}}/{\partial t}$ that
+
+$$\widetilde{\mathbf{B}}={1 \over c}\hat{\mathbf{k}}\times \widetilde{\mathbf{E}}$$
+
+Explain how
+
+$$\mathbf{B}={1 \over c}\hat{\mathbf{k}}\times \mathbf{E}$$
+
+and
+
+$$\widetilde{\mathbf{B}}={1 \over c}\hat{\mathbf{k}}\times \widetilde{\mathbf{E}}$$
+
+are related.
 
 # Midterm
 

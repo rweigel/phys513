@@ -45,7 +45,7 @@ if run == 0
 end
 
 if run == 1
-    profile = 3;
+    profile = 2;
     source  = 1;
     Lx  = 5;       % Domain length in meters
     Nx  = 500;     % Spatial samples in domain

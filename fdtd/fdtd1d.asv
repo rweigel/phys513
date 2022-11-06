@@ -70,7 +70,7 @@ as = ones(Nx,1);
 % Create grid of epsilon, mu, sigma.
 [epsr,mur,sigma] = fdtd_profile(profile, Nx, ixb);
 
-figure(1);clf
+figure(1);
 fdtd_profile_plot(profile, Nx, ixb);
 fname = sprintf('figures/fdtd1d_run-%d_profile-%d.pdf', profile);
 print(fname, '-dpdf', '-bestfit');
@@ -162,23 +162,15 @@ end
 fname = sprintf('figures/fdtd1d_run-%d_profile-%d_vs_x_it-%d.pdf', run, profile, iter);
 print(fname, '-dpdf', '-bestfit');
 
-figure(3);clf;
-    plot(Ey,'b','LineWidth',2);
-    hold on;
-    grid on;
-    plot(377*Hz,'r','LineWidth',2);
-    legend('E_y [V/m]','377H_z [T]') 
-    xlabel('i_x');
-    fdtd1d_annotate;
-    set(gca,'xlim', [248, 260])
-    set(gca,'ylim', [-0.2, 1.6])
-    grid(gca, 'minor')
-    fname = sprintf('figures/fdtd1d_run-%d_profile-%d_vs_x_it-%d-zoom.pdf', run, profile, iter);
-    print(fname, '-dpdf', '-bestfit');
+set(gca,'xlim', [248, 260])
+set(gca,'ylim', [-0.2, 1.6])
+grid(gca, 'minor')
+fname = sprintf('figures/fdtd1d_run-%d_profile-%d_vs_x_it-%d-zoom.pdf', run, profile, iter);
+print(fname, '-dpdf', '-bestfit');
 
 fprintf('\n');
 
-figure(4);clf;
+figure();clf;
     plot(Ey_ip,'r','LineWidth',2);hold on;
     plot(377*Hz_ip,'b','LineWidth',2);
     xlabel('i_t');

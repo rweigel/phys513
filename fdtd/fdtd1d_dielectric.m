@@ -45,15 +45,15 @@ if run == 0
 end
 
 if run == 1
-    profile = 2;
+    profile = 1;
     source  = 1;
     Lx  = 5;       % Domain length in meters
     Nx  = 500;     % Spatial samples in domain
     ixb = Nx/2;
     fs = 300e6;    % Source frequency in Hz
     fstr = '300 MHz';
-    Niter = 364;   % Number of iterations to perform
-    ip = ixb;  % Index of probe
+    Niter = 664;   % Number of iterations to perform
+    ip = ixb-25;  % Index of probe
     ylims = [-3, 3];
 end
 
@@ -130,6 +130,7 @@ for iter=1:Niter
 
     if (animate || iter == Niter)
         figure(2);hold off;
+            %if iter <=250; hold off;end
             plot(Ey,'b','LineWidth',2);
             hold on;
             grid on;
@@ -179,8 +180,8 @@ figure(3);clf;
 fprintf('\n');
 
 figure(4);clf;
-    plot(Ey_ip,'r','LineWidth',2);hold on;
-    plot(377*Hz_ip,'b','LineWidth',2);
+    plot(Ey_ip,'b','LineWidth',2);hold on;
+    plot(377*Hz_ip,'r','LineWidth',2);
     xlabel('i_t');
     title(sprintf('At i_x = %d', ip))
     legend('E_y [V/m]','377H_z [T]', 'Location','NorthWest') 

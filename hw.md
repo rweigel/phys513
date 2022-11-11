@@ -564,13 +564,13 @@ are related.
 
 Consider a wave propagating in space in the $+x$ direction with amplitude $E_{oI}$ in a medium with $\epsilon_1$ and $\mu_1$. At $x=0$, it encounters a new medium with $\epsilon_2$ and $\mu_2$. Assume that medium 1 extends an infinite distance in the $-x$ direction and medium 2 extends an infinite distance in the $+x$ direction. As discussed in class, the equations for the electric and magnetic fields in the two media can be written in the form
 
-`$\widetilde{E}^1_y(x,t) = (\widetilde{E}_{oI}e^{ik_1x} + \widetilde{E}_{oR}e^{-ik_1x})e^{i\omega t}$`
+`$\widetilde{E}^1_y(x,t) = (\widetilde{E}_{oI}e^{ik_1x} + \widetilde{E}_{oR}e^{-ik_1x})e^{-i\omega t}$`
 
-`$\widetilde{E}^2_y(x,t) = \widetilde{E}_{oT}e^{ik_2x}e^{i\omega t}$`
+`$\widetilde{E}^2_y(x,t) = \widetilde{E}_{oT}e^{ik_2x}e^{-i\omega t}$`
 
-`$\widetilde{B}^1_z(x,t) = (\widetilde{B}_{oI}e^{ik_1x} + \widetilde{B}_{oR}e^{-ik_1x})e^{i\omega t}$`
+`$\widetilde{B}^1_z(x,t) = (\widetilde{B}_{oI}e^{ik_1x} + \widetilde{B}_{oR}e^{-ik_1x})e^{-i\omega t}$`
 
-`$\widetilde{B}^2_z(x,t) = (\widetilde{B}_{oT}e^{ik_2x})e^{i\omega t}$`
+`$\widetilde{B}^2_z(x,t) = (\widetilde{B}_{oT}e^{ik_2x})e^{-i\omega t}$`
 
 1. Use the boundary conditions $E_y^1(0,t)=E_y^2(0,t)$ and $B_z^1(0,t)/\mu_1=B_z^2(0,t)/\mu_2$ along with relationships between $\mathbf{E}$ and $\mathbf{B}$ found on the previous homework to write the above four equations in terms of $\omega$, $k_1$, $k_2$, $\widetilde{E}_{oI}$, $\rho$, and $\tau$, where $\rho=(1+\beta)/(1-\beta)$, $\tau=2/(1+\beta)$ and $\beta=\sqrt{\mu_1/\epsilon_1}/\sqrt{\mu_2/\epsilon_2}$.
 

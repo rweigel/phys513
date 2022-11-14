@@ -572,7 +572,7 @@ Consider a wave propagating in space in the $+x$ direction with amplitude $E_{oI
 
 `$\widetilde{B}^2_z(x,t) = (\widetilde{B}_{oT}e^{ik_2x})e^{-i\omega t}$`
 
-1. Use the boundary conditions $E_y^1(0,t)=E_y^2(0,t)$ and $B_z^1(0,t)/\mu_1=B_z^2(0,t)/\mu_2$ along with relationships between $\mathbf{E}$ and $\mathbf{B}$ found on the previous homework to write the above four equations in terms of $\omega$, $k_1$, $k_2$, $\widetilde{E}_{oI}$, $\rho$, and $\tau$, where $\rho=(1+\beta)/(1-\beta)$, $\tau=2/(1+\beta)$ and $\beta=\sqrt{\mu_1/\epsilon_1}/\sqrt{\mu_2/\epsilon_2}$.
+1. Use the boundary conditions $E_y^1(0,t)=E_y^2(0,t)$ and $B_z^1(0,t)/\mu_1=B_z^2(0,t)/\mu_2$ along with relationships between $\mathbf{E}$ and $\mathbf{B}$ found on the previous homework to write the above four equations in terms of $\omega$, $k_1$, $k_2$, $\widetilde{E}_{oI}$, $\rho$, and $\tau$, where $\rho=(1-\beta)/(1+\beta)$, $\tau=2/(1+\beta)$ and $\beta=\sqrt{\mu_1/\epsilon_1}/\sqrt{\mu_2/\epsilon_2}$.
 
 2. Show that `$E^1_y(x,t)$` can be written in the form $A(x)\sin(\omega t + \phi(x))$ and find the minimum and maximum values of $A$ in terms of $\rho$ and $E_{oI}$.
 

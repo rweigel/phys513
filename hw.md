@@ -578,7 +578,51 @@ Consider a wave propagating in space in the $+x$ direction with amplitude $E_{oI
 
 3. Suppose that I place an electric probe in media 1. I will observe an electric field that varies sinusoidally with time with some amplitude. At what locations will the probe measure the largest amplitudes?
 
+# HW 10
 
+## Approximating a Transmission Line
+
+In class, I discussed how a problem 4.6e of the textbook leads to the continuous transmission line wave equations for $V$ and $I$. (These wave equations have the same form as those for $E$ and $B$ covered previously.)
+
+Given that the continuous wave equations for $V$ and $I$ were derived from a circuit with differential inductors and capacitors, it would seem that we could approximate a continuous transmission line with a "ladder" circuit with many inductors and capacitors.
+
+In class, I reviewed how, given the alternating voltage source has amplitude $V_0$, one finds $\widetilde{V}_1$, $\widetilde{V}_2$, $\widetilde{I}_0$, $\widetilde{I}_1$, and $\widetilde{I}_2$.
+
+<img src="figures/Short_Ladder.svg"/>
+
+The basic method is to collapse the circuit in steps as shown below to find $Z_0$. Once $Z_0$ is known, the unknown complex voltage and current amplitudes can be found.
+
+<img src="figures/Short_Ladder_Step1.svg"/>
+
+<img src="figures/Short_Ladder_Step2.svg"/>
+
+1. Find $Z_0$ and $Z_1$ in terms of $\omega$, $L$, and $C$. For $w=L=C=1$, you should get $Z_0=(1-j)/2$, $Z_1=1-j$.
+2. Find $\widetilde{V}_1$, $\widetilde{V}_2$, $\widetilde{I}_0$, $\widetilde{I}_1$, and $\widetilde{I}_2$. You can check your answers by comparing the ratios of $\widetilde{V}$ and $\widetilde{I}$ with $Z$ computed in 1.
+3. An iterative approach to computing $\widetilde{V}$ and $\widetilde{I}$, and $Z$ is to note that KCL for each node is
+
+   `$\widetilde{I}_{n+1} = \widetilde{I}_n - j\omega C \widetilde{V}_n$`
+
+   and the relationship for the voltages across the inductor is
+
+   `$\widetilde{V}_{n+1} = \widetilde{V}_n - j\omega L \widetilde{I}_{n+1}$`
+
+   and, as before,
+   
+   `$Z_n = \widetilde{V}_n/\widetilde{I}_n$`
+
+   Verify that these equations that they give the same results as in part 2. Then implement a loop that computes the above for an arbitrary number of ladder steps.
+
+4. If $Z_L=\sqrt{L/C}$, a transmission line is said to be "perfectly matched" -- the impedance $Z_0$ seen at the source is real and $\widetilde{I}_0$ and $\widetilde{V}_0$ are in phase (recall the importance of this shown in a previous HW problem is that the power through the load is maximized). In the following, you will approximate a continuous transmission line with a ladder network.
+
+   Using a ladder network with $N=100$ steps, $\omega=1\text{ MHz}$, $L=(0.1/N)\text{ mH}$, $C=(1/N)\text{ }\mu\text{F}$, and $Z_L=\sqrt{L/C}$ plot $|\widetilde{I}_n|$, $|\widetilde{V}_n|$, and $|Z_n|/Z_L$.
+
+5. Repeat 4. using $Z_L=3\sqrt{L/C}$ and find $\text{max}(|\widetilde{V}_n|)/\text{min}(|\widetilde{V}_n|)$ (put value in plot title). Be prepared to discuss in class how this is related to the previous HW.
+
+Save your code as `HW10_4.ext` and `HW10_5.ext`, where `ext` is the extension for the language (e.g., `m` or `py`). Save your plots as `HW10_4.pdf` and `HW10_5.pdf`.
+
+## Impedance Transformation
+
+To be posted.
 
 # Midterm
 

@@ -596,7 +596,7 @@ The basic method is to collapse the circuit in steps as shown below to find $Z_0
 
 <img src="figures/Short_Ladder_Step2.svg"/>
 
-1. Find $Z_0$ and $Z_1$ in terms of $\omega$, $L$, and $C$. For $w=L=C=1$, you should get $Z_0=(1-j)/2$, $Z_1=1-j$.
+1. Find $Z_0$ and $Z_1$ in terms of $\omega$, $L$, $C$, and $Z_L$. For $w=L=C=Z_L=1$, you should get $Z_0=(1-j)/2$, $Z_1=1-j$.
 2. Find $\widetilde{V}_1$, $\widetilde{V}_2$, $\widetilde{I}_0$, $\widetilde{I}_1$, and $\widetilde{I}_2$. You can check your answers by comparing the ratios of $\widetilde{V}$ and $\widetilde{I}$ with $Z$ computed in 1.
 3. An iterative approach to computing $\widetilde{V}$ and $\widetilde{I}$, and $Z$ is to note that KCL for each node is
 
@@ -619,10 +619,6 @@ The basic method is to collapse the circuit in steps as shown below to find $Z_0
 5. Repeat 4. using $Z_L=3\sqrt{L/C}$ and find $\text{max}(|\widetilde{V}_n|)/\text{min}(|\widetilde{V}_n|)$ (put value in plot title). Be prepared to discuss in class how this is related to the previous HW.
 
 Save your code as `HW10_4.ext` and `HW10_5.ext`, where `ext` is the extension for the language (e.g., `m` or `py`). Save your plots as `HW10_4.pdf` and `HW10_5.pdf`.
-
-## Impedance Transformation
-
-To be posted.
 
 # Midterm
 

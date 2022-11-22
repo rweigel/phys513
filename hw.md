@@ -624,7 +624,7 @@ Save your code as `HW10_4.ext` and `HW10_5.ext`, where `ext` is the extension fo
 
 Due Saturday, December 3rd at 3pm.
 
-In class, I demonstrated how to compute reflection coefficients `$\widetilde{\rho}_n$` without the use of the Smith chart. The basic procedure is to start with (assuming the time dependence is proportional to $e^{j\omega t}$)
+In class, I demonstrated how to compute reflection coefficients `$\widetilde{\rho}_n$` without the use of the Smith chart. The basic procedure is to start with (assuming the time dependence is proportional to $e^{j\omega t}$ to be consistent with Ramo; Griffiths uses the $-j$ convention).
 
 `$$\widetilde{V}_n(x) = \widetilde{V}_{n}^+\left(e^{-j\beta_n x}+\widetilde{\rho}_ne^{+j\beta_n x}\right)$$`
 

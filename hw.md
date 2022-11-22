@@ -631,7 +631,7 @@ In class, I demonstrated how to compute reflection coefficients `$\widetilde{\rh
 
 `$$\widetilde{I}_n(x) = \frac{\widetilde{V}_{n}^+}{Z_{0n}}\left(e^{-j\beta_n x}-\widetilde{\rho}_ne^{+j\beta_n x}\right)$$`
 
-and use the fact that at the interfaces between two regions, `$\widetilde{I}_n(x)$` and `$\widetilde{V}_n(x)$` are continuous to find the reflection coefficients. For the following transmission line
+and use the fact that at the interfaces between two regions, `$\widetilde{I}_n(x)$` and `$\widetilde{V}_n(x)$` are continuous to find the reflection coefficients. For the following transmission line having $\lambda_1=10\text{ cm}$ and $\lambda_2=5\text{ cm}$,
 
 <img src="figures/Transmission_Line.svg"/>
 

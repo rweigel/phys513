@@ -580,7 +580,7 @@ Consider a wave propagating in space in the $+x$ direction with amplitude $E_{oI
 
 # HW 10
 
-## Approximating a Transmission Line
+**Approximating a Transmission Line**
 
 In class, I discussed how a problem 4.6e of the textbook leads to the continuous transmission line wave equations for $V$ and $I$. (These wave equations have the same form as those for $E$ and $B$ covered previously.)
 
@@ -619,6 +619,27 @@ The basic method is to collapse the circuit in steps as shown below to find $Z_0
 5. Repeat 4. using $Z_L=3\sqrt{L/C}$ and find $\text{max}(|\widetilde{V}_n|)/\text{min}(|\widetilde{V}_n|)$ (put value in plot title). Be prepared to discuss in class how this is related to the previous HW.
 
 Save your code as `HW10_4.ext` and `HW10_5.ext`, where `ext` is the extension for the language (e.g., `m` or `py`). Save your plots as `HW10_4.pdf` and `HW10_5.pdf`.
+
+# HW 11
+
+Due Saturday, December 3rd at 3pm.
+
+In class, I demonstrated how to compute reflection coefficients `$\widetilde{\rho}_n$` without the use of the Smith chart. The basic procedure is to start with
+
+`$$\widetilde{V}_n(x) = \widetilde{V}_{n}^+\left(e^{-j\beta_n x}+\widetilde{\rho}_ne^{+j\beta_n x}\right)$$`
+
+
+`$$\widetilde{I}_n(x) = \frac{\widetilde{V}_{n}^+}{Z_{0n}}\left(e^{-j\beta_n x}-\widetilde{\rho}_ne^{+j\beta_n x}\right)$$`
+
+and use the fact that at the interfaces between two regions, `$\widetilde{I}_n(x)$` and `$\widetilde{V}_n(x)$` are continuous to find the reflection coefficients. For the following transmission line
+
+<img src="figures/Transmission_Line.svg"/>
+
+1. use the procedure covered in class to find `$\widetilde{\rho}_2$` and `$\widetilde{\rho}_1$` and then plot $|\widetilde{V}_n(x)|/|\widetilde{V}_s|$ and `$|\widetilde{V}_n(x)|/|\widetilde{I}_n(x)|$`
+2. use the Smith chart to find `$\widetilde{\rho}_2$` and `$\widetilde{\rho}_1$`.
+
+
+
 
 # Midterm
 

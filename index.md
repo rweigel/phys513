@@ -11,37 +11,7 @@ Subtitle: Applied Electromagnetic Theory
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
-HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3) | [4](hw.html#hw-4) | [5](hw.html#hw-5) | [6](hw.html#hw-6) | [7](hw.html#hw-7) | [8](hw.html#hw-8) | [9](hw.html#hw-9) | [10](hw.html#hw-10)
-
-# Schedule
-
-## Thursday, September 8th
-
-* Discuss [HW #2](hw.html#hw-2)
-* Cover dielectrics
-    * Fundamental dielectric example
-    * Discuss why capacitance increases when a dielectric is used
-    * Example of computing potential between plates of a capacitor that is half-filled with a dielectric using (1) Gauss's law and (2) BV method.
-
-## Thursday, September 1st
-
-* Discuss [HW #1](hw.html#hw-1), which is due on Saturday, September 3rd at 3pm.
-    * Student presentation of their problem #1
-    * Partial derivation of equation needed for problem #2
-    * Discussion of field lines expected for problem #2 and also general methods of sketching field lines
-* Cover [HW #2](hw.html#hw-2) topics
-    * Discuss an approach to problem #1 on [HW #2](hw.html#hw-2) (find $V$ due to sheet of charge at $d/2$ first, then generalize for sheet at $x'$, then use that $V$ and superposition)
-    * Review solutions of Laplace's equation for 2--D cartesian
-    * Solve boundary value problem for long duct with three sides grounded
-
-## Thursday, August 25th
-
-* Introductions
-* Syllabus
-* Cover [HW #1](hw.html#hw-1) topics
-    * Solving for $\mathbf{E}$ and $V$ for a parallel plate capacitor and long coaxial cylinders given potentials on conducting surfaces: Using (1) Gauss' law (assume $\pm Q$ on each conductor, find $\mathbf{E}$, and eliminate $Q$ using $V_o=-\int Edl$) and (2) using the Boundary Value method.
-    * The interpretation and calculation of capacitance.
-
+HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3) | [4](hw.html#hw-4) | [5](hw.html#hw-5) | [6](hw.html#hw-6) | [7](hw.html#hw-7) | [8](hw.html#hw-8) | [9](hw.html#hw-9) | [10](hw.html#hw-10) | [11](hw.html#hw-11)
 
 # Syllabus
 

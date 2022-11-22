@@ -635,7 +635,7 @@ and use the fact that at the interfaces between two regions, `$\widetilde{I}_n(x
 
 <img src="figures/Transmission_Line.svg"/>
 
-1. use the procedure covered in class to find `$\widetilde{\rho}_2$` and `$\widetilde{\rho}_1$` and then plot $|\widetilde{V}_n(x)|/|\widetilde{V}_s|$ and `$|\widetilde{V}_n(x)|/|\widetilde{I}_n(x)|$`
+1. use the procedure covered in class to find `$\widetilde{\rho}_2$` and `$\widetilde{\rho}_1$` and then plot $|\widetilde{V}(x)|/|\widetilde{V}_s|$ and `$|\widetilde{V}(x)|/|\widetilde{I}(x)|$`
 2. use the Smith chart to find `$\widetilde{\rho}_2$` and `$\widetilde{\rho}_1$`.
 
 

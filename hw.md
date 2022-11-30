@@ -640,7 +640,7 @@ and use the fact that at the interfaces between two regions, `$\widetilde{I}_n(x
 
 # Midterm
 
-Due Saturday, Octover 15th at 3 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.
+Due Saturday, October 15th at 3 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.
 
 ----
 

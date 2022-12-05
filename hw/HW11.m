@@ -31,12 +31,28 @@ V2 = V2p*(exp(-1j*beta2*x2) + rho2*exp(1j*beta2*x2));
 clf;hold on; grid on;
 plot(x1/1e-3, abs(V1),'k','LineWidth',2)
 plot(x2/1e-3, abs(V2),'k','LineWidth',2)
-legend('|V(x)/V_s|')
+plot([0, 5], [abs(V2(end)),abs(V2(end))],'k','LineWidth',2)
+text(5.5, abs(V2(end)),'...')
+legend('|V(x)/V_s|','AutoUpdate','off')
 xlabel('x [cm]')
 
 VSWR1 = (1+abs(rho1))/(1-abs(rho1));
 VSWR2 = (1+abs(rho2))/(1-abs(rho2));
-title(sprintf('VSWR_1 = %.2f; VSWR_2 = %.2f',VSWR1,VSWR2));
+VSWR3 = 1;
+title(sprintf('VSWR_1 = %.2f; VSWR_2 = %.2f; VSWR_3 = %d',VSWR1,VSWR2,VSWR3));
+
+box on;
+set(gca, 'XLim', [x1(1)/1e-3, 6])
+ylims = get(gca,'YLim');
+p = patch([x1(1), x1(end), x1(end), x1(1)]/1e-3,[ylims(1), ylims(1), ylims(2), ylims(2)],'k');
+set(p,'FaceAlpha',0.5,'EdgeColor','none');
+set(gca,'YLim',ylims)
+p = patch([x2(1), x2(end), x2(end), x2(1)]/1e-3,[ylims(1), ylims(1), ylims(2), ylims(2)],'k');
+set(p,'FaceAlpha',0.2,'EdgeColor','none');
+set(gca,'YLim',ylims)
+p = patch([0, 6, 6, 0],[ylims(1), ylims(1), ylims(2), ylims(2)],'k');
+set(p,'FaceAlpha',0.1,'EdgeColor','none');
+set(gca,'YLim',ylims)
 
 print('HW11.svg', '-dsvg');
 print('HW11.png', '-dpng', '-r300'); 

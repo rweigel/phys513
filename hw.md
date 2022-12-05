@@ -644,6 +644,8 @@ and use the fact that at the interfaces between two regions, `$\widetilde{I}_n(x
 1. use the procedure covered in class to find `$|\widetilde{\rho}_2|$` and `$|\widetilde{\rho}_1|$` and then plot $|\widetilde{V}(x)|/|\widetilde{V}_s|$ and `$|\widetilde{V}(x)|/|\widetilde{I}(x)|$`
 2. use the [Smith chart](https://www.acs.psu.edu/drussell/Demos/SWR/SmithChart.pdf) to find `$|\widetilde{\rho}_2|$` and `$|\widetilde{\rho}_1|$`.
 
+See [HW11.m](hw/HW11.m), [HW11.png](hw/HW11.png), and handout for written part.
+
 # Midterm
 
 Due Saturday, October 15th at 3 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.

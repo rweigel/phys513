@@ -670,7 +670,7 @@ The sphere at $r=a$ is grounded and the sphere at $r=3a$ is held at $V_o$; $a=1\
 
 Due on Monday, December 12th at 11:59 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.
 
-Two co-axial cables, each of length 1 m, are connected. One end of the combined cables is connected to an AC voltage generator with voltage amplitude of $V_g=1\text{ V}$. The other end is connected to a resistor.
+Two co-axial cables, each of length 1 m, are connected. One end of the combined cables is connected to an AC voltage generator with voltage amplitude of $V_g=1\text{ V}$ and frequency $f=10^6/2\pi$. The other end is connected to a resistor.
 
 The cable connected to the generator has an inductance of $L=0.1\text{ mH}$ and capacitance $C=1 \text{ }\mu\text{F}$. The other cable has an inductance of $L=0.4\text{ mH}$ and capacitance $C=1\text{ }\mu\text{F}$. The resistor has a resistance of $40\text{ }\Omega$.
 

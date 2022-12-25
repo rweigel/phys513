@@ -610,6 +610,8 @@ The basic method is to collapse the circuit in steps as shown below to find $Z_0
    
    `$Z_n = \widetilde{V}_n/\widetilde{I}_n$`
 
+   % Note that with this formulation, one needs to compute $I_0=V_0/Z_0$ by using iteration for impedance. See handwritten notes for how to avoid having to iterate to find Z_0.
+
    Verify that these equations that they give the same results as in part 2. Then implement a loop that computes the above for an arbitrary number of ladder steps.
 
 4. If $Z_L=\sqrt{L/C}$, a transmission line is said to be "perfectly matched" -- the impedance $Z_0$ seen at the source is real and $\widetilde{I}_0$ and $\widetilde{V}_0$ are in phase (recall the importance of this shown in a previous HW problem is that the power through the load is maximized). In the following, you will approximate a continuous transmission line with a ladder network.
@@ -620,30 +622,33 @@ The basic method is to collapse the circuit in steps as shown below to find $Z_0
 
 Save your code as `HW10_4.ext` and `HW10_5.ext`, where `ext` is the extension for the language (e.g., `m` or `py`). Save your plots as `HW10_4.pdf` and `HW10_5.pdf`.
 
+**Solution**
+
+See [HW10.m](hw/HW10.m) and handout for written part.
+
 # HW 11
 
 Due Saturday, December 3rd at 3pm.
 
-In class, I demonstrated how to compute reflection coefficients `$\widetilde{\rho}_n$` without the use of the Smith chart. The basic procedure is to start with
+In class, I demonstrated how to compute reflection coefficients `$\widetilde{\rho}_n$` without the use of the Smith chart. The basic procedure is to start with (assuming the time dependence is proportional to $e^{j\omega t}$ to be consistent with Ramo; Griffiths uses the $-j$ convention).
 
 `$$\widetilde{V}_n(x) = \widetilde{V}_{n}^+\left(e^{-j\beta_n x}+\widetilde{\rho}_ne^{+j\beta_n x}\right)$$`
 
 
 `$$\widetilde{I}_n(x) = \frac{\widetilde{V}_{n}^+}{Z_{0n}}\left(e^{-j\beta_n x}-\widetilde{\rho}_ne^{+j\beta_n x}\right)$$`
 
-and use the fact that at the interfaces between two regions, `$\widetilde{I}_n(x)$` and `$\widetilde{V}_n(x)$` are continuous to find the reflection coefficients. For the following transmission line
+and use the fact that at the interfaces between two regions, `$\widetilde{I}_n(x)$` and `$\widetilde{V}_n(x)$` are continuous to find the reflection coefficients. For the following transmission line having $\lambda_1=10\text{ cm}$ and $\lambda_2=5\text{ cm}$,
 
 <img src="figures/Transmission_Line.svg"/>
 
 1. use the procedure covered in class to find `$|\widetilde{\rho}_2|$` and `$|\widetilde{\rho}_1|$` and then plot $|\widetilde{V}(x)|/|\widetilde{V}_s|$ and `$|\widetilde{V}(x)|/|\widetilde{I}(x)|$`
-2. use the Smith chart to find `$|\widetilde{\rho}_2|$` and `$|\widetilde{\rho}_1|$`.
+2. use the [Smith chart](https://www.acs.psu.edu/drussell/Demos/SWR/SmithChart.pdf) to find `$|\widetilde{\rho}_2|$` and `$|\widetilde{\rho}_1|$`.
 
-
-
+See [HW11.m](hw/HW11.m), [HW11.png](hw/HW11.png), and handout for written part.
 
 # Midterm
 
-Due Saturday, Octover 15th at 3 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.
+Due Saturday, October 15th at 3 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.
 
 ----
 
@@ -660,3 +665,17 @@ The sphere at $r=a$ is grounded and the sphere at $r=3a$ is held at $V_o$; $a=1\
    Use a grid spacing of $a/3$ and iterate until the maximum absolute change in potential at any grid point is $1$%.
 
 3. Plot your solutions to 1. and 2. on the same axes.
+
+# Final
+
+Due on Monday, December 12th at 11:59 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.
+
+Two co-axial cables, each of length 1 m, are connected. One end of the combined cables is connected to an AC voltage generator with voltage amplitude of $V_g=1\text{ V}$ and frequency $f=10^6/2\pi$. The other end is connected to a resistor.
+
+The cable connected to the generator has an inductance of $L=0.1\text{ mH}$ and capacitance $C=1 \text{ }\mu\text{F}$. The other cable has an inductance of $L=0.4\text{ mH}$ and capacitance $C=1\text{ }\mu\text{F}$. The resistor has a resistance of $40\text{ }\Omega$.
+
+1. Find $\widetilde{V}_e(x)$, the exact expression for the voltage as a function of $x$, where $x=0$ is the position of the resistor and $x=-2\text{ m}$ is the position of the generator. You may leave your expressions in terms of variables that you define.
+2. Approximate this system with a ladder network with 2000 steps. Call this approximate voltage $\widetilde{V}_a$.
+3. On the same axes (one plot, two traces), plot $|\widetilde{V}_e(x)|$ and $|\widetilde{V}_a(x)|$ versus $x$.
+
+Save your code in a file named `final.ext`. Save your plot as `final-plot.pdf`. Don't forget to save your plot! Save your derivation for part 1. in a file named `final.pdf`.

@@ -373,7 +373,7 @@ In class, I will ask you to give a brief summary of your solution.
 
 **Answer**
 
-My code is located at https://github.com/rweigel/phys513/tree/master/hw (files with names that start with `HW4`).
+My code is located at https://github.com/rweigel/phys513/tree/master/2022/hw (files with names that start with `HW4`).
 
 I looked up the [analytic answer](http://www.netdenizen.com/emagnet/offaxis/iloopoffaxis.htm) for the off-axis magnetic field of a circular current loop . The off-axis field requires an integration of an elliptic integral.
 
@@ -434,7 +434,8 @@ On the following diagram, two rectangles labeled e. and b. are shown. In this re
 
 Read 3.14--3.17 of the textbook.
 
-The program `fdtd1d.m` in the fdtd directory at https://github.com/rweigel/phys513/ uses the Finite Difference Time Domain method to solve the equations
+The program `fdtd1d.m` in the fdtd directory at 
+https://github.com/rweigel/phys513/tree/master/fdtd uses the Finite Difference Time Domain method to solve the equations
 
 $$\boldsymbol{\nabla}\times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$$
 

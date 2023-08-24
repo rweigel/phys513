@@ -66,8 +66,9 @@ You will likely need to reference other textbooks in this course. The following 
 ### Undergraduate-level
 
 * Introduction to Electrodynamics by David J. Griffiths - the most commonly used junior-level undergraduate textbook for physics majors.
-* Field and Wave Electromagnetics by David K. Cheng - a commonly used junior-level undergraduate textbook for engineering majors.
-* Elements of Electromagnetics by Matthew N. O. Sadiku - a commonly used junior-level undergraduate textbook for engineering majors.
+* Electromagnetics by Notaros - junior-level undergraduate textbook for engineering majors.
+* Field and Wave Electromagnetics by David K. Cheng - junior-level undergraduate textbook for engineering majors.
+* Elements of Electromagnetics by Matthew N. O. Sadiku - junior-level undergraduate textbook for engineering majors.
 * Electricity and Magnetism (3rd Edition) by Edward M. Purcell and David J. Morin covers the same topics as Griffiths at the same level. If you are looking for an alternative explanation, this textbook will be helpful. The book contains far more examples, discussion, and content than Griffiths. It also includes solutions.
 * Schaum's outline of theory and problems of electromagnetics by Joseph A. Edminister is a useful reference for problems with full solutions and summaries of topics. [The 4th edition](https://www.amazon.com/Schaums-Outline-Electromagnetics-4th-Outlines/dp/0071831479/) contains chapters on transmission lines and waveguides.
 * Div, Grad, Curl, and All That: An Informal Text on Vector Calculus (4th Edition) by H. M. Schey is an excellent reference for the mathematical background that you need to understand for this course. The book contains a concise and clear review of topics that are covered in a vector calculus course (usually "Calculus III").
@@ -75,7 +76,6 @@ You will likely need to reference other textbooks in this course. The following 
 
 ### Graduate-level
 
-Two textbooks that cover applied E&M topics in detail are
 * Microwave Engineering by David M. Pozar.
 * [Electromagnetic Fields and Energy by Hermann Haus and James Melcher. RES.6-001, Spring 2008.](https://ocw.mit.edu/resources/res-6-001-electromagnetic-fields-and-energy-spring-2008/front-end-matter/)
 * [Electromagnetic Waves and Antennas by Sophocles J. Orfanidis](https://www.ece.rutgers.edu/~orfanidi/ewa/ewa-2up.pdf). This book is dense and comprehensive, but a supplement such as the course textbook and Microwave Engineering by Pozar is probably needed as a primary reference initially.

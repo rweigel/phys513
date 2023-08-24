@@ -11,6 +11,20 @@ Subtitle: Applied Electromagnetic Theory<br>Fall, 2023
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
+HWs: [HW 1](hw.html)
+
+# Schedule
+
+## August 24th
+
+* Introductions
+* Syllabus
+* Continuous Charge Distributions, Limits, and Dimensional Analysis
+  * Dimensional Analysis References:
+    * [A good reference to start with for dimensional analysis](https://drive.google.com/drive/folders/0B6antUcxBPXcZmR1NjJMZ2JnUWM?resourcekey=0-EBqg197VgdeBZT_RySwtIQ★★★★remove★★★★)
+    * [My collection of dimensional analysis references](https://drive.google.com/drive/folders/0B6antUcxBPXcZmR1NjJMZ2JnUWM★★★★remove★★★★)
+* Gauss's law (if time)
+
 # Syllabus
 
 ## Catalog Description
@@ -33,8 +47,8 @@ Homework assignments are due at 11:59 pm on Thursday so you have 3 hours to revi
 ## Grading
 
 * Homework: 30%
-* Mid-term (take-home): 35%
-* Final (take-home): 35%
+* Mid-term (part in-class, part take-home): 35%
+* Final (part in-class, part take-home): 35%
 
 The course letter grade is nominally determined using > 97: A+, 93 to 96.999: A-, 90 to 92.999: A-, 87 to 89.999: B+, 83 to 86.999: B, 80 to 82.999: B-, 70 to 70.999, 60, to 69.999: D, < 60: F. It is quite likely that these grade cut-offs will change downwards.
 
@@ -86,3 +100,4 @@ If you have a learning disability or other condition that may affect academic pe
 ## Counseling and Student Support
 
 Counseling and Psychological Services provides confidential psychological services, including 24/7 crisis intervention and consultation to faculty and staff: http://caps.gmu.edu/.
+

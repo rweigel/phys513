@@ -15,6 +15,15 @@ HWs: [HW 1](hw.html)
 
 # Schedule
 
+## August 31st
+
+* Discuss HW
+* Field Lines
+* Gauss's Law
+* GitHub
+* Discord
+* 1-D Boundary Value Problems
+
 ## August 24th
 
 * Introductions

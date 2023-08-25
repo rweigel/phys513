@@ -51,7 +51,7 @@ Homework assignments are due at 11:59 pm on Thursday so you have 3 hours to revi
 * Mid-term (part in-class, part take-home): 35%
 * Final (part in-class, part take-home): 35%
 
-The course letter grade is nominally determined using > 97: A+, 93 to 96.999: A-, 90 to 92.999: A-, 87 to 89.999: B+, 83 to 86.999: B, 80 to 82.999: B-, 70 to 70.999, 60, to 69.999: D, < 60: F. It is quite likely that these grade cut-offs will change downwards.
+The course letter grade is nominally determined using > 97: A+, 93 to 96.999: A, 90 to 92.999: A-, 87 to 89.999: B+, 83 to 86.999: B, 80 to 82.999: B-, 70 to 70.999, 60, to 69.999: D, < 60: F. It is quite likely that these grade cut-offs will change downwards.
 
 ## Textbook and References
 
@@ -88,7 +88,7 @@ Textbooks that cover advanced E&M theory are
 
 ## Academic Calendar and University Policy
 
-* [Academic Calenar](https://registrar.gmu.edu/calendars/)
+* [Academic Calendar](https://registrar.gmu.edu/calendars/)
 * [University Policy](http://universitypolicy.gmu.edu/)
 * Last class Thursday, November 30th
 

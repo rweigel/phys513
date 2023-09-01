@@ -11,7 +11,7 @@ Subtitle: Applied Electromagnetic Theory<br>Fall, 2023
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
-HWs: [HW 1](hw.html)
+HWs: [HW 1](hw.html#hw-1) | [HW 2](hw.html#hw-2)
 
 # Schedule
 

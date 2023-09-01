@@ -15,10 +15,20 @@ HWs: [HW 1](hw.html)
 
 # Schedule
 
+## September 7th
+
+* Discuss HW
+* Follow-up to question of using spherical Gaussian surface for derivation for field due to sheet of charge
+* Follow-up on "seems like sometimes zooming works, other times not". My answer to the above will in part cover this and I'll also look at a zoom-in with various Gaussian surfaces that can't be used.
+* Capacitance
+* 1-D Boundary Value Problems
+* GitHub
+* Discord
+
 ## August 31st
 
 * Discuss HW
-* Field Lines
+* Field Lines (referenced simulator: https://academo.org/demos/electric-field-line-simulator/)
 * Gauss's Law
 * GitHub
 * Discord

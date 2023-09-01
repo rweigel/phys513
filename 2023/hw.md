@@ -44,7 +44,9 @@ Turn in your notes that you have prepared for a presentation.
 
 # HW 2
 
-(Other problems will be posted on August 31st)
+Due September 7th at 11:59 pm. I will consider extension requests, for any problem _except_ problem 2.4. Problem 2.4 is a review problem that I want everyone to have solved so they have the required background for what I will discuss in class.
+
+If you are stuck, please ask questions on Discord or send me questions via email.
 
 ## Field Lines
 

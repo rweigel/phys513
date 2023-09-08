@@ -11,19 +11,29 @@ Subtitle: Applied Electromagnetic Theory<br>Fall, 2023
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
-HWs: [HW 1](hw.html#hw-1) | [HW 2](hw.html#hw-2)
+HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3)
 
 # Schedule
 
 ## September 7th
 
-* Discuss HW
+* GitHub (Start at 6:50 pm)
+* Discuss HW grading
+  * Red circle or red text means I took off for an error.
+  * Red circle around blue text - I meant to write text in red. Points were taken off.
+  * Blue circle around read text - I meant to write text in blue. Not points off.
+* Discuss common HW issues
+  * Not using limits to check answer.
+  * Using "by symmetry" without explanation. Symmetry is often subtile and I need a diagram to convince me you understood argument.
+  * I made many comments on notation. Get in the habit of being careful. This will help avoid embarassment in research presentations and help when you teach.
+  * Use of the "answer operator"
+* Common HW #2 issue - "sketch" means hand--drawn. "plot" means either draw by hand accurately with graph paper (computing points and then drawing curve) or using software.
 * Follow-up to question of using spherical Gaussian surface for derivation for field due to sheet of charge
 * Follow-up on "seems like sometimes zooming works, other times not". My answer to the above will in part cover this and I'll also look at a zoom-in with various Gaussian surfaces that can't be used.
+* Discuss HW 2.4
 * Capacitance
 * 1-D Boundary Value Problems
-* GitHub
-* Discord
+* Discord (Discussion needed)
 
 ## August 31st
 

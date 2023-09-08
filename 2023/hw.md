@@ -22,14 +22,134 @@ You may look up the exact solution, but cite your source. You may use any progra
 
 Print out the code you used for your answer and write the actual answer it yields in a comment.
 
+**Solution**
+
+The exact solution is (Griffiths 4th Edition, example 2.2):
+
+$$E_y=2k\lambda_oL\frac{1}{y\sqrt{y^2+L^2}}$$
+
+We want to re-write this is a form that will allow cancellation of constants that were not given when the above ratio is computed. Using $\lambda_o=Q/2L$, we have
+
+$$E_y=\frac{kQ}{L^2}\frac{1}{\ds\frac{y}{L}\left[1+\left(\frac{y}{L}\right)^2\right]^{1/2}}$$
+
+With $y=L$, 
+
+$$E_y=\frac{kQ}{L^2}\frac{1}{\sqrt{2}}$$
+
+For a charge $Q$ at position $(x,y)$
+
+$$E_y=kQ\frac{z}{(y^2+x^2)^{3/2}}$$
+
+Setting $y=L$, this can be written as
+
+$$E_y=\frac{kQ}{L^2}\frac{1}{\ds\left[1+\left(\frac{y}{L}\right)^2\right]^{3/2}}$$
+
+To compute the field due to multiple charges, we need to place charges at $x=-L,-L+\Delta, ..., L$. The spacing $\Delta/L$ is $2/(N-1)$.
+
+
+With $kQ/L^2$ term omitted, the sum is
+
+$$S(N)\equiv\frac{1}{N}\sum_{i=-(N-1)/2}^{(N-1)/2}\frac{1}{\ds\left[1+(i\Delta)^2\right]^{3/2}}$$
+
+Before implementing, check that this sum is correct by expanding it for $N=3$, $N=5$.
+
+**Important**: I want to see checks like this in your code. In analytical problems you should always use limits to check answer. In numerical problems, you should always use some sort of check on a reduced problem to check your implementation. The following checks took me some time, but because I had them, I was able to catch errors very quickly and also have confidence in my result. In my code, I also created two plots to help me build confidence in my result; see below. I plotted the sum as a function of $N$ and verified that it converged to a constant value (initially it did not, because I forgot to divide sum by $N$). I also plotted the error as a function of $N$ to verify that it was monotonically decreasing. (If it started increasing at some value of $N$, I would know that something went wrong.)
+
+$N=3$, $\Delta=1$ and we want the sum terms to correspond to charges at $x/L=-1, 0, $ and $1$.
+
+$$S(N)=\frac{1}{3}\sum_{i=-1}^{1}\frac{1}{\ds\left[1+(i\Delta)^2\right]^{3/2}}=
+\frac{1/3}{\ds\left[1+(-1)^2\right]^{3/2}}+
+\frac{1/3}{\ds\left[1+(0)^2\right]^{3/2}}+
+\frac{1/3}{\ds\left[1+(1)^2\right]^{3/2}}
+$$
+
+The result is $0.569035593728849$. This value is used in the following program as a check.
+
+$N=5$, $\Delta=2/(N-1)=1/2$ and we want charges at $x/L=-1, -1/2, 0, 1/2, $ and $1$.
+
+$$S(N)=\frac{1}{5}\sum_{i=-2}^{2}\frac{1}{\ds\left[1+(i\Delta)^2\right]^{3/2}}=
+\frac{1/5}{\ds\left[1+(-1)^2\right]^{3/2}}+
+\frac{1/5}{\ds\left[1+(-1/2)^2\right]^{3/2}}+
+\frac{1/5}{\ds\left[1+(0/2)^2\right]^{3/2}}+
+\frac{1/5}{\ds\left[1+(1/2)^2\right]^{3/2}}+
+\frac{1/5}{\ds\left[1+(1\Delta)^2\right]^{3/2}}
+$$
+
+The result is $0.627638057357283$.
+
+Notice the fact that the first two and last two terms evaluate to the same value. This can be used to reduce the number of computations.
+
+To finish the problem, evaluate 
+
+$$\left|\frac{1/\sqrt{2}-S(N)}{1/\sqrt{2}}\right|\le 0.01$$
+
+or $|1-\sqrt{2}S(N)|\le 0.01$
+
+for odd positive values of $N$ until the inequality is satisified. The result should be $N=51$. 
+
+The following two figures were used to check my algorithm. [Source code](solns/HW1_1.m)
+
+<img src="solns/HW1_1a.svg"/>
+
+<img src="solns/HW1_1b.svg"/>
+
 ## Charge on Cylinder
 
 Charge is uniformly distributed on the curved surface of a cylinder of length $h$ and radius $R$. The cylinder is centered on the origin, aligned with the $z$--axis, and has a uniform charge density of $\sigma_o$.
 
 <img src="https://rweigel.github.io/phys305/figures/Continuous-Charge-Densities-Cylinder.svg"/>
 
-
 Find $\mathbf{E}(z)$. Prior to doing any calculations, document limiting cases that you can use to check your answer.
+
+**Answer**
+
+Limiting cases:
+
+* Expect zero at origin.
+* Expect ring of charge solution as $h/R\rightarrow 0$
+* Expect infinite cylinder solution when $h\gg R$
+
+We also expect $E_z(z) = -E_z(z)$ (symmetry)
+
+The field for uniformly charged ring in the $x$--$y$ plane and centered on the origin is
+
+$$E_z=2\pi R\lambda k\frac{z}{\left(z^2+R^2\right)^{3/2}}=kQ\frac{z}{R}\frac{1}{\left(1+(z/R)^2\right)^{3/2}}$$
+
+If the ring is translated along the $z$--axis by $z'$, this corresponds to a translation of the coordinate system and we can write
+
+$$E_z=\frac{kQ}{R^2}\frac{\ds\left(\frac{z-z'}{R}\right)}{\ds\left(1+\left(\frac{z-z'}{R}\right)^2\right)^{3/2}}$$
+
+If we consider differential rings of height $dz'$, their area is $2\pi Rdz'$ and charge is
+
+$dQ=(2\pi Rdz')\sigma_o$
+
+Replacing $E_z$ with $dE_z$ and $Q$ with $dQ$ in the last equation for $E_z$, we have
+
+$$dE_z(z)=2\pi R k\frac{dz'}{R^2}\frac{\ds\left(\frac{z-z'}{R}\right)}{\ds\left(1+\left(\frac{z-z'}{R}\right)^2\right)^{3/2}}$$
+
+and this must be integrated from $z'=-h/2$ to $z'=h/2$. The result is
+
+$$E_z(z)=
+\frac{kQ}{R^2}
+\left[
+\frac{1}{h_R\sqrt{(\frac{z}{R}-\frac{h_R}{2})^2+1}}-
+\frac{1}{h_R\sqrt{(\frac{z}{R}+\frac{h_R}{2})^2+1}}
+\right]
+$$
+
+where $h_R \equiv h/R$. 
+
+(The solution was written in this form in anticipation for a problem on HW #2.)
+
+Checks:
+
+* $E_z(0)=0$ is satisfied.
+* We expect ring of charge solution as $h/R=h_R\rightarrow 0$. However, when we plug this into the above, we get $1/0-1/0$, which is indeterminate.
+* Expect infinitely long and uniformly charged cylinder solution when $h\gg R$ (or $h_R\gg 1$). When we plug this into the above, we get $0$. This can be shown to be correct using Gauss's law, from which it follows that $E_z=0$ at all points inside the cylinder (not only along $z$--axis, which we computed above).
+
+The symmetry condition $E_z(z) = -E_z(z)$ is satisifed.
+
+Addressing the last two limit requires a significant amount of effort ([see related problem](https://rweigel.github.io/phys685/hw.html#surface-current-on-cylinder)). In the next homework, you will consider an alternative approach.
 
 ## Reading
 
@@ -58,9 +178,9 @@ Consider a 2-D vector field defined by
 
 $$\mathbf{F} = F_x(x,y)\hat{\mathbf{x}} + F_y(x,y)\hat{\mathbf{y}}$$
 
-A field line is a line that is always tangent to the vector $\mathbf{F}$.  
+A field line is a line that is always tangent to the vector $\mathbf{F}$.
 
-To determine the equations that must be solved to find the field line, consider a differential distance $ds$ drawn in the direction of $\mathbf{F}$ at a given point. This step has a horizontal component of $dx$ and a vertical component of $dy$.  
+To determine the equations that must be solved to find the field line, consider a differential distance $ds$ drawn in the direction of $\mathbf{F}$ at a given point. This step has a horizontal component of $dx$ and a vertical component of $dy$.
 
 <img src="https://rweigel.github.io/phys513/2022/figures/similar_triangles.svg"/>
 
@@ -98,7 +218,7 @@ The electric field caused by a $+q$ charge at $(x',y',z')$ is
 
 $$\mathbf{E}(x,y,z) = kq\frac{(x-x')\hat{\mathbf{x}}+(y-y')\hat{\mathbf{y}}+(z-z')\hat{\mathbf{z}}}{\big[(x-x')^2+(y-y')^2+(z-z')^2\big]^{3/2}}$$
 
-Write a program that draws the field lines in the $x$-$y$ plane for a dipole: $+q$ at $(x,y,z)=(d,0,0)$ and $-q$ at $(x,y,z)=(-d,0,0)$. You may use the Forward Euler method, but I encourage you to use a better algorithm using an existing library (such as MATLAB's <code>ODE45</code> or SciPy's <code>ODEINT</code> or <code>SOLVE_IVP</code>). I have intentionally not specified how many lines to draw or given values for $q$ and $d$.
+Write a program that draws the field lines in the $x$-$y$ plane for a dipole: $+q$ at $(x,y,z)=(d,0,0)$ and $-q$ at $(x,y,z)=(-d,0,0)$. You may use the Forward Euler method, but I encourage you to use a better algorithm using an existing library (such as MATLAB's <code>ODE45</code> or SciPy's <code>ODEINT</code> or <code>SOLVE_IVP</code> **if you have prior experience with them**). I have intentionally not specified how many lines to draw or given values for $q$ and $d$.
 
 **Sample Code**
 
@@ -182,6 +302,21 @@ Create a plot of $E_z(z/R)/E_o$, where $E_o = kQ/R^2$ for (that is, plot $E_z/E_
  
 Be prepared to provide a physical explanation for the features of the curves and the ratios of $h/R$.
 
+**Solution**
+
+The following plot was created using https://www.desmos.com/calculator/vg2dblcbfc. This page is interactive, so you can adjust the $h/R$ ratio.
+
+Comments:
+
+* By using the dimensionless ratio, we can easily compare the fundamental features of the cylinder equation using only one parameter. If instead we plotted $E$ vs $z$, we would need to plot the equation for many values of $R$ and $h$ to understand the full range shapes the equation can have.
+* As $h/R$ decreases, the cylinder solution approaches the ring solution. For $h/R=0.1$, the lines for the ring and cylinder cannot be distinguished by eye.
+* For $h/R=1$, the cylinder and ring curves increasingly overlap starting at approximately $z/R=1$. This means the cylinder field is becoming more and more like the ring field as $z/R$ increases, which is expected.
+* The ring and cylinder curves (for $h/R=1$) overlap with the point charge curve for large $z/R$. This is expected because both being to "look" like a point charge as you move away from them.
+* The explanation for the curve approaching zero as $r/R$ increases is in this limit, the cylinder appears to be "long". Inside of an infinitely long cylinder $h/R\rightarrow \infty$, the field is zero (even off--axis). This can be shown by using Gauss's law.
+* All curves have odd symmetry ($E(-z)=-E(z)$), as expected -- the field for $z>0$ is positive and the field for $z<0$ is negative. (The image below only shows $z/R > 0$.)
+
+<img src="solns/HW2_2.png" width="500px"/>
+
 ## Checking Gauss's Law
 
 Given a point charge $Q$ at the origin, compute the electric flux $\Phi_E=\int\mathbf{E}\bfcdot d\mathbf{A}$ through one face of a cube that is also centered on the origin using Coulomb's law and explicit evaluation of the integral.
@@ -221,3 +356,60 @@ Using Gauss's law and the fact that the electric field inside a conductor must b
    Assume $\psi(0)=0$ (I will discuss why this choice is arbitrary in class) and using $E$ found in part 4., find and sketch a plot of $\psi/(kQ/a)$ versus $r/a$.
    
    In class, I will ask for a physical explanation for why I will get the same result if I choose a different integration path. For example, if my integration path was radial, then tangential, then radial again. This is covered in most intro textbooks. I'll also ask why I ask for plots of dimensionless parameters in this problem and in other problems on this HW.
+   
+# HW 3
+
+Due September 14th at 11:59 pm.
+
+If you are stuck, please ask questions on Discord or send me questions via email.
+
+## Limiting Behavior (Again)
+
+A square sheet of charge with side length $w$ that lies in the $x$--$y$ plane and is centered on the origin has an electric field along the $z$--axis of
+
+$$E_z(z)=\frac{\sigma_o}{\pi \epsilon_o}\tan^{-1}\left[\frac{w^2}{4z}\frac{1}{\sqrt{z^2+w^2/2}}\right]$$
+
+1. State two limits that can be used to check this equation.
+2. Check the limits mathematically (hint: you will need to use for a Taylor series for one limit and a Laurent series for another limit. See [Wolfram Alpha's information on $\tan^{1}(x)$](https://www.wolframalpha.com/input?i=atan%28x%29) or [proofwiki](https://proofwiki.org/wiki/Power_Series_Expansion_for_Real_Arctangent_Function) for small and large $x$).
+3. Plot $E_z(z')/E_o$ vs. $z'$, where $z'=z/w$ and $E_o=\sigma_o/2\epsilon_o$. Discuss the features of the curve (see HW 2.2 for an example) and how they match the curves for the two limiting cases, which you should plot on the same axis. (Plot using a program such as Desmos, Python, MATLAB, etc.).
+
+## Computing Capacitance
+
+In HW 2.4, you computed the potential difference between two conductors, given one had a net charge of $Q$ and the other $-Q$. The definition of the capacitance for two conductors is
+
+$$C=\frac{Q}{|\Delta V|}$$
+
+where $Q>0$ and $\Delta V$ is the difference in potential between the conductors when they have an equal and opposite amount of charge. (One often sees the definition of capacitance without the absolute value; in this cases $\Delta V$ is the $V_{+Q}-V_{-Q}$, that is, the potential of the $+Q$ conductor minus the potential of the $-Q$ conductor.)
+
+To find the difference in potential, a line integral was used. This equation does not specify the path of integration.
+
+1. Why?
+
+2. Compute the capacitance of the system considered in HW #2.4.
+
+In HW 2.4, you used Gauss's law to find $E$ and then found $\Delta V$ by integrating $E$ and then used the equation for capacitance. This approach can only be used for systems where $E$ can be found using Gauss's law.
+
+An alternative is to use Laplace's equation. In spherical coordinates with variation only in the radial direction, it is
+
+$$
+\nabla^2\Phi(r)=
+{1 \over r^{2}}{\partial \over \partial r}\left(r^{2}{\partial \Phi \over \partial r}\right)=0
+$$
+
+3. Find the general solution to this equation (it should have two unknown constants; see a related problem on [page 40 of the textbook](https://drive.google.com/file/d/1zmcFCJX_in4Z3Z6UoQum0ERrJlFfN8Lh/view?usp=drive_link)).
+4. Assume the outer conductor is at a potential of $V_o$ and the inner at $0$. Find $V(r)$ for $a\le r\le b$.
+
+We need to know $\Delta V$ and $Q$ in the capacitance equation. Here we were given $\Delta V$ and don't know $Q$ (reverse of the Gauss's law case). However, we know $E$ is related to $V$ and also that just outside a conductor, the charge density is related to $E$ via $\sigma=\epsilon_o\mathbf{E}\cdot\hat{\mathbf{n}}$, where $\hat{\mathbf{n}}$ is the normal unit vector to the conducting surface with outward positive.
+
+5. Use $V(r)$ to find $E(r)$.
+6. Find the charge density and then charge on each conductor.
+7. Find the capacitance using $V_o$ and the charge computed in the previous step.
+
+(If you want to work ahead, develop a numerical solution of this problem.)
+
+## Laplace' Equation in Two Dimensions -- Numerical
+
+1. Verify the numbers in the textbook's Step 1 column of Table 1.20. Show your calculations on a piece of paper. (In class, we will start developing a program to compute the potentials in the other columns.)
+2. Find the equation for this problem's exact potential if all sides are set to have zero potential except the side at $80\text{ V}$. I recommend finding a solution first and using it to answer this part; if you have time, attempt to derive it.
+
+(If you want to work ahead, develop a numerical solution to this problem and compare it to the exact solution.)

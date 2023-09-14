@@ -288,6 +288,14 @@ end
 
 Save your as a file with name <code>HW2_1.ext</code>, where <code>ext</code> is the file extension for your program, e.g., <code>m</code>, <code>py</code>, etc. Save a PDF or PNG of your plot and name it <code>HW2_1.png</code> or <code>HW2_1.pdf</code>. If you used a spreadsheet, you do not need to upload an image; instead upload the spreadsheet file (if you used Google Docs, create a file named <code>HW2_1.link</code> and paste the link to your Google Spreadsheet; make sure that your spreadsheet is visible to anyone with the link).
 
+**Comments**
+
+Several students used the MATLAB function `streamline` or `quiver`. This are acceptable functions to use in general for visualizing a vector field. However, this problem involved writing code that would draw a field line with the motivation that you would understand the basic algorithm of taking a steps in the horizontal/vertical direction in proportion to the electric field in horizontal/vertical direction.
+
+In retrospect, I modified the problem statement to include the bold passage below because students assumed that I meant use "`ODE45`". In general, if you have having difficulties with a problem, attempt an easier approach first. This is especially true for computational problems.
+
+> ... but I encourage you to use a better algorithm using an existing library (such as MATLAB's <code>ODE45</code> or SciPy's <code>ODEINT</code> or <code>SOLVE_IVP</code> **if you have prior experience with them**) ...
+
 ## Limiting Behavior For Cylinder
 
 In the previous HW, you computed the electric field along the centerline of a cylinder with a uniform surface charge on its curved surface.
@@ -302,6 +310,7 @@ Create a plot of $E_z(z/R)/E_o$, where $E_o = kQ/R^2$ for (that is, plot $E_z/E_
  
 Be prepared to provide a physical explanation for the features of the curves and the ratios of $h/R$.
 
+\ifsolutions
 **Solution**
 
 The following plot was created using https://www.desmos.com/calculator/vg2dblcbfc. This page is interactive, so you can adjust the $h/R$ ratio.
@@ -316,14 +325,46 @@ Comments:
 * All curves have odd symmetry ($E(-z)=-E(z)$), as expected -- the field for $z>0$ is positive and the field for $z<0$ is negative. (The image below only shows $z/R > 0$.)
 
 <img src="solns/HW2_2.png" width="500px"/>
+\fi
 
 ## Checking Gauss's Law
 
 Given a point charge $Q$ at the origin, compute the electric flux $\Phi_E=\int\mathbf{E}\bfcdot d\mathbf{A}$ through one face of a cube that is also centered on the origin using Coulomb's law and explicit evaluation of the integral.
 
-(From Gauss's law, the net flux through any _closed_ surface is $Q_{encl}/\epsilon_o$. The net flux through the cube's surface is $Q/\epsilon_o$, and the flux must be the same through each face, so we expect the answer to be $Q/6\epsilon_o$. In this problem, you are being asked to show that you get the same result without using Gauss's law.)
+\ifsolutions
 
-## Charge on Concentric Thin Shells
+**Solution**
+
+From Gauss's law, the net flux through any _closed_ surface is $Q_{encl}/\epsilon_o$. The net flux through the cube's surface is $Q/\epsilon_o$, and the flux must be the same through each face, so we expect the answer to be $Q/6\epsilon_o$. In this problem, you are being asked to show that you get the same result without using Gauss's law.
+
+Several students solved for case when cube was not centered on the origin but rather had one corner at the origin and edges along the cartesian coordinate axes. In this case, one can conclude the flux through one face should be $Q/24\epsilon_o$. This is equivalent to asking if we split the given cube into $8$ sub--cubes, what is the flux through the outer face of one of the sub-cubes. In this case, the face area of the sub--cube is $1/4$ of the area of the main cube. In addition to being the wrong problem, the solution given does not use Coulomb's law and explicit evaluation of the integral. (The motivation for this problem is to reinforce the idea that Gauss' law holds for arbitrary surfaces and as practice for setting up integration.)
+
+In general,
+
+$\mathbf{r}=x\xhat + y\yhat + z\zhat$. If we assume the side length is $2a$, then for the top side, $\mathbf{r}=x\xhat + y\yhat + a\zhat$.
+
+We need to evaluate
+
+$$\Phi_E=\int_{\text{top}}\mathbf{E}\bfcdot d\mathbf{A}$$
+
+Using
+
+$\ds\mathbf{E}=kq\frac{\mathbf{r}}{r^3}$ and $d\mathbf{A}=dxdy\hat{\mathbf{z}}$, the integral is
+
+$$\Phi_E=kq\int_{-a}^{a}dy\int_{-a}^{a}\frac{adx}{\sqrt{a^2+x^2+y^2}^{3/2}}$$
+
+or, nondimensionalizing the integral using $x\rightarrow x/a$ and $y\rightarrow y/a$,
+
+$$\Phi_E=kq\int_{-1}^{1}dy\int_{-1}^{1}\frac{dx}{\sqrt{1+x^2+y^2}^{3/2}}$$
+
+Defining $b^2=1+y^2$ and using [Wolfram Alpha for the integration](https://www.wolframalpha.com/input?i=integrate+1%2F%28sqrt%28b%5E2%2Bx%5E2%29%29%5E%283%29+from+-1+to+1), we have
+
+$$\Phi_E=kq\int_{-1}^{1}dy\frac{2}{(1+y^2)\sqrt{2+y^2}}$$
+
+Using [Wolfram Alpha](), $\Phi_E=kq(2\pi/3)=q/6\epsilon_o$.
+\fi
+
+## Charge on Concentric Thick Shells
 
 Charge placed on concentric spherical conducting shells, the cross--section of which is shown. Both shells have a thickness of $t$. The inner shell has an outer radius of $a$ and a net charge of $-Q$. The outer shell has an inner radius of $b$ and a net charge of $+Q$. Assume that $Q$ is positive.
 
@@ -333,11 +374,29 @@ Using Gauss's law and the fact that the electric field inside a conductor must b
 
 1. there can be no charge on the inner surface of the inner conductor,
 
+   \ifsolutions
+    **Answer**: A Gaussian sphere with a surface inside the inner conductor has $E=0$ on its surface (b/c $E$ inside a conductor is zero). Based on $\oint \bfvec{E}\bfcdot d\mathbf{l}=Q_{\text{encl}}/\epsilon_o$, this implies $Q_{\text{encl}}=0$. (Note that all charges must be on the surface of a conductor, so the only possible location for the charge is on the inner and outer surfaces.)
+   \fi
+
 2. the charge on the inner surface of the outer conductor is $+Q$, and
+
+   \ifsolutions
+    **Answer**: A Gaussian sphere with its surface inside the outer conductor has $E=0$ on its surface (b/c $E$ inside a conductor is zero). Based on $\oint \bfvec{E}\bfcdot d\mathbf{l}=Q_{\text{encl}}/\epsilon_o$, this implies $Q_{\text{encl}}=0$. We know the charge on the inner conductor must be $-Q$. To make the charge inside this sphere zero, we need $+Q$ on the inner surface of the inner conductor to get $Q_{\text{encl}}=0$.
+   \fi
 
 3. there is no charge on the outer surface of the outer conductor.
 
+   \ifsolutions
+    **Answer**: If the total charge on the outer conductor is $+Q$ and all of it is on its inner surface, but conservation of charge, there is no charge on its outer surface. Recall that charges arrange themselves on a conductor to make the electric field inside all conductors zero. With this charge arrangement, the field due to the charges on the outer surface of the inner conductor cancels the field due to the charge on the inner surface of the outer conductor for $r>b$.
+   \fi
+
 4. Find the electric field in each of the five labeled regions and sketch a plot of $E/(kQ/a^2)$ versus $r/a$. Region 1. is the empty volume inside of the inner conductor, region 2. is the inner conductor, region 3. is the empty volume between the conductors, region 4. is the outer conductor, and region 5. is the region outside of the outer conductor. (Hint: Use Gauss's law several times; when not zero, the electric field should be proportional to $1/r^2$.)
+
+   \ifsolutions
+   **Answer**: 1. $E=0\quad$ 2. $E=0\quad$ 3. $E/(kQ/a^2)=-1/(r/a)^2\quad$ 4. $E=0\quad$ 5. $E=0$
+   \else
+   \vspace{4em}
+   \fi
 
 5. Recall that because the electric field has the form of $\rhat/r^2$, we can always find a scalar function $\psi$ (which we call electric potential) such that
 
@@ -356,7 +415,24 @@ Using Gauss's law and the fact that the electric field inside a conductor must b
    Assume $\psi(0)=0$ (I will discuss why this choice is arbitrary in class) and using $E$ found in part 4., find and sketch a plot of $\psi/(kQ/a)$ versus $r/a$.
    
    In class, I will ask for a physical explanation for why I will get the same result if I choose a different integration path. For example, if my integration path was radial, then tangential, then radial again. This is covered in most intro textbooks. I'll also ask why I ask for plots of dimensionless parameters in this problem and in other problems on this HW.
-   
+
+   \ifsolutions
+   **Solution**
+
+    In region 1, $\ds\psi(r)-\psi(0)=-\int_0^r 0 dr \Rightarrow \psi(r)=0$ and $\psi(a-t)=0$.
+
+    In region 2, $\ds\psi(r)-\psi(a-t)=-\int_{a-t}^r 0 dr \Rightarrow \psi(r)=0$ and $\psi(a)=0$.
+    
+    The fact that the potential is constant in region 2. is consistent with the expectation that a conductor is an equipotential.
+
+    In region 3, $\ds\psi(r)-\psi(a)=kQ\int_a^r 1/r^2 dr \Rightarrow \psi(r)=kQ(1/a-1/b)$ and $\psi(b)=kq(1/a-1/b)$
+
+    Note that the potential at $b$ is larger than that at $a$, which is expected because 
+
+    In region 5, $\ds\psi(r)-\psi(c)=-\int_0^r 0 dr \Rightarrow \psi(r)=\psi(c)$.
+
+   \fi
+
 # HW 3
 
 Due September 14th at 11:59 pm.
@@ -372,6 +448,50 @@ $$E_z(z)=\frac{\sigma_o}{\pi \epsilon_o}\tan^{-1}\left[\frac{w^2}{4z}\frac{1}{\s
 1. State two limits that can be used to check this equation.
 2. Check the limits mathematically (hint: you will need to use for a Taylor series for one limit and a Laurent series for another limit. See [Wolfram Alpha's information on $\tan^{1}(x)$](https://www.wolframalpha.com/input?i=atan%28x%29) or [proofwiki](https://proofwiki.org/wiki/Power_Series_Expansion_for_Real_Arctangent_Function) for small and large $x$).
 3. Plot $E_z(z')/E_o$ vs. $z'$, where $z'=z/w$ and $E_o=\sigma_o/2\epsilon_o$. Discuss the features of the curve (see HW 2.2 for an example) and how they match the curves for the two limiting cases, which you should plot on the same axis. (Plot using a program such as Desmos, Python, MATLAB, etc.).
+
+\ifsolutions
+**Solution**
+
+1. Recall that
+
+   $$
+   \text{sign}(x) =
+   \begin{cases}
+   \phantom{-}1\text{ for } x\gt 0 \\
+  -1\text{ for } x\lt 0
+   \end{cases}
+   $$
+
+  * Far away ($z'\gg 1$), field should apprach that of a point charge with $Q=\sigma_ow^2$
+
+    $$E_z/E_o=\frac{1}{2\pi}\frac{1}{z'^2}\text{sign}(z')$$
+    
+    A common error was the omission of $\text{sign}(z')$. Without it, the equation implies the field is always in the $+z$ direction.
+
+  * Near the surface ($z'\ll 1$), field should approach that of an infinite and uniformly charged sheet
+
+    $$E_z/E_o = \text{sign}(z)$$
+
+2. In dimensionless form, we have 
+
+   $$\frac{E_z(z')}{E_o}=\frac{2}{\pi}\tan^{-1}\left[\frac{1}{4z'}\frac{1}{\sqrt{z'^2+1}}\right]$$
+
+   For $z'\ll 1$, the argument to $\tan^{-1}$ is large. From the sources cited $\tan^{-1}(x)\approx \text{sign}(x)\pi/2$ for large $x$ (Wolfram only gives large positive $x$, but $\tan^{-1}(x)$ is an odd function, so the limiting value depends on the sign of $x$).
+
+   $$\frac{E_z(z')}{E_o}\rightarrow\frac{2}{\pi}\frac{\pi}{2}\text{sign}(z')=\text{sign}(z')$$
+
+   For $z'\gg 1$, the argument to $\tan^{-1}$ is small. From the sources cited $\tan^{-1}(x)\approx x$ for small $x$. 
+
+   $$\frac{E_z(z')}{E_o}\rightarrow\frac{2}{\pi}\left[\frac{1}{4z'|z'|}\right]=\frac{1}{2\pi}\frac{1}{z'^2}\text{sign}(z')$$
+
+   (Technically, we should do a Taylor series expansion of the full equation instead simply replacing $z'^2+1$ with $z'^2$ and $\tan^{-1}(f(z'))$ with $f(z')$, but the result is the same.)
+
+3. From https://www.desmos.com/calculator/nkxxr4fioy:
+
+   <img src="solns/HW3_1.png" width="50%"/>
+
+   Curve matches the two limits given in part 1. For $|z|/w \gtrapprox 1$, field of finite sheet is less than $\sim 2$% different from the field when all of the charge is collapsed onto the origin. To be within $\sim 2$% of the field of an infinite sheet, one needs $|z|/w \lt 1/100$. (I expected the curve to be flatter near $z=0$ so that the range for which the infinite sheet was accurate was larger.)
+\fi
 
 ## Computing Capacitance
 
@@ -407,7 +527,7 @@ We need to know $\Delta V$ and $Q$ in the capacitance equation. Here we were giv
 
 (If you want to work ahead, develop a numerical solution of this problem.)
 
-## Laplace' Equation in Two Dimensions -- Numerical
+## Laplace's Equation in Two Dimensions -- Numerical
 
 1. Verify the numbers in the textbook's Step 1 column of Table 1.20. Show your calculations on a piece of paper. (In class, we will start developing a program to compute the potentials in the other columns.)
 2. Find the equation for this problem's exact potential if all sides are set to have zero potential except the side at $80\text{ V}$. I recommend finding a solution first and using it to answer this part; if you have time, attempt to derive it.

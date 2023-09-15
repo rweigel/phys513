@@ -11,9 +11,13 @@ Subtitle: Applied Electromagnetic Theory<br>Fall, 2023
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
-HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3)
+HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3) | [4](hw.html#hw-4)
 
 # Schedule
+
+## September 14th
+
+* To encourage you to review solutions, if I made a comment on a common error in my solutions, I'll mark off for later homeworks for the same error.
 
 ## September 7th
 
@@ -64,6 +68,8 @@ Classical electromagnetic theory with applications. Topics include electrostatic
 ## Format
 
 My primary objective for this course is for students to be able to solve and present advanced electricity and magnetism problems related to the topics given in the catalog description. I will cover topics in chapters 1-6 of [Fields and Waves in Communication Electronics, third edition by Simon Ramo, John R. Whinnery, Theodore Van Duzer, Wiley, 1994](http://www.amazon.ca/Fields-Waves-Communication-Electronics-Simon/dp/0471585513).
+
+Many of the students in this class have had only E&M at the freshman undergraduate level. As a result, not all of the topics in the texbook are covered, and the focus is on a basic understanding of the fundamentals using theoretical and computation problems. In addition, I emphasize problem solving skills: Determining expected features of the solution to a given problem using analogies, limits, or similar problems, using non--dimensionalization to better understand the dependence of solutions on problem parameters, and building computational solutions in small steps with many intermediate checks.
 
 Approximately 1/2 of class time will be a lecture. The rest of the time will be spent with students working on problems or presenting problems using the whiteboard.
 

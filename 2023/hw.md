@@ -240,7 +240,7 @@ In this [Spreadsheet](https://docs.google.com/spreadsheets/d/1AL08kI-UhRC2qocJcr
 
 You can access MATLAB using the Citrix Virtual Lab: https://its.gmu.edu/service/citrix-virtual-lab/. Make sure to install the app first. The instructions say it is recommended, but I was not able to get things to work until I installed the app.
 
-```matlab
+```bash
 function ode_demo()
 
     %% Forward Euler
@@ -466,7 +466,7 @@ $$E_z(z)=\frac{\sigma_o}{\pi \epsilon_o}\tan^{-1}\left[\frac{w^2}{4z}\frac{1}{\s
 
     $$E_z/E_o=\frac{1}{2\pi}\frac{1}{z'^2}\text{sign}(z')$$
     
-    A common error was the omission of $\text{sign}(z')$. Without it, the equation implies the field is always in the $+z$ direction.
+    A common error was the omission of $\text{sign}(z')$. Without it, the equation implies the field is always in the $+z$ direction; however, for $z<0$, the $E_z < 0$ since the field points away from the origin.
 
   * Near the surface ($z'\ll 1$), field should approach that of an infinite and uniformly charged sheet
 
@@ -490,7 +490,7 @@ $$E_z(z)=\frac{\sigma_o}{\pi \epsilon_o}\tan^{-1}\left[\frac{w^2}{4z}\frac{1}{\s
 
    <img src="solns/HW3_1.png" width="50%"/>
 
-   Curve matches the two limits given in part 1. For $|z|/w \gtrapprox 1$, field of finite sheet is less than $\sim 2$% different from the field when all of the charge is collapsed onto the origin. To be within $\sim 2$% of the field of an infinite sheet, one needs $|z|/w \lt 1/100$. (I expected the curve to be flatter near $z=0$ so that the range for which the infinite sheet was accurate was larger.)
+   Curve matches the two limits given in part 1. For $|z|/w > 1$, field of finite sheet is less than $2$% different from the field when all of the charge is collapsed onto the origin. To be within $\sim 2$% of the field of an infinite sheet, one needs $|z|/w \lt 1/100$. (I expected the curve to be flatter near $z=0$ so that the range for which the infinite sheet was accurate was larger.)
 \fi
 
 ## Computing Capacitance
@@ -516,7 +516,7 @@ $$
 {1 \over r^{2}}{\partial \over \partial r}\left(r^{2}{\partial \Phi \over \partial r}\right)=0
 $$
 
-3. Find the general solution to this equation (it should have two unknown constants; see a related problem on [page 40 of the textbook](https://drive.google.com/file/d/1zmcFCJX_in4Z3Z6UoQum0ERrJlFfN8Lh/view?usp=drive_link)).
+3. Find the general solution to this equation (it should have two unknown constants; see a related derivation on [page 40 of the textbook](https://drive.google.com/file/d/1zmcFCJX_in4Z3Z6UoQum0ERrJlFfN8Lh/view?usp=drive_link)).
 4. Assume the outer conductor is at a potential of $V_o$ and the inner at $0$. Find $V(r)$ for $a\le r\le b$.
 
 We need to know $\Delta V$ and $Q$ in the capacitance equation. Here we were given $\Delta V$ and don't know $Q$ (reverse of the Gauss's law case). However, we know $E$ is related to $V$ and also that just outside a conductor, the charge density is related to $E$ via $\sigma=\epsilon_o\mathbf{E}\cdot\hat{\mathbf{n}}$, where $\hat{\mathbf{n}}$ is the normal unit vector to the conducting surface with outward positive.
@@ -533,3 +533,82 @@ We need to know $\Delta V$ and $Q$ in the capacitance equation. Here we were giv
 2. Find the equation for this problem's exact potential if all sides are set to have zero potential except the side at $80\text{ V}$. I recommend finding a solution first and using it to answer this part; if you have time, attempt to derive it.
 
 (If you want to work ahead, develop a numerical solution to this problem and compare it to the exact solution.)
+
+# HW 4
+
+Save your solutions in a file named `HW4.pdf` and upload it to your repository.
+
+## A Model of Polarization
+
+In Example 4.3 of Griffiths (3rd and 4th Edition), he models a polarized sphere by using two uniformly charged spheres with centers that are separated by a small distance. 
+
+In this problem, a polarized slab will be modeled using two slabs of charge with uniform and opposite charge density that are offset by a small distance $\delta$.
+
+1. Find $\mathbf{E}^+(y)$ for the slab with uniform charge density $\rho_o$ shown in the following figure. Assume that the slab is infinite in extent in the $\pm z$ and $\pm x$ directions so that Gauss's law can be used to find $\mathbf{E}$. (This slab can be thought of as being composed of thin sheets of charge stacked together and so an alternative to using Gauss's law is to sum the electric field due to sheets of charge.)
+
+   <img src="https://rweigel.github.io/phys305/figures/Gausss_Law_Uniform_Slab.svg"/>
+
+2. Sketch (by hand) $\mathbf{E}^+(y)$ vs $y$. Label key points on the $y$--axis.
+
+3. Next, compute and plot $\mathbf{E}^-(y)$ for the same slab if it had charge density of $-\rho_o$ and was shifted by $-\delta$ in the $y$--direction. Assume that $\delta\ll t$.
+
+4. Compute and sketch $\mathbf{E}^+ + \mathbf{E}^-$.
+
+## Bound Charges
+
+Read 4.1--4.4 of Griffiths, Introduction to Electrodynamics (3rd or 4th edition).
+
+A result in section 4.2 is that the electric potential (and also electric field, which is related to electric potential) of a polarized object can be found by computing the bound surface and volume charge densities $\sigma_b$ and $\rho_b$, respectively. 
+
+In the previous problem, a polarized object was modeled and you should have found that the electric field that resulted was approximately equivalent to the field due to a sheet with a positive charge density at $y\approx t/2$ and a sheet with a negative density at $y\approx -t/2$ (except in two small regions of width $\delta$). 
+
+What is the charge density on infinite sheets at $y=t/2$ and $y=-t/2$ that gives the same $\mathbf{E}(y)$ (except in two small regions) as found in the previous problem?
+
+## Capactor with Dielectrics -- Analytical
+
+(Related problems are in section 1.15 of Ramo and example 4.5 of Griffiths 3rd and 4th edition.)
+
+A large parallel plate capacitor is half--filled with two linear dielectrics with permittivities of $\epsilon_1$ and $\epsilon_2$. Assume that the capacitor is large enough that the potential only varies in the $x$--direction. In the diagram, the dotted rectangle is the cross--section of a Gaussian cylinder referenced in parts 4. and 5.
+
+<img src="../figures/Capacitor_With_Dielectric.svg"/>
+
+1. Solve $\nabla^2 V$ in each dielectric using $V_1(0)=0$, $V_2(2d)=V_o$, $V_1(d)=V_2(d)$ and $D_1(d)=D_2(d)$.
+2. Verify that when $\epsilon_1=\epsilon_2=\epsilon_o$, the answer is as expected from a problem solved previously in class.
+
+Using your answer to 1.,
+
+3. use $\sigma_b=\mathbf{P}\bfcdot\hat{\mathbf{n}}$ to find the four bound surface charge densities (that is, the bound charge density on the left and right surfaces on both dielectrics);
+4. show that Gauss's law $\oint \mathbf{E}\bfcdot d\mathbf{a}=\sigma/\epsilon_o$ is satisfied for the Gaussian cylinder shown on the diagram ($\sigma$ in this equation is all charges: bound and free); and
+5. show that Gauss's law for dielectrics, $\oint \mathbf{D}\bfcdot d\mathbf{a}=\sigma_{\text {free}}$ is satisfied for the Gaussian cylinder shown on the diagram ($\sigma_{\text {free}}$ in this equation is all non--bound charges).
+
+## Laplace' Equation in 1--D Spherical -- Numerical
+
+In Section 1.20 of the texbook, a derivation is given for a numerical algorithm for solving Laplace's equation in 2--D cartesian.
+
+1. Use similar steps to derive an algorithm for solving numerically solving Laplace's equation in 1--D spherical, which is
+
+    $$
+    \nabla^2\Phi(r)=
+    {1 \over r^{2}}{\partial \over \partial r}\left(r^{2}{\partial \Phi \over \partial r}\right)=0
+    $$
+
+    If $r\ne 0$, then
+
+    $$
+    \nabla^2\Phi=
+    {\partial \over \partial r}\left(r^{2}{\partial \Phi \over \partial r}\right)=0
+    $$
+    
+    Using the product rule, we can write 
+    
+    $$
+    \nabla^2\Phi=
+    2r{\partial \Phi \over \partial r} + r^{2}{\partial^2 \Phi \over \partial r^2}=0
+    $$
+    
+2. If $\Phi(r=2)=1$ and $\Phi(r=1)=0$, use your algorithm from 1. to find the potential at $r=1.5$. (Use a grid with points at $r=1$, $r=1.5$, and $r=2$.)
+3. Repeat 2. using a grid with points at $r=1$, $r=4/3$, $r=5/3$, and $r=2$.
+
+## Laplace's Equation in 2-D Cartesian -- Numerical
+
+Use the equation found in HW problem 3.3.2 to determine if the "Correct Potentials" column in Table 1.20 of Ramo are correct.

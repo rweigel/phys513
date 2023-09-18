@@ -534,6 +534,30 @@ We need to know $\Delta V$ and $Q$ in the capacitance equation. Here we were giv
 
 (If you want to work ahead, develop a numerical solution to this problem and compare it to the exact solution.)
 
+\ifsolutions
+**Answers**
+
+1.
+   * $\Phi_1=77.50$
+   * $\Phi_2=65.62$
+   * $\Phi_3=70.62$
+   * $\Phi_4=54.06$
+2. This problem is given in many books as an example and here I expected you to research to find a solution. Problem 3.54 of Griffiths 4th Edition has a solution for the case when the origin is at the bottom center of the duct, the top is held at $V$, the width is $2b$ and the height is $a$.
+
+   $$\Phi(x,y) = -\frac{2V}{b}\sum_{n=1}^{\infty}\frac{(-1)^n}{\alpha_n}\frac{\sinh(\alpha_n y)}{\sinh(\alpha_n a)}\cos(\alpha_n x)$$
+
+   where $\alpha_n=(2n-1)\pi/2b$. To transform this to the problem we are given, first set the width $2b$ to $1$ and height $a=1$. Then
+
+   $$\Phi(x,y) = -4V\sum_{n=1}^{\infty}\frac{(-1)^n}{\alpha_n}\frac{\sinh(\alpha_n y)}{\sinh(\alpha_n)}\cos(\alpha_n x)$$
+
+   $\alpha_n=(2n-1)\pi$. If we choose a coordinate system the is centered on the right edge of Figure 1.20a with $y$ to the left and $x$ upwards, this equation can be used.
+
+   One can show that if the origin is placed at the lower left of the duct in Figure 1.20a, with $x$ to the right and $y$ up, the potential is
+   $$\Phi_l(x,y)=\frac{4V}{\pi}\sum_{n=1,3,...}^\infty \frac{\sin(n\pi y/y_0)}{n\sinh (n\pi y_0/x_0)}\sinh\left[n\pi(x_0-x)/y_0\right]$$
+
+   where $V=80\text{ V}$ and the width $x_o=1$ and height $y_o=1$.
+\fi
+
 # HW 4
 
 Save your solutions in a file named `HW4.pdf` and upload it to your repository.
@@ -554,6 +578,8 @@ In this problem, a polarized slab will be modeled using two slabs of charge with
 
 4. Compute and sketch $\mathbf{E}^+ + \mathbf{E}^-$.
 
+The primary motivation of this problem is to justify the claim that the field of a polarized object can be computed not by finding the field due to all of the dipoles but rather the field created by so--called "bound" charge densities. Here, the field due to the dipoles approaches the field due to to sheets of charge. This fact is addressed in the following problem.
+
 ## Bound Charges
 
 Read 4.1--4.4 of Griffiths, Introduction to Electrodynamics (3rd or 4th edition).
@@ -570,7 +596,7 @@ What is the charge density on infinite sheets at $y=t/2$ and $y=-t/2$ that gives
 
 A large parallel plate capacitor is half--filled with two linear dielectrics with permittivities of $\epsilon_1$ and $\epsilon_2$. Assume that the capacitor is large enough that the potential only varies in the $x$--direction. In the diagram, the dotted rectangle is the cross--section of a Gaussian cylinder referenced in parts 4. and 5.
 
-<img src="../figures/Capacitor_With_Dielectric.svg"/>
+<img src="figures/Capacitor_With_Dielectric.svg"/>
 
 1. Solve $\nabla^2 V$ in each dielectric using $V_1(0)=0$, $V_2(2d)=V_o$, $V_1(d)=V_2(d)$ and $D_1(d)=D_2(d)$.
 2. Verify that when $\epsilon_1=\epsilon_2=\epsilon_o$, the answer is as expected from a problem solved previously in class.

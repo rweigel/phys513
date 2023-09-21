@@ -296,6 +296,12 @@ In retrospect, I modified the problem statement to include the bold passage belo
 
 > ... but I encourage you to use a better algorithm using an existing library (such as MATLAB's <code>ODE45</code> or SciPy's <code>ODEINT</code> or <code>SOLVE_IVP</code> **if you have prior experience with them**) ...
 
+**Solution**
+
+[Code to generate one field line](solns/HW2_2.m) using either Forward Euler or `ode45`.
+
+<img src="solns/HW2_1.svg"/>
+
 ## Limiting Behavior For Cylinder
 
 In the previous HW, you computed the electric field along the centerline of a cylinder with a uniform surface charge on its curved surface.
@@ -452,6 +458,10 @@ $$E_z(z)=\frac{\sigma_o}{\pi \epsilon_o}\tan^{-1}\left[\frac{w^2}{4z}\frac{1}{\s
 \ifsolutions
 **Solution**
 
+A common approach in the student solutions was to state a limit such as $z/w\ll 1$ and then use equation to evaluate limit. Here I asked you to work out what you expect the solution to be in the limits _first_. This is typically what one does _before_ attempting to find a complicated solution, which in this case was given.
+
+Also, several students who used MATLAB put in values for $w$, $\epsilon_0$, and $\sigma_0$. The point of non-dimensionalization is that you don't need to deal with these to get a full understanding of how the equations behaves. Given the non-dimensional curve, one can easily figure out $E$ for _any_ $w$ and $\sigma_0$.
+
 1. Recall that
 
    $$
@@ -523,7 +533,16 @@ We need to know $\Delta V$ and $Q$ in the capacitance equation. Here we were giv
 
 5. Use $V(r)$ to find $E(r)$.
 6. Find the charge density and then charge on each conductor.
+
+   \ifsolutions
+    **Answer**
+    A common problem occured when when $\sigma$ was computed. The formula is $\sigma=\epsilon_o\mathbf{E}\bfcdot \hat{\mathbf{n}}$ where $\mathbf{E}$ is evaluated on the surface. In this problem, the surface charge density should not depend on $r$. On the inner/outer surfaces, $r=a$ or $r=b$ should be substituted into the equation for $\mathbf{E}$.
+   \fi
 7. Find the capacitance using $V_o$ and the charge computed in the previous step.
+   \ifsolutions
+   **Answer**
+   A common problem was a mis--match between this capacitance and the capacitance computed using Gauss's law. If you did not get the same answer, you should recognize and document that you know that you should have.
+   \fi
 
 (If you want to work ahead, develop a numerical solution of this problem.)
 

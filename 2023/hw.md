@@ -548,7 +548,7 @@ We need to know $\Delta V$ and $Q$ in the capacitance equation. Here we were giv
 
 ## Laplace's Equation in Two Dimensions -- Numerical
 
-1. Verify the numbers in the textbook's Step 1 column of Table 1.20. Show your calculations on a piece of paper. (In class, we will start developing a program to compute the potentials in the other columns.)
+1. Verify the numbers in the textbook's Step 1 column of Table 1.20 of Ramo. Show your calculations on a piece of paper. (In class, we will start developing a program to compute the potentials in the other columns.)
 2. Find the equation for this problem's exact potential if all sides are set to have zero potential except the side at $80\text{ V}$. I recommend finding a solution first and using it to answer this part; if you have time, attempt to derive it.
 
 (If you want to work ahead, develop a numerical solution to this problem and compare it to the exact solution.)
@@ -593,11 +593,51 @@ In this problem, a polarized slab will be modeled using two slabs of charge with
 
 2. Sketch (by hand) $\mathbf{E}^+(y)$ vs $y$. Label key points on the $y$--axis.
 
-3. Next, compute and plot $\mathbf{E}^-(y)$ for the same slab if it had charge density of $-\rho_o$ and was shifted by $-\delta$ in the $y$--direction. Assume that $\delta\ll t$.
+3. Next, compute and ~plot~ sketch $\mathbf{E}^-(y)$ for the same slab if it had charge density of $-\rho_o$ and was shifted by $-\delta$ in the $y$--direction. Assume that $\delta\ll t$.
 
 4. Compute and sketch $\mathbf{E}^+ + \mathbf{E}^-$.
 
 The primary motivation of this problem is to justify the claim that the field of a polarized object can be computed not by finding the field due to all of the dipoles but rather the field created by so--called "bound" charge densities. Here, the field due to the dipoles approaches the field due to to sheets of charge. This fact is addressed in the following problem.
+
+**Answer**
+
+Details on how to solve this problem were given in class and so only a summary is given here.
+
+1\. Gauss's law can be used to find the field for $|y|\ge t/2$ (a cylinder centered on the origin or with its bottom cap at $y=0$ can both be used). This gives $E\_y=\pm \rho_o t/2\epsilon_o$ above/below the slab. Inside the slab, we know $E_y=0$ at $y=0$ because the field due to the upper part of the slab cancels that due to the lower part. We also expect that inside the slab, $E\_y(y)$ field will increase linearly (why?). From this, we can write $E\_y(y)=\rho_o y/\epsilon_o$. This equation gives zero at the origin and matches the outer field at $y=\pm t/2$. Alternatively, we can also use Gauss's law. For a cylinder centered on the origin and height $2y$, the charge enclosed is $\rho_o 2y$.
+
+2\. To simplify notation, use $E'_y=E_y/E_o$, $y'=y/t$, and $\delta'=\delta/t$ with $E_o=\rho t/2\epsilon_o$. Then
+
+$$
+E'^+_y = \begin{cases}
+  1  & y \ge 1\\
+  y' & |y'| \le 1 \\
+  -1  & y' \le -1
+\end{cases}
+$$
+
+See https://www.desmos.com/calculator/uhuz9paddg
+
+3\. Invert the sketch from 2. and then translate it by $\delta$ in the $-y$ direction. Inside the negatively charged slab, the field will be $E\_y(y)=-\rho_o (y+\delta)/\epsilon_o$. (This gives $E_y=0$ when $y=-\delta$, corresponding to the center of the negatively charged slab.)
+
+$$
+E'^-_y = \begin{cases}
+  1  & y \ge 1-\delta'\\
+  y' & |y'+\delta'| \le 1 \\
+  -1  & y' \le -1-\delta'
+\end{cases}
+$$
+
+See https://www.desmos.com/calculator/uhuz9paddg
+
+4\. In the region of overlap we need to sum
+
+$E\_y(y) = E^+\_y(y) + E^-\_y(y)$
+
+Using $E^+\_y(y)=\rho_o y/\epsilon_o$ and $E^-\_y(y)=-\rho_o (y+\delta)/\epsilon_o$ gives
+
+$E\_y(y) = -\rho_o\delta/\epsilon_o$
+
+See https://www.desmos.com/calculator/uhuz9paddg
 
 ## Bound Charges
 
@@ -608,6 +648,14 @@ A result in section 4.2 is that the electric potential (and also electric field,
 In the previous problem, a polarized object was modeled and you should have found that the electric field that resulted was approximately equivalent to the field due to a sheet with a positive charge density at $y\approx t/2$ and a sheet with a negative density at $y\approx -t/2$ (except in two small regions of width $\delta$). 
 
 What is the charge density on infinite sheets at $y=t/2$ and $y=-t/2$ that gives the same $\mathbf{E}(y)$ (except in two small regions) as found in the previous problem?
+
+**Answer**
+
+From the previous problem, in the region of overlap
+
+$E\_y(y) = -\rho_o\delta /\epsilon_o$
+
+This is the same field one would get if we had a positive sheet of charge at $y=t/2$ and a negative sheet at $y=-t/2$ if the sheets had a charge density of $\rho_o \delta$. If one draws the charge density when the two slabs are superimposed, the system appears to be two such sheets of charge.
 
 ## Capactor with Dielectrics -- Analytical
 
@@ -657,3 +705,49 @@ In Section 1.20 of the texbook, a derivation is given for a numerical algorithm 
 ## Laplace's Equation in 2-D Cartesian -- Numerical
 
 Use the equation found in HW problem 3.3.2 to determine if the "Correct Potentials" column in Table 1.20 of Ramo are correct.
+
+# HW 5
+
+**Note that problems 1--3 are due at 4 pm on Thursday, September 28th. I want to discuss the answers in class.**
+
+Problem #4 is due at 11:59 pm on Thursday, September 28th.
+
+After discussing these solutions in class on Thursday, September 28th, I will begin covering magnetism. It will be helpful if you briefly review chapters 27 and 28 of [Young & Freedman](https://drive.google.com/drive/folders/1RbJbDlpZB6THg1cKvlmRnvQYewRKmn03) and related sections in Griffiths Chapter 5 and/or Ramo Chapter 2.
+
+## Checking HW 4.3
+
+For HW problem 4.3, compute the charge density on the gray conductors. Assume there is a tiny gap between the conducting surfaces and the dielectrics.
+
+In class, I've emphasized the importance of checking your solution. For example,
+
+1. Symmetry checks were used when the problem has symmetry, in which case the mathematical solution should have a consistent symmetry
+2. Related problem checks were used if the parameters in a problem can be modified so the problem is equivalent to a simpler problem
+3. Sketching or plotting the solution and the solution to related problems
+4. Using physical checks -- for example, do the signs and magnitudes match what is expected from the charge configuration? If we modify a parameter (given constants) or a ratio of parameters, does the solution change in the expected way? Usually, a diagram was used to aid in the explanation of the physical check.
+
+Write at least 10 checks you could do on your solution to HW 4.3. Imagine that puppies will die if your answer is wrong, and you want to be certain that you understand everything about the problem and solution.
+
+Post your solution by 4 pm on Thursday, September 28th in a plain text file named `HW5_1.txt` in your GitHub repository.
+
+## Numerical Implementation of HW 4.3
+
+Describe how you would solve HW 4.3 using the finite difference method used in Section 1.20 of Ramo and used on HW 4.4.
+
+You do not need to do any calculations -- I am looking only for a description of the setup with words and equations.
+
+Post your solution by 4 pm on Thursday, September 28th in a file named `HW5_2.pdf` in your GitHub repository.
+
+## Capacitance
+
+Suppose the conducting system shown in figure 1.20a of Ramo was modified so that all sides were at zero potential except the left side, which was still at $80\text{ V}$.
+
+You do not need to do any calculations -- I am looking only for a description of the setup with words and equations.
+
+Post your solution by 11:59 pm on Thursday, September 28th in a file named `HW5_3.pdf` in your GitHub repository.
+
+## Polarized Object
+
+A sphere of radius $R_o$ has a spherical cavity of radius $R_i$. The sphere and cavity are centered on the origin. The region $R_i\le r\le R_o$ has a polarization $\mathbf{P}=(P_or^2/R_i^2)\hat{\mathbf{r}}$. The polarization is "frozen in", meaning that the object should be thought of as being created by gluing $+$ and $-$ charges in place to form the polarized object. Said another way, although the dipoles responsible for the polarization will create an electric field in the object, the polarization will not change, Or, equivalently, $\epsilon=\epsilon_o$ and so $\chi_e=0$ because $\epsilon=\epsilon_o(1+\chi_e)$.
+
+1. Find $\sigma_b$ and $\rho_b$.
+2. Find $\mathbf{E}_b(r)$, which is the electric field due to the bound charge densities found in part 1. of this problem.

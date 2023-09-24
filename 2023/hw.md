@@ -725,7 +725,7 @@ In class, I've emphasized the importance of checking your solution. For example,
 3. Sketching or plotting the solution and the solution to related problems
 4. Using physical checks -- for example, do the signs and magnitudes match what is expected from the charge configuration? If we modify a parameter (given constants) or a ratio of parameters, does the solution change in the expected way? Usually, a diagram was used to aid in the explanation of the physical check.
 
-Write at least 10 checks you could do on your solution to HW 4.3. Imagine that puppies will die if your answer is wrong, and you want to be certain that you understand everything about the problem and solution.
+Write at least 10 checks you could do on your solution to HW 4.3 (some checks should include consideration of the densities on the plate, which I've asked for). Imagine that puppies will die if your answer is wrong, and you want to be certain that you understand everything about the problem and solution.
 
 Post your solution by 4 pm on Thursday, September 28th in a plain text file named `HW5_1.txt` in your GitHub repository.
 
@@ -740,6 +740,8 @@ Post your solution by 4 pm on Thursday, September 28th in a file named `HW5_2.pd
 ## Capacitance
 
 Suppose the conducting system shown in figure 1.20a of Ramo was modified so that all sides were at zero potential except the left side, which was still at $80\text{ V}$.
+
+How would you compute the capacitance using either a numerical solution or the equations for the exact solution?
 
 You do not need to do any calculations -- I am looking only for a description of the setup with words and equations.
 

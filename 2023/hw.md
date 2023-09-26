@@ -715,6 +715,8 @@ I get, with 33 terms in sum
 * $\Phi_3=67.61$ (book $65.4$)
 * $\Phi_4=51.93$ (book $50.7$)
 
+See [HW4_4.py](solns/HW4_4.py).
+
 # HW 5
 
 **Note that problems 1--3 are due at 4 pm on Thursday, September 28th. I want to discuss the answers in class.**

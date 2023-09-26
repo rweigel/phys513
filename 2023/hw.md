@@ -674,7 +674,7 @@ Using your answer to 1.,
 4. show that Gauss's law $\oint \mathbf{E}\bfcdot d\mathbf{a}=\sigma/\epsilon_o$ is satisfied for the Gaussian cylinder shown on the diagram ($\sigma$ in this equation is all charges: bound and free); and
 5. show that Gauss's law for dielectrics, $\oint \mathbf{D}\bfcdot d\mathbf{a}=\sigma_{\text {free}}$ is satisfied for the Gaussian cylinder shown on the diagram ($\sigma_{\text {free}}$ in this equation is all non--bound charges).
 
-## Laplace' Equation in 1--D Spherical -- Numerical
+``## Laplace' Equation in 1--D Spherical -- Numerical
 
 In Section 1.20 of the texbook, a derivation is given for a numerical algorithm for solving Laplace's equation in 2--D cartesian.
 
@@ -705,6 +705,15 @@ In Section 1.20 of the texbook, a derivation is given for a numerical algorithm 
 ## Laplace's Equation in 2-D Cartesian -- Numerical
 
 Use the equation found in HW problem 3.3.2 to determine if the "Correct Potentials" column in Table 1.20 of Ramo are correct.
+
+**Answer**
+
+I get, with 33 terms in sum
+
+* $\Phi_1=78.07$ (book $75.2$)
+* $\Phi_2=62.39$ (book $60.5$)
+* $\Phi_3=67.61$ (book $65.4$)
+* $\Phi_4=51.93$ (book $50.7$)
 
 # HW 5
 

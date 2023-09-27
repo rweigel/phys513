@@ -674,7 +674,29 @@ Using your answer to 1.,
 4. show that Gauss's law $\oint \mathbf{E}\bfcdot d\mathbf{a}=\sigma/\epsilon_o$ is satisfied for the Gaussian cylinder shown on the diagram ($\sigma$ in this equation is all charges: bound and free); and
 5. show that Gauss's law for dielectrics, $\oint \mathbf{D}\bfcdot d\mathbf{a}=\sigma_{\text {free}}$ is satisfied for the Gaussian cylinder shown on the diagram ($\sigma_{\text {free}}$ in this equation is all non--bound charges).
 
-``## Laplace' Equation in 1--D Spherical -- Numerical
+   \ifsolutions
+   **Comment**
+
+   Many students essientially derived how the equation used for part 4 could be transformed into the equation $\mathbf{D}_2=\mathbf{D}_1$. That is, they wrote something like
+
+   $|E_1|-|E_2|=-|P_1|/\epsilon_o + |P_2|/\epsilon_o$
+
+   $(|E_1|+|P_1|/\epsilon_o)-(|E_2|+|P_2|/\epsilon_o|)=0$
+
+   Using $D=\epsilon_oE + P$, they conclude the above implies
+
+   $D_1-D_2=0$
+   
+   This is technically correct, but did not use any of the results computed earlier. It is really more of a derivation of the relationship between $D$ and $E$, which was not asked for.
+   
+   A more direct approach is to show why the integral implies $D_{1x}(d)=D_{2x}(d)$ and then use $D=\epsilon E$ to write 
+
+   $\epsilon_1E_{1x}(d)=\epsilon_2E_{2x}(d)$
+   
+   and plug in values for $E_{1x}(d)$ and $E_{2x}(d)$ to confirm.
+   \fi
+
+## Laplace' Equation in 1--D Spherical -- Numerical
 
 In Section 1.20 of the texbook, a derivation is given for a numerical algorithm for solving Laplace's equation in 2--D cartesian.
 
@@ -727,7 +749,9 @@ After discussing these solutions in class on Thursday, September 28th, I will be
 
 ## Checking HW 4.3
 
-For HW problem 4.3, compute the charge density on the gray conductors. Assume there is a tiny gap between the conducting surfaces and the dielectrics.
+For HW problem 4.3, compute the charge density on the gray conductors.
+
+%§Assume there is a tiny gap between the conducting surfaces and the dielectrics.
 
 In class, I've emphasized the importance of checking your solution. For example,
 

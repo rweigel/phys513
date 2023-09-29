@@ -666,12 +666,57 @@ A large parallel plate capacitor is half--filled with two linear dielectrics wit
 <img src="figures/Capacitor_With_Dielectric.svg"/>
 
 1. Solve $\nabla^2 V$ in each dielectric using $V_1(0)=0$, $V_2(2d)=V_o$, $V_1(d)=V_2(d)$ and $D_1(d)=D_2(d)$.
+   \ifsolutions
+   $$\frac{V_1}{V_o} = \left(\frac{\epsilon_2}{\epsilon_1+\epsilon_2}\right)\frac{x}{d}$$ 
+
+   $$\frac{V_2}{V_o} = \left(\frac{\epsilon_1}{\epsilon_1+\epsilon_2}\right)\frac{x}{d} + \frac{\epsilon_2-\epsilon_1}{\epsilon_1+\epsilon_2}$$
+   \fi
 2. Verify that when $\epsilon_1=\epsilon_2=\epsilon_o$, the answer is as expected from a problem solved previously in class.
+
+   \ifsolutions
+   **Answer**
+   In this case, $V_1/V_o = V_2/V_o = x/2d$, which is a solution to Laplace's equation that matches the boundary conditions (and so is the unique solution).
+   \fi
 
 Using your answer to 1.,
 
 3. use $\sigma_b=\mathbf{P}\bfcdot\hat{\mathbf{n}}$ to find the four bound surface charge densities (that is, the bound charge density on the left and right surfaces on both dielectrics);
-4. show that Gauss's law $\oint \mathbf{E}\bfcdot d\mathbf{a}=\sigma/\epsilon_o$ is satisfied for the Gaussian cylinder shown on the diagram ($\sigma$ in this equation is all charges: bound and free); and
+
+   \ifsolutions
+
+   **Partial Solution**
+   Assuming the dielectrics are linear so that $\mathbf{P}=\epsilon_o\chi_e\mathbf{E}=-\epsilon_o\chi_e\boldsymbol{\nabla}V$. This gives the general result
+   
+   $$\sigma_b = -\epsilon_o\chi_e\boldsymbol{\nabla}V\bfcdot\hat{\mathbf{n}}$$
+
+   For dielectric 1 on the right face, $\hat{\mathbf{n}}=\xhat$, so 
+   
+   $$\sigma_{b1r}=-\epsilon_o\chi_{e1}\left(\frac{\epsilon_2}{\epsilon_1+\epsilon_2}\right)\frac{V_o}{d}$$
+   
+   On the left face $\hat{\mathbf{n}}=-\xhat$, so the density has the opposite sign.
+
+   For dielectric 2 on the right face, $\hat{\mathbf{n}}=\xhat$.
+
+   $$\sigma_{b2r}=-\epsilon_o\chi_{e2}\left(\frac{\epsilon_1}{\epsilon_1+\epsilon_2}\right)\frac{V_o}{d}$$
+
+   On the left face $\hat{\mathbf{n}}=-\xhat$, so the density has the opposite sign.
+
+   To answer the question in terms of the parameters given, use the definition $\epsilon = \epsilon_o(1+\chi_e)$.
+   \fi
+
+4. show that Gauss's law $\oint \mathbf{E}\bfcdot d\mathbf{a}=Q_{encl}/\epsilon_o$ is satisfied for the Gaussian cylinder shown on the diagram ($Q_{encl} in this equation is all charges: bound and free); and
+
+   \ifsolutions
+   **Solution**
+   There are no non--bound charges, so the charge enclosed in $\sigma_{b1r}A + \sigma_{b2l}A$, where $\sigma_{b1r}$ is the charge density on the right face of dielectric $1$ and $\sigma_{b2l}$ is the charge density on the left face of dielectric $2$. The usual arguements for such a 1--D problem allow us to write
+
+   $$
+   E_2A-E_1A = -\boldsymbol{\nabla}V_1 + \boldsymbol{\nabla}V_2 = (\sigma_{b1r}A + \sigma_{b2l}A)/\epsilon_o
+   $$
+   
+   Substitution of the bound charge densities from 4. will give equality. (At this point, you can almost "see" how it all works if you recall that the bound charge density is related to the electric field.)
+   \fi
+
 5. show that Gauss's law for dielectrics, $\oint \mathbf{D}\bfcdot d\mathbf{a}=\sigma_{\text {free}}$ is satisfied for the Gaussian cylinder shown on the diagram ($\sigma_{\text {free}}$ in this equation is all non--bound charges).
 
    \ifsolutions
@@ -689,11 +734,11 @@ Using your answer to 1.,
    
    This is technically correct, but did not use any of the results computed earlier. It is really more of a derivation of the relationship between $D$ and $E$, which was not asked for.
    
-   A more direct approach is to show why the integral implies $D_{1x}(d)=D_{2x}(d)$ and then use $D=\epsilon E$ to write 
+   A more direct approach is to show why the integral implies $D_{1}(d)=D_{2}(d)$ and then use $D=\epsilon E$ to write 
 
-   $\epsilon_1E_{1x}(d)=\epsilon_2E_{2x}(d)$
+   $\epsilon_1E_{1}(d)=\epsilon_2E_{2}(d)$
    
-   and plug in values for $E_{1x}(d)$ and $E_{2x}(d)$ to confirm.
+   and plug in values for $E_{1}(d)$ and $E_{2}(d)$ to confirm.
    \fi
 
 ## Laplace' Equation in 1--D Spherical -- Numerical
@@ -788,3 +833,61 @@ A sphere of radius $R_o$ has a spherical cavity of radius $R_i$. The sphere and 
 
 1. Find $\sigma_b$ and $\rho_b$.
 2. Find $\mathbf{E}_b(r)$, which is the electric field due to the bound charge densities found in part 1. of this problem.
+
+# HW 6
+
+## Lorentz Force Calculation
+
+The circular loop shown has radius $b$ is parallel to the $x-y$ plane its center is at $z=d$.
+
+<img src="https://rweigel.github.io/phys305/figures/Lorentz_Force_Shifted_Ring.svg"/>
+
+Due to a magnetic dipole at $(x,y,z)$ = $(0,0,0)$, there is a field (in spherical coordinates with $\theta$ as the angle from the $+z$--axis),
+
+$$\mathbf{B}_{ext}=\frac{\mu_o}{4\pi}\frac{m_o}{r^3}\left(2\cos\theta\hat{\mathbf{r}}+\sin\theta\hat{\boldsymbol{\theta}}\right)$$
+
+
+Before doing any calculations, try to determine the direction of the total force on the loop.
+
+1. Will the loop tend to expand or compress?
+2. Compute the net force on the circular loop in terms.
+
+(The loop will create a magnetic field. However, when computing the force on the loop, the field due to the loop is omitted, and only $\mathbf{B}_{ext}$ is used. The reason is the same reason that when you compute the force on an object in mechanics, you only use the force due to the gravitational field of Earth. Although each part of the object exerts a gravitational force on the other parts of the object, the net "self--force" is zero.)
+
+## Biot--Savart
+
+The loop shown is centered on the origin.
+
+<img src="https://rweigel.github.io/phys305/figures/Lorentz_Force_Law_Rectangular_Loop.svg"/>
+
+1. Find the magnetic field at the origin
+2. If $a\gg b$, we expect the field at the origin to be approximately equal to that of two long straight wires. Use your answer to 1. to verify this.
+
+## Interface Condition for $\mathbf{B}$
+
+In the following figure, the cross--section of two planes is shown. The planes are infinite in extent in the $\pm z$ direction and $w\gg t$, so they are infinite in extent in the $\pm x$ direction.
+
+On the red plane, the surface current density is $\mathbf{K}=K_o\zhat$, so that current flows out of the page.
+On the blue, plane the surface current density is $\mathbf{K}=-K_o\zhat$, so that current flows into the page.
+
+The Amperian loop to be used in part 3. of this problem is shown as a dotted line. 
+
+<img src="https://rweigel.github.io/phys305/figures/Amperes_Law_Two_Sheets.svg"/>
+
+1. Find $\mathbf{B}$ using the equation for the magnetic field due to a large flat current sheet (Equation 5.58 of Griffiths 4th Edition) and superposition.
+2. Plot $B_x(y)$ in the range $-2t\le y\le 2t$.
+3. Show that $\oint \mathbf{B}\bfcdot d\mathbf{l} = \mu_o I_{encl}$ is satisfied for the Amperian loop shown.
+4. In electrostatics, when one crossed a sheet of current, there was a change in the electric field. This fact was used for boundary value problems. In magnetostatics, when crosses a plane of current, there is a change in the magnetic field. Find an equation for $B_{a\parallel}-B_{b\parallel}$, where $B_{a\parallel}$ is the component of the field that is parallel to the plane just above the blue plane and $B_{b\parallel}$ is the component of the field that is parallel to the plane just below the blue plane.
+
+
+## Current--Carrying Slab
+
+The slab shown on the left in the following figure carries a current density of $J_o\xhat$. A cross section of the slab is shown on the right. Assume $w\gg t$ so that the slab can be treated as infinite in the $x$ and $y$ directions.
+
+1. What is the direction of $\mathbf{B}$ outside of the slab ($z\gt t/2$ and $z\lt -t/2$)?
+2. What is $\mathbf{B}$ in the $x$--$y$ plane?
+3. Find $\mathbf{B}(z)$
+
+<img src="https://rweigel.github.io/phys305/figures/Amperes_Law_Current_Carrying_Slab.svg" width="90%"/>
+
+

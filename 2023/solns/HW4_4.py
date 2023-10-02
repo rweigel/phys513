@@ -2,7 +2,7 @@ import numpy as np
 
 V = [80, 60, 100, 20] # Vl, Vb, Vt, Vr
 
-# V = [0, 1, 0, 0] # Vl, Vb, Vt, Vr
+V = [np.pi/4, 0, 0, 0] # Vl, Vb, Vt, Vr
 # Checks performed:
 #   At grid points in Figure 1.20a,
 #   1. For V = [1,0,0,0]
@@ -19,7 +19,7 @@ yo = 1
 def exact(x, y):
   # Exact solution is in the form of a series sum.
   # Exact solution is approximated by first non-zero Nmax/2 terms in sum.
-  Nmax = 66
+  Nmax = 100
   pi = np.pi
   sinh = np.sinh
   sin = np.sin
@@ -38,3 +38,10 @@ print("Φ1 = {:.2f} (book 75.2)".format(exact(1/3, 2/3)))
 print("Φ2 = {:.2f} (book 60.5)".format(exact(2/3, 2/3)))
 print("Φ3 = {:.2f} (book 65.4)".format(exact(1/3, 1/3)))
 print("Φ4 = {:.2f} (book 50.7)".format(exact(2/3, 1/3)))
+
+"""_summary_
+Φ1 = 78.07 (book 75.2)
+Φ2 = 62.39 (book 60.5)
+Φ3 = 67.61 (book 65.4)
+Φ4 = 51.93 (book 50.7)
+"""

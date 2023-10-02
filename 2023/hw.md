@@ -741,7 +741,7 @@ Using your answer to 1.,
    and plug in values for $E_{1}(d)$ and $E_{2}(d)$ to confirm.
    \fi
 
-## Laplace' Equation in 1--D Spherical -- Numerical
+## Laplace's Equation in 1--D Spherical -- Numerical
 
 In Section 1.20 of the texbook, a derivation is given for a numerical algorithm for solving Laplace's equation in 2--D cartesian.
 
@@ -835,6 +835,8 @@ A sphere of radius $R_o$ has a spherical cavity of radius $R_i$. The sphere and 
 2. Find $\mathbf{E}_b(r)$, which is the electric field due to the bound charge densities found in part 1. of this problem.
 
 # HW 6
+
+Due on October 5th at 11:59 pm. Save your answers in a file named `HW6.pdf` and put it in your GitHub repository.
 
 ## Lorentz Force Calculation
 

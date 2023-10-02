@@ -2,7 +2,7 @@ import numpy as np
 
 V = [80, 60, 100, 20] # Vl, Vb, Vt, Vr
 
-V = [np.pi/4, 0, 0, 0] # Vl, Vb, Vt, Vr
+#V = [np.pi/4, 0, 0, 0] # Vl, Vb, Vt, Vr
 # Checks performed:
 #   At grid points in Figure 1.20a,
 #   1. For V = [1,0,0,0]

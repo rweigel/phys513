@@ -809,6 +809,43 @@ Write at least 10 checks you could do on your solution to HW 4.3 (some checks sh
 
 Post your solution by 4 pm on Thursday, September 28th in a plain text file named `HW5_1.txt` in your GitHub repository.
 
+\ifsolutions
+**Solution**
+
+Using Gauss's law in the same way used to find the equation for the surface charge density near the surface of a conductor, we can show that the (free) surface charge density on a conductor is $\sigma = \epsilon\mathbf{E}\bfcdot\hat{\mathbf{n}}$ if the surface of a conductor is in contact with a dielectric. (Or, equivalently $\sigma = \mathbf{D}\bfcdot\hat{\mathbf{n}}$).
+
+Using either gives
+
+$$\sigma_2=-\sigma_1=\frac{\epsilon_1\epsilon_2}{\epsilon_1+\epsilon_2}$$
+
+Given the charge on the conducting plates is $\sigma A$, we can show the capacitance is
+
+$$C=\frac{A}{d}\frac{\epsilon_1\epsilon_2}{\epsilon_1+\epsilon_2}$$
+
+or
+
+$$\ds C=\frac{A}{d}\frac{1}{\frac{1}{\epsilon_1}+\frac{1}{\epsilon_2}}$$
+
+or
+
+$$\frac{1}{C}=\frac{1}{C_1} + \frac{1}{C_2}$$
+
+where $C_1=\epsilon_1 A/d_1$ and $C_2=\epsilon_2 A/d_2$ with $d_1=d_2=d$. This is expected given that we the above formula is that for the equivalent capacitance of capacitors in series. As a result, we have an alternative way of computing the charge density: Using the equivalent capacitance formula and then $Q=C|\Delta V|$ and dividing $Q$ by $A$. A useful exercise is to re--write the formulas for $V$ and $E$ in terms of $C_1$ and $C_2$ as often we know or are given the capacitance rather than the permittivity.
+
+Checks:
+
+1. Check mathematically that soln matches boundary conditions used.
+2. [Plot soln](https://www.desmos.com/calculator/zfzsxgxsfr) and inspect features, for example, slopes should be positive and $V$ should be continuous and match boundary conditions.
+3. Let one of the $\epsilon$s approach infinity. Soln should be same as if dielectric was replaced with conductor
+4. Consider an alternative soln. Treat as two capacitors with differing dielectrics. Use to find $\Delta V$ across each capacitor.
+5. Plot charge densities for each surface. Ask if the relative densities makes sense.
+6. Check that the net bound surface charge on each dielectric is zero.
+7. Check that the surface charge density on each conductor is equal and opposite.
+8. Use Gauss's law multiple times with end caps in different regions. Is it satisfied?
+9. Alternative approach -- Assume unknown charge on plates and solve for $E$
+10. Related problem. If two dielectrics formed a spherical capacitor, in the limit that the thickness of the dielectric is small compared to its radius, should match this 1--D cartesion solution. Similar for cylindrical capacitor.
+\fi
+
 ## Numerical Implementation of HW 4.3
 
 Describe how you would solve HW 4.3 using the finite difference method used in Section 1.20 of Ramo and used on HW 4.4.
@@ -827,12 +864,44 @@ You do not need to do any calculations -- I am looking only for a description of
 
 Post your solution by 11:59 pm on Thursday, September 28th in a file named `HW5_3.pdf` in your GitHub repository.
 
+\ifsolutions
+**Solution**
+
+$C=Q/|\Delta V|$. We know $|\Delta V|=V_o$ and need $Q$. We know that near the surface of a conductor, $\sigma=\epsilon_o\mathbf{E}\bfcdot\hat{\mathbf{n}}$ (or if near the surface there is a dielectric, $\sigma=\mathbf{D}\bfcdot\hat{\mathbf{n}}$). First, write the density in terms of potential
+
+$\sigma=\epsilon_o\mathbf{E}\bfcdot\hat{\mathbf{n}}=-\epsilon_o\boldsymbol{\nabla}\Phi\bfcdot\hat{\mathbf{n}}$
+
+To estimate the density on the upper half of the left edge of figure 1.20a, use
+
+$$\sigma = -\epsilon_o\frac{\partial V}{\partial x}\simeq -\epsilon_o \frac{\Phi_1-80\text{ V}}{\Delta x}$$
+
+where $\Delta x$ is horizontal distance from the $\Phi_1$ node to the left edge. This process can be repeated to find six surface charge density estimates. Note that the capacitance will depend on the length of the duct (into and out of the page), which was not given. In such cases, the capacitance per unit length should be reported. 
+
+<img src="solns/HW5_3.png" width="50%"/>
+\fi
+
 ## Polarized Object
 
 A sphere of radius $R_o$ has a spherical cavity of radius $R_i$. The sphere and cavity are centered on the origin. The region $R_i\le r\le R_o$ has a polarization $\mathbf{P}=(P_or^2/R_i^2)\hat{\mathbf{r}}$. The polarization is "frozen in", meaning that the object should be thought of as being created by gluing $+$ and $-$ charges in place to form the polarized object. Said another way, although the dipoles responsible for the polarization will create an electric field in the object, the polarization will not change, Or, equivalently, $\epsilon=\epsilon_o$ and so $\chi_e=0$ because $\epsilon=\epsilon_o(1+\chi_e)$.
 
 1. Find $\sigma_b$ and $\rho_b$.
 2. Find $\mathbf{E}_b(r)$, which is the electric field due to the bound charge densities found in part 1. of this problem.
+
+\ifsolutions
+1. 
+   $$\sigma_{bi} = -P_o$$
+
+   $$\sigma_{bo} = +P_o\frac{R_o^2}{R_i^2}$$
+
+   $$
+   \rho_b = -\boldsymbol{\nabla}\cdot\mathbf{P} = {1 \over r^2}{\partial \left( r^2 P_r \right) \over \partial r} = -\frac{4P_o}{R_i^2}
+   $$
+
+  Checks: Given $\mathbf{P}$ is outward, expect inner surface to have negative bound charge. Expect total bound charge to be zero (a polarized object can be thought of as being created by gluing dipoles in place; dipoles have zero net charge).
+
+2. Think of this as a regular charge problem with the densities found in part 1. In the cavity, the field will be zero.  Outside, the field will be zero (because net bound charge is zero) and outside of a uniformly charged shell, the field is same as if all charge was at origin, and the $\rho$ can be thought of as being created by nested shells. Inside the object, use Gauss's law to find $E_r(r)$. Other components of $\mathbf{E}$ are zero, which can be justified by a symmetry argument (what is it?).
+
+\fi
 
 # HW 6
 

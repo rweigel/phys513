@@ -950,7 +950,6 @@ The Amperian loop to be used in part 3. of this problem is shown as a dotted lin
 3. Show that $\oint \mathbf{B}\bfcdot d\mathbf{l} = \mu_o I_{encl}$ is satisfied for the Amperian loop shown.
 4. In electrostatics, when one crossed a sheet of current, there was a change in the electric field. This fact was used for boundary value problems. In magnetostatics, when crosses a plane of current, there is a change in the magnetic field. Find an equation for $B_{a\parallel}-B_{b\parallel}$, where $B_{a\parallel}$ is the component of the field that is parallel to the plane just above the blue plane and $B_{b\parallel}$ is the component of the field that is parallel to the plane just below the blue plane.
 
-
 ## Current--Carrying Slab
 
 The slab shown on the left in the following figure carries a current density of $J_o\xhat$. A cross section of the slab is shown on the right. Assume $w\gg t$ so that the slab can be treated as infinite in the $x$ and $y$ directions.
@@ -961,4 +960,25 @@ The slab shown on the left in the following figure carries a current density of 
 
 <img src="https://rweigel.github.io/phys305/figures/Amperes_Law_Current_Carrying_Slab.svg" width="90%"/>
 
+# Midterm
+
+Due on October 19th at 11:59 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.
+
+----
+
+The space between two concentric conducting spherical shells of radius $a$ and $3a$ is filled with a thick shell of uniformly charged material for $a\lt r \le 2a$ and a thick shell of dielectric material for $2a\lt r\lt 3a$.
+
+<img src="figures/Sphere_with_Dielectric_and_Charge_Density.svg"/>
+
+The sphere at $r=a$ is grounded and the sphere at $r=3a$ is held at $V_o$; $a=1\text{ m}$, $V_o=1\text{ Volt}$, $\rho_o=V_o\epsilon_o/a^2$, and $\epsilon=2\epsilon_o$.
+   
+1. Find the exact value of the potential for all $r$.
+
+2. Use the "Simple Averaging" method to find the potential for $a\le r\le 3a$.
+
+   Use a grid spacing of $a/3$ and iterate until the maximum absolute change in potential at any grid point is $1$%.
+
+3. Plot your solutions to 1. and 2. on the same axes.
+
+4. Find all bound charge densities and the charge density on the two conductors.
 

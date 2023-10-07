@@ -960,6 +960,14 @@ The slab shown on the left in the following figure carries a current density of 
 
 <img src="https://rweigel.github.io/phys305/figures/Amperes_Law_Current_Carrying_Slab.svg" width="90%"/>
 
+# HW 7
+
+This problem has no due date, and you do not need to turn anything in. However, please spend at least 30 minutes on this problem. I know that you have a midterm to prepare for, but after the midterm, I will cover a topic that requires and understanding of the solution to this problem. If you use Ramo as a reference, note that you can replace $H$ with $B/\mu_o$.
+
+A section of a long coaxial cable is shown in the following image. Find the magnetic field for all $r$.
+
+<img src="figures/Coaxial_Cable.png" width=30%/>
+
 # Midterm
 
 Due on October 19th at 11:59 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.

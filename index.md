@@ -15,9 +15,22 @@ HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3) | [4](hw.html#hw-
 
 # Schedule
 
+## October 12th
+
+* In--class part of midterm (60 minutes, one problem)
+* Inductance
+* Generalized Ampere's law
+
+## October 5th
+
+* Will post take--home part of mid--term tomorrow or Saturday; due October 19th at 11:59 pm.
+* More on Ampere's law
+* Faraday's law and Lenz's law
+* Slidewire generator
+
 ## September 28th
 
-* The in--class exam will be one problem related to 2.2, 2.3, 3.2, 4.1, 4.2, 4.3, 4.4, 5.4. Find similar problems in textbooks to practice with. You should know any of the equations used in these problems. The motivation for the problem is to ensure that you can solve problems at this level on your own and have an understanding of the motivation of the steps required for the solution. No non--trivial integration will be required.
+* The in--class exam will be one problem related to HW 2.2, 2.3, 3.2, 4.1, 4.2, 4.3, 4.4, 5.4. Find similar problems in textbooks to practice with. You should know any of the equations used in these problems. The motivation for the problem is to ensure that you can solve problems at this level on your own and have an understanding of the motivation of the steps required for the solution. No non--trivial integration will be required.
 * I will hand out take-home part on October 5th and it will be due on October 19th. This problem will be an extension of a numerical problem covered on a previous homework.
 
 ## September 21st

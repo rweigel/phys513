@@ -406,7 +406,7 @@ Using Gauss's law and the fact that the electric field inside a conductor must b
 
 5. Recall that because the electric field has the form of $\rhat/r^2$, we can always find a scalar function $\psi$ (which we call electric potential) such that
 
-   $$\mathbf{E}=-\boldsymbol{\nabla}\psi = -{\partial \psi \over \partial x}\xhat - {\partial \psi \over \partial x}\yhat - {\partial \psi \over \partial x}\zhat$$
+   $$\mathbf{E}=-\boldsymbol{\nabla}\psi = -{\partial \psi \over \partial x}\xhat - {\partial \psi \over \partial y}\yhat - {\partial \psi \over \partial z}\zhat$$
 
    It can be shown that this equation can be inverted:
    

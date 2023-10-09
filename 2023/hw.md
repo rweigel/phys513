@@ -844,6 +844,8 @@ Checks:
 8. Use Gauss's law multiple times with end caps in different regions. Is it satisfied?
 9. Alternative approach -- Assume unknown charge on plates and solve for $E$
 10. Related problem. If two dielectrics formed a spherical capacitor, in the limit that the thickness of the dielectric is small compared to its radius, should match this 1--D cartesion solution. Similar for cylindrical capacitor.
+
+One check that does not apply is that they system should look like a point charge from far away. Here we have infinitely large plates, so there is no "far away".
 \fi
 
 ## Numerical Implementation of HW 4.3
@@ -861,7 +863,7 @@ $$\frac{d^2V_1}{dx^2}=-\frac{\rho_1}{\epsilon_o}$$
 
 $$\frac{d^2V_2}{dx^2}=-\frac{\rho_2}{\epsilon_o}$$
 
-In both regions, $\rho=0$, so the above equations simplify to Laplace's equation. Using the finite difference approximation described in the textbook, we have
+In both regions $\rho=0$, so the above equations simplify to Laplace's equation. Using the finite difference approximation described in the textbook, we have
 
 $$V_1(x_i)=\frac{1}{2}\Big(V_1(x_{i-1})+V_1(x_{i+1})\Big)$$
 
@@ -913,7 +915,15 @@ To estimate the density on the upper half of the left edge of figure 1.20a, use
 
 $$\sigma = -\epsilon_o\frac{\partial V}{\partial x}\simeq -\epsilon_o \frac{\Phi_1-80\text{ V}}{\Delta x}$$
 
-where $\Delta x$ is horizontal distance from the $\Phi_1$ node to the left edge. This process can be repeated to find six surface charge density estimates. Note that the capacitance will depend on the length of the duct (into and out of the page), which was not given. In such cases, the capacitance per unit length should be reported. 
+where $\Delta x$ is horizontal distance from the $\Phi_1$ node to the left edge. This process can be repeated to find six surface charge density estimates. One should find the charge on the $80\text{ V}$ edge is approximately equal and opposite to that on the edges at $0\text{ V}$. Note that the capacitance will depend on the length of the duct (into and out of the page), which was not given. In such cases, the capacitance per unit length (into and out of page) should be reported. In this problem, the side lengths were given as one unit, so if the length of the duct is $L$ and the square edge side is $w$, then
+
+$$Q= -Lw\epsilon_o\frac{\partial V}{\partial x}\simeq -Lw\epsilon_o \frac{\Phi_1-80\text{ V}}{w/3}$$
+
+so the capacitance is
+
+$$\frac{C}{L} \simeq 3\epsilon_o (\Phi_1-80)$$
+
+Note that the capacitance is independent of the value of the potential distance, so it is more convenient to set the left edge at $1\text{ V}$.
 
 <img src="solns/HW5_3.png" width="50%"/>
 \fi
@@ -1026,11 +1036,11 @@ The sphere at $r=a$ is grounded and the sphere at $r=3a$ is held at $V_o$; $a=1\
    
 1. Find the exact value of the potential for all $r$.
 
-2. Use the "Simple Averaging" method to find the potential for $a\le r\le 3a$.
+2. Use the "Simple Averaging" numerical method to find the potential for $a\le r\le 3a$.
 
    Use a grid spacing of $a/3$ and iterate until the maximum absolute change in potential at any grid point is $1$%.
 
 3. Plot your solutions to 1. and 2. on the same axes.
 
-4. Find all bound charge densities and the charge density on the two conductors.
+4. Find all bound charge densities and the charge density on the two conductors using either your exact or numerical solution.
 

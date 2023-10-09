@@ -915,7 +915,7 @@ To estimate the density on the upper half of the left edge of figure 1.20a, use
 
 $$\sigma = -\epsilon_o\frac{\partial V}{\partial x}\simeq -\epsilon_o \frac{\Phi_1-80\text{ V}}{\Delta x}$$
 
-where $\Delta x$ is horizontal distance from the $\Phi_1$ node to the left edge. This process can be repeated to find six surface charge density estimates. One should find the charge on the $80\text{ V}$ edge is approximately equal and opposite to that on the edges at $0\text{ V}$. Note that the capacitance will depend on the length of the duct (into and out of the page), which was not given. In such cases, the capacitance per unit length (into and out of page) should be reported. In this problem, the side lengths were given as one unit, so if the length of the duct is $L$ and the square edge side is $w$, then
+where $\Delta x$ is horizontal distance from the $\Phi_1$ node to the left edge. This process can be repeated to find six surface charge density estimates. One should find the charge on the $80\text{ V}$ edge is approximately equal and opposite to that on the edges at $0\text{ V}$. Note that the capacitance will depend on the length of the duct (into and out of the page), which was not given. In such cases, the capacitance per unit length (into and out of page) should be reported. In this problem, the side lengths were given as one unit, so if the length of the duct is $L$ and the square edge side is $w$, then for the grid shown in Figure 1.20a,
 
 $$Q= -Lw\epsilon_o\frac{\partial V}{\partial x}\simeq -Lw\epsilon_o \frac{\Phi_1-80\text{ V}}{w/3}$$
 

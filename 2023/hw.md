@@ -816,7 +816,7 @@ Using Gauss's law in the same way used to find the equation for the surface char
 
 Using either gives
 
-$$\sigma_2=-\sigma_1=\frac{\epsilon_1\epsilon_2}{\epsilon_1+\epsilon_2}$$
+$$\sigma_2=-\sigma_1=\frac{V_o}{d}\frac{\epsilon_1\epsilon_2}{\epsilon_1+\epsilon_2}$$
 
 Given the charge on the conducting plates is $\sigma A$, we can show the capacitance is
 
@@ -894,12 +894,18 @@ A sphere of radius $R_o$ has a spherical cavity of radius $R_i$. The sphere and 
    $$\sigma_{bo} = +P_o\frac{R_o^2}{R_i^2}$$
 
    $$
-   \rho_b = -\boldsymbol{\nabla}\cdot\mathbf{P} = {1 \over r^2}{\partial \left( r^2 P_r \right) \over \partial r} = -\frac{4P_o}{R_i^2}
+   \rho_b = -\boldsymbol{\nabla}\cdot\mathbf{P} = {1 \over r^2}{\partial \left( r^2 P_r \right) \over \partial r} = -\frac{4P_or}{R_i^2}
    $$
 
   Checks: Given $\mathbf{P}$ is outward, expect inner surface to have negative bound charge. Expect total bound charge to be zero (a polarized object can be thought of as being created by gluing dipoles in place; dipoles have zero net charge).
 
-2. Think of this as a regular charge problem with the densities found in part 1. In the cavity, the field will be zero.  Outside, the field will be zero (because net bound charge is zero) and outside of a uniformly charged shell, the field is same as if all charge was at origin, and the $\rho$ can be thought of as being created by nested shells. Inside the object, use Gauss's law to find $E_r(r)$. Other components of $\mathbf{E}$ are zero, which can be justified by a symmetry argument (what is it?).
+2. Think of this as a regular charge problem with the densities found in part 1. In the cavity, the field will be zero because the field inside a uniformly charged shell is zero and the volumne charge density can be thought of as being created by nested shells.  Outside, the field will be zero (because net bound charge is zero) and outside of a uniformly charged shell, the field is same as if all charge was at origin, and the $\rho$ can be thought of as being created by nested shells. Inside the object, use Gauss's law to find $E_r(r)$. Other components of $\mathbf{E}$ are zero, which can be justified by a symmetry argument (what is it?).
+
+   Inside shell (see previous problems for justification to get to this point on the left--hand side):
+   
+   $$4\pi r^2 E_r(r) \epsilon_o = Q_{\text{encl}}=\sigma_{bi}4\pi R_i^2 + \rho_b\frac{4\pi}{3} (r^3-R_i^3)$$
+   
+   The first term will create a $1/r^2$ field.
 
 \fi
 

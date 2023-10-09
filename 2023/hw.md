@@ -854,6 +854,44 @@ You do not need to do any calculations -- I am looking only for a description of
 
 Post your solution by 4 pm on Thursday, September 28th in a file named `HW5_2.pdf` in your GitHub repository.
 
+\ifsolutions
+In each region, Poisson's equation applies
+
+$$\frac{d^2V_1}{dx^2}=-\frac{\rho_1}{\epsilon_o}$$
+
+$$\frac{d^2V_2}{dx^2}=-\frac{\rho_2}{\epsilon_o}$$
+
+In both regions, $\rho=0$, so the above equations simplify to Laplace's equation. Using the finite difference approximation described in the textbook, we have
+
+$$V_1(x_i)=\frac{1}{2}\Big(V_1(x_{i-1})+V_1(x_{i+1})\Big)$$
+
+$$V_2(x_i)=\frac{1}{2}\Big(V_2(x_{i-1})+V_2(x_{i+1})\Big)$$
+
+Note that if $\rho_1$ was not zero, there would be an extra term in the equation for $V_1$. Similar for $V_2$.
+
+Suppose we take $h=d/2$, then we have grid points at $0, d/2, d, 3d/2$, and $2d$ and so
+
+$$V_1(d/2)=\frac{1}{2}\Big(V_1(0)+V_1(d)\Big)$$
+
+$$V_2(3d/2)=\frac{1}{2}\Big(V_2(2d)+V_2(d)\Big)$$
+
+There are four unknowns in the above two equations ($V_1(0)=0$ and $V_2(2d)=V_o$ are given). The remaining two equations needed to solve are the boundary conditions at the interface: $V_1(d)=V_2(d)$ and $D_1(d)=D_2(d)$. The latter can be written as $\epsilon_1E_1(d)=\epsilon_2E_2(d)$, where
+
+$$E_1(d)=-\frac{V_1(d)-V_1(d/2)}{d/2}$$
+
+$$E_2(d)=-\frac{V_2(3d/2)-V_2(d)}{d/2}$$
+
+Thus, we need to solve for 
+
+$$V_1(d/2)=\frac{1}{2}\Big(V_1(0)+V_1(d)\Big)$$
+
+$$V_2(3d/2)=\frac{1}{2}\Big(V_1(2d)+V_1(d)\Big)$$
+
+$$V_1(d)=V_2(d)$$
+
+$$\epsilon_1\frac{V_1(d)-V_1(d/2)}{d/2} = \epsilon_2\frac{V_2(3d/2)-V_1(d)}{d/2}$$
+\fi
+
 ## Capacitance
 
 Suppose the conducting system shown in figure 1.20a of Ramo was modified so that all sides were at zero potential except the left side, which was still at $80\text{ V}$.

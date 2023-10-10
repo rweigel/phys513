@@ -975,9 +975,77 @@ $$\mathbf{B}_{ext}=\frac{\mu_o}{4\pi}\frac{m_o}{r^3}\left(2\cos\theta\hat{\mathb
 Before doing any calculations, try to determine the direction of the total force on the loop.
 
 1. Will the loop tend to expand or compress?
-2. Compute the net force on the circular loop in terms.
+2. Compute the net force on the circular loop.
 
 (The loop will create a magnetic field. However, when computing the force on the loop, the field due to the loop is omitted, and only $\mathbf{B}_{ext}$ is used. The reason is the same reason that when you compute the force on an object in mechanics, you only use the force due to the gravitational field of Earth. Although each part of the object exerts a gravitational force on the other parts of the object, the net "self--force" is zero.)
+
+\ifsolutions
+**Answer**
+
+<img src="figures/Lorentz_Force_Shifted_Ring_Solution.svg"/>
+
+At the point on the wire shown on (b) and (c) (and actually any point on the wire), $\cos\theta=d/r$ and $\sin\theta=b/r$, where $r=\sqrt{b^2+d^2}$. Substitution gives
+
+$\displaystyle\mathbf{B}_{ext}=\frac{\mu_o}{4\pi}\frac{m_o}{(b^2+d^2)^2}\left(2d\hat{\mathbf{r}}+b\hat{\boldsymbol{\theta}}\right)$
+
+2\. From part (c) of the figure above, and at the position on the wire shown, the field has components in the $+y$ and $+z$ directions (the $z$ component direction depends on $\theta$). The differential force on the point shown is
+
+$d\mathbf{F}= dl \mathbf{I}\times \mathbf{B}$
+
+The cross product of $\mathbf{I}=I_o\xhat$ with $\mathbf{B}=B_y\zhat$ gives a force in the $+\hat{\mathbf{z}}$ direction. Try plotting the system looking down at from the $+z$--axis; then ask what the direction of force is due to the $B_y$ at four locations on the loop that are separated by $90^\circ$. You should find that the force due to $B_y$ on all elements of the wire will be upward, and so the net horizontal force will be non--zero. The wire will tend to move in the $+z$ direction.
+
+The cross product of $\mathbf{I}=I_o\xhat$ with $\mathbf{B}=B_z\zhat$ gives a force in the $-\hat{\mathbf{y}}$ direction. Try plotting the system looking down at from the $+z$--axis; then ask what the direction of force is due to the $B_z$ at four locations on the loop that are separated by $90^\circ$. You should find that the force due to $B_z\zhat$ on all elements of the wire will be inward, and so the net horizontal force will be zero. The wire will tend to compress, but it will not translate horizontally.
+
+The given field is
+$\mathbf{B}_{ext}=B_o(2\cos\theta\hat{\mathbf{r}} + \sin\theta\boldsymbol{\hat{\theta}})$, where $B_o\equiv\mu_o m_o/4\pi r^3$ and $r$, $\sin\theta$, and $\cos\theta$ are given in the answer to part 1.
+
+To write $\mathbf{B}_{ext}$ in cylindrical coordinates, one can use a diagram to show that
+
+$\hat{\mathbf{r}}=\cos\theta\zhat + \sin\theta\hat{\mathbf{s}}$
+
+$\hat{\boldsymbol{\theta}}=-\sin\theta\zhat + \cos\theta\hat{\mathbf{s}}$
+
+(These formulas are not given on the pages at the end of Griffiths, but they can be derived from the given formulas. However, you should also be able to derive them using a diagram.)
+
+Substitution gives
+
+$\displaystyle\frac{\mathbf{B}_{ext}}{B_o}=(3\cos^2\theta-1)\zhat + 3\cos\theta\sin\theta\mathbf{\hat{s}}$
+
+(Earlier, I noted that for small enough $\theta$, $\mathbf{B}_{ext}$ has a $+z$ component. From this equation, we can see that the requirement for this is $3\cos^2\theta-1 > 1$ or $b\lt \sqrt{2}d$.)
+
+Both components are constant on the loop because $\theta$ is constant. Based on the answers to 2. and 3., we only expect the $\hat{\mathbf{s}}$ component of the field to give a _net_ force. Given these two arguments, we can finish the problem by writing $\mathbf{F}=ILB_{ext\text{ }s}\zhat$ with $L=2\pi b$ and $B_{ext\text{ }s}=3\cos\theta\sin\theta$. In the following, details on the math that leads to these conclusions are shown.
+
+We need to evaluate
+
+$\displaystyle \mathbf{F}=\int dl \mathbf{I}\times \mathbf{B}$
+
+From the diagram, $\mathbf{I}=-I\boldsymbol{\hat{\phi}}$ and $dl=b d\phi$.
+The cross product needed for computing the force is
+
+$\mathbf{I}\times \mathbf{B}_{ext}=-IB_o\left((3\cos^2\theta-1)\boldsymbol{\hat{\phi}}\times\zhat + 3\cos\theta\sin\theta\boldsymbol{\hat{\phi}}\times\mathbf{\hat{s}}\right)$
+
+Evaluating the unit vector cross products gives
+
+$\mathbf{I}\times \mathbf{B}_{ext}=IB_o(1-3\cos^2\theta)\mathbf{\hat{s}} + 3IB_o\cos\theta\sin\theta\zhat$
+
+We usually would convert $\hat{\mathbf{s}}$ to cartesian unit vectors before integration. However, we know that the integral of $d\phi\hat{\mathbf{s}}$ from $0$ to $2\pi$ is zero from a diagram (see discussion in [integrating unit vectors](vectors.html#integrating); we also expect this physically -- if we pick two points on opposite sides of the wire, the force on them in the $\hat{\mathbf{s}}$ direction is equal and opposite. As a result, we could drop the $\hat{\mathbf{s}}$ term in the cross product at this point. 
+
+Using $dl=b d\phi$ and the cross product computed above, we have
+
+$\displaystyle \mathbf{F}=\int_0^{2\pi} b d\phi IB_o(1-3\cos^2\theta)\mathbf{\hat{s}} + \int_0^{2\pi} b d\phi 3IB_o\cos\theta\sin\theta\zhat$
+
+Factoring out constants gives
+
+$\displaystyle \mathbf{F}= IB_ob(1-3\cos^2\theta)\int_0^{2\pi} d\phi\mathbf{\hat{s}} +  3IB_ob\cos\theta\sin\theta\int_0^{2\pi} d\phi\zhat$
+
+The first integral is zero after using $\hat{\mathbf{s}}=\cos\phi\xhat + \sin\phi\yhat$. The second integral is $2\pi$. We are left with
+
+$\mathbf{F}=I (2\pi b) B_o  3\cos\theta\sin\theta\zhat$
+
+Using $B_o=\mu_o m_o/4\pi r^3$, $\cos\theta=d/r$, $\sin\theta=b/r$, and $r=\sqrt{b^2+d^2}$ gives
+
+$\displaystyle \mathbf{F}=\frac{3}{2}\frac{\mu_om_oIdb^2}{(b^2+d^2)^{5/2}}\hat{\mathbf{z}}$
+\fi
 
 ## Biot--Savart
 
@@ -988,6 +1056,82 @@ The loop shown is centered on the origin.
 1. Find the magnetic field at the origin
 2. If $a\gg b$, we expect the field at the origin to be approximately equal to that of two long straight wires. Use your answer to 1. to verify this.
 
+
+\ifsolutions
+**Answer**
+
+1\. Griffiths gives the equation $B=\frac{\mu_o I}{4\pi s}(\sin\theta_2-\sin\theta_1)$. This equation can be applied to the given problem. For the bottom wire, the initial angle is $\sin\theta_1=a/\sqrt{a^2+b^2}$ and the final angle is $\sin\theta_2=-a/\sqrt{a^2+b^2}$. Therefore,
+
+Bottom: $\displaystyle B_z=\frac{\mu_o I}{4\pi (b/2)}\frac{-2a}{\sqrt{a^2+b^2}}=-\frac{\mu_o I}{\pi b}\frac{a}{\sqrt{a^2+b^2}}$ 
+
+The top wire contributes the same field as the bottom, so.
+
+Top: $\displaystyle B_z=-\frac{\mu_o I}{\pi b}\frac{a}{\sqrt{a^2+b^2}}$ 
+
+The field for the left and right wire can be found by swapping $a$ and $b$ in the above equation.
+
+Left: $\displaystyle B_z=-\frac{\mu_o I}{\pi a}\frac{b}{\sqrt{a^2+b^2}}$ 
+
+Right: $\displaystyle B_z=-\frac{\mu_o I}{\pi a}\frac{b}{\sqrt{a^2+b^2}}$ 
+
+Griffiths' solution uses a short--cut that applies to this particular problem. In class, I encouraged you to solve this problem using the more general method, which is as follows.
+
+$\mathbf{r}=\mathbf{0}$
+
+$\mathbf{r}'=x'\xhat + y'\yhat=x'\xhat -(b/2)\yhat$
+
+$d\mathbf{l}' = -dx'\xhat$
+
+Substitution of the above into
+
+$\displaystyle \mathbf{B}(\mathbf{r}) = \frac{\mu_0I}{4\pi}\int\frac{d\mathbf{l}'\times (\mathbf{r} - \mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|^3}$
+
+Gives
+
+$\displaystyle \mathbf{B} = \frac{\mu_0I}{4\pi}\int\frac{-dx'\xhat\times (-x'\xhat + (b/2)\yhat)}{\left(x'^2 + (b/2)^2\right)^{3/2}}$
+
+After evaluating the cross products, we are left with
+
+$\displaystyle \mathbf{B} = -\zhat\frac{\mu_o}{4\pi}\frac{Ib}{2}\int_{-a/2}^{a/2}\frac{dx'}{\left(x'^2 + (b/2)^2\right)^{3/2}}$
+
+Let $x'=(b/2)\tan u$, then $dx'=b du/2\cos^2u$ and the integrand is
+
+$\displaystyle\frac{\left(\frac{b}{2}\right)\frac{du}{\cos^2u}}{\left(\frac{b}{2}\right)^3(\tan^2u+1)^{3/2}}$
+
+Dividing $\sin^2u+\cos^2u=1$ by $\cos^2u$ gives $\tan^2u+1=1/\cos^2u$, so the integrand can be written
+
+$\displaystyle\frac{\left(\frac{b}{2}\right)\frac{du}{\cos^2u}}{\left(\frac{b}{2}\right)^3|1/\cos u|^3}=\left(\frac{2}{b}\right)^2|\cos u|du$
+
+The limits of integration are from $u_o=\tan^{-1}(-a/b)$ to $u_f=\tan^{-1}(a/b)$
+
+$\displaystyle \mathbf{B} = -\zhat\frac{\mu_o}{4\pi}\frac{I2}{b}\int_{u_o}^{u_f}|\cos u|du$
+
+Within these limits of integration, $\cos u$ is positive<sup>\*</sup>, so we can drop the absolute value and integrate. (<sup>\*</sup>this requires some thought and a diagram to show.)
+
+$\displaystyle \mathbf{B} = -\zhat\frac{\mu_o}{4\pi}\frac{I2}{b}(\sin u_f-\sin u_o)$
+
+If $u_o=\tan^{-1}(-a/b)$, then $\tan u_o=-a/b$. This corresponds to a right triangle in the fourth quadrant with sides of $a$ and $b$, which has a hypotenuse of $\sqrt{a^2+b^2}$ and for which $\sin u_o = -a/\sqrt{a^2+b^2}$. Similarly, $\sin u_f = a/\sqrt{a^2+b^2}$. Substitution gives
+
+$\displaystyle \mathbf{B} = -\zhat\frac{\mu_oI}{b}\frac{a}{\sqrt{a^2+b^2}}$
+
+2\. For an infinite wire, $B=\mu_o I/2\pi s$, where $s$ is the perpendicular distance from the wire; the magnitude is determined from the right--hand rule. The top and bottom wires will create a field with this magnitude in the $-\zhat$ direction (from the right-hand rule). For both wires, the perpendicular distance is $b/2$. Therefore, $B_z=-2\mu_o I/\pi b$.
+
+The field from the top and bottom wires from part 1. is
+
+$\displaystyle B_z=-\frac{2\mu_o I}{\pi b}\frac{a}{\sqrt{a^2+b^2}}$
+
+Factoring out $a$ gives
+
+$\displaystyle B_z=-\frac{2\mu_o I}{\pi b}\frac{1}{\sqrt{1+b^2/a^2}}$
+
+For $b \lt a$, we can expand
+
+$\displaystyle B_z = -\frac{2\mu_o I}{\pi b}\left(1-\frac{1}{2}\frac{b^2}{a^2}+...\right)$
+
+For $a\gg b$,
+
+$\displaystyle B_z \simeq -\frac{2\mu_o I}{\pi b}$
+\fi
 ## Interface Condition for $\mathbf{B}$
 
 In the following figure, the cross--section of two planes is shown. The planes are infinite in extent in the $\pm z$ direction and $w\gg t$, so they are infinite in extent in the $\pm x$ direction.
@@ -1013,6 +1157,22 @@ The slab shown on the left in the following figure carries a current density of 
 3. Find $\mathbf{B}(z)$
 
 <img src="https://rweigel.github.io/phys305/figures/Amperes_Law_Current_Carrying_Slab.svg" width="90%"/>
+
+\ifsolutions
+**Answer**
+
+1. $z\gt +t/2$, $\mathbf{B}$ in $-\yhat$
+
+   $z\lt -t/2$, $\mathbf{B}$ in $+\yhat$ 
+
+2. $\mathbf{B}=0$
+
+3. Inside, $B_y=-\mu_oJ_oz$.
+
+    $z>+t/2$, $B_y=-\mu_oJ_ot/2$
+    
+    $z<-t/2$, $B_y=+\mu_oJ_ot/2$
+\fi
 
 # HW 7
 

@@ -971,7 +971,6 @@ Due to a magnetic dipole at $(x,y,z)$ = $(0,0,0)$, there is a field (in spherica
 
 $$\mathbf{B}_{ext}=\frac{\mu_o}{4\pi}\frac{m_o}{r^3}\left(2\cos\theta\hat{\mathbf{r}}+\sin\theta\hat{\boldsymbol{\theta}}\right)$$
 
-
 Before doing any calculations, try to determine the direction of the total force on the loop.
 
 1. Will the loop tend to expand or compress?
@@ -1056,8 +1055,6 @@ The loop shown is centered on the origin.
 1. Find the magnetic field at the origin
 2. If $a\gg b$, we expect the field at the origin to be approximately equal to that of two long straight wires. Use your answer to 1. to verify this.
 
-
-\ifsolutions
 **Answer**
 
 1\. Griffiths gives the equation $B=\frac{\mu_o I}{4\pi s}(\sin\theta_2-\sin\theta_1)$. This equation can be applied to the given problem. For the bottom wire, the initial angle is $\sin\theta_1=a/\sqrt{a^2+b^2}$ and the final angle is $\sin\theta_2=-a/\sqrt{a^2+b^2}$. Therefore,
@@ -1073,46 +1070,6 @@ The field for the left and right wire can be found by swapping $a$ and $b$ in th
 Left: $\displaystyle B_z=-\frac{\mu_o I}{\pi a}\frac{b}{\sqrt{a^2+b^2}}$ 
 
 Right: $\displaystyle B_z=-\frac{\mu_o I}{\pi a}\frac{b}{\sqrt{a^2+b^2}}$ 
-
-Griffiths' solution uses a short--cut that applies to this particular problem. In class, I encouraged you to solve this problem using the more general method, which is as follows.
-
-$\mathbf{r}=\mathbf{0}$
-
-$\mathbf{r}'=x'\xhat + y'\yhat=x'\xhat -(b/2)\yhat$
-
-$d\mathbf{l}' = -dx'\xhat$
-
-Substitution of the above into
-
-$\displaystyle \mathbf{B}(\mathbf{r}) = \frac{\mu_0I}{4\pi}\int\frac{d\mathbf{l}'\times (\mathbf{r} - \mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|^3}$
-
-Gives
-
-$\displaystyle \mathbf{B} = \frac{\mu_0I}{4\pi}\int\frac{-dx'\xhat\times (-x'\xhat + (b/2)\yhat)}{\left(x'^2 + (b/2)^2\right)^{3/2}}$
-
-After evaluating the cross products, we are left with
-
-$\displaystyle \mathbf{B} = -\zhat\frac{\mu_o}{4\pi}\frac{Ib}{2}\int_{-a/2}^{a/2}\frac{dx'}{\left(x'^2 + (b/2)^2\right)^{3/2}}$
-
-Let $x'=(b/2)\tan u$, then $dx'=b du/2\cos^2u$ and the integrand is
-
-$\displaystyle\frac{\left(\frac{b}{2}\right)\frac{du}{\cos^2u}}{\left(\frac{b}{2}\right)^3(\tan^2u+1)^{3/2}}$
-
-Dividing $\sin^2u+\cos^2u=1$ by $\cos^2u$ gives $\tan^2u+1=1/\cos^2u$, so the integrand can be written
-
-$\displaystyle\frac{\left(\frac{b}{2}\right)\frac{du}{\cos^2u}}{\left(\frac{b}{2}\right)^3|1/\cos u|^3}=\left(\frac{2}{b}\right)^2|\cos u|du$
-
-The limits of integration are from $u_o=\tan^{-1}(-a/b)$ to $u_f=\tan^{-1}(a/b)$
-
-$\displaystyle \mathbf{B} = -\zhat\frac{\mu_o}{4\pi}\frac{I2}{b}\int_{u_o}^{u_f}|\cos u|du$
-
-Within these limits of integration, $\cos u$ is positive<sup>\*</sup>, so we can drop the absolute value and integrate. (<sup>\*</sup>this requires some thought and a diagram to show.)
-
-$\displaystyle \mathbf{B} = -\zhat\frac{\mu_o}{4\pi}\frac{I2}{b}(\sin u_f-\sin u_o)$
-
-If $u_o=\tan^{-1}(-a/b)$, then $\tan u_o=-a/b$. This corresponds to a right triangle in the fourth quadrant with sides of $a$ and $b$, which has a hypotenuse of $\sqrt{a^2+b^2}$ and for which $\sin u_o = -a/\sqrt{a^2+b^2}$. Similarly, $\sin u_f = a/\sqrt{a^2+b^2}$. Substitution gives
-
-$\displaystyle \mathbf{B} = -\zhat\frac{\mu_oI}{b}\frac{a}{\sqrt{a^2+b^2}}$
 
 2\. For an infinite wire, $B=\mu_o I/2\pi s$, where $s$ is the perpendicular distance from the wire; the magnitude is determined from the right--hand rule. The top and bottom wires will create a field with this magnitude in the $-\zhat$ direction (from the right-hand rule). For both wires, the perpendicular distance is $b/2$. Therefore, $B_z=-2\mu_o I/\pi b$.
 
@@ -1131,7 +1088,7 @@ $\displaystyle B_z = -\frac{2\mu_o I}{\pi b}\left(1-\frac{1}{2}\frac{b^2}{a^2}+.
 For $a\gg b$,
 
 $\displaystyle B_z \simeq -\frac{2\mu_o I}{\pi b}$
-\fi
+
 ## Interface Condition for $\mathbf{B}$
 
 In the following figure, the cross--section of two planes is shown. The planes are infinite in extent in the $\pm z$ direction and $w\gg t$, so they are infinite in extent in the $\pm x$ direction.
@@ -1144,9 +1101,38 @@ The Amperian loop to be used in part 3. of this problem is shown as a dotted lin
 <img src="https://rweigel.github.io/phys305/figures/Amperes_Law_Two_Sheets.svg"/>
 
 1. Find $\mathbf{B}$ using the equation for the magnetic field due to a large flat current sheet (Equation 5.58 of Griffiths 4th Edition) and superposition.
-2. Plot $B_x(y)$ in the range $-2t\le y\le 2t$.
+2. Sketch $B_x(y)$ in the range $-2t\le y\le 2t$.
 3. Show that $\oint \mathbf{B}\bfcdot d\mathbf{l} = \mu_o I_{encl}$ is satisfied for the Amperian loop shown.
 4. In electrostatics, when one crossed a sheet of current, there was a change in the electric field. This fact was used for boundary value problems. In magnetostatics, when crosses a plane of current, there is a change in the magnetic field. Find an equation for $B_{a\parallel}-B_{b\parallel}$, where $B_{a\parallel}$ is the component of the field that is parallel to the plane just above the blue plane and $B_{b\parallel}$ is the component of the field that is parallel to the plane just below the blue plane.
+
+**Answer**
+
+
+1. Equation 5.58 is for a sheet with a different orientation. The magnitude of the field above and below the sheet is $\mu_oK/2$ and the direction is given by the right--hand rule.
+
+  Between the sheets, the fields are in the same direction and outside they are in the opposite direction. The field is zero except between the sheets where it is $\mathbf{B}=-\mu_oK_o\xhat$.
+  
+  This configuration is analagous to two sheets of charge with charge density $\pm \sigma_o$; outside, the field is zero and inside it is $\sigma_o/\epsilon_o$.
+
+2. 
+
+<img src="https://rweigel.github.io/phys305/figures/Amperes_Law_Two_Sheets_Solution.svg"/>
+
+3. The sign of $I_{encl}$ depends on the direction of integration around the Amperian loop. Choosing clockwise roation, $I_{encl}=+K_od$, where $d$ is the width of the loop. (The sign of $I_{encl}$ is positive if you wrap your fingers around loop in the direction of integration and the flow of current through the loop is in the direction of your thumb.) 
+
+   $$\oint \mathbf{B}\bfcdot d\mathbf{l}=\int_{1}\mathbf{B}\bfcdot d\mathbf{l}+\int_{2}\mathbf{B}\bfcdot d\mathbf{l}+\int_{3}\mathbf{B}\bfcdot d\mathbf{l}+\int_{4}\mathbf{B}\bfcdot d\mathbf{l}$$
+   
+   On segments $1$ and $3$, $\mathbf{B}$ is perpendicular to $d\mathbf{l}$, so their integrands are zero. On segment $4$, $\mathbf{B}$ is zero, so its integrand is zero.
+   
+   On segment $2$, $d\mathbf{l}=-dx\xhat$ and
+
+   $$\int_{0}^d\mathbf{B}\bfcdot d\mathbf{l}=\int_{0}^d(-\mu_oK_o\xhat)\bfcdot (-dx\xhat)=\mu_oK_od$$
+   
+   Therefore, we have shown
+   
+   $$\left(\oint \mathbf{B}\bfcdot d\mathbf{l} = \mu_oK_od\right) = \Big(\mu_o I_{encl} = \mu_o K_o d\Big)$$
+
+4. $B_{a\parallel}-B_{b\parallel} = 0 - (-\mu_oK_o) = \mu_oK_o$. This equation is consistent with the general boundary equation 2.14(4) of Ramo $\hat{\mathbf{n}} \times (\mathbf{H}_1-\mathbf{H}_2)=\mathbf{K}_f$, where $\hat{\mathbf{n}}$ is the normal to the surface that points into region $1$.
 
 ## Current--Carrying Slab
 
@@ -1156,7 +1142,7 @@ The slab shown on the left in the following figure carries a current density of 
 2. What is $\mathbf{B}$ in the $x$--$y$ plane?
 3. Find $\mathbf{B}(z)$
 
-<img src="https://rweigel.github.io/phys305/figures/Amperes_Law_Current_Carrying_Slab.svg" width="90%"/>
+<img src="https://rweigel.github.io/phys305/figures/Amperes_Law_Current_Carrying_Slab.svg" width="60%"/>
 
 \ifsolutions
 **Answer**
@@ -1169,9 +1155,9 @@ The slab shown on the left in the following figure carries a current density of 
 
 3. Inside, $B_y=-\mu_oJ_oz$.
 
-    $z>+t/2$, $B_y=-\mu_oJ_ot/2$
-    
-    $z<-t/2$, $B_y=+\mu_oJ_ot/2$
+   $z>+t/2$, $B_y=-\mu_oJ_ot/2$
+
+   $z<-t/2$, $B_y=+\mu_oJ_ot/2$
 \fi
 
 # HW 7
@@ -1186,7 +1172,7 @@ A section of a long coaxial cable is shown in the following image. Find the magn
 
 Due on October 19th at 11:59 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.
 
-----
+%----
 
 The space between two concentric conducting spherical shells of radius $a$ and $3a$ is filled with a thick shell of uniformly charged material for $a\lt r \le 2a$ and a thick shell of dielectric material for $2a\lt r\lt 3a$.
 
@@ -1203,4 +1189,3 @@ The sphere at $r=a$ is grounded and the sphere at $r=3a$ is held at $V_o$; $a=1\
 3. Plot your solutions to 1. and 2. on the same axes.
 
 4. Find all bound charge densities and the charge density on the two conductors using either your exact or numerical solution.
-

@@ -22,6 +22,14 @@ HWs:
 
 # Schedule
 
+## October 17th
+
+* Midterm (60 minutes)
+* Comment on annotation issues on HW.
+* Discuss ideas for approaching take--home part
+* Discuss [HW #7](hw.html#hw-7)
+* Cover inductance
+
 ## October 12th
 
 * In--class part of midterm (60 minutes, one problem)

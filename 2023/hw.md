@@ -1071,6 +1071,10 @@ Left: $\displaystyle B_z=-\frac{\mu_o I}{\pi a}\frac{b}{\sqrt{a^2+b^2}}$
 
 Right: $\displaystyle B_z=-\frac{\mu_o I}{\pi a}\frac{b}{\sqrt{a^2+b^2}}$ 
 
+The total field is
+
+$$B_z=-\frac{2\mu_oI}{\pi\sqrt{a^2+b^2}}\left(\frac{a}{b}+\frac{b}{a}\right)$$
+
 2\. For an infinite wire, $B=\mu_o I/2\pi s$, where $s$ is the perpendicular distance from the wire; the magnitude is determined from the right--hand rule. The top and bottom wires will create a field with this magnitude in the $-\zhat$ direction (from the right-hand rule). For both wires, the perpendicular distance is $b/2$. Therefore, $B_z=-2\mu_o I/\pi b$.
 
 The field from the top and bottom wires from part 1. is
@@ -1132,7 +1136,7 @@ The Amperian loop to be used in part 3. of this problem is shown as a dotted lin
    
    $$\left(\oint \mathbf{B}\bfcdot d\mathbf{l} = \mu_oK_od\right) = \Big(\mu_o I_{encl} = \mu_o K_o d\Big)$$
 
-4. $B_{a\parallel}-B_{b\parallel} = 0 - (-\mu_oK_o) = \mu_oK_o$. This equation is consistent with the general boundary equation 2.14(4) of Ramo $\hat{\mathbf{n}} \times (\mathbf{H}_1-\mathbf{H}_2)=\mathbf{K}_f$, where $\hat{\mathbf{n}}$ is the normal to the surface that points into region $1$.
+4. $B_{a\parallel}-B_{b\parallel} = 0 - (-\mu_oK_o) = \mu_oK_o$. This equation is consistent with the general boundary equation 2.14(4) of Ramo $\hat{\mathbf{n}} \times (\mathbf{H}_1-\mathbf{H}_2)=\mathbf{K}_f$, where $\hat{\mathbf{n}}$ is the normal to the surface that points into region $1$. A question was raised about the fact that the loop was not centered on the sheet. To use Ampere's law to find the field due to an infinite sheet, one needs to use a centered loop. Ampere's law applies to any closed loop, and so we should find that Ampere's law is satisfied for this loop, even if it could not have been used to find the field due to an infinite sheet.
 
 ## Current--Carrying Slab
 
@@ -1168,11 +1172,35 @@ A section of a long coaxial cable is shown in the following image. Find the magn
 
 <img src="figures/Coaxial_Cable.png" width=30%/>
 
+## Inductance of a Rectangular Duct
+
+A rectangular duct carries a net current of $I = Kl$ in the direction shown. A series of current supplies along the infinitesimal gap is driving the current. The duct has a small enough thickness that the current can be treated as flowing on a sheet.
+
+<img src="figures/Rectangular_Duct.svg">
+
+1. Assuming $w \gg h$ and $l \gg h$, use Ampere's law to find the magnetic field inside and outside of the duct. Show the Amperian loop and justify your steps.
+
+2. The duct has only an external self-inductance. (External inductance means inductance due to flux through a cross-section where there is no current.) The external self-inductance is due to the magnetic flux through the cross-sectional area $A=hw$. The electromotive force across the gap is due to a change in magnetic flux
+
+   $$\mathcal{E} = -\frac{\partial \Phi_m}{\partial t}$$
+
+   where $\Phi_m$ is the magnetic flux. Compute this magnetic flux and re-write this equation in the form of
+
+   $$\mathcal{E} = -\mathcal{L} \frac{\partial I}{\partial t}$$
+
+   so as to find $\mathcal{L}$ in terms of $\mu_o$, $l$, and the cross-sectional area $A=hw$. 
+
+3. An alternative method of computing inductance uses the relationship $\mu_oLI^2=\int B^2 dv$, where $dv$ is a differential volume, the integral is taken over all space, and $B$ is the magnitude of the field created by the current $I$ (see Ramo section 2.17 with $H=B/\mu_o$ and Griffiths 4th edition, section 7.2.4). Use this formula to compute $\mathcal{L}$.
+
+## Inductance of a Co--Axial Cable
+
+In class, I derived the inductance of a co--axial cable using $\oint \mathbf{E}\bfcdot d\mathbf{l}=-d\Phi_m/dt$ and the definition $\mathcal{L}=\Phi_m/I$
+
 # Midterm
 
 Due on October 19th at 11:59 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.
 
-%----
+## Take-home
 
 The space between two concentric conducting spherical shells of radius $a$ and $3a$ is filled with a thick shell of uniformly charged material for $a\lt r \le 2a$ and a thick shell of dielectric material for $2a\lt r\lt 3a$.
 
@@ -1189,3 +1217,15 @@ The sphere at $r=a$ is grounded and the sphere at $r=3a$ is held at $V_o$; $a=1\
 3. Plot your solutions to 1. and 2. on the same axes.
 
 4. Find all bound charge densities and the charge density on the two conductors using either your exact or numerical solution.
+
+## In--Class
+
+The space between two concentric conducting spherical shells of radius $a$ and $3a$ is filled with a thick dielectric shell with permittivity $\epsilon_1$ for $a\lt r \le 2a$ and thick dielectric shell with permittivity $\epsilon_2$ for $2a\lt r\lt 3a$. The inner conducting shell at $r=a$ is held at potential $V_o$. The outer conducting shell at $r=3a$ is held at a potential of $0$.
+
+<img src="figures/Sphere_with_Dielectrics.svg"/>
+
+1. Find $V(r)$ for all $r$
+2. Find $\mathbf{E}(r)$ for all $r$
+3. Find $\mathbf{D}(r)$ for all $r$
+4. Find all surface charge densities (both bound and free)
+5. Find the capacitance

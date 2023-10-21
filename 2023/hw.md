@@ -1174,6 +1174,8 @@ A section of a long coaxial cable is shown in the following image. Find the magn
 
 # HW 8
 
+Due Thursday, October 26th at 11:59 pm. Save your answers in a single file named `HW8.pdf` and upload to your GitHub repository.
+
 ## Inductance of a Rectangular Duct
 
 A rectangular duct carries a net current of $I = Kl$ in the direction shown. A series of current supplies along the infinitesimal gap is driving the current. The conducting material of the duct has a small enough thickness that the current can be treated as flowing on a sheet. Ignore the subscript $1$ on the variables in the following diagram.

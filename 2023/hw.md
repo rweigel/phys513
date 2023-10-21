@@ -1172,15 +1172,17 @@ A section of a long coaxial cable is shown in the following image. Find the magn
 
 <img src="figures/Coaxial_Cable.png" width=30%/>
 
+# HW 8
+
 ## Inductance of a Rectangular Duct
 
-A rectangular duct carries a net current of $I = Kl$ in the direction shown. A series of current supplies along the infinitesimal gap is driving the current. The duct has a small enough thickness that the current can be treated as flowing on a sheet.
+A rectangular duct carries a net current of $I = Kl$ in the direction shown. A series of current supplies along the infinitesimal gap is driving the current. The conducting material of the duct has a small enough thickness that the current can be treated as flowing on a sheet. Ignore the subscript $1$ on the variables in the following diagram.
 
 <img src="figures/Rectangular_Duct.svg">
 
 1. Assuming $w \gg h$ and $l \gg h$, use Ampere's law to find the magnetic field inside and outside of the duct. Show the Amperian loop and justify your steps.
 
-2. The duct has only an external self-inductance. (External inductance means inductance due to flux through a cross-section where there is no current.) The external self-inductance is due to the magnetic flux through the cross-sectional area $A=hw$. The electromotive force across the gap is due to a change in magnetic flux
+2. The electromotive force across the gap is due to a change in magnetic flux
 
    $$\mathcal{E} = -\frac{\partial \Phi_m}{\partial t}$$
 
@@ -1188,13 +1190,52 @@ A rectangular duct carries a net current of $I = Kl$ in the direction shown. A s
 
    $$\mathcal{E} = -\mathcal{L} \frac{\partial I}{\partial t}$$
 
-   so as to find $\mathcal{L}$ in terms of $\mu_o$, $l$, and the cross-sectional area $A=hw$. 
+   so as to find the inductance $\mathcal{L}$ in terms of $\mu_o$, $l$, and the cross-sectional area $A=hw$. 
 
-3. An alternative method of computing inductance uses the relationship $\mu_oLI^2=\int B^2 dv$, where $dv$ is a differential volume, the integral is taken over all space, and $B$ is the magnitude of the field created by the current $I$ (see Ramo section 2.17 with $H=B/\mu_o$ and Griffiths 4th edition, section 7.2.4). Use this formula to compute $\mathcal{L}$.
+3. An alternative method of computing inductance uses the relationship $\mu_o\mathcal{L}I^2=\int B^2 dv$, where $dv$ is a differential volume, the integral is taken over all space, and $B$ is the magnitude of the field created by the current $I$ (see Ramo section 2.17 with $H=B/\mu_o$ and Griffiths 4th edition, section 7.2.4). Use this formula to compute $\mathcal{L}$.
 
 ## Inductance of a Co--Axial Cable
 
-In class, I derived the inductance of a co--axial cable using $\oint \mathbf{E}\bfcdot d\mathbf{l}=-d\Phi_m/dt$ and the definition $\mathcal{L}=\Phi_m/I$
+In class, I derived the inductance of a long co--axial cable using $\oint \mathbf{E}\bfcdot d\mathbf{l}=-d\Phi_m/dt$ and the definition $\mathcal{L}=\Phi_m/I$
+
+In the previous problem, it was noted that an alternative approach is to use $\mu_od\mathcal{L}I^2=\int B^2 dv$.
+
+Use $\mu_od\mathcal{L}I^2=\int B^2 dv$ to find $\mathcal{L}$ for the long co--axial cable geometry considered in class, where the cable had length $l$, inner radius $a$, and outer radius $b$.
+
+## Phasors and Related Math
+
+### Trig Identity I
+
+In class, I mentioned [a geometrical proof](https://mymission.lamission.edu/userdata/sargsye2/docs/Math%20240/Proof%20of%20the%20difference%20formula%20for%20cosine.pdf) for $\sin(\alpha + \beta)=\sin(\alpha)\cos(\beta)+\cos(\beta)\sin(\beta)$ and noted that it could also be proved simply using Euler's identity.
+
+Show that $\sin(\alpha + \beta)=\sin(\alpha)\cos(\beta)+\cos(\beta)\sin(\beta)$ using only Euler's identity, $e^{ix}=\cos(x)+i\sin(x)$.
+
+### Trig Identity II
+
+Later in the semester, we will encounter an equation that corresponds to the sum of waves travelling in opposite directions, each with different amplitudes:
+
+$$V(z,t)=\cos(\omega t-\beta z) + a\cos(\omega t+\beta z)$$
+
+where $a$ is a constant. Show that this equation can be written as the sum of two standing waves:
+
+$$V(z,t)=A\cos(\omega t)\cos(\beta z) + B\sin(\omega t)\sin(\beta z)$$
+
+and find $A$ and $B$.
+
+### Summing Sinusoidal Functions
+
+Write $A_1\cos(\theta+\delta_1) + A_2\cos(\theta + \delta_2)$ in the form $A\cos(\theta+\delta)$ using
+
+1. only the identity $\cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$ and
+2. the method outlined on page 785 of [this document](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=184).
+
+### Finding the Steady State Solution of an ODE with Phasors
+
+Use the approach taken in Example A.1 of [this document](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=184) to find the steady state solution $I(t)$ for the ordinary differential equation
+
+$$\frac{dI}{dt}+\frac{I}{\tau}=\frac{V_o}{\mathcal{L}}\cos(\omega t + \phi)$$
+
+(In class I showed how this equation arises for the coaxial cable problem, in which case $\tau=\mathcal{L}/R$. Here you are only asked to find the steady state solution for $I(t)$ using the phasor technique.)
 
 # Midterm
 

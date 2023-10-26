@@ -1210,7 +1210,7 @@ Use $\mu_od\mathcal{L}I^2=\int B^2 dv$ to find $\mathcal{L}$ for the long co--ax
 
 In class, I mentioned [a geometrical proof](https://mymission.lamission.edu/userdata/sargsye2/docs/Math%20240/Proof%20of%20the%20difference%20formula%20for%20cosine.pdf) for $\sin(\alpha + \beta)=\sin(\alpha)\cos(\beta)+\cos(\beta)\sin(\beta)$ and noted that it could also be proved simply using Euler's identity.
 
-Show that $\sin(\alpha + \beta)=\sin(\alpha)\cos(\beta)+\cos(\beta)\sin(\beta)$ using only Euler's identity, $e^{ix}=\cos(x)+i\sin(x)$.
+Show that $\sin(\alpha + \beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)$ using only Euler's identity, $e^{ix}=\cos(x)+i\sin(x)$.
 
 ### Trig Identity II
 
@@ -1253,7 +1253,7 @@ The sphere at $r=a$ is grounded and the sphere at $r=3a$ is held at $V_o$; $a=1\
    
 1. Find the exact value of the potential for all $r$.
 
-2. Use the "Simple Averaging" numerical method to find the potential for $a\le r\le 3a$.
+2. Use the finite difference method to find the potential for $a\le r\le 3a$.
 
    Use a grid spacing of $a/3$ and iterate until the maximum absolute change in potential at any grid point is $1$%.
 

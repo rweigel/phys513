@@ -20,8 +20,15 @@ HWs:
 [6](hw.html#hw-6) | 
 [7](hw.html#hw-7) |
 [8](hw.html#hw-8) |
+[9](hw.html#hw-9) |
 
 # Schedule
+
+## October 24th
+
+* Review of KVL and KCL for resistive circuits
+* Solving circuit problems using complex impedance
+* Computation of impedance for differential transmission line
 
 ## October 17th
 
@@ -29,13 +36,15 @@ HWs:
 * Comment on annotation issues on HW.
 * Discuss ideas for approaching take--home part
 * Discuss [HW #7](hw.html#hw-7)
-* Cover inductance
+* Inductance
+* Trig manipulation using Euler's formula
+* Solving ODEs using the phasor method
 
 ## October 12th
 
 * In--class part of midterm (60 minutes, one problem)
+* Faraday's law and Lenz's law
 * Inductance
-* Generalized Ampere's law
 
 ## October 5th
 

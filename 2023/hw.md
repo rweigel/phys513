@@ -1298,14 +1298,14 @@ $$V_k(x,t)=\text{Re}\left[e^{i\omega t}\left(\widetilde{V}_{k}^+(x)+\widetilde{V
 by defining $\widetilde{V}_{k}^+(x)=\widetilde{V}_{k}^+e^{-i\beta_kx}$ and $\widetilde{V}_{k}^-(x)=\widetilde{V}_{k}^-e^{i\beta_kx}$
 
 1. Find $\widetilde{V}_{0}^+(x)$, $\widetilde{V}_{0}^-(x)$ and $\widetilde{V}_{1}^+(x)$ in terms of $\widetilde{V}_s$, $\widetilde{\rho}$, and $\widetilde{\tau}$.
-2. Plot or sketch the voltage along the line at $t=0$. Assume that $\beta_0 l_0 = 4\pi$ and $Z_1=3Z_0$.
+2. Plot or sketch the voltage as a function of $x/l_o$ at $t=0$. Assume that $\beta_0 l_0 = 4\pi$ and $Z_1=3Z_0$.
 3. Write the quantity $\widetilde{V}_0(x)\equiv\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)$ in polar form, $|\widetilde{V}_0(x)|e^{i\phi}$. That is, find $|\widetilde{V}_0(x)|$ and $\phi$. Assume that $\beta_0 l_0 = 4\pi$ and $Z_1=3Z_0$. Be prepared to discuss the interpretation of $\widetilde{V}_0(x)$ in terms of what it corresponds to if you used connected an oscilliscope to the line at position $x$ and what you see in the plot created by [`wave_sum.m`](https://raw.githubusercontent.com/rweigel/phys513/master/fdtd/wave_sum.m).
 
 ## Basic Discrete Element Transmission Line
 
-The program [HW10_2.m]() solves three transmission line problems numerically. First, it gives a solution to HW 9.2. Second, it solves HW 9.2 if the number of nodes is $N$ instead of $3$. Finally, it solves the case for when the load resistance is $3\sqrt{L/C}$.
+The program [HW10.m](https://raw.githubusercontent.com/rweigel/phys513/master/2022/hw/HW10.m) solves three discrete--element transmission line problems numerically. First, it gives a solution to HW 9.2. Second, it solves HW 9.2 if the number of nodes is $N$ instead of $3$. Finally, it solves the case for when the load resistance is $3\sqrt{L/C}$.
 
-Provide a derivation that justifies the following code. Ideally you would do this in general, but start with the case where $N=3$, which you solved by hand in HW 9.2.
+Provide a derivation that justifies the following code used in  [HW10.m](https://raw.githubusercontent.com/rweigel/phys513/master/2022/hw/HW10.m). Ideally you would do this for arbitrary $N$, but at least do the case where $N=3$, which you solved by hand in HW 9.2.
 
 ```
 % Compute impedances starting at load

@@ -1200,9 +1200,9 @@ A rectangular duct carries a net current of $I = Kl$ in the direction shown. A s
 
 In class, I derived the inductance of a long co--axial cable using $\oint \mathbf{E}\bfcdot d\mathbf{l}=-d\Phi_m/dt$ and the definition $\mathcal{L}=\Phi_m/I$
 
-In the previous problem, it was noted that an alternative approach is to use $\mu_od\mathcal{L}I^2=\int B^2 dv$.
+In the previous problem, it was noted that an alternative approach is to use $\mu_o\mathcal{L}I^2=\int B^2 dv$.
 
-Use $\mu_od\mathcal{L}I^2=\int B^2 dv$ to find $\mathcal{L}$ for the long co--axial cable geometry considered in class, where the cable had length $l$, inner radius $a$, and outer radius $b$.
+Use $\mu_o\mathcal{L}I^2=\int B^2 dv$ to find $\mathcal{L}$ for the long co--axial cable geometry considered in class, where the cable had length $l$, inner radius $a$, and outer radius $b$.
 
 ## Phasors and Related Math
 
@@ -1229,7 +1229,7 @@ and find $A$ and $B$.
 Write $A_1\cos(\theta+\delta_1) + A_2\cos(\theta + \delta_2)$ in the form $A\cos(\theta+\delta)$ using
 
 1. only the identity $\cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$ and
-2. the method outlined on page 785 of [this document](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=184).
+2. the method outlined on page 784 for the example _addition of two sine functions_ of [this document](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=184).
 
 ### Finding the Steady State Solution of an ODE with Phasors
 
@@ -1263,9 +1263,9 @@ Show your notes for the procedure I started in class for this case and then fini
 
 2. Find  $\widetilde{V}_i$ ($i=0, 1, 2$)
 
-3. Find the impedance "seen" by the load, which is $\widetilde{V}_o/\widetilde{I}_o$. (As a check, for $\omega=L=C=Z_L=1$, you should get $(1-i)/2$)
+3. Find the impedance "seen" by the source, which is $\widetilde{V}_o/\widetilde{I}_o$. (As a check, for $\omega=L=C=Z_L=1$, you should get $(1-i)/2$)
 
-4. Find the time domain expressions for all currents and voltages. That is, find  $I_i(t)$ and $V_i(t)$ ($i=0, 1, 2$).
+4. Find the time domain expressions for all currents and voltages. That is, find  $I_i(t)$ and $V_i(t)$ ($i=1, 2$).
 
 5. Sketch or plot $V_o(t)$ and $V_2(t)$ if $Z_L=\sqrt{L/C}$ (in this case the "load" is a resistor with resistance of $\sqrt{L/C}$). Use $V_o(t)=\cos(\omega t)$ [Volts], $L=1$ [Henry], and $C=1$ [Farad].
 
@@ -1279,6 +1279,48 @@ Given an AC power source $V_s(t)=V_o\cos(\omega t)$ that has an internal impedan
 2. Find $\overline{P}_l$, the average of $P_l(t)$ found in part 1. over a time of $2\pi/\omega$
 3. Use the equation $\overline{P}_l$ found in part 2. to show that $\overline{P}(R_l,X_l)$ is a maximum when $R_l=R_s$ and $X_l=-X_s$ (assume $R_s$ and $X_s$ are constants; in this case, $\overline{P}_l$ is a function of the variables $R_l$ and $X_l$).
 
+# HW 10
+
+## Basic Continuous Transmission Line
+
+In class, we considered a coaxial cable  of length $l_o$ with one end connected to a AC power supply with $V_s(t)=V_{so}\cos(\omega t)$. The other end was connected to an infinitely long coaxial cable. The characteristic impedances were $Z_o$ and $Z_1$, respectively. We solved for the complex--valued constants $\widetilde{\rho}\equiv\widetilde{V}_{0}^-/\widetilde{V}_{0}^+$ and $\widetilde{\tau}\equiv\widetilde{V}_{1}^+/\widetilde{V}_{0}^+$.
+
+Recall that the general solution for voltage in the two cables is
+
+$$V_k(x,t)=\text{Re}\left[\widetilde{V}_{k}^+e^{i(\omega t-\beta_kx)}+\widetilde{V}_{k}^-e^{i(\omega t+\beta_kx)}\right]$$
+
+where $k=0$ corresponds to the cable of length $l_o$ and $k=1$ the infinitely long cable; $\widetilde{V}_{k}^+$ and $\widetilde{V}_{k}^-$ are complex--valued constants.
+
+This can be re-written as 
+
+$$V_k(x,t)=\text{Re}\left[e^{i\omega t}\left(\widetilde{V}_{k}^+(x)+\widetilde{V}_{k}^-(x)\right)\right]$$
+
+by defining $\widetilde{V}_{k}^+(x)=\widetilde{V}_{k}^+e^{-i\beta_kx}$ and $\widetilde{V}_{k}^-(x)=\widetilde{V}_{k}^-e^{i\beta_kx}$
+
+1. Find $\widetilde{V}_{0}^+(x)$, $\widetilde{V}_{0}^-(x)$ and $\widetilde{V}_{1}^+(x)$ in terms of $\widetilde{V}_s$, $\widetilde{\rho}$, and $\widetilde{\tau}$.
+2. Plot or sketch the voltage along the line at $t=0$. Assume that $\beta_0 l_0 = 4\pi$ and $Z_1=3Z_0$.
+3. Write the quantity $\widetilde{V}_0(x)\equiv\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)$ in polar form, $|\widetilde{V}_0(x)|e^{i\phi}$. That is, find $|\widetilde{V}_0(x)|$ and $\phi$. Assume that $\beta_0 l_0 = 4\pi$ and $Z_1=3Z_0$. Be prepared to discuss the interpretation of $\widetilde{V}_0(x)$ in terms of what it corresponds to if you used connected an oscilliscope to the line at position $x$ and what you see in the plot created by [`wave_sum.m`](https://raw.githubusercontent.com/rweigel/phys513/master/fdtd/wave_sum.m).
+
+## Basic Discrete Element Transmission Line
+
+The program [HW10_2.m]() solves three transmission line problems numerically. First, it gives a solution to HW 9.2. Second, it solves HW 9.2 if the number of nodes is $N$ instead of $3$. Finally, it solves the case for when the load resistance is $3\sqrt{L/C}$.
+
+Provide a derivation that justifies the following code. Ideally you would do this in general, but start with the case where $N=3$, which you solved by hand in HW 9.2.
+
+```
+% Compute impedances starting at load
+for n = [N:-1:2]
+    y = 1/(Z(n) + 1j*w*L);
+    Z(n-1) = 1/(y + 1j*w*C);
+end
+
+I(1) = V(1)/Z(1);
+for n = [1:N-1]
+    I(n+1) = I(n) - 1j*w*C*V(n);
+    V(n+1) = V(n) - 1j*w*L*I(n+1);
+end
+```
+
 # Midterm
 
 Due on October 19th at 11:59 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.
@@ -1290,7 +1332,7 @@ The space between two concentric conducting spherical shells of radius $a$ and $
 <img src="figures/Sphere_with_Dielectric_and_Charge_Density.svg"/>
 
 The sphere at $r=a$ is grounded and the sphere at $r=3a$ is held at $V_o$; $a=1\text{ m}$, $V_o=1\text{ Volt}$, $\rho_o=V_o\epsilon_o/a^2$, and $\epsilon=2\epsilon_o$.
-   
+
 1. Find the exact value of the potential for all $r$.
 
 2. Use the finite difference method to find the potential for $a\le r\le 3a$.

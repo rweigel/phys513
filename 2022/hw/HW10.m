@@ -9,7 +9,7 @@ set(0,'DefaultAxesFontSize',16);
 run = 2;
 
 if run == 1
-    % Problem 10.3 - check of code result with hand calculation
+    % Problem 9.2 - check of code result with hand calculation
     N = 3;
     L = 1;
     C = 1;
@@ -19,7 +19,7 @@ if run == 1
 end
 
 if run == 2
-    % Perfectly matched (problem 10.4)
+    % Perfectly matched (10.2)
     N = 101;
     Lo = 0.0001;
     Co = 1e-6;
@@ -28,7 +28,7 @@ if run == 2
     w = 1e6;
     Zo = sqrt(L/C);
     ZL = Zo;
-    fname = 'HW10_4_perfectly_matched';
+    fname = 'HW10_2_perfectly_matched';
 end
 
 if run == 3
@@ -41,7 +41,7 @@ if run == 3
     w = 1e6;
     Zo = sqrt(L/C);
     ZL = 3*Zo;
-    fname = 'HW10_5_not_perfectly_matched';
+    fname = 'HW10_2_not_perfectly_matched';
 end
 
 Z = zeros(1, N);

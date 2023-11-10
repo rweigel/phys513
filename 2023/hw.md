@@ -1281,6 +1281,8 @@ Given an AC power source $V_s(t)=V_o\cos(\omega t)$ that has an internal impedan
 
 # HW 10
 
+Save your answer is in a file named `HW10.pdf` and upload to your repository. Feel free to actually use the file name that I specified. Save any plots as `HW10a.pdf`, `HW10b.pdf`, etc.
+
 ## Basic Continuous Transmission Line
 
 In class, we considered a coaxial cable  of length $l_o$ with one end connected to a AC power supply with $V_s(t)=V_{so}\cos(\omega t)$. The other end was connected to an infinitely long coaxial cable. The characteristic impedances were $Z_o$ and $Z_1$, respectively. We solved for the complex--valued constants $\widetilde{\rho}\equiv\widetilde{V}_{0}^-/\widetilde{V}_{0}^+$ and $\widetilde{\tau}\equiv\widetilde{V}_{1}^+/\widetilde{V}_{0}^+$.

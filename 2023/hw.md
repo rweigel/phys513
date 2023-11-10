@@ -1285,7 +1285,11 @@ Save your answer is in a file named `HW10.pdf` and upload to your repository. Fe
 
 ## Basic Continuous Transmission Line
 
-In class, we considered a coaxial cable  of length $l_o$ with one end connected to a AC power supply with $V_s(t)=V_{so}\cos(\omega t)$. The other end was connected to an infinitely long coaxial cable. The characteristic impedances were $Z_o$ and $Z_1$, respectively. We solved for the complex--valued constants $\widetilde{\rho}\equiv\widetilde{V}_{0}^-/\widetilde{V}_{0}^+$ and $\widetilde{\tau}\equiv\widetilde{V}_{1}^+/\widetilde{V}_{0}^+$.
+In class, we considered a coaxial cable  of length $l_o$ with one end connected to a AC power supply with $V_s(t)=V_{so}\cos(\omega t)$. The other end was connected to an infinitely long coaxial cable. The characteristic impedances were $Z_o$ and $Z_1$, respectively. Schematically, the system is represented as in the following figure, where the top line corresponds to the outer cylinder and the bottom line corresponds to the inner cylinder.
+
+<img src="figures/Transmission_Line_2_Segment.svg"/>
+
+We solved for the complex--valued constants $\widetilde{\rho}\equiv\widetilde{V}_{0}^-/\widetilde{V}_{0}^+$ and $\widetilde{\tau}\equiv\widetilde{V}_{1}^+/\widetilde{V}_{0}^+$.
 
 Recall that the general solution for voltage in the two cables is
 

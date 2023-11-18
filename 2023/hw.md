@@ -1266,8 +1266,10 @@ Show your notes for the procedure I started in class for this case and then fini
 3. Find the impedance "seen" by the source, which is $\widetilde{V}_o/\widetilde{I}_o$. (As a check, for $\omega=L=C=Z_L=1$, you should get $(1-i)/2$)
 
 4. Find the time domain expressions for all currents and voltages. That is, find  $I_i(t)$ and $V_i(t)$ ($i=1, 2$).
+% Using $\omega=L=C=Z_L=1$
 
 5. Sketch or plot $V_o(t)$ and $V_2(t)$ if $Z_L=\sqrt{L/C}$ (in this case the "load" is a resistor with resistance of $\sqrt{L/C}$). Use $V_o(t)=\cos(\omega t)$ [Volts], $L=1$ [Henry], and $C=1$ [Farad].
+% Using $\omega=L=C=Z_L=1$
 
 <img src="figures/Short_Ladder.svg"/>
 
@@ -1326,6 +1328,20 @@ for n = [1:N-1]
     V(n+1) = V(n) - 1j*w*L*I(n+1);
 end
 ```
+
+# HW 11
+
+For the following transmission line having $\beta_0=2\pi/\lambda_0=2\pi/(10\text{ cm}$), $\beta_1=2\pi/\lambda_1=2\pi/(5\text{ cm})$, $\beta_2=\beta_0$, and lengths $l_0$ and $l_1$,
+
+<img src="figures/Transmission_Line_3_Segment.svg"/>
+
+1. Find and plot $|\widetilde{V}(x)|$ and $|\widetilde{V}(x)|/|\widetilde{I}(x)|$ assuming $|\widetilde{V}_{s0}|=1\text{ Volt}$.
+
+2. The plot of $|\widetilde{V}(x)|$ is what would be measured as the peak voltage at $x$ over a time of one period of the voltage source. Said another way, if an oscilliscope was connected between the top and bottom bars at $x$, a sinusoidal wave with amplitude $|\widetilde{V}(x)|$ would appear.
+
+   Assume that you found this plot and no longer have access to the equations used to create it (or that it was created by someone by direct measurements). Using only the plot, compute $S$ defined in equation (4) of section 5.8 of Ramo. Using equation (6) in the same section, compute $|\widetilde{\rho}_0|$, $|\widetilde{\rho}_1|$, $|\widetilde{\rho}_2|$. (Indicate in your solution what points on the plot were used for your caculation.)
+   
+3. In class, I derived conditions for $|\widetilde{\rho}_0|=0$: $l_1$ needed to be an odd multiple of $\lambda_1/4$ and $Z_1=\sqrt{Z_0Z_2}$. Plot $|\widetilde{V}(x)|$ if $Z_1=\sqrt{Z_0Z_2}$.
 
 # Midterm
 

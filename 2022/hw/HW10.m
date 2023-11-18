@@ -6,7 +6,7 @@ set(0,'DefaultTextFontName','Times');
 set(0,'DefaultTextFontSize',16);
 set(0,'DefaultAxesFontSize',16);
 
-run = 2;
+run = 1;
 
 if run == 1
     % Problem 9.2 - check of code result with hand calculation

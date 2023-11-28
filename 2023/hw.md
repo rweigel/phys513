@@ -1306,8 +1306,34 @@ $$V_k(x,t)=\text{Re}\left[e^{i\omega t}\left(\widetilde{V}_{k}^+(x)+\widetilde{V
 by defining $\widetilde{V}_{k}^+(x)=\widetilde{V}_{k}^+e^{-i\beta_kx}$ and $\widetilde{V}_{k}^-(x)=\widetilde{V}_{k}^-e^{i\beta_kx}$
 
 1. Find $\widetilde{V}_{0}^+(x)$, $\widetilde{V}_{0}^-(x)$ and $\widetilde{V}_{1}^+(x)$ in terms of $\widetilde{V}_s$, $\widetilde{\rho}$, and $\widetilde{\tau}$.
+
+   **Answer**: Details on derivation given in class.
+
+   $\widetilde{\rho}=1/2$
+
+   $\widetilde{\tau}=3/2$
+
+   $$\widetilde{V}_{0}^+(x)=\widetilde{V}_s\frac{e^{-i\beta_ox}}{e^{i\beta_ol_o}+\widetilde{\rho}e^{-i\beta_ol_o}}$$
+
+   $$\widetilde{V}_{0}^-(x)=\widetilde{V}_s\frac{\widetilde{\rho}e^{i\beta_ox}}{e^{i\beta_ol_o}+\widetilde{\rho}e^{-i\beta_ol_o}}$$
+   
+   Check: $\widetilde{V}_s=\widetilde{V}_{0}^+(-l_o) + \widetilde{V}_{0}^-(-l_o)$
+
+   $$\widetilde{V}_{1}^+(x)=\widetilde{V}_s\frac{\widetilde{\tau}e^{-i\beta_1x}}{e^{i\beta_ol_o}+\widetilde{\rho}e^{-i\beta_ol_o}}$$
+   
+   Check:
+   
+   $\widetilde{V}_{0}^+(0) + \widetilde{V}_{0}^-(0) = \widetilde{V}_{1}^+(0)$
+   
+   Substitution gives $1 + \widetilde{\rho} = \widetilde{\tau}$, which is consistent with definition $\rho=(Z_1-Z_0)/(Z_1+Z_0)$ and $\tau=2Z_1/(Z_1+Z_0)$.
+
 2. Plot or sketch the voltage as a function of $x/l_o$ at $t=0$. Assume that $\beta_0 l_0 = 4\pi$ and $Z_1=3Z_0$.
+
+   **Solution**: (Assumes $\beta_0=\beta_1$) https://www.desmos.com/calculator/wteuno5c2u Set the time slider to zero.
+
 3. Write the quantity $\widetilde{V}_0(x)\equiv\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)$ in polar form, $|\widetilde{V}_0(x)|e^{i\phi}$. That is, find $|\widetilde{V}_0(x)|$ and $\phi$. Assume that $\beta_0 l_0 = 4\pi$ and $Z_1=3Z_0$. Be prepared to discuss the interpretation of $\widetilde{V}_0(x)$ in terms of what it corresponds to if you used connected an oscilliscope to the line at position $x$ and what you see in the plot created by [`wave_sum.m`](https://raw.githubusercontent.com/rweigel/phys513/master/fdtd/wave_sum.m).
+
+   **Solution**: $|\widetilde{V}_0(x)|$ shown as blue line in https://www.desmos.com/calculator/wteuno5c2u. It represents the maximum voltage that will be measured at a given point on the line. An oscilliscope placed at position $x$ would have a sinusuodal wave with amplitude $|\widetilde{V}_0(x)|$.
 
 ## Basic Discrete Element Transmission Line
 

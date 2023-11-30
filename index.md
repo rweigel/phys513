@@ -63,9 +63,9 @@ HWs:
 ## September 21st
 
 * Midterm exam:
-  * In--class: Thursday, October 12th from 4:30 – 6:00 pm. This short component will have one or two problems that are similar to the HW problems. 
+  * In--class: Thursday, October 12th from 4:30 – 6:00 pm. This short component will have one or two problems that are similar to the HW problems.
   * Take--home: Handed out on October 5th and due October 17th. This part will be an extension of HW problem or similar to a HW problem.
-* Final exam format will also have an in--class and take--home component. The in--class part is on Thursday, December 7th, from 4:30 – 7:10 pm. The take--home part will be due on December 13th at 9 am.
+* Final exam format will ~also have an in--class and take--home component~ be take-home. ~The in--class part is on Thursday, December 7th, from 4:30 – 7:10 pm.~ The take--home part will be due on December ~13~12th at 9 am.
 
 ## September 14th
 

@@ -1333,7 +1333,17 @@ by defining $\widetilde{V}_{k}^+(x)=\widetilde{V}_{k}^+e^{-i\beta_kx}$ and $\wid
 
 3. Write the quantity $\widetilde{V}_0(x)\equiv\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)$ in polar form, $|\widetilde{V}_0(x)|e^{i\phi}$. That is, find $|\widetilde{V}_0(x)|$ and $\phi$. Assume that $\beta_0 l_0 = 4\pi$ and $Z_1=3Z_0$. Be prepared to discuss the interpretation of $\widetilde{V}_0(x)$ in terms of what it corresponds to if you used connected an oscilliscope to the line at position $x$ and what you see in the plot created by [`wave_sum.m`](https://raw.githubusercontent.com/rweigel/phys513/master/fdtd/wave_sum.m).
 
-   **Solution**: $|\widetilde{V}_0(x)|$ shown as blue line in https://www.desmos.com/calculator/wteuno5c2u. It represents the maximum voltage that will be measured at a given point on the line. An oscilliscope placed at position $x$ would have a sinusuodal wave with amplitude $|\widetilde{V}_0(x)|$.
+   **Solution**: $|\widetilde{V}_0(x)|$ shown as blue line in https://www.desmos.com/calculator/wteuno5c2u. It represents the maximum voltage that will be measured at a given point on the line. An oscilliscope placed at position $x$ would have a sinusuodal wave with amplitude $|\widetilde{V}_0(x)|$. To find $|\widetilde{V}_0(x)|$, use $|\widetilde{V}_0(x)|^2 = \widetilde{V}_0(x)\widetilde{V}^*_0(x)$ with the definition
+   
+   $\widetilde{V}_0(x)=\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)$
+   
+   and the values found above to show
+   
+   $$|\widetilde{V}_0(x)|=\frac{2}{3}V_{so}\sqrt{\frac{5}{4}+\cos2\beta_ox}$$
+   
+   or, using $x'=x/l_o$ and $\beta_ol_o=4\pi$
+
+   $$|\widetilde{V}_0(x')|=\frac{2}{3}V_{so}\sqrt{\frac{5}{4}+\cos2(4\pi)x'}$$
 
 ## Basic Discrete Element Transmission Line
 
@@ -1402,3 +1412,26 @@ The space between two concentric conducting spherical shells of radius $a$ and $
 3. Find $\mathbf{D}(r)$ for all $r$
 4. Find all surface charge densities (both bound and free)
 5. Find the capacitance
+
+# Final
+
+Due on Tuesday, December 12th at 9:00 am (I cannot give an extension because grades are due the next day). You may not collaborate with anyone or use ChatGPT or equivalent; any evidence of violation will result in a grade of zero and an Honor Code violation.
+
+The following transmission line considered in HW #11 has $\beta_0=2\pi/\lambda_0=2\pi/(10\text{ cm}$), $\beta_1=2\pi/\lambda_1=2\pi/(5\text{ cm})$, $\beta_2=\beta_0$, and lengths $l_0$ and $l_1$ as indicated in the figure.
+
+<img src="figures/Transmission_Line_3_Segment.svg"/>
+
+Approximate this transmision line with a ladder RC network with at least 100 elements and assume $V_{s0}=1\text{ Volt}$ and $Z_0=1\text{ }\Omega$.
+
+
+1. Compute and plot $|\widetilde{V}(k)|$, $|\widetilde{I}(k)|$, and $|\widetilde{V}(k)|/|\widetilde{I}(k)|$ assuming $|\widetilde{V}_{s0}|=1\text{ Volt}$, where $k$ is the step number of the ladder.
+
+2. Compare the result from 1. with the exact answer by a. by plotting the exact answer on the same figure as the approximate answer and b. plotting the difference between the approximate answer and the exact answer as a function of $k$.
+
+3. In the plot for $|\widetilde{V}(k)|$, include the VSWR (Voltage Standing Wave Ratio) for the exact and approxmate solutions in the legend.
+
+Save your code as `Final.m` and your plots as `Final1.png`, `Final2.png`, and `Final3.png`.
+* `Final1.png` should contain the exact and approxmate $|\widetilde{V}(k)|$ and their difference,
+* `Final2.png` should contain the exact and approxmate  $|\widetilde{I}(k)|$ and their difference; and
+* `Final3.png` should contain the exact and approxmate $|\widetilde{V}(k)|/|\widetilde{I}(k)|$ and their difference. 
+

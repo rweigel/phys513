@@ -38,7 +38,7 @@ for n = [N:-1:2]
         C = dC2;
     else
         L = dL1;
-        C = dC1;        
+        C = dC1;
     end
     y = 1/(Z(n) + 1j*w*L);
     Z(n-1) = 1/(y + 1j*w*C);
@@ -51,8 +51,8 @@ for n = [1:N-1]
         C = dC2;
     else
         L = dL1;
-        C = dC1;        
-    end    
+        C = dC1;
+    end
     I(n+1) = I(n) - 1j*w*C*V(n);
     V(n+1) = V(n) - 1j*w*L*I(n+1);
 end

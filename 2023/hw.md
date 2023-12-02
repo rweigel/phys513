@@ -1421,7 +1421,7 @@ The following transmission line considered in HW #11 has $\beta_0=2\pi/\lambda_0
 
 <img src="figures/Transmission_Line_3_Segment.svg"/>
 
-Approximate this transmision line with a ladder RC network with at least 100 elements and assume $V_{s0}=1\text{ Volt}$ and $Z_0=1\text{ }\Omega$.
+Approximate this transmision line with a ladder LC network with at least 100 elements and assume $V_{s0}=1\text{ Volt}$ and $Z_0=1\text{ }\Omega$.
 
 
 1. Compute and plot $|\widetilde{V}(k)|$, $|\widetilde{I}(k)|$, and $|\widetilde{V}(k)|/|\widetilde{I}(k)|$ assuming $|\widetilde{V}_{s0}|=1\text{ Volt}$, where $k$ is the step number of the ladder.

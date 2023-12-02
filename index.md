@@ -26,6 +26,32 @@ HWs:
 
 # Schedule
 
+## November 30th
+
+### Course Evals
+
+See document about procedure sent via email before class.
+
+### In-class Problem
+
+(Solutions on page 254 of Ramo)
+
+One end of a coaxial cable of arbitrary length and characteristic impedance $Z_o$ is connected to an AC power source. The other end is connected to a load with impedance $Z_L$.
+
+<img src="figures/Transmission_Line_Load_Terminated.svg" width="40%"/>
+
+Show that $|\rho|=1$ if
+1. $Z_L=0$ (short at end)
+2. $Z_0/Z_L=0$ (end is open)
+3. $Z_L=ib$ (that is, the load has no resistive component, and the reactive component has a magnitude of $b$; this requires the assumption that $Z_o$ is real, which is equivalent to the coaxial cable being "ideal" in the sense that it has no resistance, either ohmic or radiative.)
+
+Show that if $Z_L=0$,
+1. $|\widetilde{V}(x)|=0$ at $x=0, -\lambda/2, - 2\lambda/2, ...$,
+2. $|\widetilde{V}(x)|=0$ has maxima when $\beta x$ is an odd multiple of $\pi/2$,
+3. $|\widetilde{I}(x)|=0$ has maxima when  $|\widetilde{V}(x)|=0$,
+4. $I(x,t)$ and $V(x,t)$ are shifted in time by $90^\circ$, and
+5. ${\text{max }|\widetilde{V}(x)|}/{{\text{max }|\widetilde{I}(x)}|}=Z_o$. Can we way that $\widetilde{V}(x)/\widetilde{I}(x)=Z_o$?
+
 ## October 24th
 
 * Review of KVL and KCL for resistive circuits

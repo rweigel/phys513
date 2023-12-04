@@ -1381,7 +1381,7 @@ For the following transmission line having $\beta_0=2\pi/\lambda_0=2\pi/(10\text
 
 **Partial Solution**: 
 
-[HW11.m](solns/HW11.svg), which creates
+[HW11.m](solns/HW11.m), which creates
 
 <img src="solns/HW11.svg"/>
 

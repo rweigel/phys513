@@ -1379,6 +1379,12 @@ For the following transmission line having $\beta_0=2\pi/\lambda_0=2\pi/(10\text
    
 3. In class, I derived conditions for $|\widetilde{\rho}_0|=0$: $l_1$ needed to be an odd multiple of $\lambda_1/4$ and $Z_1=\sqrt{Z_0Z_2}$. Plot $|\widetilde{V}(x)|$ if $Z_1=\sqrt{Z_0Z_2}$.
 
+**Partial Solution**: 
+
+[HW11.m](solns/HW11.svg), which creates
+
+<img src="solns/HW11.svg"/>
+
 # Midterm
 
 Due on October 19th at 11:59 pm. You may not collaborate with anyone. Any evidence that you received help will result in a grade of zero and an Honor Code violation.

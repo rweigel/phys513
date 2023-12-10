@@ -1,8 +1,8 @@
 clear
 
 Vs = 1;
-lambda1 = 5e-3;
-lambda2 = 10e-3;
+lambda1 = 10e-3;
+lambda2 = 5e-3;
 Z1 = 1;
 Z2 = Z1/2;
 Z3 = Z1/3;

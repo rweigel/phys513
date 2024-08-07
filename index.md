@@ -12,6 +12,7 @@ Subtitle: Applied Electromagnetic Theory<br>Fall, 2024
 * Course URL: https://rweigel.github.io/phys513
 
 HWs:
+
 %[1](hw.html#hw-1) | 
 %[2](hw.html#hw-2) | 
 %[3](hw.html#hw-3) | 

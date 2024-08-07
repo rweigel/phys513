@@ -1,6 +1,6 @@
 ```mdextension
 Title: PHYS 513
-Subtitle: Applied Electromagnetic Theory<br>Fall, 2023
+Subtitle: Applied Electromagnetic Theory<br>Fall, 2024
 ```
 
 * Day and Time: Thursday from 4:30 -- 7:10 pm
@@ -12,126 +12,21 @@ Subtitle: Applied Electromagnetic Theory<br>Fall, 2023
 * Course URL: https://rweigel.github.io/phys513
 
 HWs:
-[1](hw.html#hw-1) | 
-[2](hw.html#hw-2) | 
-[3](hw.html#hw-3) | 
-[4](hw.html#hw-4) | 
-[5](hw.html#hw-5) | 
-[6](hw.html#hw-6) | 
-[7](hw.html#hw-7) |
-[8](hw.html#hw-8) |
-[9](hw.html#hw-9) |
-[10](hw.html#hw-10) |
-[11](hw.html#hw-11) |
+%[1](hw.html#hw-1) | 
+%[2](hw.html#hw-2) | 
+%[3](hw.html#hw-3) | 
+%[4](hw.html#hw-4) | 
+%[5](hw.html#hw-5) | 
+%[6](hw.html#hw-6) | 
+%[7](hw.html#hw-7) |
+%[8](hw.html#hw-8) |
+%[9](hw.html#hw-9) |
+%[10](hw.html#hw-10) |
+%[11](hw.html#hw-11) |
 
 # Schedule
 
-## November 30th
-
-### Course Evals
-
-See document about procedure sent via email before class.
-
-### In-class Problem
-
-(Solutions on page 254 of Ramo)
-
-One end of a coaxial cable of arbitrary length and characteristic impedance $Z_o$ is connected to an AC power source. The other end is connected to a load with impedance $Z_L$.
-
-<img src="figures/Transmission_Line_Load_Terminated.svg" width="40%"/>
-
-Show that $|\rho|=1$ if
-1. $Z_L=0$ (short at end)
-2. $Z_0/Z_L=0$ (end is open)
-3. $Z_L=ib$ (that is, the load has no resistive component, and the reactive component has a magnitude of $b$; this requires the assumption that $Z_o$ is real, which is equivalent to the coaxial cable being "ideal" in the sense that it has no resistance, either ohmic or radiative.)
-
-Show that if $Z_L=0$,
-1. $|\widetilde{V}(x)|=0$ at $x=0, -\lambda/2, - 2\lambda/2, ...$,
-2. $|\widetilde{V}(x)|=0$ has maxima when $\beta x$ is an odd multiple of $\pi/2$,
-3. $|\widetilde{I}(x)|=0$ has maxima when  $|\widetilde{V}(x)|=0$,
-4. $I(x,t)$ and $V(x,t)$ are shifted in time by $90^\circ$, and
-5. ${\text{max }|\widetilde{V}(x)|}/{{\text{max }|\widetilde{I}(x)}|}=Z_o$. Can we way that $\widetilde{V}(x)/\widetilde{I}(x)=Z_o$?
-
-## October 24th
-
-* Review of KVL and KCL for resistive circuits
-* Solving circuit problems using complex impedance
-* Computation of impedance for differential transmission line
-
-## October 17th
-
-* Midterm (60 minutes)
-* Comment on annotation issues on HW.
-* Discuss ideas for approaching take--home part
-* Discuss [HW #7](hw.html#hw-7)
-* Inductance
-* Trig manipulation using Euler's formula
-* Solving ODEs using the phasor method
-
-## October 12th
-
-* In--class part of midterm (60 minutes, one problem)
-* Faraday's law and Lenz's law
-* Inductance
-
-## October 5th
-
-* Will post take--home part of mid--term tomorrow or Saturday; due October 19th at 11:59 pm.
-* More on Ampere's law
-* Faraday's law and Lenz's law
-* Slidewire generator
-
-## September 28th
-
-* The in--class exam will be one problem related to HW 2.2, 2.3, 3.2, 4.1, 4.2, 4.3, 4.4, 5.4. Find similar problems in textbooks to practice with. You should know any of the equations used in these problems. The motivation for the problem is to ensure that you can solve problems at this level on your own and have an understanding of the motivation of the steps required for the solution. No non--trivial integration will be required.
-* I will hand out take-home part on October 5th and it will be due on October 19th. This problem will be an extension of a numerical problem covered on a previous homework.
-
-## September 21st
-
-* Midterm exam:
-  * In--class: Thursday, October 12th from 4:30 – 6:00 pm. This short component will have one or two problems that are similar to the HW problems.
-  * Take--home: Handed out on October 5th and due October 17th. This part will be an extension of HW problem or similar to a HW problem.
-* Final exam format will ~also have an in--class and take--home component~ be take-home. ~The in--class part is on Thursday, December 7th, from 4:30 – 7:10 pm.~ The take--home part will be due on December ~13~12th at 9 am.
-
-## September 14th
-
-* To encourage you to review solutions, if I made a comment on a common error in my solutions, I'll mark off for later homeworks for the same error.
-* "Quiz" on Gauss's law and field lines
-* Discussion of HW #3 problems
-* Discussion of numerically solving Laplace's equation in 1-D spherical
-* Polarized slab example
-* Overview of $\mathbf{D}$ and $\mathbf{P}$
-
-## September 7th
-
-* GitHub (Start at 6:50 pm)
-* Discuss HW grading
-  * Red circle or red text means I took off for an error.
-  * Red circle around blue text - I meant to write text in red. Points were taken off.
-  * Blue circle around read text - I meant to write text in blue. Not points off.
-* Discuss common HW issues
-  * Not using limits to check answer.
-  * Using "by symmetry" without explanation. Symmetry is often subtile and I need a diagram to convince me you understood argument.
-  * I made many comments on notation. Get in the habit of being careful. This will help avoid embarassment in research presentations and help when you teach.
-  * Use of the "answer operator"
-* Common HW #2 issue - "sketch" means hand--drawn. "plot" means either draw by hand accurately with graph paper (computing points and then drawing curve) or using software.
-* Follow-up to question of using spherical Gaussian surface for derivation for field due to sheet of charge
-* Follow-up on "seems like sometimes zooming works, other times not". My answer to the above will in part cover this and I'll also look at a zoom-in with various Gaussian surfaces that can't be used.
-* Discuss HW 2.4
-* Capacitance
-* 1-D Boundary Value Problems
-* Discord (Discussion needed)
-
-## August 31st
-
-* Discuss HW
-* Field Lines (referenced simulator: https://academo.org/demos/electric-field-line-simulator/)
-* Gauss's Law
-* GitHub
-* Discord
-* 1-D Boundary Value Problems
-
-## August 24th
+## August 29th
 
 * Introductions
 * Syllabus

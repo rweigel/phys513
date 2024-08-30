@@ -26,6 +26,12 @@ HWs: [1](hw.html#hw-1)
 
 # Schedule
 
+## September 5th
+
+* Discuss [HW #1](hw.html#hw-1)
+* Field lines
+* Gauss's law
+
 ## August 29th
 
 * Introductions

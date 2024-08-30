@@ -24,7 +24,6 @@ A line of length $2L$ is centered on the origin and lies between $-L\le x\le L$.
 
    Save your program as a file named `HW1_1.ext`, where `ext` is the file extension for your program, e.g., `m`, `py`, etc. You do not need to send me your code (unless you have a question about it), but in the future, I'll have you use GitHub to store your code with that filename.
 
-
 ## Charge on Cylinder
 
 Charge is uniformly distributed on the curved surface of a cylinder of length $h$ and radius $R$. The cylinder is centered on the origin, aligned with the $z$--axis, and has a uniform charge density of $\sigma_o$.

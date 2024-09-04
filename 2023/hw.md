@@ -182,7 +182,7 @@ A field line is a line that is always tangent to the vector $\mathbf{F}$.
 
 To determine the equations that must be solved to find the field line, consider a differential distance $ds$ drawn in the direction of $\mathbf{F}$ at a given point. This step has a horizontal component of $dx$ and a vertical component of $dy$.
 
-<img src="https://rweigel.github.io/phys513/2022/figures/similar_triangles.svg"/>
+<img src="../2022/figures/similar_triangles.svg"/>
 
 The differential triangle is similar to a triangle formed with $a$ $F_x$ in the $x$-direction, $F_y$ in the $y$-direction, and $F$ as the hypotenuse so that
 

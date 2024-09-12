@@ -24,7 +24,12 @@ Print out the code you used for your answer and write the actual answer it yield
 
 **Solution**
 
-The exact solution is (Griffiths 4th Edition, example 2.2):
+Assume a charge at x of $\lambda dx$, with $dx$ small enough to be such that it is effectively a point charge. If this is the case, the vector from $x$ to $y=h$ is
+$\mathbf{r} = -x\xhat + y\yhat$ and so
+
+$$d\mathbf{E} = k (\lambda dx) \rhat/r^2 = k (\lambda dx) \mathbf{r}/r^3 = k (\lambda dx) (-x \xhat + y \yhat)/r^3$$
+
+To find the electric field due to a summation of these charges at $x$ from $-L$ to $L$, integrate the above expression.The exact solution is (Griffiths 4th Edition, example 2.2):
 
 $$E_y=2k\lambda_oL\frac{1}{y\sqrt{y^2+L^2}}$$
 
@@ -38,7 +43,7 @@ $$E_y=\frac{kQ}{L^2}\frac{1}{\sqrt{2}}$$
 
 For a charge $Q$ at position $(x,y)$
 
-$$E_y=kQ\frac{z}{(y^2+x^2)^{3/2}}$$
+$$E_y=kQ\frac{y}{(y^2+x^2)^{3/2}}$$
 
 Setting $y=L$, this can be written as
 

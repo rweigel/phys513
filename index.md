@@ -28,6 +28,7 @@ HWs: [1](hw.html#hw-1)
 
 ## September 5th
 
+* GitHub and Discord
 * Discuss [HW #1](hw.html#hw-1)
 * Field lines
 * Gauss's law
@@ -37,7 +38,17 @@ HWs: [1](hw.html#hw-1)
 * Introductions
 * Syllabus
 * Overview of Electrostatics
-* Continuous Charge Distributions, Limits, and Dimensional Analysis
+* Line of charge along $x=[-l/2, l/2]$, field at $h$
+  * Set-up
+  * Two limits
+  * Exact solution
+* Line offset by $y=h$, find field at origin.
+  * Solution using same set-up method as before
+  * Solution using answer to non--offset problem
+* Ring of charge centered on origin and in $x$--$y$ plane.
+  * Solution using formal set-up approach
+  * Solution similified by noting features
+* (Not covered) Continuous Charge Distributions, Limits, and Dimensional Analysis
   * Dimensional Analysis References:
     * [A good reference to start with for dimensional analysis](https://drive.google.com/file/d/1_up6mplBXCoXJ4oB5rISpRFKCogpdv7a/view?usp=sharing★★★★remove★★★★)
     * [My collection of dimensional analysis references](https://drive.google.com/drive/folders/0B6antUcxBPXcZmR1NjJMZ2JnUWM★★★★remove★★★★)

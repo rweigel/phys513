@@ -11,9 +11,8 @@ Subtitle: Applied Electromagnetic Theory<br>Fall, 2024
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
-HWs: [1](hw.html#hw-1) 
+HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2)
 
-%[2](hw.html#hw-2) | 
 %[3](hw.html#hw-3) | 
 %[4](hw.html#hw-4) | 
 %[5](hw.html#hw-5) | 
@@ -25,6 +24,13 @@ HWs: [1](hw.html#hw-1)
 %[11](hw.html#hw-11) |
 
 # Schedule
+
+## September 12th
+
+* Exam notes:
+  * I've added the final exam date to the syllabus. It is Thursday, December 12th, from 4:30 to 6:00 p.m. in the regular classroom.
+  * Mid-term will be Thursday, October 17th, from 4:30 pm to 6:00 pm.
+  * Both exams will have two parts: a take-home problem and 1--3 in-class problems. The in-class problems will cover the same topics as your homework problems and are written to ensure that you can solve them independently; if you understand the concepts associated with them, the in-class problems should be straightforward.
 
 ## September 5th
 
@@ -120,7 +126,8 @@ Textbooks that cover advanced E&M theory are
 
 * [Academic Calendar](https://registrar.gmu.edu/calendars/)
 * [University Policy](http://universitypolicy.gmu.edu/)
-* Last class Thursday, November 30th
+* Last class: Thursday, November 30th
+* Final exam: Thursday, December 12th from 4:30-7:10 pm in the regular classroom.
 
 ## Disability Accommodations
 

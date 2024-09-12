@@ -65,7 +65,7 @@ figure(2);clf;
     grid on;
 
 % Find first index where abs(Err) < 0.01
-I = find(Err < 0.01, 1);    
+I = find(Err < 0.01, 1);
 fprintf('|Error| < 0.01 when N >= %d\n',n(I));
 % |Error| < 0.01 when N >= 51
 

@@ -11,22 +11,27 @@ Subtitle: Applied Electromagnetic Theory<br>Fall, 2024
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
-HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2)
+HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3)
 
-%[3](hw.html#hw-3) | 
-%[4](hw.html#hw-4) | 
-%[5](hw.html#hw-5) | 
-%[6](hw.html#hw-6) | 
-%[7](hw.html#hw-7) |
-%[8](hw.html#hw-8) |
-%[9](hw.html#hw-9) |
-%[10](hw.html#hw-10) |
-%[11](hw.html#hw-11) |
+%| [4](hw.html#hw-4)
+%| [5](hw.html#hw-5)
+%| [6](hw.html#hw-6) 
+%| [7](hw.html#hw-7)
+%| [8](hw.html#hw-8)
+%| [9](hw.html#hw-9)
+%| [10](hw.html#hw-10)
+%| [11](hw.html#hw-11)
 
 # Schedule
 
+## September 17th
+* Discuss [HW #3](hw.html#hw-3)
+
 ## September 12th
 * Discuss [HW #2](hw.html#hw-2)
+* Computing capacitance using
+  * Gauss's law (put $+Q$ on one conductor $-Q$ on another, compute potential difference)
+  * Laplace's equation (put one conductor at a potential of $V_o$ and the other at $0$; compute $\mathbf{E}$ and use it to find $\sigma$; from $\sigma$, compute $Q$)
 
 ## September 5th
 

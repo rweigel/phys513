@@ -231,3 +231,37 @@ $$\psi(r)-\psi(0)=-\int_0^rE_r(r)dr$$
 Using the electric field from problem [2.3.4](#charge-on-concentric-thick-shells) and assuming $\psi(0)=0$ (I will discuss why this choice is arbitrary in class), find and sketch a plot of $\psi/(kQ/a)$ versus $r/a$.
    
 In class, I will ask for a physical explanation for why I will get the same result if I choose a different integration path. For example, if my integration path was radial, then tangential, then radial again. This is covered in most intro textbooks. I'll also ask why I ask for plots of dimensionless parameters in this problem and in other problems on this HW.
+
+# HW 3
+
+Due September 19th at 11:59 pm. 
+
+Upload your solutions to GitHub. Name all files associated with your solution as `HW3_x.EXT`, where `x` = 1, 2, 3 is the problem from this homework and `EXT` is the file extension, e.g., `pdf`, `py`, `m`. Upload all files associated with your solution such as code and notes (in PDF). If your PDF is larger than a few MB, [compress it](https://www.adobe.com/acrobat/online/compress-pdf.html).
+
+If you are stuck, please ask questions on Discord or send me questions via email. Be prepared to answer questions about your answers to these problems. Even if you have not completed them, I will ask for your ideas on how to approach them.
+
+## Concentric Spheres and a Charged Shell
+
+Suppose problem 2.3 is modified so that there is also a uniformly charged spherical shell with a radius $(a + b)/2$ and a total charge of $Q/2$.
+
+1. Find the electric field in the five labeled regions and sketch a plot of $E/(kQ/a^2)$ versus $r/a$.
+2. Do the same for the electric potential and plot $\psi/(kQ/a)$ versus $r/a$. Assume the potential at $r=0$ is zero.
+3. In this problem the electric field "jumps" when crossing over charges on a surface. (That is, there is a discontinuity in the $E(r)$ plot.) For each of the three jumps in the plot of $E$, find the ratio of the change in $E$ across the discontinuity and the charge density at the discontinuity.
+
+## Capacitance for a Long Cylinder
+
+In class, I covered how to compute capacitance for (a) large conducting planes with a small separation distance and (b) the system in HW 2.3. This was done using two methods:
+
+1. Gauss's law (put $+Q$ on one conductor $-Q$ on another, use Gauss's law to find $E$, use $E$ to compute the potential difference, then use $C=Q/|\Delta \psi|$
+2. Laplace's equation (put one conductor at a potential of $V_o$ and the other at $0$; solve $\nabla^2\psi=0$ for $\psi$, compute $E$ and use it to find $\sigma$; from $\sigma$, compute $Q$; then use $C=Q/|\Delta \psi|$.)
+
+Use these two methods to find the capacitance of two equal-length and long concentric cylinders. Assume the diagram in HW 2.3 is the cross-section. 
+
+## Laplace's Equation in Two Dimensions -- Numerical
+
+1. Verify the numbers in the Step 1 column of Table 1.20 of Ramo. Show your calculations on a piece of paper. (In class, we will develop a program to compute the potentials in the other columns.)
+
+2. Find the equation for this problem's exact potential if all sides are set to have zero potential except the side at $80\text{ V}$. I recommend finding a solution first and using it to answer this part; if you have time, attempt to derive it.
+
+(If you want to work ahead, develop a numerical solution to this problem and compare it to the exact solution.)
+

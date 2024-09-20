@@ -11,9 +11,8 @@ Subtitle: Applied Electromagnetic Theory<br>Fall, 2024
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
-HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3)
+HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3) | [4](hw.html#hw-4)
 
-%| [4](hw.html#hw-4)
 %| [5](hw.html#hw-5)
 %| [6](hw.html#hw-6) 
 %| [7](hw.html#hw-7)
@@ -24,8 +23,15 @@ HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3)
 
 # Schedule
 
+* In-class mid-term exam: Thursday, October 17th from 4:30--6:00 pm.
+* In-class final exam: Thursday, December 12th from 4:30--7:15 pm.
+
 ## September 17th
+
+* Comments on common errors in [HW #2](hw.html#hw-2)
 * Discuss [HW #3](hw.html#hw-3)
+* Numerical solution of 1-D Laplacian
+* Polarized slab example
 
 ## September 12th
 * Discuss [HW #2](hw.html#hw-2)

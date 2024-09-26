@@ -306,7 +306,7 @@ In class, I will ask for a physical explanation for why I will get the same resu
 In region 1, $\ds\psi(r)-\psi(0)=-\int_0^r 0 dr \Rightarrow \psi(r)=0$ and $\psi(a-t)=0$.
 
 In region 2, $\ds\psi(r)-\psi(a-t)=-\int_{a-t}^r 0 dr \Rightarrow \psi(r)=0$ and $\psi(a)=0$.
-    
+
 The fact that the potential is constant in region 2. is consistent with the expectation that a conductor is an equipotential.
 
 In region 3, $\ds\psi(r)-\psi(a)=kQ\int_a^r 1/r'^2 dr' \Rightarrow \psi(r) = kQ(1/a-1/r)$ and so $\psi(b)=kq(1/a-1/b)$
@@ -333,6 +333,15 @@ Suppose problem 2.3 is modified so that there is also a uniformly charged spheri
 2. Do the same for the electric potential and plot $\psi/(kQ/a)$ versus $r/a$. Assume the potential at $r=0$ is zero.
 3. In this problem the electric field "jumps" when crossing over charges on a surface. (That is, there is a discontinuity in the $E(r)$ plot.) For each of the jumps in the plot of $E$, find the ratio of the change in $E$ across the discontinuity and the charge density at the discontinuity.
 
+\ifsolutions
+**Comments**:
+1. This was discussed in class. For a sketch, I set $b=2a$ to simplify.
+2. One can visualize the answer by inverting the sketch from 1. and asking what the cumulative sum of that plot will look like. A key feature is that the curve is continuous (but the first derivative, related to $E$, will be discontinuous). Many students had discontinuities.
+3. The jumps should be $\sigma/\epsilon_o$, where $\sigma$ is the surface charge density at the location of the jumps.
+
+I will not post solutions because there are many ways of checking your answer; you may want to try this problem again in case it shows up on an exam.
+\fi
+
 ## Capacitance for a Long Cylinder
 
 In class, I covered how to compute capacitance for (a) large conducting planes with a small separation distance and (b) the system in HW 2.3. This was done using two methods:
@@ -342,6 +351,15 @@ In class, I covered how to compute capacitance for (a) large conducting planes w
 
 Use these two methods to find the capacitance of two equal-length and long concentric cylinders. Assume the diagram in HW 2.3 is the cross-section. 
 
+\ifsolutions
+**Comment**: Most students used the equation for the spherical problem for both parts. For part 1., $E\sim 1/r$ (see intro books which cover this). For part 2., the Laplacian in cylindrical coordinates, not spherical, should be used. It is
+
+$$\nabla^2 = \frac{1}{s}\frac{\partial}{\partial s}\left(s\frac{\partial\Phi}{\partial s}\right)$$
+
+where $s$ is the radial cylindrical coordinate. If you made this error, try the problem again and verify that you get the same answer for parts 1. and 2.
+
+\fi
+
 ## Laplace's Equation in Two Dimensions -- Numerical
 
 1. Verify the numbers in the Step 1 column of Table 1.20 of Ramo. Show your calculations on a piece of paper. (In class, we will develop a program to compute the potentials in the other columns.)
@@ -350,13 +368,37 @@ Use these two methods to find the capacitance of two equal-length and long conce
 
 (If you want to work ahead, develop a numerical solution to this problem and compare it to the exact solution.)
 
+\ifsolutions
+**Answers**
+
+1.
+   * $\Phi_1=77.50$
+   * $\Phi_2=65.62$
+   * $\Phi_3=70.62$
+   * $\Phi_4=54.06$
+2. This problem is given in many books as an example and here I expected you to research to find a solution. Problem 3.54 of Griffiths 4th Edition has a solution for the case when the origin is at the bottom center of the duct, the top is held at $V$, the width is $2b$ and the height is $a$.
+
+   $$\Phi(x,y) = -\frac{2V}{b}\sum_{n=1}^{\infty}\frac{(-1)^n}{\alpha_n}\frac{\sinh(\alpha_n y)}{\sinh(\alpha_n a)}\cos(\alpha_n x)$$
+
+   where $\alpha_n=(2n-1)\pi/2b$. To transform this to the problem we are given, first set the width $2b$ to $1$ and height $a=1$. Then
+
+   $$\Phi(x,y) = -4V\sum_{n=1}^{\infty}\frac{(-1)^n}{\alpha_n}\frac{\sinh(\alpha_n y)}{\sinh(\alpha_n)}\cos(\alpha_n x)$$
+
+   $\alpha_n=(2n-1)\pi$. If we choose a coordinate system the is centered on the right edge of Figure 1.20a with $y$ to the left and $x$ upwards, this equation can be used.
+
+   One can show that if the origin is placed at the lower left of the duct in Figure 1.20a, with $x$ to the right and $y$ up, the potential is
+   $$\Phi_l(x,y)=\frac{4V}{\pi}\sum_{n=1,3,...}^\infty \frac{\sin(n\pi y/y_0)}{n\sinh (n\pi y_0/x_0)}\sinh\left[n\pi(x_0-x)/y_0\right]$$
+
+   where $V=80\text{ V}$ and the width $x_o=1$ and height $y_o=1$.
+\fi
+
 # HW 4
 
 Due September 26th at 11:59 pm.
 
 Upload your solutions to GitHub. Name all files associated with your solution as `HW4_x.EXT`, where `x` = 1, 2, 3 is the problem from this homework and `EXT` is the file extension, e.g., `pdf`, `py`, `m`. Upload all files associated with your solution such as code and notes (in PDF). If your PDF is larger than a few MB, [compress it](https://www.adobe.com/acrobat/online/compress-pdf.html).
 
-## Laplace's Equation in 1--D Spherical -- Numerical
+## Laplace's Equation in 1--D Cylindrical -- Numerical
 
 1. Use similar steps to derive a numerical algorithm for solving numerically solving Laplace's equation in 1--D cylindrical. (In class, I discussed solving the spherical version of this problem.)
 

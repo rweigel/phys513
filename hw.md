@@ -445,3 +445,49 @@ Suppose a cylinder of radius $a$ has $\mathbf{P}=P_o\hat{\mathbf{s}}$, where $s$
 1. Find $\sigma_b$ and $\rho_b$.
 2. Compute the total bound charge.
 2. Find $\mathbf{E}_b(s)$, which is the electric field due to $\sigma_b$ and $\rho_b$.
+
+# HW 5
+
+Due Friday, October 4th at 11:59 pm.
+
+## Laplace's Equation in 2-D Cartesian -- Numerical
+
+Determine if the "Correct Potentials" column in Table 1.20 of Ramo are correct using the analytical solution covered in HW 3.3.
+
+Write out the equations that were evaluated to compute the potentials in a file named `HW5_1.pdf` and any code as `HW5_1.ext`, where ext is the file name extension for the language, e.g., `m` or `py`. (As before, you do not need to derive the analytical solution -- you can simply cite the source of one and adapt it to this problem.)
+
+## Capactor with Dielectrics -- Analytical
+
+(Related problems are in section 1.15 of Ramo and example 4.5 of Griffiths 3rd and 4th edition.)
+
+A large parallel plate capacitor is half--filled with two linear dielectrics with permittivities of $\epsilon_1$ and $\epsilon_2$. Assume that the capacitor is large enough that the potential only varies in the $x$--direction. In the diagram, the dotted rectangle is the cross--section of a Gaussian cylinder referenced in parts 4. and 5.
+
+<img src="figures/Capacitor_With_Dielectric.svg"/>
+
+1. Solve $\nabla^2 \psi=0$ in each dielectric using $\psi_1(0)=0$, $\psi_2(2d)=V_o$, $\psi_1(d)=\psi_2(d)$ and $D_1(d)=D_2(d)$.
+   \ifsolutions
+   $$\frac{V_1}{V_o} = \left(\frac{\epsilon_2}{\epsilon_1+\epsilon_2}\right)\frac{x}{d}$$ 
+
+   $$\frac{V_2}{V_o} = \left(\frac{\epsilon_1}{\epsilon_1+\epsilon_2}\right)\frac{x}{d} + \frac{\epsilon_2-\epsilon_1}{\epsilon_1+\epsilon_2}$$
+   \fi
+2. Verify that when $\epsilon_1=\epsilon_2=\epsilon_o$, the answer is as expected from a problem solved previously in class.
+
+   \ifsolutions
+   **Answer**
+   In this case, $V_1/V_o = V_2/V_o = x/2d$, which is a solution to Laplace's equation that matches the boundary conditions (and so is the unique solution).
+   \fi
+
+Using your answer to 1.,
+
+3. use $\sigma_b=\mathbf{P}\bfcdot\hat{\mathbf{n}}$ to find the four bound surface charge densities (that is, the bound charge density on the left and right surfaces on both dielectrics);
+
+Save your answer in a file named `HW5_2.pdf`.
+
+## Capactor with Dielectrics -- Numerical
+
+Find a numerical approximation of the (1--D) potential for the previous problem. Do this using the "Simple Averaging Method" described in Example 1.20 of the textbook. Use grid points at $x=0, d/2, d, 3d/2$, and $2d$. You only need to find the approximation using one step of the simple averaging method.
+
+Hint: For any grid point that is not at $x=d$, the potential is simply the average of the potentials to the left and right. For a grid point at $x=d$, you will need to find an equation that numerically implements the exact condition $D_1(d)=D_2(d)$. If your grid points are at $x=0, d$, and $2d$, the only equation that you will solve is the equation for the condition $D_1(d)=D_2(d)$. Try this version of the problem first. Does it give a sensible result when $\chi_{e2}\rightarrow \infty$ or if $\epsilon_1=\epsilon_2$?
+
+Save your derivation and numerical values for the potential in a file named `HW5_3.pdf` and any code as `HW5_2.ext`, where ext is the file name extension for the language, e.g., `m` or `py`.
+

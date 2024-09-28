@@ -192,7 +192,7 @@ Create a plot of $E_z(z/R)/E_o$, where $E_o = kQ/R^2$ for (that is, plot $E_z/E_
  
 Be prepared to provide a physical explanation for the features of the curves and the ratios of $h/R$.
 
-\ifsolutions
+%\ifsolutions
 **Solution**
 
 The following plot was created using https://www.desmos.com/calculator/vg2dblcbfc. This page is interactive, so you can adjust the $h/R$ ratio.
@@ -207,13 +207,13 @@ Comments:
 * All curves have odd symmetry ($E(-z)=-E(z)$), as expected -- the field for $z>0$ is positive and the field for $z<0$ is negative. (The image below only shows $z/R > 0$.)
 
 <img src="solns/HW2_2.png" width="500px"/>
-\fi
+%\fi
 
 ## Checking Gauss's Law
 
 Given a point charge $Q$ at the origin, compute the electric flux $\Phi_E=\int\mathbf{E}\bfcdot d\mathbf{A}$ through one face of a cube that is also centered on the origin using Coulomb's law and explicit evaluation of the integral.
 
-\ifsolutions
+%\ifsolutions
 
 **Solution**
 
@@ -244,7 +244,7 @@ Defining $b^2=1+y^2$ and using [Wolfram Alpha for the integration](https://www.w
 $$\Phi_E=kq\int_{-1}^{1}dy\frac{2}{(1+y^2)\sqrt{2+y^2}}$$
 
 Using [Wolfram Alpha](), $\Phi_E=kq(2\pi/3)=q/6\epsilon_o$.
-\fi
+%\fi
 
 ## Charge on Concentric Thick Shells
 
@@ -256,29 +256,19 @@ Using Gauss's law and the fact that the electric field inside a conductor must b
 
 1. there can be no charge on the inner surface of the inner conductor,
 
-   \ifsolutions
-    **Answer**: A Gaussian sphere with a surface inside the inner conductor has $E=0$ on its surface (b/c $E$ inside a conductor is zero). Based on $\oint \bfvec{E}\bfcdot d\mathbf{l}=Q_{\text{encl}}/\epsilon_o$, this implies $Q_{\text{encl}}=0$. (Note that all charges must be on the surface of a conductor, so the only possible location for the charge is on the inner and outer surfaces.)
-   \fi
+   **Answer**: A Gaussian sphere with a surface inside the inner conductor has $E=0$ on its surface (b/c $E$ inside a conductor is zero). Based on $\oint \bfvec{E}\bfcdot d\mathbf{l}=Q_{\text{encl}}/\epsilon_o$, this implies $Q_{\text{encl}}=0$. (Note that all charges must be on the surface of a conductor, so the only possible location for the charge is on the inner and outer surfaces.)
 
 2. the charge on the inner surface of the outer conductor is $+Q$, and
 
-   \ifsolutions
     **Answer**: A Gaussian sphere with its surface inside the outer conductor has $E=0$ on its surface (b/c $E$ inside a conductor is zero). Based on $\oint \bfvec{E}\bfcdot d\mathbf{A}=Q_{\text{encl}}/\epsilon_o$, this implies $Q_{\text{encl}}=0$. The charge on the inner conductor was given as $-Q$. To make the charge inside the Gaussian sphere zero, we need $+Q$ on the inner surface of the outer conductor to get $Q_{\text{encl}}=0$.
-   \fi
 
 3. there is no charge on the outer surface of the outer conductor.
 
-   \ifsolutions
     **Answer**: If the total charge on the outer conductor is $+Q$ and all of it is on its inner surface, but conservation of charge, there is no charge on its outer surface. Recall that charges arrange themselves on a conductor to make the electric field inside all conductors zero. With this charge arrangement, the field due to the charges on the outer surface of the inner conductor cancels the field due to the charge on the inner surface of the outer conductor for $r>b$.
-   \fi
 
 4. Find the electric field in each of the five labeled regions and sketch a plot of $E/(kQ/a^2)$ versus $r/a$. Region 1. is the empty volume inside of the inner conductor, region 2. is the inner conductor, region 3. is the empty volume between the conductors, region 4. is the outer conductor, and region 5. is the region outside of the outer conductor. (Hint: Use Gauss's law several times; when not zero, the electric field should be proportional to $1/r^2$.)
 
-   \ifsolutions
    **Answer**: 1. $E=0\quad$ 2. $E=0\quad$ 3. $E/(kQ/a^2)=-1/(r/a)^2\quad$ 4. $E=0\quad$ 5. $E=0$
-   \else
-   \vspace{4em}
-   \fi
 
 ## Scalar Potential
 
@@ -300,7 +290,6 @@ Using the electric field from problem [2.3.4](#charge-on-concentric-thick-shells
    
 In class, I will ask for a physical explanation for why I will get the same result if I choose a different integration path. For example, if my integration path was radial, then tangential, then radial again. This is covered in most intro textbooks. I'll also ask why I ask for plots of dimensionless parameters in this problem and in other problems on this HW.
 
-\ifsolutions
 **Solution**
 
 In region 1, $\ds\psi(r)-\psi(0)=-\int_0^r 0 dr \Rightarrow \psi(r)=0$ and $\psi(a-t)=0$.
@@ -314,8 +303,6 @@ In region 3, $\ds\psi(r)-\psi(a)=kQ\int_a^r 1/r'^2 dr' \Rightarrow \psi(r) = kQ(
 In region 4., the potential will be the same as in region 3. because a conductor is an equipotential: $\psi(r)=\psi(b)$
 
 In region 5., assuming the outer radius of the outer shell is $c$, $\ds\psi(r)-\psi(c)=-\int_c^r 0 dr \Rightarrow \psi(r)=\psi(c)$. Because $\psi(r)$ in region 4. is constant and equal to $\psi(b)$, $\psi(c)=\psi(b)$.
-
-\fi
 
 # HW 3
 
@@ -333,14 +320,12 @@ Suppose problem 2.3 is modified so that there is also a uniformly charged spheri
 2. Do the same for the electric potential and plot $\psi/(kQ/a)$ versus $r/a$. Assume the potential at $r=0$ is zero.
 3. In this problem the electric field "jumps" when crossing over charges on a surface. (That is, there is a discontinuity in the $E(r)$ plot.) For each of the jumps in the plot of $E$, find the ratio of the change in $E$ across the discontinuity and the charge density at the discontinuity.
 
-\ifsolutions
 **Comments**:
 1. This was discussed in class. For a sketch, I set $b=2a$ to simplify.
 2. One can visualize the answer by inverting the sketch from 1. and asking what the cumulative sum of that plot will look like. A key feature is that the curve is continuous (but the first derivative, related to $E$, will be discontinuous). Many students had discontinuities.
 3. The jumps should be $\sigma/\epsilon_o$, where $\sigma$ is the surface charge density at the location of the jumps.
 
 I will not post solutions because there are many ways of checking your answer; you may want to try this problem again in case it shows up on an exam.
-\fi
 
 ## Capacitance for a Long Cylinder
 
@@ -351,14 +336,11 @@ In class, I covered how to compute capacitance for (a) large conducting planes w
 
 Use these two methods to find the capacitance of two equal-length and long concentric cylinders. Assume the diagram in HW 2.3 is the cross-section. 
 
-\ifsolutions
 **Comment**: Most students used the equation for the spherical problem for both parts. For part 1., $E\sim 1/r$ (see intro books which cover this). For part 2., the Laplacian in cylindrical coordinates, not spherical, should be used. It is
 
 $$\nabla^2 = \frac{1}{s}\frac{\partial}{\partial s}\left(s\frac{\partial\Phi}{\partial s}\right)$$
 
 where $s$ is the radial cylindrical coordinate. If you made this error, try the problem again and verify that you get the same answer for parts 1. and 2.
-
-\fi
 
 ## Laplace's Equation in Two Dimensions -- Numerical
 
@@ -368,7 +350,6 @@ where $s$ is the radial cylindrical coordinate. If you made this error, try the 
 
 (If you want to work ahead, develop a numerical solution to this problem and compare it to the exact solution.)
 
-\ifsolutions
 **Answers**
 
 1.
@@ -390,7 +371,7 @@ where $s$ is the radial cylindrical coordinate. If you made this error, try the 
    $$\Phi_l(x,y)=\frac{4V}{\pi}\sum_{n=1,3,...}^\infty \frac{\sin(n\pi y/y_0)}{n\sinh (n\pi y_0/x_0)}\sinh\left[n\pi(x_0-x)/y_0\right]$$
 
    where $V=80\text{ V}$ and the width $x_o=1$ and height $y_o=1$.
-\fi
+%\fi
 
 # HW 4
 
@@ -465,17 +446,8 @@ A large parallel plate capacitor is half--filled with two linear dielectrics wit
 <img src="figures/Capacitor_With_Dielectric.svg"/>
 
 1. Solve $\nabla^2 \psi=0$ in each dielectric using $\psi_1(0)=0$, $\psi_2(2d)=V_o$, $\psi_1(d)=\psi_2(d)$ and $D_1(d)=D_2(d)$.
-   \ifsolutions
-   $$\frac{V_1}{V_o} = \left(\frac{\epsilon_2}{\epsilon_1+\epsilon_2}\right)\frac{x}{d}$$ 
 
-   $$\frac{V_2}{V_o} = \left(\frac{\epsilon_1}{\epsilon_1+\epsilon_2}\right)\frac{x}{d} + \frac{\epsilon_2-\epsilon_1}{\epsilon_1+\epsilon_2}$$
-   \fi
 2. Verify that when $\epsilon_1=\epsilon_2=\epsilon_o$, the answer is as expected from a problem solved previously in class.
-
-   \ifsolutions
-   **Answer**
-   In this case, $V_1/V_o = V_2/V_o = x/2d$, which is a solution to Laplace's equation that matches the boundary conditions (and so is the unique solution).
-   \fi
 
 Using your answer to 1.,
 

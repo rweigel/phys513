@@ -533,3 +533,60 @@ Hint: For any grid point that is not at $x=d$, the potential is simply the avera
 
 Save your derivation and numerical values for the potential in a file named `HW5_3.pdf` and any code as `HW5_2.ext`, where ext is the file name extension for the language, e.g., `m` or `py`.
 
+# HW 6
+
+Problem 1. due at the start of class. Problems 2. and 3. due on Friday, October 11th at 11:59 pm.
+
+## Mid-term problems
+
+**This problem is due at the start of class on October 10th.**
+
+The midterm notes I mentioned in class are
+* The problems will be based on concepts covered in homework problems.
+* I will look at the homework problems, identify the concepts, and write questions that can be solved in the allotted time.
+* You are encouraged to find problems related to the homework problems in other resources and attempt them.
+
+Find at least one problem that you think would be a good problem to know how to solve in order to be prepared for the exam.
+
+Write the problem out on a sheet of paper and turn it in at the start of class.
+
+During class, I'll write the problems on the board and give you time to think about the key concepts and steps.
+
+## Trajectory
+
+At $t=0$ and the position $(x,y,z) = (x_o, 0, 0)$, a particle with charge $q$ is given an initial velocity $\mathbf{v}_o=(v_{ox}, 0, 0)$ in a region of space where there is no electric field and the magnetic field is dipolar and given by (in spherical coordinates)
+
+%$$\mathbf{B}=\frac{\mu_o}{4\pi}\frac{\pi b^2}{r^5}\left(3xz\hat{\mathbf{x}}+3yz\hat{\mathbf{y}}+(3z^2-r^2)\hat{\mathbf{z}}\right)$$
+
+$$\mathbf{B}=\frac{B_o}{r^3}\left(2\cos\theta\mathbf{\hat{r}}+\sin\theta\boldsymbol{\hat{\theta}}\right)$$
+
+%where $R_E=6.37\cdot 10^6 \text{ m}$, $B_o=3.12\cdot 10^{-5}\text{ T}$, and $v_{ox}=1.4\cdot 10^7\text{ m/s}$. There is no electric field.
+
+In class, I discussed a numerical algorithm for finding the trajectory of a particle in a magnetic field by starting with
+
+$$m\frac{d\mathbf{v}}{dt} = q\mathbf{v}\times\mathbf{B}$$
+
+using the "Forward Euler" method:
+
+$$\frac{v_x(t+\Delta t)-v_x(t)}{\Delta t} = \frac{q}{m}\Big[\mathbf{v}(t)\times\mathbf{B}\big(x(t),y(t)\big)\Big]_x$$
+
+$$\frac{v_y(t+\Delta t)-v_y(t)}{\Delta t} = \frac{q}{m}\Big[\mathbf{v}(t)\times\mathbf{B}\big(x(t),y(t))\big)\Big]_y$$
+
+$$\frac{x(t+\Delta t)-x(t)}{\Delta t}=v_x(t)$$
+
+$$\frac{y(t+\Delta t)-y(t)}{\Delta t}=v_y(t)$$
+
+
+Use this method to find $x, y, v_x$, and $v_y$ at $t=\Delta t$.
+
+Then, using the results for $t=\Delta t$, find $x, y, v_x$, and $v_y$ $t=2\Delta t$.
+
+(In a future homework assignment, you will find the trajectory over a long period of time using a better algorithm. For this homework, I want you to understand the basic algorithm.)
+
+## Ampere's law
+
+The figure shows the cross--section of two square planes that are "large", meaning that their side length is much larger than $t$. A surface current of $\mathbf{K}=K_o\zhat$ flows on the bottom plane ($K_o$ has units of Amps/meter); the top plane has a surface current of $\mathbf{K}=-K_o\zhat$. (To understand a surface current, think of it as being created by placing many long straight wires side--by--side; in the diagram, the wires would be perpendicular to the page.)
+
+Use Ampere's law to find the magnetic field for all $y$. Justify all of your steps. Note that most of the steps involve starting with the most general solution, $\mathbf{B}(x,y,z) = B_x(x,y,z)\xhat + B_y(x,y,z)\yhat + B_z(x,y,z)\zhat$, and making symmetry arguments such that integration in Ampere's law is not needed.
+
+<img src="figures/Two_Planes.svg"/>

@@ -11,9 +11,13 @@ Subtitle: Applied Electromagnetic Theory<br>Fall, 2024
 * Office: 259 Planetary Hall
 * Course URL: https://rweigel.github.io/phys513
 
-HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3) | [4](hw.html#hw-4)
+HWs:
+[1](hw.html#hw-1) | 
+[2](hw.html#hw-2) | 
+[3](hw.html#hw-3) | 
+[4](hw.html#hw-4) | 
+[5](hw.html#hw-5)
 
-%| [5](hw.html#hw-5)
 %| [6](hw.html#hw-6) 
 %| [7](hw.html#hw-7)
 %| [8](hw.html#hw-8)
@@ -23,10 +27,37 @@ HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3) | [4](hw.html#hw-
 
 # Schedule
 
-* In-class mid-term exam: Thursday, October 17th from 4:30--6:00 pm.
 * In-class final exam: Thursday, December 12th from 4:30--7:15 pm.
 
-## September 17th
+## October 17th
+
+In-class mid-term exam: Thursday, October 17th from 4:30--6:00 pm.
+* The problems will be based on concepts covered in homework problems.
+* I will look at the homework problems, identify the concepts, and write questions that can be solved in the allotted time.
+* You are encouraged to find problems related to the homework problems in other resources and attempt them.
+* Equations for divergence and laplacian in non--cartesian coordinates will be given. Other equations used in the homework problems will not be given.
+
+## October 10th
+
+* Ampere's law
+* Faraday's law
+
+## October 3rd
+
+* Comments on common errors in [HW #4](hw.html#hw-4)
+* Discuss [HW #5](hw.html#hw-5)
+* Magnetic force, gyrofrequency, and particle trajectories ([video](https://svs.gsfc.nasa.gov/20237/))
+* Biot-Savart law
+* Ampere's law
+
+## September 26th
+
+* Comments on common errors in [HW #3](hw.html#hw-3)
+* Discuss [HW #4](hw.html#hw-4)
+* Polarization, $\mathbf{P}$, and $\mathbf{D}$
+* Computing capacitance with dielectrics.
+
+## September 19th
 
 * Comments on common errors in [HW #2](hw.html#hw-2)
 * Discuss [HW #3](hw.html#hw-3)
@@ -34,6 +65,7 @@ HWs: [1](hw.html#hw-1) | [2](hw.html#hw-2) | [3](hw.html#hw-3) | [4](hw.html#hw-
 * Polarized slab example
 
 ## September 12th
+
 * Discuss [HW #2](hw.html#hw-2)
 * Computing capacitance using
   * Gauss's law (put $+Q$ on one conductor $-Q$ on another, compute potential difference)

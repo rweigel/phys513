@@ -386,6 +386,13 @@ Upload your solutions to GitHub. Name all files associated with your solution as
 2. If $\Phi(r=2)=1$ and $\Phi(r=1)=0$, use your algorithm from 1. to find the potential at $r=1.5$. (Use a grid with points at $r=1$, $r=1.5$, and $r=2$.)
 3. Repeat 2. using a grid with points at $r=1$, $r=4/3$, $r=5/3$, and $r=2$.
 
+**Answers**
+
+$$\psi(s) = \frac{1}{2}\left[\left(1+\frac{h}{2s}\right)\psi(s+h) + \left(1-\frac{h}{2s}\right)\psi(s+h)\psi(s-h)\right]$$
+
+1. $\psi(3/2) = 7/12$
+2. $\psi(4/3) = 0.414226$, $\psi(5/3) = 0.736402$
+
 ## 1--D Spherical 
 
 A spherical shell of radius $r_o=(a + b)/2$ and a uniform charge density $\sigma_o$ is concentric with 
@@ -395,7 +402,25 @@ conducting spheres with the inner sphere having radius $a$ and the outer radius 
 
    You will need to use the fact that the potential is continuous, so $\Phi_1(r_o)=\Phi_2(r_o)$ and also a condition that relates the electric field at $r=r_o^-$ and $r=r_o^+$.
 
+
 2. Find the charge on both conductors.
+
+**Answers**
+
+1. &nbsp;
+
+   $\displaystyle\psi_i=-\frac{\sigma_or'^2}{\epsilon_o}\left(\frac{1}{\frac{1}{b}-\frac{1}{c}}\right)\left(\frac{1}{r'}-\frac{1}{c}\right)\left(\frac{1}{r}-\frac{1}{b}\right)$
+
+   $\displaystyle\psi_o=-\frac{\sigma_or'^2}{\epsilon_o}\left(\frac{1}{\frac{1}{b}-\frac{1}{c}}\right)\left(\frac{1}{r'}-\frac{1}{b}\right)\left(\frac{1}{r}-\frac{1}{c}\right)$
+
+
+2.  &nbsp;
+
+   $\displaystyle q_i=-q'\left(\frac{1}{\frac{1}{b}-\frac{1}{c}}\right)\left(\frac{1}{r'}-\frac{1}{c}\right)$
+
+   $\displaystyle q_o=+q'\left(\frac{1}{\frac{1}{b}-\frac{1}{c}}\right)\left(\frac{1}{r'}-\frac{1}{b}\right)$
+
+where $r'=(a+b)/2$ and $q'=4\pi r'^2\sigma_o$.
 
 ## A Model of Polarization
 
@@ -415,6 +440,45 @@ In this problem, a polarized slab will be modeled using two slabs of charge with
 
 The primary motivation of this problem is to justify the claim that the field of a polarized object can be computed not by finding the field due to all of the dipoles but rather by finding the field created by so--called "bound" charge densities. Here, the field due to the dipoles approaches the field due to sheets of charge. This fact is addressed in the following problem.
 
+**Answer**
+
+Details on how to solve this problem were given in class and so only a summary is given here.
+
+1\. Gauss's law can be used to find the field for $|y|\ge t/2$ (a cylinder centered on the origin or with its bottom cap at $y=0$ can both be used). This gives $E\_y=\pm \rho_o t/2\epsilon_o$ above/below the slab. Inside the slab, we know $E_y=0$ at $y=0$ because the field due to the upper part of the slab cancels that due to the lower part. We also expect that inside the slab, $E\_y(y)$ field will increase linearly (why?). From this, we can write $E\_y(y)=\rho_o y/\epsilon_o$. This equation gives zero at the origin and matches the outer field at $y=\pm t/2$. Alternatively, we can also use Gauss's law. For a cylinder centered on the origin and height $2y$, the charge enclosed is $\rho_o 2y$.
+
+2\. To simplify notation, use $E'_y=E_y/E_o$, $y'=y/t$, and $\delta'=\delta/t$ with $E_o=\rho t/2\epsilon_o$. Then
+
+$$
+E'^+_y = \begin{cases}
+  1  & y \ge 1\\
+  y' & |y'| \le 1 \\
+  -1  & y' \le -1
+\end{cases}
+$$
+
+See https://www.desmos.com/calculator/uhuz9paddg
+
+3\. Invert the sketch from 2. and then translate it by $\delta$ in the $-y$ direction. Inside the negatively charged slab, the field will be $E\_y(y)=-\rho_o (y+\delta)/\epsilon_o$. (This gives $E_y=0$ when $y=-\delta$, corresponding to the center of the negatively charged slab.)
+
+$$
+E'^-_y = \begin{cases}
+  1  & y \ge 1-\delta'\\
+  y' & |y'+\delta'| \le 1 \\
+  -1  & y' \le -1-\delta'
+\end{cases}
+$$
+
+See https://www.desmos.com/calculator/uhuz9paddg
+
+4\. In the region of overlap we need to sum
+
+$E\_y(y) = E^+\_y(y) + E^-\_y(y)$
+
+Using $E^+\_y(y)=\rho_o y/\epsilon_o$ and $E^-\_y(y)=-\rho_o (y+\delta)/\epsilon_o$ gives
+
+$E\_y(y) = -\rho_o\delta/\epsilon_o$
+
+See https://www.desmos.com/calculator/uhuz9paddg
 ## Polarized Cylinder
 
 For background, see Griffiths 4.1--4.4, Introduction to Electrodynamics (3rd or 4th Edition).
@@ -426,6 +490,12 @@ Suppose a cylinder of radius $a$ has $\mathbf{P}=P_o\hat{\mathbf{s}}$, where $s$
 1. Find $\sigma_b$ and $\rho_b$.
 2. Compute the total bound charge.
 2. Find $\mathbf{E}_b(s)$, which is the electric field due to $\sigma_b$ and $\rho_b$.
+
+**Solution**
+
+1. $\sigma_b=P_o$ at $r=a$; $\rho_b=-P_o/s$ for $r\le a$.
+2. 0, as expected because polarization is created by dipoles with a net charge of zero.
+3. $E_s=-P_o/\epsilon_o$
 
 # HW 5
 

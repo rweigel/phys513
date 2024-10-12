@@ -507,6 +507,33 @@ Determine if the "Correct Potentials" column in Table 1.20 of Ramo are correct u
 
 Write out the equations that were evaluated to compute the potentials in a file named `HW5_1.pdf` and any code as `HW5_1.ext`, where ext is the file name extension for the language, e.g., `m` or `py`. (As before, you do not need to derive the analytical solution -- you can simply cite the source of one and adapt it to this problem.)
 
+**Answer**
+
+Problem 3.54 of Griffiths 4th Edition has a solution for the case when the origin is at the bottom center of the duct, the top is held at $V$, the width is $2b$ and the height is $a$.
+
+$$\Phi(x,y) = -\frac{2V}{b}\sum_{n=1}^{\infty}\frac{(-1)^n}{\alpha_n}\frac{\sinh(\alpha_n y)}{\sinh(\alpha_n a)}\cos(\alpha_n x)$$
+
+where $\alpha_n=(2n-1)\pi/2b$. To transform this to the problem we are given, first set the width $2b$ to $1$ and height $a=1$. Then
+
+$$\Phi(x,y) = -4V\sum_{n=1}^{\infty}\frac{(-1)^n}{\alpha_n}\frac{\sinh(\alpha_n y)}{\sinh(\alpha_n)}\cos(\alpha_n x)$$
+
+$\alpha_n=(2n-1)\pi$. If we choose a coordinate system the is centered on the right edge of Figure 1.20a with $y$ to the left and $x$ upwards, this equation can be used.
+
+One can show that if the origin is placed at the lower left of the duct in Figure 1.20a, with $x$ to the right and $y$ up, the potential is
+
+$$\Phi_l(x,y)=\frac{4V}{\pi}\sum_{n=1,3,...}^\infty \frac{\sin(n\pi y/y_0)}{n\sinh (n\pi y_0/x_0)}\sinh\left[n\pi(x_0-x)/y_0\right]$$
+
+where $V=80\text{ V}$ and the width $x_o=1$ and height $y_o=1$. Similar coordinate changes can be made to find the solution to the problem where only the right/to/bottom side is at a non--zero potential and then by superposition, $\Phi = \Phi_l + \Phi_r + \Phi_t + \Phi_b$.
+
+I get, with 33 terms in sum
+
+* $\Phi_1=78.07$ (book $75.2$)
+* $\Phi_2=62.39$ (book $60.5$)
+* $\Phi_3=67.61$ (book $65.4$)
+* $\Phi_4=51.93$ (book $50.7$)
+
+See [HW5_1.py](solns/HW5_1.py).
+
 ## Capactor with Dielectrics -- Analytical
 
 (Related problems are in section 1.15 of Ramo and example 4.5 of Griffiths 3rd and 4th edition.)
@@ -524,6 +551,34 @@ Using your answer to 1.,
 3. use $\sigma_b=\mathbf{P}\bfcdot\hat{\mathbf{n}}$ to find the four bound surface charge densities (that is, the bound charge density on the left and right surfaces on both dielectrics);
 
 Save your answer in a file named `HW5_2.pdf`.
+
+**Answers**
+
+1. &nbsp;
+
+   $$\frac{V_1}{V_o} = \left(\frac{\epsilon_2}{\epsilon_1+\epsilon_2}\right)\frac{x}{d}$$ 
+
+   $$\frac{V_2}{V_o} = \left(\frac{\epsilon_1}{\epsilon_1+\epsilon_2}\right)\frac{x}{d} + \frac{\epsilon_2-\epsilon_1}{\epsilon_1+\epsilon_2}$$
+
+2. In this case, $V_1/V_o = V_2/V_o = x/2d$, which is a solution to Laplace's equation that matches the boundary conditions (and so is the unique solution).
+
+3. Assuming the dielectrics are linear so that $\mathbf{P}=\epsilon_o\chi_e\mathbf{E}=-\epsilon_o\chi_e\boldsymbol{\nabla}V$. This gives the general result
+   
+   $$\sigma_b = -\epsilon_o\chi_e\boldsymbol{\nabla}V\bfcdot\hat{\mathbf{n}}$$
+
+   For dielectric 1 on the right face, $\hat{\mathbf{n}}=\xhat$, so 
+   
+   $$\sigma_{b1r}=-\epsilon_o\chi_{e1}\left(\frac{\epsilon_2}{\epsilon_1+\epsilon_2}\right)\frac{V_o}{d}$$
+   
+   On the left face $\hat{\mathbf{n}}=-\xhat$, so the density has the opposite sign.
+
+   For dielectric 2 on the right face, $\hat{\mathbf{n}}=\xhat$.
+
+   $$\sigma_{b2r}=-\epsilon_o\chi_{e2}\left(\frac{\epsilon_1}{\epsilon_1+\epsilon_2}\right)\frac{V_o}{d}$$
+
+   On the left face $\hat{\mathbf{n}}=-\xhat$, so the density has the opposite sign.
+
+   To answer the question in terms of the parameters given, use the definition $\epsilon = \epsilon_o(1+\chi_e)$.
 
 ## Capactor with Dielectrics -- Numerical
 

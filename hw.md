@@ -645,3 +645,27 @@ The figure shows the cross--section of two square planes that are "large", meani
 Use Ampere's law to find the magnetic field for all $y$. Justify all of your steps. Note that most of the steps involve starting with the most general solution, $\mathbf{B}(x,y,z) = B_x(x,y,z)\xhat + B_y(x,y,z)\yhat + B_z(x,y,z)\zhat$, and making symmetry arguments such that integration in Ampere's law is not needed.
 
 <img src="figures/Two_Planes.svg"/>
+
+**Answer**
+
+If one considers the sheets to be composed straight wires, then one can argue that any field must be in the $x$ direction - at any point in space, there are two wires whose field sums to horizontal (use the Biot-Savart result that for an infinite wire, the field is tangent to a circle centered on the wire; make sure that you can draw a diagram that justifies this claim).
+
+As a result, $\mathbf{B}(x,y,z) = B_x(x,y,z)\xhat$. If the system is infinite in the $x$ and $z$ directions, there can be no dependence on these coordinates, so $\mathbf{B}(x,y,z) = B_x(y)\xhat$.
+
+At this point, we can use Ampere's law. Although it is possible to use Ampere's law twice on the given system, it is easier to find the field due to one of the sheets and then use superposition.
+
+<img src="figures/Two_Planes_Solution.svg"/>
+
+$$\oint \mathbf{B}\bfcdot d\mathbf{l}=\mu_oI_{\text{encl}}=\int_{1}\mathbf{B}\bfcdot d\mathbf{l}+\int_{2}\mathbf{B}\bfcdot d\mathbf{l}+\int_{3}\mathbf{B}\bfcdot d\mathbf{l}+\int_{4}\mathbf{B}\bfcdot d\mathbf{l}$$
+
+The sign of $I_{\text{encl}}$ depends on the direction of integration around the Amperian loop. Choosing clockwise integration, $I_{\text{encl}}=+K_od$, where $d$ is the width of the Amperian loop. (The sign of $I_{\text{encl}}$ is positive if you wrap your fingers around loop in the direction of integration and the flow of current through the loop is in the direction of your thumb.) 
+
+Therefore, we are left with
+
+$$\mu_oI_{\text{encl}} = -B_2(y)w + B_4(y)w$$
+
+where we have assumed the unknown $B_2$ and $B_4$ are in the positive $x$ direction. It may seem we are stuck, but we can argue that $B_2=-B_4$, that is the field a distance above the sheet must be equal in magnitude and opposite in sign to the field the same distance below the sheet.
+
+The final result is that the field is $\mu_oK_o/2\xhat$ above the blue sheet and $-\mu_oK_o/2\xhat$ below the sheet.
+
+Finally, we can use superposition to conclude that the field is $-\mu_oK_o\xhat$ between the sheets and zero otherwise.

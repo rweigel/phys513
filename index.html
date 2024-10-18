@@ -382,10 +382,6 @@
       font-size: inherit !important;
     }
 
-    .katex-warning {
-      border-right: 0.5em solid red;
-    }
-
     .katex-display {
       text-align: center;
       margin: 0em;
@@ -395,6 +391,16 @@
     .katex-display.fleqn>.katex {
       padding-left: 0em;
       margin: 0em;
+    }
+
+    .katex-warning {
+      border-right: 0.5em solid red;
+    }
+
+    .katex-error-expression {}
+
+    .katex-error-message {
+      color: red;
     }
 
     .page-break {
@@ -422,8 +428,14 @@
         margin: 0.5in 0.75in 0.75in;
       }
 
-      .katex .hide-tail {
-        overflow: hidden !important;
+      body,
+      html {
+        margin: 0px;
+        padding: 0px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        overflow: auto;
+        display: inline;
       }
 
       .page-break {
@@ -499,6 +511,10 @@
         overflow-wrap: break-word;
       }
 
+      .katex .hide-tail {
+        overflow: hidden !important;
+      }
+
       .katex {
         font: 1em / 1.1 KaTeX_Main, "Times New Roman", serif;
         white-space: nowrap;
@@ -550,106 +566,106 @@
   <div id="toc" style="min-width: 5em;">
     <ol>
       <li>
-        <a href="#schedule" raw="# Schedule" lo="28" class="">
+        <a href="#schedule" raw="# Schedule" lo="28">
           <span class="toctext">Schedule</span>
         </a>
         <ol class="toc" style="display: none;">
           <li>
-            <a href="#october-17th" raw="## October 17th" lo="33" class="">
+            <a href="#october-17th" raw="## October 17th" lo="32">
               <span class="toctext">October 17th</span>
             </a>
           </li>
           <li>
-            <a href="#october-10th" raw="## October 10th" lo="35" class="">
+            <a href="#october-10th" raw="## October 10th" lo="40">
               <span class="toctext">October 10th</span>
             </a>
           </li>
           <li>
-            <a href="#october-3rd" raw="## October 3rd" lo="40" class="">
+            <a href="#october-3rd" raw="## October 3rd" lo="45">
               <span class="toctext">October 3rd</span>
             </a>
           </li>
           <li>
-            <a href="#september-26th" raw="## September 26th" lo="48">
+            <a href="#september-26th" raw="## September 26th" lo="53">
               <span class="toctext">September 26th</span>
             </a>
           </li>
           <li>
-            <a href="#september-19th" raw="## September 19th" lo="55">
+            <a href="#september-19th" raw="## September 19th" lo="60">
               <span class="toctext">September 19th</span>
             </a>
           </li>
           <li>
-            <a href="#september-12th" raw="## September 12th" lo="62">
+            <a href="#september-12th" raw="## September 12th" lo="67">
               <span class="toctext">September 12th</span>
             </a>
           </li>
           <li>
-            <a href="#september-5th" raw="## September 5th" lo="69">
+            <a href="#september-5th" raw="## September 5th" lo="74">
               <span class="toctext">September 5th</span>
             </a>
           </li>
           <li>
-            <a href="#august-29th" raw="## August 29th" lo="76">
+            <a href="#august-29th" raw="## August 29th" lo="81">
               <span class="toctext">August 29th</span>
             </a>
           </li>
         </ol>
       </li>
       <li>
-        <a href="#syllabus" raw="# Syllabus" lo="97">
+        <a href="#syllabus" raw="# Syllabus" lo="102">
           <span class="toctext">Syllabus</span>
         </a>
         <ol class="toc" style="display: none;">
           <li>
-            <a href="#catalog-description" raw="## Catalog Description" lo="99">
+            <a href="#catalog-description" raw="## Catalog Description" lo="104">
               <span class="toctext">Catalog Description</span>
             </a>
           </li>
           <li>
-            <a href="#format" raw="## Format" lo="103">
+            <a href="#format" raw="## Format" lo="108">
               <span class="toctext">Format</span>
             </a>
           </li>
           <li>
-            <a href="#grading" raw="## Grading" lo="118">
+            <a href="#grading" raw="## Grading" lo="123">
               <span class="toctext">Grading</span>
             </a>
           </li>
           <li>
-            <a href="#textbook-and-references" raw="## Textbook and References" lo="126">
+            <a href="#textbook-and-references" raw="## Textbook and References" lo="131">
               <span class="toctext">Textbook and References</span>
             </a>
             <ol class="toc" style="display: none;">
               <li>
-                <a href="#mathematical" raw="### Mathematical" lo="132">
+                <a href="#mathematical" raw="### Mathematical" lo="137">
                   <span class="toctext">Mathematical</span>
                 </a>
               </li>
               <li>
-                <a href="#undergraduate-level" raw="### Undergraduate-level" lo="137">
+                <a href="#undergraduate-level" raw="### Undergraduate-level" lo="142">
                   <span class="toctext">Undergraduate-level</span>
                 </a>
               </li>
               <li>
-                <a href="#graduate-level" raw="### Graduate-level" lo="147">
+                <a href="#graduate-level" raw="### Graduate-level" lo="152">
                   <span class="toctext">Graduate-level</span>
                 </a>
               </li>
             </ol>
           </li>
           <li>
-            <a href="#academic-calendar-and-university-policy" raw="## Academic Calendar and University Policy" lo="159">
+            <a href="#academic-calendar-and-university-policy" raw="## Academic Calendar and University Policy" lo="164">
               <span class="toctext">Academic Calendar and University Policy</span>
             </a>
           </li>
           <li>
-            <a href="#disability-accommodations" raw="## Disability Accommodations" lo="165">
+            <a href="#disability-accommodations" raw="## Disability Accommodations" lo="170">
               <span class="toctext">Disability Accommodations</span>
             </a>
           </li>
           <li>
-            <a href="#counseling-and-student-support" raw="## Counseling and Student Support" lo="171">
+            <a href="#counseling-and-student-support" raw="## Counseling and Student Support" lo="176">
               <span class="toctext">Counseling and Student Support</span>
             </a>
           </li>
@@ -715,11 +731,11 @@
         <div class="block-info" style="display: none;"><span class="line-numbers">6-12</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="14" lf="20" class="">HWs: <a href="hw.html#hw-1">1</a> | <a href="hw.html#hw-2">2</a> | <a href="hw.html#hw-3">3</a> | <a href="hw.html#hw-4">4</a> | <a href="hw.html#hw-5">5</a> | <a href="hw.html#hw-6">6</a> </p>
-        <div class="block-info" style="display: none;"><span class="line-numbers">14-20</span></div>
+        <p padlength="0" lo="14" lf="21" class="">HWs: <a href="hw.html#hw-1">1</a> | <a href="hw.html#hw-2">2</a> | <a href="hw.html#hw-3">3</a> | <a href="hw.html#hw-4">4</a> | <a href="hw.html#hw-5">5</a> | <a href="hw.html#hw-6">6</a> | <a href="hw.html#hw-7">7</a></p>
+        <div class="block-info" style="display: none;"><span class="line-numbers">14-21</span></div>
       </div>
       <div class="block">
-        <div class="comment active" lo="22" lf="26" style="">%| <a href="hw.html#hw-7">7</a> %| <a href="hw.html#hw-8">8</a> %| <a href="hw.html#hw-9">9</a> %| <a href="hw.html#hw-10">10</a> %| <a href="hw.html#hw-11">11</a></div>
+        <div class="comment active" lo="23" lf="26" style="">%| <a href="hw.html#hw-8">8</a> %| <a href="hw.html#hw-9">9</a> %| <a href="hw.html#hw-10">10</a> %| <a href="hw.html#hw-11">11</a></div>
       </div>
     </div>
     <div class="section">
@@ -729,9 +745,9 @@
       </div>
       <div class="block">
         <ul lo="30" lf="30" class="compact">
-          <li markerlength="2" padlength="0" lo="30" lf="30" class="">
+          <li markerlength="2" padlength="0" lo="30" lf="32">
             <div class="block">
-              <p padlength="0" lo="30" lf="30" class="">In-class final exam: Thursday, December 12th from 4:30–7:15 pm.</p>
+              <p padlength="0" lo="30" lf="30">In-class final exam: Thursday, December 12th from 4:30–7:15 pm.</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">30</span></div>
             </div>
           </li>
@@ -741,36 +757,36 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="32" lf="32" class=""><a name="october-17th" number="1.1" lo="32" raw="## October 17th" class="anchor hanchor" href="#october-17th" lf="32"><span class="hnumber">1.1</span>&nbsp;<span class="htext">October 17th</span></a></h2>
+        <h2 lo="32" lf="32"><a name="october-17th" number="1.1" lo="32" raw="## October 17th" class="anchor hanchor" href="#october-17th" lf="32"><span class="hnumber">1.1</span>&nbsp;<span class="htext">October 17th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">32</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="34" lf="34" class="">In-class mid-term exam: Thursday, October 17th from 4:30–6:00 pm.</p>
+        <p padlength="0" lo="34" lf="34">In-class mid-term exam: Thursday, October 17th from 4:30–6:00 pm.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">34</span></div>
       </div>
       <div class="block">
         <ul lo="35" lf="38" class="compact">
-          <li markerlength="2" padlength="0" lo="35" lf="35" class="">
+          <li markerlength="2" padlength="0" lo="35" lf="35">
             <div class="block">
-              <p padlength="0" lo="35" lf="35" class="">The problems will be based on concepts covered in homework problems.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">38</span></div>
+              <p padlength="0" lo="35" lf="35">The problems will be based on concepts covered in homework problems.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">38-40</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="36" lf="36" class="">
+          <li markerlength="2" padlength="0" lo="36" lf="36">
             <div class="block">
-              <p padlength="0" lo="36" lf="36" class="">I will look at the homework problems, identify the concepts, and write questions that can be solved in the allotted time.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">38</span></div>
+              <p padlength="0" lo="36" lf="36">I will look at the homework problems, identify the concepts, and write questions that can be solved in the allotted time.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">38-40</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="37" lf="37" class="">
+          <li markerlength="2" padlength="0" lo="37" lf="37">
             <div class="block">
-              <p padlength="0" lo="37" lf="37" class="">You are encouraged to find problems related to the homework problems in other resources and attempt them.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">38</span></div>
+              <p padlength="0" lo="37" lf="37">You are encouraged to find problems related to the homework problems in other resources and attempt them.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">38-40</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="38" lf="38" class="">
+          <li markerlength="2" padlength="0" lo="38" lf="40">
             <div class="block">
-              <p padlength="0" lo="38" lf="38" class="">Equations for divergence and laplacian in non–cartesian coordinates will be given. Other equations used in the homework problems will not be given.</p>
+              <p padlength="0" lo="38" lf="38">Equations for divergence and laplacian in non–cartesian coordinates will be given. Other equations used in the homework problems will not be given.</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">38</span></div>
             </div>
           </li>
@@ -780,7 +796,7 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="40" lf="40" class=""><a name="october-10th" number="1.2" lo="40" raw="## October 10th" class="anchor hanchor" href="#october-10th" lf="40"><span class="hnumber">1.2</span>&nbsp;<span class="htext">October 10th</span></a></h2>
+        <h2 lo="40" lf="40"><a name="october-10th" number="1.2" lo="40" raw="## October 10th" class="anchor hanchor" href="#october-10th" lf="40"><span class="hnumber">1.2</span>&nbsp;<span class="htext">October 10th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">40</span></div>
       </div>
       <div class="block">
@@ -793,7 +809,7 @@
           </li>
           <li markerlength="2" padlength="0" lo="43" lf="45">
             <div class="block">
-              <p padlength="0" lo="43" lf="43" class="">Faraday’s law</p>
+              <p padlength="0" lo="43" lf="43">Faraday’s law</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">43</span></div>
             </div>
           </li>
@@ -803,38 +819,38 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="45" lf="45" class=""><a name="october-3rd" number="1.3" lo="45" raw="## October 3rd" class="anchor hanchor" href="#october-3rd" lf="45"><span class="hnumber">1.3</span>&nbsp;<span class="htext">October 3rd</span></a></h2>
+        <h2 lo="45" lf="45"><a name="october-3rd" number="1.3" lo="45" raw="## October 3rd" class="anchor hanchor" href="#october-3rd" lf="45"><span class="hnumber">1.3</span>&nbsp;<span class="htext">October 3rd</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">45</span></div>
       </div>
       <div class="block">
         <ul lo="47" lf="51" class="compact">
-          <li markerlength="2" padlength="0" lo="47" lf="47" class="">
+          <li markerlength="2" padlength="0" lo="47" lf="47">
             <div class="block">
-              <p padlength="0" lo="47" lf="47" class="">Comments on common errors in <a href="hw.html#hw-4">HW #4</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">51</span></div>
+              <p padlength="0" lo="47" lf="47">Comments on common errors in <a href="hw.html#hw-4">HW #4</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">51-53</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="48" lf="48" class="">
+          <li markerlength="2" padlength="0" lo="48" lf="48">
             <div class="block">
-              <p padlength="0" lo="48" lf="48" class="">Discuss <a href="hw.html#hw-5">HW #5</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">51</span></div>
+              <p padlength="0" lo="48" lf="48">Discuss <a href="hw.html#hw-5">HW #5</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">51-53</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="49" lf="49" class="">
+          <li markerlength="2" padlength="0" lo="49" lf="49">
             <div class="block">
-              <p padlength="0" lo="49" lf="49" class="">Magnetic force, gyrofrequency, and particle trajectories (<a href="https://svs.gsfc.nasa.gov/20237/">video</a>)</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">51</span></div>
+              <p padlength="0" lo="49" lf="49">Magnetic force, gyrofrequency, and particle trajectories (<a href="https://svs.gsfc.nasa.gov/20237/">video</a>)</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">51-53</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="50" lf="50" class="">
+          <li markerlength="2" padlength="0" lo="50" lf="50">
             <div class="block">
-              <p padlength="0" lo="50" lf="50" class="">Biot-Savart law</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">51</span></div>
+              <p padlength="0" lo="50" lf="50">Biot-Savart law</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">51-53</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="51" lf="51" class="">
+          <li markerlength="2" padlength="0" lo="51" lf="53">
             <div class="block">
-              <p padlength="0" lo="51" lf="51" class="">Ampere’s law</p>
+              <p padlength="0" lo="51" lf="51">Ampere’s law</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">51</span></div>
             </div>
           </li>

@@ -17,9 +17,9 @@ HWs:
 [3](hw.html#hw-3) | 
 [4](hw.html#hw-4) | 
 [5](hw.html#hw-5) |
-[6](hw.html#hw-6) 
+[6](hw.html#hw-6) |
+[7](hw.html#hw-7)
 
-%| [7](hw.html#hw-7)
 %| [8](hw.html#hw-8)
 %| [9](hw.html#hw-9)
 %| [10](hw.html#hw-10)

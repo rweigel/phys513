@@ -669,3 +669,112 @@ where we have assumed the unknown $B_2$ and $B_4$ are in the positive $x$ direct
 The final result is that the field is $\mu_oK_o/2\xhat$ above the blue sheet and $-\mu_oK_o/2\xhat$ below the sheet.
 
 Finally, we can use superposition to conclude that the field is $-\mu_oK_o\xhat$ between the sheets and zero otherwise.
+
+# HW 7
+
+Due on Friday, October 25th at 11:59 pm. Upload your code to your GitHub repository.
+
+In HW 6.2, you solved for the first few steps of a charged particle in a magnetic field. In this problem, you will solve for the trajectory for a longer period of time.
+
+Assume the particle is a proton with kinetic energy of $10\text{ MeV}$ (ignore relativistic effects) so $v_{ox}=10^7\text{ m/s}$. For the initial position, use $x_o=2R_E$, where $R_E$ is Earth's radius. Finally, for $B_o$, use $3\cdot 10^{-5} \text{ T}$.
+
+Note that the $r$ in the equation for $\mathbf{B}$ in HW 6.2 should have been $r/R_E$, that is,
+
+$$\mathbf{B}=\frac{B_o}{(r/R_E)^3}\left(2\cos\theta\mathbf{\hat{r}}+\sin\theta\boldsymbol{\hat{\theta}}\right)$$
+
+1\. Plot the trajectory of this particle for 100 seconds.
+
+You may use the integration method discussed in HW 6.2 (Forward Euler) or you may use a more advanced ODE integration algorithm, such as Runge-Kutta 4-5. In the following sample code, I demonstrate using Forward Euler and the `ode45` function in MATLAB to solve a simple ODE. 
+
+2\. Plot the trajectory of a proton with $v_{ox}=10^7\cos(10^\circ)\text{ m/s}$ and $v_{oy}=10^7\sin(10^\circ)\text{ m/s}$ for 100 seconds and using the same initial position used previously.
+
+If you are interested in the theory of these trajectories, see https://arxiv.org/abs/1112.3487.
+
+----
+
+**Sample Code**
+
+As an example of solving two ODES, in the following, I solve the two equations
+
+$\ds\frac{dx}{dt}=x \qquad \frac{dy}{dt}=-y$
+
+numerically using the Forward Euler approximation. In this approximation, the equations can be rewritten as
+
+$x_{i+1}=x_{i} + \Delta t x_i \qquad y_{i+1}=y_{i} - \Delta t y_i$
+
+I use the parameter $\Delta t = 0.01$, which controls the accuracy of the solution. (Note that the Forward Euler approximation is not a good method for solving ODEs, but it is simple and easy to implement.)
+
+*MATLAB*
+
+```matlab
+function ode_demo()
+
+    %% Forward Euler
+    dt = 0.01;
+
+    t = 0;
+    x(1) = 1;
+    y(1) = 1;
+    Nsteps = 100;
+
+    fprintf('t\tx\ty\n')
+    for i = 1:Nsteps-1
+        fprintf('%.1f\t%.1f\t%.1f\n',t(i),x(i),y(i));
+        x(i+1) = x(i) + dt*x(i);
+        y(i+1) = y(i) - dt*y(i);
+        t(i+1) = t(i) + dt;
+    end
+
+    plot(x,y);
+    hold on;
+    xlabel('x')
+    ylabel('y')
+    title('$dx/dt=x; dy/dt=-y$; x(0)=y(0)=1','Interpreter','Latex');
+
+    %% Runge-Kutta
+
+    function ret = dXdt(t, X)
+        % For MATLAB ODE functions, must specify code that computes right-hand
+        % side of differential equations. Here we have
+        % dx/dt = x
+        % dy/dt = -y
+        %
+        % Defining X = [x, y], in matrix notation
+        %   dX/dt = [x; -y]
+        ret = [X(1); -X(2)];
+    end    
+
+    [t, X] = ode45(@dXdt, [0, 1], [1, 1]);
+
+    plot(X(:,1),X(:,2),'r-');
+
+    legend('Forward Euler', 'Runge-Kutta 4-5');
+end
+```
+
+# Midterm
+
+
+PHYS 513 Midterm Exam. Closed book and notes. 4:30 -- 6:00 pm Thursday, October 17th.
+
+## Spherical Capacitor
+
+The space between two concentric conducting spherical shells of radius $a$ and $3a$ is filled with a thick dielectric shell with permittivity $\epsilon_1=2\epsilon_o$ for $a\lt r \le 2a$ and a thick dielectric shell with permittivity $\epsilon_2=4\epsilon_o$ for $2a\lt r\lt 3a$. The space for $r < a$ and $r>3a$ has permittivity $\epsilon_o$.
+
+The inner conducting shell at $r=a$ is held at potential $V_o$. The outer conducting shell at $r=3a$ is held at a potential of $0$.
+
+<img src="figures/Sphere_with_Dielectrics.svg" width="25%"/>
+
+1. Find the electric potential, $\psi(r)$,  for all $r$
+2. Find $\mathbf{E}(r)$ for all $r$
+3. Find $\mathbf{D}(r)$ for all $r$
+4. Find all surface charge densities (both bound and free)
+5. Find the capacitance
+
+Note that $\nabla^2\psi(r) = \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial\Phi}{\partial r}\right)$
+
+## Coaxial Cable
+
+A section of a long coaxial cable is shown in the following image. Find the magnetic field for all $r$. Assume that the current $I$ is uniformly distributed through the cross--sectional areas (i.e., the current density, $J$, is constant for $0\le r\le a$ and $b\le r \le c$).
+
+<img src="figures/Coaxial_Cable.png" width=20%/>

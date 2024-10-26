@@ -18,9 +18,9 @@ HWs:
 [4](hw.html#hw-4) | 
 [5](hw.html#hw-5) |
 [6](hw.html#hw-6) |
-[7](hw.html#hw-7)
+[7](hw.html#hw-7) |
+[8](hw.html#hw-8)
 
-%| [8](hw.html#hw-8)
 %| [9](hw.html#hw-9)
 %| [10](hw.html#hw-10)
 %| [11](hw.html#hw-11)
@@ -28,6 +28,13 @@ HWs:
 # Schedule
 
 * In-class final exam: Thursday, December 12th from 4:30--7:15 pm.
+
+## October 24th
+
+* Discuss midterm
+* Discuss HW #7
+* Faraday's law
+* Inductance
 
 ## October 17th
 

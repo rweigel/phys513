@@ -754,6 +754,8 @@ end
 
 # HW 8
 
+Due on Friday, November 1st at 11:59 pm.
+
 ## Inductance of a Rectangular Duct
 
 A rectangular duct carries a net current of $I = Kl$ in the direction shown. A series of current supplies along the infinitesimal gap is driving the current. The conducting material of the duct has a small enough thickness that the current can be treated as flowing on a sheet. Ignore the subscript $1$ on the variables in the following diagram.

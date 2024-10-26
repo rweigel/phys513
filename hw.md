@@ -752,6 +752,67 @@ function ode_demo()
 end
 ```
 
+# HW 8
+
+## Inductance of a Rectangular Duct
+
+A rectangular duct carries a net current of $I = Kl$ in the direction shown. A series of current supplies along the infinitesimal gap is driving the current. The conducting material of the duct has a small enough thickness that the current can be treated as flowing on a sheet. Ignore the subscript $1$ on the variables in the following diagram.
+
+<img src="figures/Rectangular_Duct.svg">
+
+1. Assuming $w \gg h$ and $l \gg h$, use Ampere's law to find the magnetic field inside and outside of the duct. Show the Amperian loop and justify your steps.
+
+2. The electromotive force across the gap is due to a change in magnetic flux
+
+   $$\mathcal{E} = -\frac{\partial \Phi_m}{\partial t}$$
+
+   where $\Phi_m$ is the magnetic flux. Compute this magnetic flux and re-write this equation in the form of
+
+   $$\mathcal{E} = -\mathcal{L} \frac{\partial I}{\partial t}$$
+
+   so as to find the inductance $\mathcal{L}$ in terms of $\mu_o$, $l$, and the cross-sectional area $A=hw$. 
+
+3. An alternative method of computing inductance uses the relationship $\mu_o\mathcal{L}I^2=\int B^2 dv$, where $dv$ is a differential volume, the integral is taken over all space, and $B$ is the magnitude of the field created by the current $I$ (see Ramo section 2.17 with $H=B/\mu_o$ and Griffiths 4th edition, section 7.2.4). Use this formula to compute $\mathcal{L}$.
+
+## Inductance of a Co--Axial Cable
+
+In class, I derived the inductance of a long co--axial cable using $\oint \mathbf{E}\bfcdot d\mathbf{l}=-d\Phi_m/dt$ and the definition $\mathcal{L}=\Phi_m/I$
+
+In the previous problem, it was noted that an alternative approach is to use $\mu_o\mathcal{L}I^2=\int B^2 dv$.
+
+Use $\mu_o\mathcal{L}I^2=\int B^2 dv$ to find $\mathcal{L}$ for the long co--axial cable geometry considered in class, where the cable had length $l$, inner radius $a$, and outer radius $b$.
+
+## Phasors and Related Math
+
+### Trig Identity I
+
+Show that $\sin(\alpha + \beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)$ using only Euler's identity, $e^{ix}=\cos(x)+i\sin(x)$.
+
+(For the curious, there is [a geometrical proof](https://mymission.lamission.edu/userdata/sargsye2/docs/Math%20240/Proof%20of%20the%20difference%20formula%20for%20cosine.pdf)).
+
+### Trig Identity II
+
+Later in the semester, we will encounter an equation that corresponds to the sum of waves travelling in opposite directions, each with different amplitudes:
+
+$$V(z,t)=\cos(\omega t-\beta z) + a\cos(\omega t+\beta z)$$
+
+where $a$ is a constant. Show that this equation can be written as the sum of two standing waves:
+
+$$V(z,t)=A\cos(\omega t)\cos(\beta z) + B\sin(\omega t)\sin(\beta z)$$
+
+and find $A$ and $B$.
+
+### Summing Sinusoidal Functions
+
+Write $A_1\cos(\theta+\delta_1) + A_2\cos(\theta + \delta_2)$ in the form $A\cos(\theta+\delta)$ using
+
+1. only the identity $\cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$ and
+2. the method outlined on page 784 for the example _addition of two sine functions_ of [this document](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=184).
+
+## Reading
+
+Read about the displacement current in Ramo, Griffiths, and one other reference. Come to class with at least one question about it
+
 # Midterm
 
 

@@ -24,12 +24,7 @@ Print out the code you used for your answer and write the actual answer it yield
 
 **Solution**
 
-Assume a charge at x of $\lambda dx$, with $dx$ small enough to be such that it is effectively a point charge. If this is the case, the vector from $x$ to $y=h$ is
-$\mathbf{r} = -x\xhat + y\yhat$ and so
-
-$$d\mathbf{E} = k (\lambda dx) \rhat/r^2 = k (\lambda dx) \mathbf{r}/r^3 = k (\lambda dx) (-x \xhat + y \yhat)/r^3$$
-
-To find the electric field due to a summation of these charges at $x$ from $-L$ to $L$, integrate the above expression.The exact solution is (Griffiths 4th Edition, example 2.2):
+The exact solution is (Griffiths 4th Edition, example 2.2):
 
 $$E_y=2k\lambda_oL\frac{1}{y\sqrt{y^2+L^2}}$$
 
@@ -43,7 +38,7 @@ $$E_y=\frac{kQ}{L^2}\frac{1}{\sqrt{2}}$$
 
 For a charge $Q$ at position $(x,y)$
 
-$$E_y=kQ\frac{y}{(y^2+x^2)^{3/2}}$$
+$$E_y=kQ\frac{z}{(y^2+x^2)^{3/2}}$$
 
 Setting $y=L$, this can be written as
 
@@ -149,12 +144,11 @@ where $h_R \equiv h/R$.
 Checks:
 
 * $E_z(0)=0$ is satisfied.
+* The symmetry condition $E_z(z) = -E_z(z)$ is satisifed.
 * We expect ring of charge solution as $h/R=h_R\rightarrow 0$. However, when we plug this into the above, we get $1/0-1/0$, which is indeterminate.
 * Expect infinitely long and uniformly charged cylinder solution when $h\gg R$ (or $h_R\gg 1$). When we plug this into the above, we get $0$. This can be shown to be correct using Gauss's law, from which it follows that $E_z=0$ at all points inside the cylinder (not only along $z$--axis, which we computed above).
 
-The symmetry condition $E_z(z) = -E_z(z)$ is satisifed.
-
-Addressing the last two limit requires a significant amount of effort ([see related problem](https://rweigel.github.io/phys685/hw.html#surface-current-on-cylinder)). In the next homework, you will consider an alternative approach.
+Addressing the last two limits requires a significant amount of effort ([see related problem](https://rweigel.github.io/phys685/hw.html#surface-current-on-cylinder)). In the next homework, you will consider an alternative approach.
 
 ## Reading
 
@@ -187,7 +181,7 @@ A field line is a line that is always tangent to the vector $\mathbf{F}$.
 
 To determine the equations that must be solved to find the field line, consider a differential distance $ds$ drawn in the direction of $\mathbf{F}$ at a given point. This step has a horizontal component of $dx$ and a vertical component of $dy$.
 
-<img src="../2022/figures/similar_triangles.svg"/>
+<img src="https://rweigel.github.io/phys513/2022/figures/similar_triangles.svg"/>
 
 The differential triangle is similar to a triangle formed with $a$ $F_x$ in the $x$-direction, $F_y$ in the $y$-direction, and $F$ as the hypotenuse so that
 
@@ -419,7 +413,7 @@ Using Gauss's law and the fact that the electric field inside a conductor must b
    
    where the integral is taken over _any_ path between the points given by $\mathbf{r}$ and $\mathbf{r}_o$.
 
-   In one dimension, assuming the integration path is radial, and choosing $\mathbf{r_o}$ to be the origin, we have
+   In one dimension, assuming the integration path is radial, and choosing $\mathbf{r}_o$ to be the origin, we have
    
    $$\psi(r)-\psi(0)=-\int_0^rE_r(r)dr$$
    

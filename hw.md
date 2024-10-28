@@ -778,3 +778,21 @@ Note that $\nabla^2\psi(r) = \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\f
 A section of a long coaxial cable is shown in the following image. Find the magnetic field for all $r$. Assume that the current $I$ is uniformly distributed through the cross--sectional areas (i.e., the current density, $J$, is constant for $0\le r\le a$ and $b\le r \le c$).
 
 <img src="figures/Coaxial_Cable.png" width=20%/>
+
+**Answer**
+
+From Ampere's law and the symmetry arguments discussed in class,
+
+$$B_{\phi}(s) = \frac{\mu_o}{2\pi s}I_{\text{encl}}(s)$$
+
+where $s$ is the radial coordinate and the $\phi$ increases in the counterclockwise direction.
+
+$$
+I_{\text{encl}}(s) =
+\begin{cases}
+    \ds I\frac{s^2}{a^2}  & \text{if } s < a \\\\
+    I                 & \text{if } a \le s \le b \\\\
+    \ds I\left(1-\frac{s^2-b^2}{c^2-b^2}\right)  & \text{if } b \le s \le c \\\\
+    0                 & \text{if } s > c
+\end{cases}
+$$

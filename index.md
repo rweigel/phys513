@@ -27,7 +27,29 @@ HWs:
 
 # Schedule
 
-* In-class final exam: Thursday, December 12th from 4:30--7:15 pm.
+
+## December 12th
+
+In-class final exam: Thursday, December 12th from 4:30--7:15 pm.
+
+## December 5th
+
+Last class
+
+## November 28th
+
+## November 14th
+
+## November 7th
+
+## October 31st
+
+## October 24th
+
+* Discuss midterm
+* Discuss HW #7
+* Faraday's law and Lenz's law
+* Inductance
 
 ## October 17th
 
@@ -165,7 +187,7 @@ Textbooks that cover advanced E&M theory are
 
 * [Academic Calendar](https://registrar.gmu.edu/calendars/)
 * [University Policy](http://universitypolicy.gmu.edu/)
-* Last class Thursday, November 30th
+* Last class Thursday, December 5th
 
 ## Disability Accommodations
 

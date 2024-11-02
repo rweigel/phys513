@@ -19,9 +19,9 @@ HWs:
 [5](hw.html#hw-5) |
 [6](hw.html#hw-6) |
 [7](hw.html#hw-7) |
-[8](hw.html#hw-8)
+[8](hw.html#hw-8) |
+[9](hw.html#hw-9)
 
-%| [9](hw.html#hw-9)
 %| [10](hw.html#hw-10)
 %| [11](hw.html#hw-11)
 
@@ -40,9 +40,22 @@ Last class
 
 ## November 14th
 
+* Continuous transmission line (continuous version of AC ladder circuit)
+
 ## November 7th
 
+* Discuss HW #9
+* Solving general AC circuit problems
+* Numerical solution of AC ladder circuit
+* Additional discussion of displacement current
+* How Maxwell's equations lead to a wave equation
+* 1-D electromagnetic waves
+
 ## October 31st
+
+* Discuss HW #8
+* Additional review of use of Euler's identity
+* Finding solution to series AC circuit problem using two methods
 
 ## October 24th
 

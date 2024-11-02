@@ -815,8 +815,53 @@ Write $A_1\cos(\theta+\delta_1) + A_2\cos(\theta + \delta_2)$ in the form $A\cos
 
 Read about the displacement current in Ramo, Griffiths, and one other reference. Come to class with at least one question about it
 
-# Midterm
+# HW 9
 
+Background: Ramo Chapter 4 for the theory. See also Nayfeh and Brussels, Electricity and Magnetism, Chapter 13. For the analysis of simple circuits, see [1](https://open.umn.edu/opentextbooks/textbooks/883) and [2](https://link.springer.com/book/10.1007/978-3-030-60986-3). 
+
+## Finding the Steady State Solution of an ODE with Phasors
+
+Use the approach covered in class (see also [Example A.1](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=184)) to find the steady state solution $I(t)$ for the ordinary differential equation
+
+$$\frac{dI}{dt}+\frac{I}{\tau}=\frac{V_o}{\mathcal{L}}\cos(\omega t + \phi)$$
+
+Also, find the steady-state solution to
+
+$$\mathcal{L}\frac{dI}{dt}+IR + Q/C = V_o\cos(\omega t)$$
+
+where $I=dQ/dt$.
+
+## Capacitor Impedance
+
+In class, I showed how the differential equation for a circuit with a AC voltage in series with a resistor and inductor and the use of $I(t)=\text{Re}[\widetilde{I}_oe^{i\omega t}]$ and $V(t)=\text{Re}[\widetilde{V}_oe^{i\omega t}]$ led to an equation for $\widetilde{I}_o$ that was the same as if we had a circuit with
+
+* a AC source of $\widetilde{V}_o$
+* a resistor with a voltage drop of $\widetilde{I}_oR$, 
+* and an inductor with impedance of $X_L=i\omega L$, and we treated the voltage drop across the inductor as $\widetilde{I}_oX_L$.
+
+As a result, we can treat an inductor much like a resistor in DC circuit analysis when finding the voltage across it: we multiply the (complex-valued) current times the impedance, $X_L$.
+
+In class, I started the problem of finding the impedance of a capacitor by considering the differential equation for a circuit with an AC voltage in series with a resistor and capacitor. 
+
+Show your notes for the procedure I started in class for this case and then finish it by showing $ \widetilde{V}_o - \widetilde{I}_oR - \widetilde{I}_oX_C = 0$, where $X_C=1/(j\omega C)$. 
+
+## Two-Step Ladder Circuit
+
+1. Find the complex currents $\widetilde{I}_i$ ($i=0, 1, 2$) in the following circuit using KVL and KCL for AC circuits. That is, use the same procedure as KVL and KCL for DC circuits with voltage drops across inductors and capacitors as $\widetilde{I}X_L$ and  $\widetilde{I}X_C$, respectively.
+
+  Use $V_o(t)=\cos(\omega t)$ [Volts], $L=1$ [Henry], and $C=1$ [Farad].
+
+2. Find  $\widetilde{V}_i$ ($i=0, 1, 2$)
+
+3. Find the impedance "seen" by the source, which is $\widetilde{V}_o/\widetilde{I}_o$. (As a check, for $\omega=1\text{ s}$ and $Z_L=1\text{ [Ohm]}$, you should get $(1-i)/2\text{ [Ohm]}$)
+
+4. Find the time domain expressions for all currents and voltages. That is, find  $I_i(t)$ and $V_i(t)$ ($i=1, 2$).
+
+5. Sketch or plot $V_o(t)$ and $V_2(t)$ if $Z_L=\sqrt{L/C}$ (in this case the "load" is a resistor with resistance of $\sqrt{L/C}$). 
+
+<img src="figures/Short_Ladder.svg"/>
+
+# Midterm
 
 PHYS 513 Midterm Exam. Closed book and notes. 4:30 -- 6:00 pm Thursday, October 17th.
 

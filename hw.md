@@ -861,6 +861,40 @@ Show your notes for the procedure I started in class for this case and then fini
 
 <img src="figures/Short_Ladder.svg"/>
 
+# HW 10
+
+## Maximizing Power
+
+Given an AC power source $V_s(t)=V_o\cos(\omega t)$ that has an internal impedance of $Z_s=R_s + iX_s$ that is in series with a load with impedance $Z_l=R_l + iX_l$,
+
+1. Find the instantanous power of the load: $P_l(t)=V_l(t)I_l(t)$
+2. Find $\overline{P}_l$, the average of $P_l(t)$ found in part 1. over a time of $2\pi/\omega$
+3. Use the equation $\overline{P}_l$ found in part 2. to show that $\overline{P}(R_l,X_l)$ is a maximum when $R_l=R_s$ and $X_l=-X_s$ (assume $R_s$ and $X_s$ are constants; in this case, $\overline{P}_l$ is a function of the variables $R_l$ and $X_l$).
+
+## $N$-Step Ladder Circuit
+
+In class, I discussed an iterative method for solving for the steady state currents and voltages in the ladder circuit of HW 9.3.
+
+Write a program that takes as an input the the number of steps in the ladder, $L$, $C$, $\omega$, and $Z_L$ and produces a plot of the magnitude and phase of the voltage across each capacitor as a function of the capacitor number (use the numbering convention used in the diagram of HW 9.3). Assume the input voltage is $V_o(t)=\cos(\omega t)$ [Volts].
+
+1. Create a plot of the magnitude and phase of the voltage across each capacitor as a function of the capacitor number using $N=100$ and the same parameters used in HW 9.3.
+2. Repeat part 1. using $Z_L=10\sqrt{L/C}$
+3. Repeat part 1. using $Z_L=0$.
+
+## Background Videos
+
+Watch the following three videos before class
+
+1. https://www.youtube.com/watch?v=bHIhgxav9LY
+   2. Response: https://www.youtube.com/watch?v=iph500cPK28
+   3. Response to response: https://www.youtube.com/watch?v=oI_X2cMHNe0
+
+If you want to work ahead, think about how you would reproduce the results shown at 14:25 of [the second video](https://www.youtube.com/watch?v=iph500cPK28&t=865s&ab_channel=ElectroBOOM).
+
+## Reading
+
+Read 5.1-5.8 of Ramo.
+
 # Midterm
 
 PHYS 513 Midterm Exam. Closed book and notes. 4:30 -- 6:00 pm Thursday, October 17th.

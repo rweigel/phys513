@@ -927,20 +927,78 @@ by defining $\widetilde{V}_{k}^+(x)=\widetilde{V}_{k}^+e^{-i\beta_kx}$ and $\wid
 
 Previously, we have considered a method for finding the steady state solution to a circuit that is driven by a harmonic source.
 
-To find a transient solution, an alternative approach is needed. These approaches include using numerical integration (for an approximate solution) and the laplace transform method (for an exact solution). Both typically involve writing the circuit equations in "state space form". For a two dimensional problem, it is
+To find a transient solution, an alternative approach is needed. These approaches include using numerical integration (for an approximate solution) and the Laplace transform method (for an exact solution). Both typically involve writing the circuit equations in "state space form", e.g.,
 
 $$\frac{dx_1}{dt} = a_{11}x_1 + a_{12}x_2 + b_1u_1(t)$$
 
 $$\frac{dx_2}{dt} = a_{21}x_1 + a_{22}x_2 + b_2u_2(t)$$
 
-As an example, see the circuit problems at [1](https://lpsa.swarthmore.edu/Representations/SysRepSS.html) and [2](https://elec3004.uqcloud.net/2013/lectures/Lathi-Chapter13-StateSpace.pdf).
+$$\frac{dx_3}{dt} = a_{31}x_1 + a_{32}x_2 + b_3u_3(t)$$
 
-1. Write the following circuit in state space form with $x_1=V_0$ and $x_2=I_1$, where $V_0$ is the voltage across the capacitor. That is, find $a_{ij}$ and $b_{j}$ for $i$ and $j = 1,2$.
+1\. For the circuit below, assume $Z_l$ is a resistor so $Z_l=R$. If $V_o=\cos(t)\text{ [V]}$, $L=1\text{ [H]}$, $C=1\text{ [F]}$, and and $R=1\text{ [}\Omega\text{]}$ and the state space variables are $x_1=I_1$, $x_2=I_2$, and $x_3=V_1$, show that
 
-2. Use an ODE solver (e.g., `ode45` in MATLAB or `solve_ivp` in Python) to find the solution to this circuit if $V(t)=V_o\cos(\omega t)$. Assume $Z_l$ is a resistor with resistance $R$. Pick your own values for $V_o$, $\omega$, $R$, $L$, and $C$. Be prepared to discuss how you determined if you solution makes sense.
+$a_{11} = 0\quad a_{12} =  0\quad a_{13}=-1$
 
-<img src="figures/Transient_Circuit.svg">
+$a_{21} = 0\quad a_{22} = -1\quad a_{23}=1$
 
+$a_{31} = 1\quad a_{32} = -1\quad a_{33}=0$
+
+$b_1 = 1\quad b_2=0\quad b_3=0$
+
+$u_1=\cos(t)\quad u_2=0\quad u_3=0$
+
+(If you are interested in more background on the state space formulation, see [1](https://lpsa.swarthmore.edu/Representations/SysRepSS.html) and [2](https://elec3004.uqcloud.net/2013/lectures/Lathi-Chapter13-StateSpace.pdf).
+
+<img src="figures/Transient_Circuit_Step2.svg">
+
+2\. Use the techniques covered previously for finding the steady state values to find the steady state $I_1(t)$, $I_2(t)$, and $V_1(t)$. (You do not need to find the transient solution; here we only want to confirm that our numerical solution matches the easier-to-compute steady state solution for large $t$.)
+
+The following program plots the solution for part 1.; you may use this to check your answer to part 2. (Using Python one would use SciPy's `solve_ivp` in place of `ode45`.)
+
+```bash
+set(0,'defaultTextInterpreter','LaTeX')
+set(0,'defaultLegendInterpreter','LaTeX');
+
+T = 2*pi;
+
+% Solution for one ladder step
+figure(1);clf;hold on;grid on;
+[t, X] = ode45(@dXdt1, [0, 5*pi], 0);
+plot(t,cos(t),'k-','LineWidth',2);
+plot(t,X(:,1),'r-','LineWidth',2);
+title_ = '$dx/dt = -x + \cos(t)$';
+title(title_,'FontWeight','bold');
+legend('$\cos(t)$','$x$');
+xlabel('$t$');
+
+% Solution for two ladder steps
+figure(2);clf;hold on;grid on;
+[t, X] = ode45(@dXdt2, [0, 20*T], [0, 0, 0]);
+plot(t/T,cos(2*pi*t/T),'k-','LineWidth',3);
+plot(t/T,X(:,1),'g-','LineWidth',2);
+plot(t/T,X(:,2),'b-','LineWidth',2);
+plot(t/T,X(:,3),'r-','LineWidth',2);
+legend('$\cos(t)$','$I_1$', '$I_2$', '$V_1$');
+xlabel('$t/T$');
+ylabel('$x$');
+
+function dXdt = dXdt1(t, X)
+    T = 2*pi; % Note variable defined also above.
+              % Better approach (not used here to keep code simple):
+              % https://www.mathworks.com/matlabcentral/answers/168073-ode45-where-odefun-requires-more-parameters
+    dXdt = -X + cos(2*pi*t/T);
+end    
+
+function dXdt = dXdt2(t, X)
+    T = 2*pi;
+    U = [cos(-2*pi*t/T) ; 0 ; 0];    % Time-dependent drivers
+    A = [ 0  0 -1;...
+          0 -1  1;...
+          1 -1  0];
+    B = [1 ; 0 ; 0];
+    dXdt = A*X + B.*U;
+end
+```
 # Midterm
 
 PHYS 513 Midterm Exam. Closed book and notes. 4:30 -- 6:00 pm Thursday, October 17th.

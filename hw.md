@@ -895,6 +895,52 @@ If you want to work ahead, think about how you would reproduce the results shown
 
 Read 5.1-5.8 of Ramo.
 
+# HW 11
+
+## Basic Continuous Transmission Line
+
+In class, we considered a coaxial cable  of length $l_o$ with one end connected to a AC power supply with $V_s(t)=V_{so}\cos(\omega t)$. The other end was connected to an infinitely long coaxial cable. The characteristic impedances were $Z_o$ and $Z_1$, respectively. Schematically, the system is represented as in the following figure, where the top line corresponds to the outer cylinder and the bottom line corresponds to the inner cylinder.
+
+<img src="figures/Transmission_Line_2_Segment.svg"/>
+
+We solved for the complex--valued constants $\widetilde{\rho}\equiv\widetilde{V}_{0}^-/\widetilde{V}_{0}^+$ and $\widetilde{\tau}\equiv\widetilde{V}_{1}^+/\widetilde{V}_{0}^+$.
+
+Recall that the general solution for voltage in the two cables is
+
+$$V_k(x,t)=\text{Re}\left[\widetilde{V}_{k}^+e^{i(\omega t-\beta_kx)}+\widetilde{V}_{k}^-e^{i(\omega t+\beta_kx)}\right]$$
+
+where $k=0$ corresponds to the cable of length $l_o$ and $k=1$ the infinitely long cable; $\widetilde{V}_{k}^+$ and $\widetilde{V}_{k}^-$ are complex--valued constants.
+
+This can be re-written as 
+
+$$V_k(x,t)=\text{Re}\left[e^{i\omega t}\left(\widetilde{V}_{k}^+(x)+\widetilde{V}_{k}^-(x)\right)\right]$$
+
+by defining $\widetilde{V}_{k}^+(x)=\widetilde{V}_{k}^+e^{-i\beta_kx}$ and $\widetilde{V}_{k}^-(x)=\widetilde{V}_{k}^-e^{i\beta_kx}$
+
+1. Find $\widetilde{V}_{0}^+(x)$, $\widetilde{V}_{0}^-(x)$ and $\widetilde{V}_{1}^+(x)$ in terms of $\widetilde{V}_s$.
+
+2. Plot or sketch the voltages $V_0(x,0)$ and $V_1(x,0)$ as a function of $x/l_o$. Assume that $\beta_0 l_0 = 4\pi$ and $Z_1=3Z_0$ (from which you should find $\widetilde{\rho}=1/2$, and $\widetilde{\tau}=3/2$.)
+
+3. Write the quantity $\widetilde{V}_0(x)\equiv\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)$ in polar form, $|\widetilde{V}_0(x)|e^{i\phi}$. That is, find $|\widetilde{V}_0(x)|$ and $\phi$. Assume that $\beta_0 l_0 = 4\pi$ and $Z_1=3Z_0$.
+
+## Transient Analysis of a Circuit
+
+Previously, we have considered a method for finding the steady state solution to a circuit that is driven by a harmonic source.
+
+To find a transient solution, an alternative approach is needed. These approaches include using numerical integration (for an approximate solution) and the laplace transform method (for an exact solution). Both typically involve writing the circuit equations in "state space form". For a two dimensional problem, it is
+
+$$\frac{dx_1}{dt} = a_{11}x_1 + a_{12}x_2 + b_1u_1(t)$$
+
+$$\frac{dx_2}{dt} = a_{21}x_1 + a_{22}x_2 + b_2u_2(t)$$
+
+As an example, see the circuit problems at [1](https://lpsa.swarthmore.edu/Representations/SysRepSS.html) and [2](https://elec3004.uqcloud.net/2013/lectures/Lathi-Chapter13-StateSpace.pdf).
+
+1. Write the following circuit in state space form with $x_1=V_0$ and $x_2=I_1$, where $V_0$ is the voltage across the capacitor. That is, find $a_{ij}$ and $b_{j}$ for $i$ and $j = 1,2$.
+
+2. Use an ODE solver (e.g., `ode45` in MATLAB or `solve_ivp` in Python) to find the solution to this circuit if $V(t)=V_o\cos(\omega t)$. Assume $Z_l$ is a resistor with resistance $R$. Pick your own values for $V_o$, $\omega$, $R$, $L$, and $C$. Be prepared to discuss how you determined if you solution makes sense.
+
+<img src="figures/Transient_Circuit.svg">
+
 # Midterm
 
 PHYS 513 Midterm Exam. Closed book and notes. 4:30 -- 6:00 pm Thursday, October 17th.

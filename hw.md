@@ -648,7 +648,7 @@ Use Ampere's law to find the magnetic field for all $y$. Justify all of your ste
 
 **Answer**
 
-If one considers the sheets to be composed straight wires, then one can argue that any field must be in the $x$ direction - at any point in space, there are two wires whose field sums to horizontal (use the Biot-Savart result that for an infinite wire, the field is tangent to a circle centered on the wire; make sure that you can draw a diagram that justifies this claim).
+If one considers the sheets to be composed straight wires, then one can argue that any field must be in the $x$ direction - at any point in space, there are two wires whose field sums to horizontal, and an infinite uniform sheet can be created by placing two such wires at a time on the sheet (to see this, use the Biot-Savart result for an infinite wire, the field is tangent to a circle centered on the wire; make sure that you can draw a diagram that justifies this paragraph).
 
 As a result, $\mathbf{B}(x,y,z) = B_x(x,y,z)\xhat$. If the system is infinite in the $x$ and $z$ directions, there can be no dependence on these coordinates, so $\mathbf{B}(x,y,z) = B_x(y)\xhat$.
 
@@ -850,9 +850,30 @@ Write $A_1\cos(\theta+\delta_1) + A_2\cos(\theta + \delta_2)$ in the form $A\cos
 
 **Answer**:
 
-2. $f=\text{Re}[A_1 e^{i\theta} e^i{\delta_1}]+\text{Re}[A_2 e^{i\theta} e^i{\delta_2}]
+1. Using the identity, we can write
 
-   $f=\text{Re}[e^{i\theta}()]$
+   $f=A'\cos\theta - B'\sin\theta$
+
+   where $A'=A_1\cos \delta_1+A_2\cos\delta_2$ and $B'= A_1\sin \delta_1+A_2\sin\delta_2$.
+   
+   Using an identity derived earlier, $a\cos x+b\sin x=\sqrt{a^2+b^2}\cos(x+\phi)$ where $\tan\phi=-b/a$, we get
+   
+   $f = \sqrt{A'^2+B'^2}\cos(\theta+\delta)$
+
+2. $f=\text{Re}[A_1 e^{i\theta} e^{i\delta_1}]+\text{Re}[A_2 e^{i\theta} e^{i\delta_2}]$
+
+   $f=\text{Re}\big[e^{i\theta}(A_1e^{i\delta_1}+A_2e^{i\delta_2})\big]$
+   
+   Using Euler's identity,
+   
+   $f=\text{Re}\Big[e^{i\theta}\big(A_1\cos \delta_1+A_2\cos\delta_2 + i(A_1\sin \delta_1+A_2\sin\delta_2)\big)\Big]$
+   
+  Because $A'+iB'$ can be written as $\sqrt{A'^2+B'^2}e^{i\delta}$, where $\tan\delta=B'/A'$, we can write
+   
+   $f=\text{Re}[\sqrt{A'^2+B'^2}e^{i(\theta+\delta)}]$ or
+   
+   $f = \sqrt{A'^2+B'^2}\cos(\theta+\delta)$
+
 ## Reading
 
 Read about the displacement current in Ramo, Griffiths, and one other reference. Come to class with at least one question about it
@@ -872,6 +893,28 @@ Also, find the steady-state solution to
 $$\mathcal{L}\frac{dI}{dt}+IR + Q/C = V_o\cos(\omega t)$$
 
 where $I=dQ/dt$.
+
+**Answer**
+
+Using $I(t)=\text{Re}[\widetilde{I}_oe^{i\omega t}]$ and $\cos(\omega t)=\text{Re}[e^{i\omega t}e^{i\phi}]$ gives
+
+$$\text{Re}\left[e^{i\omega t}\left(i\omega\widetilde{I}_o+\frac{\widetilde{I}_o}{\tau}-\frac{V_o}{\mathcal{L}}e^{i\phi}\right)\right]=0$$
+
+where $\tau=R/L$, which is satisfied when the quantity in $()$ is zero. This gives
+
+$$\widetilde{I}_o=\frac{V_o}{\mathcal{L}}\frac{e^{i\phi}}{1/\tau + i\omega}$$
+
+which can be written in the form $\widetilde{I}_o=I_oe^{i\theta}$ using $1/\tau-i\omega=\sqrt{\tau^2+\omega^2}e^{i\phi_{I_o}}$ where $\phi_{I_o}=\tan^{-1}(-\omega\tau)$ and $I_o=\sqrt{I_oI_o^*}$ so that
+
+$$\widetilde{I}_o=\frac{V_o}{\mathcal{L}}\frac{1}{1+\omega^2\tau^2}e^{i(\phi-\phi_{I_o})}$$
+
+With $I(t)=\text{Re}[\widetilde{I}_oe^{i\omega t}]$, we have
+
+$$I(t)=I_o\cos(\omega t + \phi - \phi_{I_o})$$
+
+Checks:
+* For $R/L\rightarrow \infty$, $\phi_{I_o}\rightarrow 0$ and fixed $\omega$, so current is in phase with voltage, which is expected for circuit with inductor replaced with resistanceless wire. Same for $DC$ circuit ($\omega=0$).
+* For $R/L\rightarrow 0$ and fixed $\omega$, $I(t)=I_o\cos(\omega t + \phi + \pi/2)$, current lags voltage by $90^\circ$. (In this case, the solution is $\widetilde{I}_o=-i(V_o/\mathcal{L}e^{i\phi})=(V_o/\mathcal{L})e^{i(\phi-\pi/2)})$, or without phasors, $V_o\cos(\omega t+\phi)=-\mathcal{L}dI(t)/dt \Rightarrow I_o(t)=-(V_o/\mathcal{L}\omega)\sin(\omega t + \phi)=(V_o/\mathcal{L})\cos(\omega t + \phi + \pi/2)$.
 
 ## Capacitor Impedance
 

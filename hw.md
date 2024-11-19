@@ -764,17 +764,25 @@ A rectangular duct carries a net current of $I = Kl$ in the direction shown. A s
 
 1. Assuming $w \gg h$ and $l \gg h$, use Ampere's law to find the magnetic field inside and outside of the duct. Show the Amperian loop and justify your steps.
 
+   **Answer**: Inside the duct $B\approx\mu_oK$ out of the page. To derive this see HW 6.3 for the derivation for a single plane. Inside the duct, the fields due to each plane add. Outside they cancel.
+   
 2. The electromotive force across the gap is due to a change in magnetic flux
 
-   $$\mathcal{E} = -\frac{\partial \Phi_m}{\partial t}$$
+   $$\mathcal{E} = -\frac{d \Phi_m}{d t}$$
 
    where $\Phi_m$ is the magnetic flux. Compute this magnetic flux and re-write this equation in the form of
 
    $$\mathcal{E} = -\mathcal{L} \frac{\partial I}{\partial t}$$
 
-   so as to find the inductance $\mathcal{L}$ in terms of $\mu_o$, $l$, and the cross-sectional area $A=hw$. 
+   so as to find the inductance $\mathcal{L}$ in terms of $\mu_o$, $l$, and the cross-sectional area $A=hw$.
+   
+   **Answer**: For the area bounded by the loop as shown, $\Phi_m=BA=\mu_oKA=\mu_o(I/l)A$ so $d\Phi_m/dt=\mu_o(A/l)(dI/dt)$ from which we conclude $\mathcal L = \mu_o A/l$. Note the sign convention for $\Phi_m=\mathbf{B}\cdot \mathbf{A}$ - the direction of $\mathbf{A}$ is determined by the right-hand rule applied to the path shown. From the diagram, $\mathbf{A}$ is out of the page because wrapping your fingers in the direction of the loop gives your thumb pointing out of the page. So $\mathbf{A}$ is in the direction of $\mathbf{B}$ and $\Phi_m$ is positive if $K$ is increasing in time. From $\mathcal{E} = -{d \Phi_m}/{d t}$, we see that $\mathcal{E}$ is negative in this case, so this induced emf is clockwise. This is consistent with Lenz's law - if $K$ is increasing in the counter-clockwise direction, the induced emf will be as to oppose that change, which an emf clockwise direction does.
+   
+   <img src="figures/Rectangular_Duct_Cross_Section.svg">
 
 3. An alternative method of computing inductance uses the relationship $\mu_o\mathcal{L}I^2=\int B^2 dv$, where $dv$ is a differential volume, the integral is taken over all space, and $B$ is the magnitude of the field created by the current $I$ (see Ramo section 2.17 with $H=B/\mu_o$ and Griffiths 4th edition, section 7.2.4). Use this formula to compute $\mathcal{L}$.
+
+   **Answer**: Assuming th magnetic field is constant over the volume and ignoring the field outside of the volume, $\int B^2 dv = (\mu_oK)^2Al$, so $\mathcal L = \mu_o A/l$
 
 ## Inductance of a Co--Axial Cable
 
@@ -784,25 +792,54 @@ In the previous problem, it was noted that an alternative approach is to use $\m
 
 Use $\mu_o\mathcal{L}I^2=\int B^2 dv$ to find $\mathcal{L}$ for the long co--axial cable geometry considered in class, where the cable had length $l$, inner radius $a$, and outer radius $b$.
 
+**Answer**: $\ds\mathcal L = \frac{\mu_o l}{2\pi}\ln (b/a)$
+
 ## Phasors and Related Math
 
 ### Trig Identity I
 
-Show that $\sin(\alpha + \beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)$ using only Euler's identity, $e^{ix}=\cos(x)+i\sin(x)$.
+Show that $\sin(\alpha + \beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta$ using only Euler's identity, $e^{ix}=\cos x+i\sin x$.
 
 (For the curious, there is [a geometrical proof](https://mymission.lamission.edu/userdata/sargsye2/docs/Math%20240/Proof%20of%20the%20difference%20formula%20for%20cosine.pdf)).
+
+**Answer**:
+
+$$\sin(\alpha + \beta)=\text{Im}[e^{i(\alpha+\beta)}]=\text{Im}[e^{i\alpha}e^{i\beta}]$$
+
+Using $e^{ix}=\cos(x)+i\sin(x)$ and expanding the product gives
+
+$$\sin(\alpha + \beta)=\text{Im}[e^{i\alpha}e^{i\beta}] = \text{Im}[(\cos\alpha\cos\beta - \sin\alpha\sin\beta) + i(\sin\alpha\cos\beta+\cos\alpha\sin\beta)]=\sin\alpha\cos\beta+\cos\alpha\sin\beta$$
+
+It also follows that
+
+$\cos(\alpha + \beta)=\text{Re}[e^{i\alpha}e^{i\beta}] = \cos\alpha\cos\beta - \sin\alpha\sin\beta$
+
 
 ### Trig Identity II
 
 Later in the semester, we will encounter an equation that corresponds to the sum of waves travelling in opposite directions, each with different amplitudes:
 
-$$V(z,t)=\cos(\omega t-\beta z) + a\cos(\omega t+\beta z)$$
+$$V(z,t)=\cos(\omega t-kz) + a\cos(\omega t+kz)$$
 
 where $a$ is a constant. Show that this equation can be written as the sum of two standing waves:
 
-$$V(z,t)=A\cos(\omega t)\cos(\beta z) + B\sin(\omega t)\sin(\beta z)$$
+$$V(z,t)=A\cos(\omega t)\cos(kz) + B\sin(\omega t)\sin(kz)$$
 
 and find $A$ and $B$.
+
+**Answer**: Using, from the last problem,
+
+$\cos(\alpha + \beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta$
+
+also,
+
+$a\cos(\alpha - \beta) = a\cos\alpha\cos\beta + a\sin\alpha\sin\beta$
+
+With $\alpha=\omega t$ and $\beta = \beta z$ and adding these two equations,
+
+$\cos(\alpha + \beta) + a\cos(\alpha - \beta) = (1+a)\cos\alpha\cos\beta + (1-a)\sin\alpha\sin\beta$
+
+so $A=a+1$, $B=1-a$. The importance of this identity is that a forward traveling wave of amplitude $1$ and an backward (for example reflected) travelling wave with amplitude $a$ can be expresses as the sum of two standing waves.
 
 ### Summing Sinusoidal Functions
 
@@ -811,6 +848,11 @@ Write $A_1\cos(\theta+\delta_1) + A_2\cos(\theta + \delta_2)$ in the form $A\cos
 1. only the identity $\cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$ and
 2. the method outlined on page 784 for the example _addition of two sine functions_ of [this document](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=184).
 
+**Answer**:
+
+2. $f=\text{Re}[A_1 e^{i\theta} e^i{\delta_1}]+\text{Re}[A_2 e^{i\theta} e^i{\delta_2}]
+
+   $f=\text{Re}[e^{i\theta}()]$
 ## Reading
 
 Read about the displacement current in Ramo, Griffiths, and one other reference. Come to class with at least one question about it

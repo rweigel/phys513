@@ -884,11 +884,11 @@ Background: Ramo Chapter 4 for the theory. See also Nayfeh and Brussels, Electri
 
 ## Finding the Steady State Solution of an ODE with Phasors
 
-Use the approach covered in class (see also [Example A.1](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=184)) to find the steady state solution $I(t)$ for the ordinary differential equation
+1\. Use the approach covered in class (see also [Example A.1](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=184)) to find the steady state solution $I(t)$ for the ordinary differential equation
 
 $$\frac{dI}{dt}+\frac{I}{\tau}=\frac{V_o}{\mathcal{L}}\cos(\omega t + \phi)$$
 
-Also, find the steady-state solution to
+2\.Also, find the steady-state solution to
 
 $$\mathcal{L}\frac{dI}{dt}+IR + Q/C = V_o\cos(\omega t)$$
 
@@ -896,25 +896,45 @@ where $I=dQ/dt$.
 
 **Answer**
 
+1\.
+
 Using $I(t)=\text{Re}[\widetilde{I}_oe^{i\omega t}]$ and $\cos(\omega t)=\text{Re}[e^{i\omega t}e^{i\phi}]$ gives
 
 $$\text{Re}\left[e^{i\omega t}\left(i\omega\widetilde{I}_o+\frac{\widetilde{I}_o}{\tau}-\frac{V_o}{\mathcal{L}}e^{i\phi}\right)\right]=0$$
 
-where $\tau=R/L$, which is satisfied when the quantity in $()$ is zero. This gives
+where $\tau=\mathcal{L}/R$, which is satisfied when the quantity in $()$ is zero. This gives
 
-$$\widetilde{I}_o=\frac{V_o}{\mathcal{L}}\frac{e^{i\phi}}{1/\tau + i\omega}$$
+$$\widetilde{I}_o=\frac{V_oe^{i\phi}}{R}\frac{1}{1 + i\omega\tau}=\frac{V_oe^{i\phi}}{R}\frac{1-i\omega\tau}{1 + (\omega\tau)^2}$$
 
-which can be written in the form $\widetilde{I}_o=I_oe^{i\theta}$ using $1/\tau-i\omega=\sqrt{\tau^2+\omega^2}e^{i\phi_{I_o}}$ where $\phi_{I_o}=\tan^{-1}(-\omega\tau)$ and $I_o=\sqrt{I_oI_o^*}$ so that
+$1-i\omega\tau$ can be written $\sqrt{1+(\omega\tau)^2}e^{i\phi'}$ with $\phi'=\tan^{-1}(-\omega\tau)=\tan^{-1}(\omega\tau)$ so that
 
-$$\widetilde{I}_o=\frac{V_o}{\mathcal{L}}\frac{1}{1+\omega^2\tau^2}e^{i(\phi-\phi_{I_o})}$$
+$$\widetilde{I}_o=\frac{V_o}{R}\frac{1}{\sqrt{1+\omega^2\tau^2}}e^{i(\phi+\phi')}$$
+
 
 With $I(t)=\text{Re}[\widetilde{I}_oe^{i\omega t}]$, we have
 
-$$I(t)=I_o\cos(\omega t + \phi - \phi_{I_o})$$
+$$I(t)=I_o\cos(\omega t + \phi + \phi')$$
+
+with
+
+$$I_o=\frac{V_o}{R}\frac{1}{\sqrt{1+\omega^2\tau^2}}$$
 
 Checks:
-* For $R/L\rightarrow \infty$, $\phi_{I_o}\rightarrow 0$ and fixed $\omega$, so current is in phase with voltage, which is expected for circuit with inductor replaced with resistanceless wire. Same for $DC$ circuit ($\omega=0$).
-* For $R/L\rightarrow 0$ and fixed $\omega$, $I(t)=I_o\cos(\omega t + \phi + \pi/2)$, current lags voltage by $90^\circ$. (In this case, the solution is $\widetilde{I}_o=-i(V_o/\mathcal{L}e^{i\phi})=(V_o/\mathcal{L})e^{i(\phi-\pi/2)})$, or without phasors, $V_o\cos(\omega t+\phi)=-\mathcal{L}dI(t)/dt \Rightarrow I_o(t)=-(V_o/\mathcal{L}\omega)\sin(\omega t + \phi)=(V_o/\mathcal{L})\cos(\omega t + \phi + \pi/2)$.
+* For $\omega\tau\rightarrow 0$, $\phi_{I_o}\rightarrow 0$ and fixed $\omega$, so current is in phase with voltage, which is expected for circuit with inductor replaced with resistanceless wire. Same for $DC$ circuit ($\omega=0$).
+* For $\omega\tau\rightarrow\infty$, $\phi_{I_o}\rightarrow \pi/2$ and $I(t)=I_o\cos(\omega t + \phi + \pi/2)$, current lags voltage by $90^\circ$. (Without phasors, $V_o\cos(\omega t+\phi)=-\mathcal{L}dI(t)/dt \Rightarrow I_o(t)=-(V_o/\mathcal{L}\omega)\sin(\omega t + \phi)=(V_o/\mathcal{L})\cos(\omega t + \phi + \pi/2)$).
+
+2\. Following steps similar to above, 
+
+$\ds\widetilde{I}_o=\frac{V_oe^{i\phi}}{\widetilde{Z}}$
+    
+$\ds\widetilde{Z}=R+i(\omega \mathcal{L} - \frac{1}{\omega C})$
+    
+$\widetilde{Z}=\sqrt{R^2+(\omega \mathcal{L} - \frac{1}{\omega C})^2}e^{i\phi_{I_o}}$
+    
+$\ds\tan\phi'=\frac{R}{(\omega \mathcal{L} - \frac{1}{\omega C})^2}$
+
+$\ds\widetilde{I}_o=V_oe^{i(\phi+\phi')}\frac{1}{\sqrt{R^2+(\omega \mathcal{L} - \frac{1}{\omega C})^2}}=\frac{V_o}{R}\frac{1}{\sqrt{1+(\omega\tau-\frac{1}{\omega RC})^2}}e^{i(\phi+\phi')}$
+
 
 ## Capacitor Impedance
 

@@ -20,9 +20,9 @@ HWs:
 [6](hw.html#hw-6) |
 [7](hw.html#hw-7) |
 [8](hw.html#hw-8) |
-[9](hw.html#hw-9)
+[9](hw.html#hw-9) |
+[10](hw.html#hw-10)
 
-%| [10](hw.html#hw-10)
 %| [11](hw.html#hw-11)
 
 # Schedule
@@ -38,18 +38,46 @@ Last class
 
 ## November 28th
 
-## November 14th
+No class
 
-* Continuous transmission line (continuous version of AC ladder circuit)
+## November 21st
+
+https://www.desmos.com/calculator/wteuno5c2u
+
+(Solutions on page 254 of Ramo)
+
+One end of a coaxial cable of arbitrary length and characteristic impedance $Z_o$ is connected to an AC power source. The other end is connected to a load with impedance $Z_L$.
+
+<img src="figures/Transmission_Line_Load_Terminated.svg" width="40%"/>
+
+Show that $|\rho|=1$ if
+1. $Z_L=0$ (short at end)
+2. $Z_0/Z_L=0$ (end is open)
+3. $Z_L=ib$ (that is, the load has no resistive component, and the reactive component has a magnitude of $b$; this requires the assumption that $Z_o$ is real, which is equivalent to the coaxial cable being "ideal" in the sense that it has no resistance, either ohmic or radiative.)
+
+Show that if $Z_L=0$,
+1. $|\widetilde{V}(x)|=0$ at $x=0, -\lambda/2, - 2\lambda/2, ...$,
+2. $|\widetilde{V}(x)|=0$ has maxima when $\beta x$ is an odd multiple of $\pi/2$,
+3. $|\widetilde{I}(x)|=0$ has maxima when  $|\widetilde{V}(x)|=0$,
+4. $I(x,t)$ and $V(x,t)$ are shifted in time by $90^\circ$, and
+5. ${\text{max }|\widetilde{V}(x)|}/{{\text{max }|\widetilde{I}(x)}|}=Z_o$. Can we way that $\widetilde{V}(x)/\widetilde{I}(x)=Z_o$?
+
+## November 14th
+* Discuss HW #10
+* Review continuous transmission line (continuous version of AC ladder circuit)
+* Cover solutions to continuous transmission line
+* Handling boundary conditions
+* Discuss 
+  * https://www.youtube.com/watch?v=bHIhgxav9LY
+  * response video https://www.youtube.com/watch?v=iph500cPK28 and
+  * response to response https://www.youtube.com/watch?v=oI_X2cMHNe0
 
 ## November 7th
 
 * Discuss HW #9
 * Solving general AC circuit problems
 * Numerical solution of AC ladder circuit
-* Additional discussion of displacement current
-* How Maxwell's equations lead to a wave equation
-* 1-D electromagnetic waves
+* Continuous transmission line (continuous version of AC ladder circuit)
 
 ## October 31st
 

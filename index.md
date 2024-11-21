@@ -21,20 +21,31 @@ HWs:
 [7](hw.html#hw-7) |
 [8](hw.html#hw-8) |
 [9](hw.html#hw-9) |
-[10](hw.html#hw-10)
-
-%| [11](hw.html#hw-11)
+[10](hw.html#hw-10) |
+[11](hw.html#hw-11)
 
 # Schedule
-
 
 ## December 12th
 
 In-class final exam: Thursday, December 12th from 4:30--7:15 pm.
 
+The exam will have two problems:
+
+1. One problem based on homework problems covered after mid--term (HWs 8--12)
+
+2. One problem based on symmetry arguments needed to justify the use of
+   * Gauss's law to find the field due to a charge distribution or
+   * Ampere's law to find the field due to a current distribution
+
+Before writing the exam, I will look at the homework problems, identify the concepts, and write questions that can be solved in the allotted time. You are encouraged to find problems related to the homework problems in other resources and attempt them. Equations for divergence and laplacian in non--cartesian coordinates will be given. Other equations used in the homework problems will not be given.
+
 ## December 5th
 
 Last class
+
+* Discuss HW #12
+* Final Review
 
 ## November 28th
 
@@ -42,25 +53,16 @@ No class
 
 ## November 21st
 
-https://www.desmos.com/calculator/wteuno5c2u
+% https://www.desmos.com/calculator/wteuno5c2u
 
-(Solutions on page 254 of Ramo)
+* Discuss final exam
+* Discuss HW #11
+* Discuss visualization of travelling waves
+* Find reflection coefficient for coaxial cable terminated by 
+  1. $Z_L=0$ (short at end)
+  2. $Z_0/Z_L=0$ (end is open)
+  3. $Z_L=ib$ (that is, the load has no resistive component, and the reactive component has a magnitude of $b$; this requires the assumption that $Z_o$ is real, which is equivalent to the coaxial cable being "ideal" in the sense that it has no resistance, either ohmic or radiative.)
 
-One end of a coaxial cable of arbitrary length and characteristic impedance $Z_o$ is connected to an AC power source. The other end is connected to a load with impedance $Z_L$.
-
-<img src="figures/Transmission_Line_Load_Terminated.svg" width="40%"/>
-
-Show that $|\rho|=1$ if
-1. $Z_L=0$ (short at end)
-2. $Z_0/Z_L=0$ (end is open)
-3. $Z_L=ib$ (that is, the load has no resistive component, and the reactive component has a magnitude of $b$; this requires the assumption that $Z_o$ is real, which is equivalent to the coaxial cable being "ideal" in the sense that it has no resistance, either ohmic or radiative.)
-
-Show that if $Z_L=0$,
-1. $|\widetilde{V}(x)|=0$ at $x=0, -\lambda/2, - 2\lambda/2, ...$,
-2. $|\widetilde{V}(x)|=0$ has maxima when $\beta x$ is an odd multiple of $\pi/2$,
-3. $|\widetilde{I}(x)|=0$ has maxima when  $|\widetilde{V}(x)|=0$,
-4. $I(x,t)$ and $V(x,t)$ are shifted in time by $90^\circ$, and
-5. ${\text{max }|\widetilde{V}(x)|}/{{\text{max }|\widetilde{I}(x)}|}=Z_o$. Can we way that $\widetilde{V}(x)/\widetilde{I}(x)=Z_o$?
 
 ## November 14th
 * Discuss HW #10

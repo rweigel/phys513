@@ -1084,6 +1084,22 @@ function dXdt = dXdt2(t, X)
     dXdt = A*X + B.*U;
 end
 ```
+
+# HW 12 
+
+Due on Friday, December 6th at 11:59 pm
+
+In HW 11.1, you computed the steady state solution for a continuous transmission line.
+
+In HW 9.3, you found the exact steady state solution to a two--step ladder circuit; in HW 11.2, you structured the differential equations for a ladder circuit needed to compute its numerical solutions.
+
+A ladder circuit can be used to approximate a continuous transmission line. In this HW, you will
+1. approximate the system of 11.1 using a ladder circuit and compute the steady state voltage and current as a function of the ladder step number;
+2. compare your solution to 1. with your solution to 11.1.
+
+Next, you will use an ODE solver to compute the transient response of your ladder circuit to a voltage pulse.
+
+
 # Midterm
 
 PHYS 513 Midterm Exam. Closed book and notes. 4:30 -- 6:00 pm Thursday, October 17th.

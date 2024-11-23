@@ -7,7 +7,7 @@ show_sum = 1;
 show_sum_past = 1;
 nframes = 300;
 
-fname = 'traveling_waves-show_phase_%02d-sum_%d-past_%d-rho_%.2f.mp4';
+fname = './data/traveling_waves-show_phase_%02d-sum_%d-past_%d-rho_%.2f.mp4';
 fname = sprintf(fname,phase,show_sum,show_sum_past,rho);
 
 vidfile = VideoWriter(fname,'MPEG-4');

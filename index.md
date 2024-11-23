@@ -22,7 +22,8 @@ HWs:
 [8](hw.html#hw-8) |
 [9](hw.html#hw-9) |
 [10](hw.html#hw-10) |
-[11](hw.html#hw-11)
+[11](hw.html#hw-11) |
+[12](hw.html#hw-12)
 
 # Schedule
 
@@ -58,6 +59,9 @@ No class
 * Discuss final exam
 * Discuss HW #11
 * Discuss visualization of travelling waves
+  * [PHET animation](https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html)
+  * [MATLAB animation](http://mag.gmu.edu/git-data/phys513/misc/data/)
+  * [Desmos animation](https://www.desmos.com/calculator/wteuno5c2u)
 * Find reflection coefficient for coaxial cable terminated by 
   1. $Z_L=0$ (short at end)
   2. $Z_0/Z_L=0$ (end is open)

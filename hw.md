@@ -884,11 +884,11 @@ Background: Ramo Chapter 4 for the theory. See also Nayfeh and Brussels, Electri
 
 ## Finding the Steady State Solution of an ODE with Phasors
 
-1\. Use the approach covered in class (see also [Example A.1](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=184)) to find the steady state solution $I(t)$ for the ordinary differential equation
+Use the approach covered in class (see also [Example A.1](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=184)) to find the steady state solution $I(t)$ for the ordinary differential equation
 
 $$\frac{dI}{dt}+\frac{I}{\tau}=\frac{V_o}{\mathcal{L}}\cos(\omega t + \phi)$$
 
-2\.Also, find the steady-state solution to
+Also, find the steady-state solution to
 
 $$\mathcal{L}\frac{dI}{dt}+IR + Q/C = V_o\cos(\omega t)$$
 
@@ -896,45 +896,25 @@ where $I=dQ/dt$.
 
 **Answer**
 
-1\.
-
 Using $I(t)=\text{Re}[\widetilde{I}_oe^{i\omega t}]$ and $\cos(\omega t)=\text{Re}[e^{i\omega t}e^{i\phi}]$ gives
 
 $$\text{Re}\left[e^{i\omega t}\left(i\omega\widetilde{I}_o+\frac{\widetilde{I}_o}{\tau}-\frac{V_o}{\mathcal{L}}e^{i\phi}\right)\right]=0$$
 
-where $\tau=\mathcal{L}/R$, which is satisfied when the quantity in $()$ is zero. This gives
+where $\tau=R/L$, which is satisfied when the quantity in $()$ is zero. This gives
 
-$$\widetilde{I}_o=\frac{V_oe^{i\phi}}{R}\frac{1}{1 + i\omega\tau}=\frac{V_oe^{i\phi}}{R}\frac{1-i\omega\tau}{1 + (\omega\tau)^2}$$
+$$\widetilde{I}_o=\frac{V_o}{\mathcal{L}}\frac{e^{i\phi}}{1/\tau + i\omega}$$
 
-$1-i\omega\tau$ can be written $\sqrt{1+(\omega\tau)^2}e^{i\phi'}$ with $\phi'=\tan^{-1}(-\omega\tau)=\tan^{-1}(\omega\tau)$ so that
+which can be written in the form $\widetilde{I}_o=I_oe^{i\theta}$ using $1/\tau-i\omega=\sqrt{\tau^2+\omega^2}e^{i\phi_{I_o}}$ where $\phi_{I_o}=\tan^{-1}(-\omega\tau)$ and $I_o=\sqrt{I_oI_o^*}$ so that
 
-$$\widetilde{I}_o=\frac{V_o}{R}\frac{1}{\sqrt{1+\omega^2\tau^2}}e^{i(\phi+\phi')}$$
-
+$$\widetilde{I}_o=\frac{V_o}{\mathcal{L}}\frac{1}{1+\omega^2\tau^2}e^{i(\phi-\phi_{I_o})}$$
 
 With $I(t)=\text{Re}[\widetilde{I}_oe^{i\omega t}]$, we have
 
-$$I(t)=I_o\cos(\omega t + \phi + \phi')$$
-
-with
-
-$$I_o=\frac{V_o}{R}\frac{1}{\sqrt{1+\omega^2\tau^2}}$$
+$$I(t)=I_o\cos(\omega t + \phi - \phi_{I_o})$$
 
 Checks:
-* For $\omega\tau\rightarrow 0$, $\phi_{I_o}\rightarrow 0$ and fixed $\omega$, so current is in phase with voltage, which is expected for circuit with inductor replaced with resistanceless wire. Same for $DC$ circuit ($\omega=0$).
-* For $\omega\tau\rightarrow\infty$, $\phi_{I_o}\rightarrow \pi/2$ and $I(t)=I_o\cos(\omega t + \phi + \pi/2)$, current lags voltage by $90^\circ$. (Without phasors, $V_o\cos(\omega t+\phi)=-\mathcal{L}dI(t)/dt \Rightarrow I_o(t)=-(V_o/\mathcal{L}\omega)\sin(\omega t + \phi)=(V_o/\mathcal{L})\cos(\omega t + \phi + \pi/2)$).
-
-2\. Following steps similar to above, 
-
-$\ds\widetilde{I}_o=\frac{V_oe^{i\phi}}{\widetilde{Z}}$
-    
-$\ds\widetilde{Z}=R+i(\omega \mathcal{L} - \frac{1}{\omega C})$
-    
-$\widetilde{Z}=\sqrt{R^2+(\omega \mathcal{L} - \frac{1}{\omega C})^2}e^{i\phi_{I_o}}$
-    
-$\ds\tan\phi'=\frac{R}{(\omega \mathcal{L} - \frac{1}{\omega C})^2}$
-
-$\ds\widetilde{I}_o=V_oe^{i(\phi+\phi')}\frac{1}{\sqrt{R^2+(\omega \mathcal{L} - \frac{1}{\omega C})^2}}=\frac{V_o}{R}\frac{1}{\sqrt{1+(\omega\tau-\frac{1}{\omega RC})^2}}e^{i(\phi+\phi')}$
-
+* For $R/L\rightarrow \infty$, $\phi_{I_o}\rightarrow 0$ and fixed $\omega$, so current is in phase with voltage, which is expected for circuit with inductor replaced with resistanceless wire. Same for $DC$ circuit ($\omega=0$).
+* For $R/L\rightarrow 0$ and fixed $\omega$, $I(t)=I_o\cos(\omega t + \phi + \pi/2)$, current lags voltage by $90^\circ$. (In this case, the solution is $\widetilde{I}_o=-i(V_o/\mathcal{L}e^{i\phi})=(V_o/\mathcal{L})e^{i(\phi-\pi/2)})$, or without phasors, $V_o\cos(\omega t+\phi)=-\mathcal{L}dI(t)/dt \Rightarrow I_o(t)=-(V_o/\mathcal{L}\omega)\sin(\omega t + \phi)=(V_o/\mathcal{L})\cos(\omega t + \phi + \pi/2)$.
 
 ## Capacitor Impedance
 
@@ -966,6 +946,82 @@ Show your notes for the procedure I started in class for this case and then fini
 
 <img src="figures/Short_Ladder.svg"/>
 
+**Answer**
+
+One method is to collapse the circuit in steps as shown below to find $Z_0$. Once $Z_0$ is known, the unknown complex voltage and current amplitudes can be found.
+
+<img src="figures/Short_Ladder_Step1.svg"/>
+
+<img src="figures/Short_Ladder_Step2.svg"/>
+
+$$Z_1=\frac{1}{\frac{1}{j\omega C} + \frac{1}{Z_L+j\omega L}}$$
+
+Note that this can be generalized - replace $Z_L$ with $Z_2$:
+
+$$Z_1=\frac{1}{\frac{1}{j\omega C} + \frac{1}{Z_2+j\omega L}}$$
+
+This is the equation that would apply if we the circuit had a third step and $Z_2$ was the result of collapsing the third step. More generally,
+
+$$Z_n=\frac{1}{\frac{1}{j\omega C} + \frac{1}{Z_{n+1}+j\omega L}}$$
+
+where $n$ is the step number. Using the given parameters,
+
+$$Z_1=\frac{1}{j+\frac{1}{1+j}}=\frac{1}{j+\frac{1-j}{2}}=\frac{1}{\frac{1+j}{2}}=1-j$$
+
+$$Z_0=\frac{1}{j+\frac{1}{1+j}}=\frac{1}{j+\frac{1-j}{2}}=\frac{1}{\frac{1+j}{2}}=\frac{1-j}{2}$$
+
+An iterative approach to computing $\widetilde{V}$ and $\widetilde{I}$, and $Z$ is to note that KCL for each node is
+
+$\widetilde{I}_{n+1} = \widetilde{I}_n - j\omega C \widetilde{V}_n$
+
+and the relationship for the voltages across the inductor is
+
+$\widetilde{V}_{n+1} = \widetilde{V}_n - j\omega L \widetilde{I}_{n+1}$
+
+and, as before,
+   
+$Z_n = \widetilde{V}_n/\widetilde{I}_n$
+
+We are given that $\widetilde{V}_0$ and we also know that $\widetilde{I}_0=\widetilde{V}_0/Z_0$.
+
+$\widetilde{I}_{n+1} = \widetilde{I}_n - j\omega C \widetilde{V}_n$ with $n=0$ gives
+
+$$\widetilde{I}_{1} = \widetilde{I}_0 - j\omega C \widetilde{V}_0 = \widetilde{V}_0/Z_0 - j\omega C \widetilde{V}_0=\widetilde{V}_0\left(\frac{1}{Z_0} - j\omega C\right)$$
+
+Using
+
+$\widetilde{V}_{n+1} = \widetilde{V}_n - j\omega L \widetilde{I}_{n+1}$ with $n=0$ gives
+
+$\widetilde{V}_{1} =
+\widetilde{V}_0 - j\omega L \widetilde{I}_{1} = 
+\widetilde{V}_0 \left[1-j\omega L \left( \frac{1}{Z_0} - j\omega C\right) \right]$
+
+Repeating the last two steps with $n=1$ gives
+
+$\widetilde{I}_{2} = \widetilde{I}_1 - j\omega C \widetilde{V}_1$
+
+$\widetilde{V}_{2} = \widetilde{V}_1 - j\omega L \widetilde{I}_{2}$
+
+Using the above with the given parameters, 
+
+1. $\widetilde{I}_0 = 1+j = \sqrt{2}e^{j\pi/4}$, $\widetilde{I}_1 = 1$, and $\widetilde{I}_2=-j=e^{-j\pi/2}$
+2. $\widetilde{V}_0 = 1$, $\widetilde{V}_1 = 1-j= \sqrt{2}e^{-j\pi/4}$, and $\widetilde{V}_2=-j=e^{-j\pi/2}$
+3. $\ds Z_0=\frac{1}{\frac{1}{j\omega C} + \frac{1}{Z_1+j\omega L}}$, where $\ds Z_1=\frac{1}{\frac{1}{j\omega C} + \frac{1}{Z_L+j\omega L}}$
+4. $I_n(t) = \text{Re}\left[\widetilde{I}_n e^{j\omega t}\right]$
+
+   $I_0(t) = \text{Re}\left[ \sqrt{2}e^{j\pi/4}e^{j\omega t}\right]=\sqrt{2}\cos(\omega t + \pi/4)$
+
+   $I_1(t) = \text{Re}\left[ e^{j\omega t}\right]=\cos(\omega t)$
+
+   $I_2(t) = \text{Re}\left[ e^{-j\pi/2}e^{j\omega t}\right]=\cos(\omega t - \pi/2)$
+
+   $V_n(t) = \text{Re}\left[\widetilde{V}_n e^{j\omega t}\right]$
+
+   $V_1(t) = \text{Re}\left[\sqrt{2}e^{-j\pi/4} e^{j\omega t}\right]=\sqrt{2}\cos(\omega t - \pi/4)$
+
+   $V_2(t) = \text{Re}\left[e^{-j\pi/2} e^{j\omega t}\right]=\cos(\omega t - \pi/2)$
+5. Plot should have $V_0(t)=\cos(\omega t)$ and $V_2(t)=\cos(\omega t - \pi/2)=-\sin(\omega t)$
+
 # HW 10
 
 ## Maximizing Power
@@ -985,6 +1041,58 @@ Write a program that takes as an input the the number of steps in the ladder, $L
 1. Create a plot of the magnitude and phase of the voltage across each capacitor as a function of the capacitor number using $N=100$ and the same parameters used in HW 9.3.
 2. Repeat part 1. using $Z_L=10\sqrt{L/C}$
 3. Repeat part 1. using $Z_L=0$.
+
+**Answer**
+
+```
+clear
+
+set(0,'DefaultAxesFontName','Times');
+set(0,'DefaultAxesTitleFontWeight','normal');
+set(0,'DefaultTextFontName','Times');
+set(0,'DefaultTextFontSize',16);
+set(0,'DefaultAxesFontSize',16);
+
+run = 1;
+
+N = 3;
+L = 1;
+C = 1;
+w = 1;
+Zo = sqrt(L/C);
+ZL = Zo;
+
+Z = zeros(1, N);
+Z(end) = ZL;
+
+V(1) = 1.0; % Source voltage
+
+% Compute impedances starting at load
+for n = [N:-1:2]
+    y = 1/(Z(n) + 1j*w*L);
+    Z(n-1) = 1/(y + 1j*w*C);
+end
+
+I(1) = V(1)/Z(1);
+for n = [1:N-1]
+    I(n+1) = I(n) - 1j*w*C*V(n);
+    V(n+1) = V(n) - 1j*w*L*I(n+1);        
+end
+
+if N == 3
+    Z
+    V
+    I
+end
+
+clf;
+plot([0:N-1],abs(V),'r','LineWidth',2);hold on;
+plot([0:N-1],abs(I),'b','LineWidth',2);
+plot([0:N-1],abs(Z)/Z(end),'g','LineWidth',2);
+grid on;
+xlabel('$n$','Interpreter','Latex')
+legend('$|\widetilde{V}|$ [V]','$|\widetilde{I}|$ [A]','$|Z|/Z_L$','Interpreter','Latex','Orientation','Horizontal')
+```
 
 ## Background Videos
 
@@ -1109,15 +1217,24 @@ end
 
 Due on Friday, December 6th at 11:59 pm
 
-In HW 11.1, you computed the steady state solution for a continuous transmission line.
+## Steady-State 
 
-In HW 9.3, you found the exact steady state solution to a two--step ladder circuit; in HW 11.2, you structured the differential equations for a ladder circuit needed to compute its numerical solutions.
+In HW 9.3, you found the exact steady--state solution to a two--step ladder circuit
 
-A ladder circuit can be used to approximate a continuous transmission line. In this HW, you will
-1. approximate the system of 11.1 using a ladder circuit and compute the steady state voltage and current as a function of the ladder step number;
-2. compare your solution to 1. with your solution to 11.1.
+In HW 11.1, you computed the steady--state solution for a continuous transmission line.
 
-Next, you will use an ODE solver to compute the transient response of your ladder circuit to a voltage pulse.
+In HW 11.2, you structured the differential equations for a ladder circuit needed to compute its numerical solutions.
+
+I have noted that a ladder circuit can be used to approximate a continuous transmission line and that finding the transient solution analytically for a ladder circuit is possible, but more involved.
+
+Approximate the transmision line of HW 11.1 with a ladder LC network with at least 100 elements; assume $V_{s0}=1\text{ Volt}$ and $Z_0=1\text{ }\Omega$. Note that in a circuit representation, the second transmission line can be replaced with a circuit element with resistance $Z_1$.
+
+1. Compute and plot $|\widetilde{V}(k)|$, where $k$ is the step number of the ladder. In class, I discussed several ways of doing this, including writing recursive relationships for the voltages and currents.
+
+2. Compare your result from 1. with your answer from HW 11.1 by plotting their voltage magnitudes on the same plot. You will need to determine a relationship between the step number of the later and the coordinate $x$ in HW 11.1 in order to make the comparison.
+
+## Transient Response
+
 
 
 # Midterm

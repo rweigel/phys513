@@ -702,7 +702,7 @@ numerically using the Forward Euler approximation. In this approximation, the eq
 
 $x_{i+1}=x_{i} + \Delta t x_i \qquad y_{i+1}=y_{i} - \Delta t y_i$
 
-I use the parameter $\Delta t = 0.01$, which controls the accuracy of the solution. (Note that the Forward Euler approximation is not a good method for solving ODEs, but it is simple and easy to implement.)
+I use the parameter $\Delta t = 0.01$, which controls the accuracy of the solution. (Note that the Forward Euler approximation is not a good method for solving ODEs, but it is simple and easy to implement. Additional references for ODEs and MATLAB: [1](https://perhuaman.wordpress.com/wp-content/uploads/2014/07/solving-odes-with-matlab-shampine-gladwell-thompson.pdf), [2](https://www.math.tamu.edu/reu/comp/matode.pdf).
 
 *MATLAB*
 
@@ -954,21 +954,21 @@ One method is to collapse the circuit in steps as shown below to find $Z_0$. Onc
 
 <img src="figures/Short_Ladder_Step2.svg"/>
 
-$$Z_1=\frac{1}{\frac{1}{j\omega C} + \frac{1}{Z_L+j\omega L}}$$
+$$Z_1=\frac{1}{\frac{1}{1/j\omega C} + \frac{1}{Z_L+j\omega L}}$$
 
 Note that this can be generalized - replace $Z_L$ with $Z_2$:
 
-$$Z_1=\frac{1}{\frac{1}{j\omega C} + \frac{1}{Z_2+j\omega L}}$$
+$$Z_1=\frac{1}{j\omega C + \ds\frac{1}{Z_2+j\omega L}}$$
 
-This is the equation that would apply if we the circuit had a third step and $Z_2$ was the result of collapsing the third step. More generally,
+This is the equation that would apply if the circuit had a third step and $Z_2$ was the result of collapsing the third step. More generally,
 
-$$Z_n=\frac{1}{\frac{1}{j\omega C} + \frac{1}{Z_{n+1}+j\omega L}}$$
+$$Z_n=\frac{1}{j\omega C + \ds\frac{1}{Z_{n+1}+j\omega L}}$$
 
 where $n$ is the step number. Using the given parameters,
 
 $$Z_1=\frac{1}{j+\frac{1}{1+j}}=\frac{1}{j+\frac{1-j}{2}}=\frac{1}{\frac{1+j}{2}}=1-j$$
 
-$$Z_0=\frac{1}{j+\frac{1}{1+j}}=\frac{1}{j+\frac{1-j}{2}}=\frac{1}{\frac{1+j}{2}}=\frac{1-j}{2}$$
+$$Z_0=\frac{1}{j+\frac{1}{(1-j)+j}}=\frac{1}{1+j}=\frac{1-j}{2}$$
 
 An iterative approach to computing $\widetilde{V}$ and $\widetilde{I}$, and $Z$ is to note that KCL for each node is
 
@@ -1006,7 +1006,20 @@ Using the above with the given parameters,
 
 1. $\widetilde{I}_0 = 1+j = \sqrt{2}e^{j\pi/4}$, $\widetilde{I}_1 = 1$, and $\widetilde{I}_2=-j=e^{-j\pi/2}$
 2. $\widetilde{V}_0 = 1$, $\widetilde{V}_1 = 1-j= \sqrt{2}e^{-j\pi/4}$, and $\widetilde{V}_2=-j=e^{-j\pi/2}$
-3. $\ds Z_0=\frac{1}{\frac{1}{j\omega C} + \frac{1}{Z_1+j\omega L}}$, where $\ds Z_1=\frac{1}{\frac{1}{j\omega C} + \frac{1}{Z_L+j\omega L}}$
+3. $\ds Z_0=\frac{1}{j\omega C + \frac{1}{Z_1+j\omega L}}$, where $\ds Z_1=\frac{1}{j\omega C + \frac{1}{Z_L+j\omega L}}$
+
+   Using given parameters (see above), 
+   
+   $Z_1=1-j$
+
+   $Z_0=(1-j)/2$
+
+   Check that answers to 1. and 2. are consistent:
+
+   $Z_1=1-j = \widetilde{V}_1/\widetilde{I}_1=1-j$
+   
+   $Z_0=(1-j)/2=\widetilde{V}_0/\widetilde{I}_0=1/(1+j)=(1-j)/2$
+
 4. $I_n(t) = \text{Re}\left[\widetilde{I}_n e^{j\omega t}\right]$
 
    $I_0(t) = \text{Re}\left[ \sqrt{2}e^{j\pi/4}e^{j\omega t}\right]=\sqrt{2}\cos(\omega t + \pi/4)$
@@ -1044,55 +1057,7 @@ Write a program that takes as an input the the number of steps in the ladder, $L
 
 **Answer**
 
-```
-clear
-
-set(0,'DefaultAxesFontName','Times');
-set(0,'DefaultAxesTitleFontWeight','normal');
-set(0,'DefaultTextFontName','Times');
-set(0,'DefaultTextFontSize',16);
-set(0,'DefaultAxesFontSize',16);
-
-run = 1;
-
-N = 3;
-L = 1;
-C = 1;
-w = 1;
-Zo = sqrt(L/C);
-ZL = Zo;
-
-Z = zeros(1, N);
-Z(end) = ZL;
-
-V(1) = 1.0; % Source voltage
-
-% Compute impedances starting at load
-for n = [N:-1:2]
-    y = 1/(Z(n) + 1j*w*L);
-    Z(n-1) = 1/(y + 1j*w*C);
-end
-
-I(1) = V(1)/Z(1);
-for n = [1:N-1]
-    I(n+1) = I(n) - 1j*w*C*V(n);
-    V(n+1) = V(n) - 1j*w*L*I(n+1);        
-end
-
-if N == 3
-    Z
-    V
-    I
-end
-
-clf;
-plot([0:N-1],abs(V),'r','LineWidth',2);hold on;
-plot([0:N-1],abs(I),'b','LineWidth',2);
-plot([0:N-1],abs(Z)/Z(end),'g','LineWidth',2);
-grid on;
-xlabel('$n$','Interpreter','Latex')
-legend('$|\widetilde{V}|$ [V]','$|\widetilde{I}|$ [A]','$|Z|/Z_L$','Interpreter','Latex','Orientation','Horizontal')
-```
+See [HW10_2](solns/H10_2.m).
 
 ## Background Videos
 
@@ -1136,6 +1101,54 @@ by defining $\widetilde{V}_{k}^+(x)=\widetilde{V}_{k}^+e^{-i\beta_kx}$ and $\wid
 
 3. Write the quantity $\widetilde{V}_0(x)\equiv\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)$ in polar form, $|\widetilde{V}_0(x)|e^{i\phi}$. That is, find $|\widetilde{V}_0(x)|$ and $\phi$. Assume that $\beta_0 l_0 = 4\pi$ and $Z_1=3Z_0$.
 
+**Answer**
+
+1\.
+
+$$\widetilde{\rho}=\frac{Z_1-Z_0}{Z_1+Z_0}$$
+
+$$\widetilde{\tau}=\frac{2Z_1}{Z_1+Z_0}$$
+
+$$\widetilde{V}_{0}^+(x)=V_{so}\frac{e^{-j\beta_0 x}}{e^{j\beta_0 l_0}+\widetilde{\rho}e^{-j\beta_0 l_0}}$$
+
+$$\widetilde{V}_{0}^-(x)=\widetilde{\rho}\frac{e^{j\beta_0 x}}{e^{j\beta_0 l_0}+\widetilde{\rho}e^{-j\beta_0 l_0}}$$
+
+$$\widetilde{V}_{1}^+(x)=\widetilde{\tau}V_{so}\frac{e^{-j\beta_1 x}}{e^{j\beta_0 l_0}+\widetilde{\rho}e^{-j\beta_0 l_0}}$$
+
+$$\widetilde{V}_{0}(x)=\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)=V_{so}\frac{e^{-j\beta_0 x}+\widetilde{\rho}e^{j\beta_0 x}}{e^{j\beta_0 l_0}+\widetilde{\rho}e^{-j\beta_0 l_0}}$$
+
+$$\widetilde{V}_{1}(x)=
+V_{so}\frac{\widetilde{\tau} e^{-j\beta_1 x}}{e^{j\beta_0 l_0}+\widetilde{\rho}e^{-j\beta_0 l_0}}
+$$
+
+2\. See https://www.desmos.com/calculator/wteuno5c2u
+
+3\. 
+
+$$\widetilde{V}_{0}(x)=\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)=V_{so}\frac{e^{-j\beta_0 x}+\widetilde{\rho}e^{j\beta_0 x}}{e^{j\beta_0 l_0}+\widetilde{\rho}e^{-j\beta_0 l_0}}$$
+
+Using the given values,
+
+$$\widetilde{V}_{0}(x)=V_{so}\frac{2}{3}\left(e^{-j\beta_0x} + \frac{1}{2}e^{j\beta_0x}\right)$$
+
+We want to write
+
+$$V_o(x,t)=\text{Re}\left[\widetilde{V}_{0}(x)e^{j\omega t}\right]$$
+
+in the form
+
+$$V_o(x,t)=\text{Re}\left[|\widetilde{V}_{0}(x)|e^{j\phi}e^{j\omega t}\right]$$
+
+or
+
+$$V_o(x,t)=|\widetilde{V}_{0}(x)|\cos(\omega t + \phi)$$
+
+so that we can determine at a given $x$ what the maximum of $V_o$ will be over one period.
+
+Using $|\widetilde{V}_{0}(x)|=\sqrt{\widetilde{V}_{0}(x)\widetilde{V}_{0}^*(x)}$ gives
+
+$$|\widetilde{V}_{0}(x)|=\frac{2}{3}\sqrt{\frac{5}{4} + \cos(8\pi x)}$$
+
 ## Transient Analysis of a Circuit
 
 Previously, we have considered a method for finding the steady state solution to a circuit that is driven by a harmonic source.
@@ -1164,7 +1177,7 @@ $u_1=\cos(t)\quad u_2=0\quad u_3=0$
 
 <img src="figures/Transient_Circuit_Step2.svg">
 
-2\. Use the techniques covered previously for finding the steady state values to find the steady state $I_1(t)$, $I_2(t)$, and $V_1(t)$. (You do not need to find the transient solution; here we only want to confirm that our numerical solution matches the easier-to-compute steady state solution for large $t$.)
+2\. Use the techniques covered previously for finding the steady state values to find the steady state $I_1(t)$, $I_2(t)$, and $V_1(t)$. (You do not need to find the transient solution; here we only want to confirm that our numerical solution matches the easier-to-compute steady state solution for large $t$. Note that there are many ways of solving: [1](https://www.ee.hacettepe.edu.tr/~solen/Matlab/MatLab/Matlab%20-%20Electronics%20and%20Circuit%20Analysis%20using%20Matlab.pdf))
 
 The following program plots the solution for part 1.; you may use this to check your answer to part 2. (Using Python one would use SciPy's `solve_ivp` in place of `ode45`.)
 
@@ -1219,23 +1232,27 @@ Due on Friday, December 6th at 11:59 pm
 
 ## Steady-State 
 
-In HW 9.3, you found the exact steady--state solution to a two--step ladder circuit
+In HW 10.2, you found the exact steady--state solution to a $N$--step ladder circuit.
 
 In HW 11.1, you computed the steady--state solution for a continuous transmission line.
 
-In HW 11.2, you structured the differential equations for a ladder circuit needed to compute its numerical solutions.
-
 I have noted that a ladder circuit can be used to approximate a continuous transmission line and that finding the transient solution analytically for a ladder circuit is possible, but more involved.
 
-Approximate the transmision line of HW 11.1 with a ladder LC network with at least 100 elements; assume $V_{s0}=1\text{ Volt}$ and $Z_0=1\text{ }\Omega$. Note that in a circuit representation, the second transmission line can be replaced with a circuit element with resistance $Z_1$.
+Approximate the transmision line of HW 11.1 with a ladder LC network with at least 100 elements; assume $V_{s0}=1\text{ Volt}$ and $Z_0=1\text{ }\Omega$. Note that in a circuit representation, the second transmission line can be replaced with a circuit element with resistance $Z_1$. Assume that $\beta_0 l_0 = 4\pi$, $l_0=0.5\text{ m}$, and $Z_1=3Z_0$.
 
 1. Compute and plot $|\widetilde{V}(k)|$, where $k$ is the step number of the ladder. In class, I discussed several ways of doing this, including writing recursive relationships for the voltages and currents.
 
-2. Compare your result from 1. with your answer from HW 11.1 by plotting their voltage magnitudes on the same plot. You will need to determine a relationship between the step number of the later and the coordinate $x$ in HW 11.1 in order to make the comparison.
+2. Compare your result from 1. with your answer from HW 11.1 by plotting their voltage magnitudes on the same plot vs. $x$ (from $x=0$ to $x=0.5\text{ m}$). You will need to determine a relationship between the step number of the ladder and the coordinate $x$ in HW 11.1 in order to make the comparison.
+
+Notes:
+* In the derivation for the continuous transmission line, $L$ and $C$ are inductances and capacitances per unit length.
+* The lumped capacitances and inductances for the circuit problem can be computed using the given parameters and and arbitrary non--zero value of $\omega$.
 
 ## Transient Response
 
+Starting with HW 11.2, create a function `dXdt3` that is a generalization of `dXdt2` that allows the solution to work for an $3$--step ladder.
 
+Plot $V_1(t)$ and $V_2(t)$. Also plot $V_1^{\text{ss}}(t)$ and $V_2^{\text{ss}}(t)$ on the same axes, where the $\text{ss}$ superscript indicates the solution found using the phasor method to find the steady state solution.
 
 # Midterm
 

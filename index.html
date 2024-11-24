@@ -382,10 +382,6 @@
       font-size: inherit !important;
     }
 
-    .katex-warning {
-      border-right: 0.5em solid red;
-    }
-
     .katex-display {
       text-align: center;
       margin: 0em;
@@ -395,6 +391,16 @@
     .katex-display.fleqn>.katex {
       padding-left: 0em;
       margin: 0em;
+    }
+
+    .katex-warning {
+      border-right: 0.5em solid red;
+    }
+
+    .katex-error-expression {}
+
+    .katex-error-message {
+      color: red;
     }
 
     .page-break {
@@ -422,8 +428,14 @@
         margin: 0.5in 0.75in 0.75in;
       }
 
-      .katex .hide-tail {
-        overflow: hidden !important;
+      body,
+      html {
+        margin: 0px;
+        padding: 0px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        overflow: auto;
+        display: inline;
       }
 
       .page-break {
@@ -499,6 +511,10 @@
         overflow-wrap: break-word;
       }
 
+      .katex .hide-tail {
+        overflow: hidden !important;
+      }
+
       .katex {
         font: 1em / 1.1 KaTeX_Main, "Times New Roman", serif;
         white-space: nowrap;
@@ -550,151 +566,151 @@
   <div id="toc" style="min-width: 5em;">
     <ol>
       <li>
-        <a href="#schedule" raw="# Schedule" lo="27" class="">
+        <a href="#schedule" raw="# Schedule" lo="28">
           <span class="toctext">Schedule</span>
         </a>
         <ol class="toc" style="display: none;">
           <li>
-            <a href="#december-12th" raw="## December 12th" lo="29" class="">
+            <a href="#december-12th" raw="## December 12th" lo="30">
               <span class="toctext">December 12th</span>
             </a>
           </li>
           <li>
-            <a href="#december-5th" raw="## December 5th" lo="45" class="">
+            <a href="#december-5th" raw="## December 5th" lo="44" class="">
               <span class="toctext">December 5th</span>
             </a>
           </li>
           <li>
-            <a href="#november-28th" raw="## November 28th" lo="52">
+            <a href="#november-28th" raw="## November 28th" lo="51">
               <span class="toctext">November 28th</span>
             </a>
           </li>
           <li>
-            <a href="#november-21st" raw="## November 21st" lo="56">
+            <a href="#november-21st" raw="## November 21st" lo="55" class="highlighted">
               <span class="toctext">November 21st</span>
             </a>
           </li>
           <li>
-            <a href="#november-14th" raw="## November 14th" lo="80">
+            <a href="#november-14th" raw="## November 14th" lo="71">
               <span class="toctext">November 14th</span>
             </a>
           </li>
           <li>
-            <a href="#november-7th" raw="## November 7th" lo="90">
+            <a href="#november-7th" raw="## November 7th" lo="81">
               <span class="toctext">November 7th</span>
             </a>
           </li>
           <li>
-            <a href="#october-31st" raw="## October 31st" lo="97">
+            <a href="#october-31st" raw="## October 31st" lo="88">
               <span class="toctext">October 31st</span>
             </a>
           </li>
           <li>
-            <a href="#october-24th" raw="## October 24th" lo="103">
+            <a href="#october-24th" raw="## October 24th" lo="94">
               <span class="toctext">October 24th</span>
             </a>
           </li>
           <li>
-            <a href="#october-24th" raw="## October 24th" lo="110">
+            <a href="#october-24th" raw="## October 24th" lo="101">
               <span class="toctext">October 24th</span>
             </a>
           </li>
           <li>
-            <a href="#october-17th" raw="## October 17th" lo="117">
+            <a href="#october-17th" raw="## October 17th" lo="108">
               <span class="toctext">October 17th</span>
             </a>
           </li>
           <li>
-            <a href="#october-10th" raw="## October 10th" lo="125">
+            <a href="#october-10th" raw="## October 10th" lo="116">
               <span class="toctext">October 10th</span>
             </a>
           </li>
           <li>
-            <a href="#october-3rd" raw="## October 3rd" lo="130">
+            <a href="#october-3rd" raw="## October 3rd" lo="121">
               <span class="toctext">October 3rd</span>
             </a>
           </li>
           <li>
-            <a href="#september-26th" raw="## September 26th" lo="138">
+            <a href="#september-26th" raw="## September 26th" lo="129">
               <span class="toctext">September 26th</span>
             </a>
           </li>
           <li>
-            <a href="#september-19th" raw="## September 19th" lo="145">
+            <a href="#september-19th" raw="## September 19th" lo="136">
               <span class="toctext">September 19th</span>
             </a>
           </li>
           <li>
-            <a href="#september-12th" raw="## September 12th" lo="152">
+            <a href="#september-12th" raw="## September 12th" lo="143">
               <span class="toctext">September 12th</span>
             </a>
           </li>
           <li>
-            <a href="#september-5th" raw="## September 5th" lo="159">
+            <a href="#september-5th" raw="## September 5th" lo="150">
               <span class="toctext">September 5th</span>
             </a>
           </li>
           <li>
-            <a href="#august-29th" raw="## August 29th" lo="166">
+            <a href="#august-29th" raw="## August 29th" lo="157">
               <span class="toctext">August 29th</span>
             </a>
           </li>
         </ol>
       </li>
       <li>
-        <a href="#syllabus" raw="# Syllabus" lo="187">
+        <a href="#syllabus" raw="# Syllabus" lo="178">
           <span class="toctext">Syllabus</span>
         </a>
         <ol class="toc" style="display: none;">
           <li>
-            <a href="#catalog-description" raw="## Catalog Description" lo="189">
+            <a href="#catalog-description" raw="## Catalog Description" lo="180">
               <span class="toctext">Catalog Description</span>
             </a>
           </li>
           <li>
-            <a href="#format" raw="## Format" lo="193">
+            <a href="#format" raw="## Format" lo="184">
               <span class="toctext">Format</span>
             </a>
           </li>
           <li>
-            <a href="#grading" raw="## Grading" lo="208">
+            <a href="#grading" raw="## Grading" lo="199">
               <span class="toctext">Grading</span>
             </a>
           </li>
           <li>
-            <a href="#textbook-and-references" raw="## Textbook and References" lo="216">
+            <a href="#textbook-and-references" raw="## Textbook and References" lo="207">
               <span class="toctext">Textbook and References</span>
             </a>
             <ol class="toc" style="display: none;">
               <li>
-                <a href="#mathematical" raw="### Mathematical" lo="222">
+                <a href="#mathematical" raw="### Mathematical" lo="213">
                   <span class="toctext">Mathematical</span>
                 </a>
               </li>
               <li>
-                <a href="#undergraduate-level" raw="### Undergraduate-level" lo="227">
+                <a href="#undergraduate-level" raw="### Undergraduate-level" lo="218">
                   <span class="toctext">Undergraduate-level</span>
                 </a>
               </li>
               <li>
-                <a href="#graduate-level" raw="### Graduate-level" lo="237">
+                <a href="#graduate-level" raw="### Graduate-level" lo="228">
                   <span class="toctext">Graduate-level</span>
                 </a>
               </li>
             </ol>
           </li>
           <li>
-            <a href="#academic-calendar-and-university-policy" raw="## Academic Calendar and University Policy" lo="249">
+            <a href="#academic-calendar-and-university-policy" raw="## Academic Calendar and University Policy" lo="240">
               <span class="toctext">Academic Calendar and University Policy</span>
             </a>
           </li>
           <li>
-            <a href="#disability-accommodations" raw="## Disability Accommodations" lo="255">
+            <a href="#disability-accommodations" raw="## Disability Accommodations" lo="246">
               <span class="toctext">Disability Accommodations</span>
             </a>
           </li>
           <li>
-            <a href="#counseling-and-student-support" raw="## Counseling and Student Support" lo="261">
+            <a href="#counseling-and-student-support" raw="## Counseling and Student Support" lo="252">
               <span class="toctext">Counseling and Student Support</span>
             </a>
           </li>
@@ -760,19 +776,19 @@
         <div class="block-info" style="display: none;"><span class="line-numbers">6-12</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="14" lf="26" class="active">HWs: <a href="hw.html#hw-1">1</a> | <a href="hw.html#hw-2">2</a> | <a href="hw.html#hw-3">3</a> | <a href="hw.html#hw-4">4</a> | <a href="hw.html#hw-5">5</a> | <a href="hw.html#hw-6">6</a> | <a href="hw.html#hw-7">7</a> | <a href="hw.html#hw-8">8</a> | <a href="hw.html#hw-9">9</a> | <a href="hw.html#hw-10">10</a> | <a href="hw.html#hw-11">11</a> | <a href="hw.html#hw-12">12</a></p>
+        <p padlength="0" lo="14" lf="26">HWs: <a href="hw.html#hw-1">1</a> | <a href="hw.html#hw-2">2</a> | <a href="hw.html#hw-3">3</a> | <a href="hw.html#hw-4">4</a> | <a href="hw.html#hw-5">5</a> | <a href="hw.html#hw-6">6</a> | <a href="hw.html#hw-7">7</a> | <a href="hw.html#hw-8">8</a> | <a href="hw.html#hw-9">9</a> | <a href="hw.html#hw-10">10</a> | <a href="hw.html#hw-11">11</a> | <a href="hw.html#hw-12">12</a></p>
         <div class="block-info" style="display: none;"><span class="line-numbers">14-26</span></div>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h1 lo="28" lf="28" class=""><a name="schedule" number="1" lo="28" raw="# Schedule" class="anchor hanchor" href="#schedule" lf="28"><span class="hnumber">1</span>&nbsp;<span class="htext">Schedule</span></a></h1>
+        <h1 lo="28" lf="28"><a name="schedule" number="1" lo="28" raw="# Schedule" class="anchor hanchor" href="#schedule"><span class="hnumber">1</span>&nbsp;<span class="htext">Schedule</span></a></h1>
         <div class="block-info" style="display: none;"><span class="line-numbers">28</span></div>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="30" lf="30" class=""><a name="december-12th" number="1.1" lo="30" raw="## December 12th" class="anchor hanchor" href="#december-12th" lf="30"><span class="hnumber">1.1</span>&nbsp;<span class="htext">December 12th</span></a></h2>
+        <h2 lo="30" lf="30"><a name="december-12th" number="1.1" lo="30" raw="## December 12th" class="anchor hanchor" href="#december-12th"><span class="hnumber">1.1</span>&nbsp;<span class="htext">December 12th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">30</span></div>
       </div>
       <div class="block">
@@ -785,28 +801,28 @@
       </div>
       <div class="block">
         <ol lo="36" lf="40" class="loose">
-          <li markerlength="3" padlength="0" lo="36" lf="37" class="">
+          <li markerlength="3" padlength="0" lo="36" lf="37">
             <div class="block">
-              <p padlength="0" lo="36" lf="37" class="">One problem based on homework problems covered after mid–term (HWs 8–12)</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">38-42</span></div>
+              <p padlength="0" lo="36" lf="37">One problem based on homework problems covered after mid–term (HWs 8–12)</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">36-37</span></div>
             </div>
           </li>
-          <li markerlength="3" padlength="0" lo="38" lf="42" class="">
+          <li markerlength="3" padlength="0" lo="38" lf="42">
             <div class="block">
-              <p padlength="0" lo="38" lf="39" class="">One problem based on symmetry arguments needed to justify the use of</p>
+              <p padlength="0" lo="38" lf="39">One problem based on symmetry arguments needed to justify the use of</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">38-39</span></div>
             </div>
             <div class="block">
               <ul lo="39" lf="40" class="compact">
-                <li markerlength="2" padlength="0" lo="39" lf="39" class="">
+                <li markerlength="2" padlength="0" lo="39" lf="39">
                   <div class="block">
-                    <p padlength="0" lo="39" lf="39" class="">Gauss’s law to find the field due to a charge distribution or</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">40-42</span></div>
+                    <p padlength="0" lo="39" lf="39">Gauss’s law to find the field due to a charge distribution or</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">39</span></div>
                   </div>
                 </li>
-                <li markerlength="2" padlength="0" lo="40" lf="42" class="">
+                <li markerlength="2" padlength="0" lo="40" lf="42">
                   <div class="block">
-                    <p padlength="0" lo="40" lf="40" class="">Ampere’s law to find the field due to a current distribution</p>
+                    <p padlength="0" lo="40" lf="40">Ampere’s law to find the field due to a current distribution</p>
                     <div class="block-info" style="display: none;"><span class="line-numbers">40</span></div>
                   </div>
                 </li>
@@ -818,13 +834,13 @@
         <div class="block-info" style="display: none;"><span class="line-numbers">36-40</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="42" lf="42" class="">Before writing the exam, I will look at the homework problems, identify the concepts, and write questions that can be solved in the allotted time. You are encouraged to find problems related to the homework problems in other resources and attempt them. Equations for divergence and laplacian in non–cartesian coordinates will be given. Other equations used in the homework problems will not be given.</p>
+        <p padlength="0" lo="42" lf="42">Before writing the exam, I will look at the homework problems, identify the concepts, and write questions that can be solved in the allotted time. You are encouraged to find problems related to the homework problems in other resources and attempt them. Equations for divergence and laplacian in non–cartesian coordinates will be given. Other equations used in the homework problems will not be given.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">42</span></div>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="44" lf="44" class=""><a name="december-5th" number="1.2" lo="44" raw="## December 5th" class="anchor hanchor" href="#december-5th" lf="44"><span class="hnumber">1.2</span>&nbsp;<span class="htext">December 5th</span></a></h2>
+        <h2 lo="44" lf="44" class=""><a name="december-5th" number="1.2" lo="44" raw="## December 5th" class="anchor hanchor" href="#december-5th"><span class="hnumber">1.2</span>&nbsp;<span class="htext">December 5th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">44</span></div>
       </div>
       <div class="block">
@@ -835,13 +851,13 @@
         <ul lo="48" lf="49" class="compact">
           <li markerlength="2" padlength="0" lo="48" lf="48">
             <div class="block">
-              <p padlength="0" lo="48" lf="48" class="">Discuss HW #12</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">49-51</span></div>
+              <p padlength="0" lo="48" lf="48">Discuss HW #12</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">48</span></div>
             </div>
           </li>
           <li markerlength="2" padlength="0" lo="49" lf="51">
             <div class="block">
-              <p padlength="0" lo="49" lf="49" class="">Final Review</p>
+              <p padlength="0" lo="49" lf="49">Final Review</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">49</span></div>
             </div>
           </li>
@@ -851,151 +867,148 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="51" lf="51" class=""><a name="november-28th" number="1.3" lo="51" raw="## November 28th" class="anchor hanchor" href="#november-28th" lf="51"><span class="hnumber">1.3</span>&nbsp;<span class="htext">November 28th</span></a></h2>
+        <h2 lo="51" lf="51"><a name="november-28th" number="1.3" lo="51" raw="## November 28th" class="anchor hanchor" href="#november-28th"><span class="hnumber">1.3</span>&nbsp;<span class="htext">November 28th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">51</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="53" lf="53" class="">No class</p>
+        <p padlength="0" lo="53" lf="53">No class</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">53</span></div>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="55" lf="55" class=""><a name="november-21st" number="1.4" lo="55" raw="## November 21st" class="anchor hanchor" href="#november-21st" lf="55"><span class="hnumber">1.4</span>&nbsp;<span class="htext">November 21st</span></a></h2>
+        <h2 lo="55" lf="55" class="highlighted"><a name="november-21st" number="1.4" lo="55" raw="## November 21st" class="anchor hanchor active" href="#november-21st"><span class="hnumber">1.4</span>&nbsp;<span class="htext">November 21st</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">55</span></div>
       </div>
       <div class="block">
-        <div class="comment" lo="57" lf="57">% <a href="https://www.desmos.com/calculator/wteuno5c2u">https://www.desmos.com/calculator/wteuno5c2u</a></div>
-      </div>
-      <div class="block">
-        <ul lo="59" lf="68" class="compact">
-          <li markerlength="2" padlength="0" lo="59" lf="59" class="">
+        <ul lo="57" lf="66" class="compact">
+          <li markerlength="2" padlength="0" lo="57" lf="57" class="">
             <div class="block">
-              <p padlength="0" lo="59" lf="59" class="">Discuss final exam</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">65-68</span></div>
+              <p padlength="0" lo="57" lf="57" class="">Discuss final exam</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">57</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="60" lf="60" class="">
+          <li markerlength="2" padlength="0" lo="58" lf="58" class="">
             <div class="block">
-              <p padlength="0" lo="60" lf="60" class="">Discuss HW #11</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">65-68</span></div>
+              <p padlength="0" lo="58" lf="58" class="">Discuss HW #11</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">58</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="61" lf="64" class="">
+          <li markerlength="2" padlength="0" lo="59" lf="62" class="">
             <div class="block">
-              <p padlength="0" lo="61" lf="61" class="">Discuss visualization of travelling waves</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">65-68</span></div>
+              <p padlength="0" lo="59" lf="59" class="">Discuss visualization of travelling waves</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">59</span></div>
             </div>
             <div class="block">
-              <ul lo="62" lf="64" class="compact">
+              <ul lo="60" lf="62" class="compact">
+                <li markerlength="2" padlength="0" lo="60" lf="60" class="">
+                  <div class="block">
+                    <p padlength="0" lo="60" lf="60" class=""><a href="https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html">PHET animation</a></p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">60</span></div>
+                  </div>
+                </li>
+                <li markerlength="2" padlength="0" lo="61" lf="61" class="">
+                  <div class="block">
+                    <p padlength="0" lo="61" lf="61" class=""><a href="http://mag.gmu.edu/git-data/phys513/misc/data/">MATLAB animation</a></p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">61</span></div>
+                  </div>
+                </li>
                 <li markerlength="2" padlength="0" lo="62" lf="62" class="">
                   <div class="block">
-                    <p padlength="0" lo="62" lf="62" class=""><a href="https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html">PHET animation</a></p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">65-68</span></div>
-                  </div>
-                </li>
-                <li markerlength="2" padlength="0" lo="63" lf="63" class="">
-                  <div class="block">
-                    <p padlength="0" lo="63" lf="63" class=""><a href="http://mag.gmu.edu/git-data/phys513/misc/data/">MATLAB animation</a></p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">65-68</span></div>
-                  </div>
-                </li>
-                <li markerlength="2" padlength="0" lo="64" lf="64" class="">
-                  <div class="block">
-                    <p padlength="0" lo="64" lf="64" class=""><a href="https://www.desmos.com/calculator/wteuno5c2u">Desmos animation</a></p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">65-68</span></div>
+                    <p padlength="0" lo="62" lf="62" class=""><a href="https://www.desmos.com/calculator/wteuno5c2u">Desmos animation</a></p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">62</span></div>
                   </div>
                 </li>
               </ul>
-              <div class="block-info" style="display: none;"><span class="line-numbers">65-68</span></div>
+              <div class="block-info" style="display: none;"><span class="line-numbers">60-62</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="65" lf="68" class="">
+          <li markerlength="2" padlength="0" lo="63" lf="66" class="">
             <div class="block">
-              <p padlength="0" lo="65" lf="65" class="">Find reflection coefficient for coaxial cable terminated by </p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">65</span></div>
+              <p padlength="0" lo="63" lf="63" class="">Find reflection coefficient for coaxial cable terminated by </p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">63</span></div>
             </div>
             <div class="block">
-              <ol lo="66" lf="68" class="compact">
+              <ol lo="64" lf="66" class="compact">
+                <li markerlength="3" padlength="0" lo="64" lf="64" class="">
+                  <div class="block">
+                    <p padlength="0" lo="64" lf="64" class=""><span len="7" raw="_Z_L=0_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> (short at end)</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">64</span></div>
+                  </div>
+                </li>
+                <li markerlength="3" padlength="0" lo="65" lf="65" class="">
+                  <div class="block">
+                    <p padlength="0" lo="65" lf="65" class=""><span len="11" raw="_Z_0/Z_L=0_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> (end is open)</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">65</span></div>
+                  </div>
+                </li>
                 <li markerlength="3" padlength="0" lo="66" lf="66" class="">
                   <div class="block">
-                    <p padlength="0" lo="66" lf="66" class=""><span len="7" raw="_Z_L=0_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> (short at end)</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">68</span></div>
-                  </div>
-                </li>
-                <li markerlength="3" padlength="0" lo="67" lf="67" class="">
-                  <div class="block">
-                    <p padlength="0" lo="67" lf="67" class=""><span len="11" raw="_Z_0/Z_L=0_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> (end is open)</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">68</span></div>
-                  </div>
-                </li>
-                <li markerlength="3" padlength="0" lo="68" lf="68" class="">
-                  <div class="block">
-                    <p padlength="0" lo="68" lf="68" class=""><span len="8" raw="_Z_L=ib_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">ib</span></span></span></span> (that is, the load has no resistive component, and the reactive component has a magnitude of <span len="3" raw="_b_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span>; this requires the assumption that <span len="5" raw="_Z_o_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is real, which is equivalent to the coaxial cable being “ideal” in the sense that it has no resistance, either ohmic or radiative.)</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">68</span></div>
+                    <p padlength="0" lo="66" lf="66" class=""><span len="8" raw="_Z_L=ib_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">L</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">ib</span></span></span></span> (that is, the load has no resistive component, and the reactive component has a magnitude of <span len="3" raw="_b_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span>; this requires the assumption that <span len="5" raw="_Z_o_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is real, which is equivalent to the coaxial cable being “ideal” in the sense that it has no resistance, either ohmic or radiative.)</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">66</span></div>
                   </div>
                 </li>
               </ol>
-              <div class="block-info" style="display: none;"><span class="line-numbers">66-68</span></div>
+              <div class="block-info" style="display: none;"><span class="line-numbers">64-66</span></div>
             </div>
           </li>
         </ul>
-        <div class="block-info" style="display: none;"><span class="line-numbers">59-68</span></div>
+        <div class="block-info" style="display: none;"><span class="line-numbers">57-66</span></div>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="71" lf="71"><a name="november-14th" number="1.5" lo="71" raw="## November 14th" class="anchor hanchor" href="#november-14th" lf="71"><span class="hnumber">1.5</span>&nbsp;<span class="htext">November 14th</span></a></h2>
+        <h2 lo="69" lf="69"><a name="november-14th" number="1.5" lo="69" raw="## November 14th" class="anchor hanchor" href="#november-14th" lf="69"><span class="hnumber">1.5</span>&nbsp;<span class="htext">November 14th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">71</span></div>
       </div>
       <div class="block">
-        <ul lo="72" lf="79" class="compact">
+        <ul lo="70" lf="77" class="compact">
+          <li markerlength="2" padlength="0" lo="70" lf="70">
+            <div class="block">
+              <p padlength="0" lo="70" lf="70">Discuss HW #10</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">72</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="71" lf="71">
+            <div class="block">
+              <p padlength="0" lo="71" lf="71">Review continuous transmission line (continuous version of AC ladder circuit)</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">73</span></div>
+            </div>
+          </li>
           <li markerlength="2" padlength="0" lo="72" lf="72">
             <div class="block">
-              <p padlength="0" lo="72" lf="72">Discuss HW #10</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">76-81</span></div>
+              <p padlength="0" lo="72" lf="72">Cover solutions to continuous transmission line</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">74</span></div>
             </div>
           </li>
           <li markerlength="2" padlength="0" lo="73" lf="73">
             <div class="block">
-              <p padlength="0" lo="73" lf="73">Review continuous transmission line (continuous version of AC ladder circuit)</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">76-81</span></div>
+              <p padlength="0" lo="73" lf="73">Handling boundary conditions</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">75</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="74" lf="74">
+          <li markerlength="2" padlength="0" lo="74" lf="79">
             <div class="block">
-              <p padlength="0" lo="74" lf="74">Cover solutions to continuous transmission line</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">76-81</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="75" lf="75">
-            <div class="block">
-              <p padlength="0" lo="75" lf="75">Handling boundary conditions</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">76-81</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="76" lf="81">
-            <div class="block">
-              <p padlength="0" lo="76" lf="76">Discuss </p>
+              <p padlength="0" lo="74" lf="74">Discuss </p>
               <div class="block-info" style="display: none;"><span class="line-numbers">76</span></div>
             </div>
             <div class="block">
-              <ul lo="77" lf="79" class="compact">
-                <li markerlength="2" padlength="0" lo="77" lf="77">
+              <ul lo="75" lf="77" class="compact">
+                <li markerlength="2" padlength="0" lo="75" lf="75">
                   <div class="block">
-                    <p padlength="0" lo="77" lf="77"><a href="https://www.youtube.com/watch?v=bHIhgxav9LY">https://www.youtube.com/watch?v=bHIhgxav9LY</a></p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">79-81</span></div>
+                    <p padlength="0" lo="75" lf="75"><a href="https://www.youtube.com/watch?v=bHIhgxav9LY">https://www.youtube.com/watch?v=bHIhgxav9LY</a></p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">77</span></div>
                   </div>
                 </li>
-                <li markerlength="2" padlength="0" lo="78" lf="78">
+                <li markerlength="2" padlength="0" lo="76" lf="76">
                   <div class="block">
-                    <p padlength="0" lo="78" lf="78">response video <a href="https://www.youtube.com/watch?v=iph500cPK28">https://www.youtube.com/watch?v=iph500cPK28</a> and</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">79-81</span></div>
+                    <p padlength="0" lo="76" lf="76">response video <a href="https://www.youtube.com/watch?v=iph500cPK28">https://www.youtube.com/watch?v=iph500cPK28</a> and</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">78</span></div>
                   </div>
                 </li>
-                <li markerlength="2" padlength="0" lo="79" lf="81">
+                <li markerlength="2" padlength="0" lo="77" lf="79">
                   <div class="block">
-                    <p padlength="0" lo="79" lf="79">response to response <a href="https://www.youtube.com/watch?v=oI_X2cMHNe0">https://www.youtube.com/watch?v=oI_X2cMHNe0</a></p>
+                    <p padlength="0" lo="77" lf="77">response to response <a href="https://www.youtube.com/watch?v=oI_X2cMHNe0">https://www.youtube.com/watch?v=oI_X2cMHNe0</a></p>
                     <div class="block-info" style="display: none;"><span class="line-numbers">79</span></div>
                   </div>
                 </li>
@@ -1009,32 +1022,32 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="81" lf="81"><a name="november-7th" number="1.6" lo="81" raw="## November 7th" class="anchor hanchor" href="#november-7th" lf="81"><span class="hnumber">1.6</span>&nbsp;<span class="htext">November 7th</span></a></h2>
+        <h2 lo="79" lf="79"><a name="november-7th" number="1.6" lo="79" raw="## November 7th" class="anchor hanchor" href="#november-7th" lf="79"><span class="hnumber">1.6</span>&nbsp;<span class="htext">November 7th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">81</span></div>
       </div>
       <div class="block">
-        <ul lo="83" lf="86" class="compact">
+        <ul lo="81" lf="84" class="compact">
+          <li markerlength="2" padlength="0" lo="81" lf="81">
+            <div class="block">
+              <p padlength="0" lo="81" lf="81">Discuss HW #9</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">83</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="82" lf="82">
+            <div class="block">
+              <p padlength="0" lo="82" lf="82">Solving general AC circuit problems</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">84</span></div>
+            </div>
+          </li>
           <li markerlength="2" padlength="0" lo="83" lf="83">
             <div class="block">
-              <p padlength="0" lo="83" lf="83">Discuss HW #9</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">86-88</span></div>
+              <p padlength="0" lo="83" lf="83">Numerical solution of AC ladder circuit</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">85</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="84" lf="84">
+          <li markerlength="2" padlength="0" lo="84" lf="86">
             <div class="block">
-              <p padlength="0" lo="84" lf="84">Solving general AC circuit problems</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">86-88</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="85" lf="85">
-            <div class="block">
-              <p padlength="0" lo="85" lf="85">Numerical solution of AC ladder circuit</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">86-88</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="86" lf="88">
-            <div class="block">
-              <p padlength="0" lo="86" lf="86">Continuous transmission line (continuous version of AC ladder circuit)</p>
+              <p padlength="0" lo="84" lf="84">Continuous transmission line (continuous version of AC ladder circuit)</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">86</span></div>
             </div>
           </li>
@@ -1044,26 +1057,26 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="88" lf="88"><a name="october-31st" number="1.7" lo="88" raw="## October 31st" class="anchor hanchor" href="#october-31st" lf="88"><span class="hnumber">1.7</span>&nbsp;<span class="htext">October 31st</span></a></h2>
+        <h2 lo="86" lf="86"><a name="october-31st" number="1.7" lo="86" raw="## October 31st" class="anchor hanchor" href="#october-31st" lf="86"><span class="hnumber">1.7</span>&nbsp;<span class="htext">October 31st</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">88</span></div>
       </div>
       <div class="block">
-        <ul lo="90" lf="92" class="compact">
-          <li markerlength="2" padlength="0" lo="90" lf="90">
+        <ul lo="88" lf="90" class="compact">
+          <li markerlength="2" padlength="0" lo="88" lf="88">
             <div class="block">
-              <p padlength="0" lo="90" lf="90">Discuss HW #8</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">92-94</span></div>
+              <p padlength="0" lo="88" lf="88">Discuss HW #8</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">90</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="91" lf="91">
+          <li markerlength="2" padlength="0" lo="89" lf="89">
             <div class="block">
-              <p padlength="0" lo="91" lf="91">Additional review of use of Euler’s identity</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">92-94</span></div>
+              <p padlength="0" lo="89" lf="89">Additional review of use of Euler’s identity</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">91</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="92" lf="94">
+          <li markerlength="2" padlength="0" lo="90" lf="92">
             <div class="block">
-              <p padlength="0" lo="92" lf="92">Finding solution to series AC circuit problem using two methods</p>
+              <p padlength="0" lo="90" lf="90">Finding solution to series AC circuit problem using two methods</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">92</span></div>
             </div>
           </li>
@@ -1073,32 +1086,32 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="94" lf="94"><a name="october-24th" number="1.8" lo="94" raw="## October 24th" class="anchor hanchor" href="#october-24th" lf="94"><span class="hnumber">1.8</span>&nbsp;<span class="htext">October 24th</span></a></h2>
+        <h2 lo="92" lf="92"><a name="october-24th" number="1.8" lo="92" raw="## October 24th" class="anchor hanchor" href="#october-24th" lf="92"><span class="hnumber">1.8</span>&nbsp;<span class="htext">October 24th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">94</span></div>
       </div>
       <div class="block">
-        <ul lo="96" lf="99" class="compact">
+        <ul lo="94" lf="97" class="compact">
+          <li markerlength="2" padlength="0" lo="94" lf="94">
+            <div class="block">
+              <p padlength="0" lo="94" lf="94">Discuss midterm</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">96</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="95" lf="95">
+            <div class="block">
+              <p padlength="0" lo="95" lf="95">Discuss HW #7</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">97</span></div>
+            </div>
+          </li>
           <li markerlength="2" padlength="0" lo="96" lf="96">
             <div class="block">
-              <p padlength="0" lo="96" lf="96">Discuss midterm</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">99-101</span></div>
+              <p padlength="0" lo="96" lf="96">Faraday’s law and Lenz’s law</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">98</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="97" lf="97">
+          <li markerlength="2" padlength="0" lo="97" lf="99">
             <div class="block">
-              <p padlength="0" lo="97" lf="97">Discuss HW #7</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">99-101</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="98" lf="98">
-            <div class="block">
-              <p padlength="0" lo="98" lf="98">Faraday’s law and Lenz’s law</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">99-101</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="99" lf="101">
-            <div class="block">
-              <p padlength="0" lo="99" lf="99">Inductance</p>
+              <p padlength="0" lo="97" lf="97">Inductance</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">99</span></div>
             </div>
           </li>
@@ -1108,32 +1121,32 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="101" lf="101"><a name="october-24th" number="1.9" lo="101" raw="## October 24th" class="anchor hanchor" href="#october-24th" lf="101"><span class="hnumber">1.9</span>&nbsp;<span class="htext">October 24th</span></a></h2>
+        <h2 lo="99" lf="99"><a name="october-24th" number="1.9" lo="99" raw="## October 24th" class="anchor hanchor" href="#october-24th" lf="99"><span class="hnumber">1.9</span>&nbsp;<span class="htext">October 24th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">101</span></div>
       </div>
       <div class="block">
-        <ul lo="103" lf="106" class="compact">
+        <ul lo="101" lf="104" class="compact">
+          <li markerlength="2" padlength="0" lo="101" lf="101">
+            <div class="block">
+              <p padlength="0" lo="101" lf="101">Discuss midterm</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">103</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="102" lf="102">
+            <div class="block">
+              <p padlength="0" lo="102" lf="102">Discuss HW #7</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">104</span></div>
+            </div>
+          </li>
           <li markerlength="2" padlength="0" lo="103" lf="103">
             <div class="block">
-              <p padlength="0" lo="103" lf="103">Discuss midterm</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">106-108</span></div>
+              <p padlength="0" lo="103" lf="103">Faraday’s law</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">105</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="104" lf="104">
+          <li markerlength="2" padlength="0" lo="104" lf="106">
             <div class="block">
-              <p padlength="0" lo="104" lf="104">Discuss HW #7</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">106-108</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="105" lf="105">
-            <div class="block">
-              <p padlength="0" lo="105" lf="105">Faraday’s law</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">106-108</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="106" lf="108">
-            <div class="block">
-              <p padlength="0" lo="106" lf="106">Inductance</p>
+              <p padlength="0" lo="104" lf="104">Inductance</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">106</span></div>
             </div>
           </li>
@@ -1143,36 +1156,36 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="108" lf="108"><a name="october-17th" number="1.10" lo="108" raw="## October 17th" class="anchor hanchor" href="#october-17th" lf="108"><span class="hnumber">1.10</span>&nbsp;<span class="htext">October 17th</span></a></h2>
+        <h2 lo="106" lf="106"><a name="october-17th" number="1.10" lo="106" raw="## October 17th" class="anchor hanchor" href="#october-17th" lf="106"><span class="hnumber">1.10</span>&nbsp;<span class="htext">October 17th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">108</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="110" lf="110">In-class mid-term exam: Thursday, October 17th from 4:30–6:00 pm.</p>
+        <p padlength="0" lo="108" lf="108">In-class mid-term exam: Thursday, October 17th from 4:30–6:00 pm.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">110</span></div>
       </div>
       <div class="block">
-        <ul lo="111" lf="114" class="compact">
+        <ul lo="109" lf="112" class="compact">
+          <li markerlength="2" padlength="0" lo="109" lf="109">
+            <div class="block">
+              <p padlength="0" lo="109" lf="109">The problems will be based on concepts covered in homework problems.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">111</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="110" lf="110">
+            <div class="block">
+              <p padlength="0" lo="110" lf="110">I will look at the homework problems, identify the concepts, and write questions that can be solved in the allotted time.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">112</span></div>
+            </div>
+          </li>
           <li markerlength="2" padlength="0" lo="111" lf="111">
             <div class="block">
-              <p padlength="0" lo="111" lf="111">The problems will be based on concepts covered in homework problems.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">114-116</span></div>
+              <p padlength="0" lo="111" lf="111">You are encouraged to find problems related to the homework problems in other resources and attempt them.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">113</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="112" lf="112">
+          <li markerlength="2" padlength="0" lo="112" lf="114">
             <div class="block">
-              <p padlength="0" lo="112" lf="112">I will look at the homework problems, identify the concepts, and write questions that can be solved in the allotted time.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">114-116</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="113" lf="113">
-            <div class="block">
-              <p padlength="0" lo="113" lf="113">You are encouraged to find problems related to the homework problems in other resources and attempt them.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">114-116</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="114" lf="116">
-            <div class="block">
-              <p padlength="0" lo="114" lf="114">Equations for divergence and laplacian in non–cartesian coordinates will be given. Other equations used in the homework problems will not be given.</p>
+              <p padlength="0" lo="112" lf="112">Equations for divergence and laplacian in non–cartesian coordinates will be given. Other equations used in the homework problems will not be given.</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">114</span></div>
             </div>
           </li>
@@ -1182,20 +1195,20 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="116" lf="116"><a name="october-10th" number="1.11" lo="116" raw="## October 10th" class="anchor hanchor" href="#october-10th" lf="116"><span class="hnumber">1.11</span>&nbsp;<span class="htext">October 10th</span></a></h2>
+        <h2 lo="114" lf="114"><a name="october-10th" number="1.11" lo="114" raw="## October 10th" class="anchor hanchor" href="#october-10th" lf="114"><span class="hnumber">1.11</span>&nbsp;<span class="htext">October 10th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">116</span></div>
       </div>
       <div class="block">
-        <ul lo="118" lf="119" class="compact">
-          <li markerlength="2" padlength="0" lo="118" lf="118">
+        <ul lo="116" lf="117" class="compact">
+          <li markerlength="2" padlength="0" lo="116" lf="116">
             <div class="block">
-              <p padlength="0" lo="118" lf="118">Ampere’s law</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">119-121</span></div>
+              <p padlength="0" lo="116" lf="116">Ampere’s law</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">118</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="119" lf="121">
+          <li markerlength="2" padlength="0" lo="117" lf="119">
             <div class="block">
-              <p padlength="0" lo="119" lf="119">Faraday’s law</p>
+              <p padlength="0" lo="117" lf="117">Faraday’s law</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">119</span></div>
             </div>
           </li>
@@ -1205,38 +1218,38 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="121" lf="121"><a name="october-3rd" number="1.12" lo="121" raw="## October 3rd" class="anchor hanchor" href="#october-3rd" lf="121"><span class="hnumber">1.12</span>&nbsp;<span class="htext">October 3rd</span></a></h2>
+        <h2 lo="119" lf="119"><a name="october-3rd" number="1.12" lo="119" raw="## October 3rd" class="anchor hanchor" href="#october-3rd" lf="119"><span class="hnumber">1.12</span>&nbsp;<span class="htext">October 3rd</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">121</span></div>
       </div>
       <div class="block">
-        <ul lo="123" lf="127" class="compact">
+        <ul lo="121" lf="125" class="compact">
+          <li markerlength="2" padlength="0" lo="121" lf="121">
+            <div class="block">
+              <p padlength="0" lo="121" lf="121">Comments on common errors in <a href="hw.html#hw-4">HW #4</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">123</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="122" lf="122">
+            <div class="block">
+              <p padlength="0" lo="122" lf="122">Discuss <a href="hw.html#hw-5">HW #5</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">124</span></div>
+            </div>
+          </li>
           <li markerlength="2" padlength="0" lo="123" lf="123">
             <div class="block">
-              <p padlength="0" lo="123" lf="123">Comments on common errors in <a href="hw.html#hw-4">HW #4</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">127-129</span></div>
+              <p padlength="0" lo="123" lf="123">Magnetic force, gyrofrequency, and particle trajectories (<a href="https://svs.gsfc.nasa.gov/20237/">video</a>)</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">125</span></div>
             </div>
           </li>
           <li markerlength="2" padlength="0" lo="124" lf="124">
             <div class="block">
-              <p padlength="0" lo="124" lf="124">Discuss <a href="hw.html#hw-5">HW #5</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">127-129</span></div>
+              <p padlength="0" lo="124" lf="124">Biot-Savart law</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">126</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="125" lf="125">
+          <li markerlength="2" padlength="0" lo="125" lf="127">
             <div class="block">
-              <p padlength="0" lo="125" lf="125">Magnetic force, gyrofrequency, and particle trajectories (<a href="https://svs.gsfc.nasa.gov/20237/">video</a>)</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">127-129</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="126" lf="126">
-            <div class="block">
-              <p padlength="0" lo="126" lf="126">Biot-Savart law</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">127-129</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="127" lf="129">
-            <div class="block">
-              <p padlength="0" lo="127" lf="127">Ampere’s law</p>
+              <p padlength="0" lo="125" lf="125">Ampere’s law</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">127</span></div>
             </div>
           </li>
@@ -1246,32 +1259,32 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="129" lf="129"><a name="september-26th" number="1.13" lo="129" raw="## September 26th" class="anchor hanchor" href="#september-26th" lf="129"><span class="hnumber">1.13</span>&nbsp;<span class="htext">September 26th</span></a></h2>
+        <h2 lo="127" lf="127"><a name="september-26th" number="1.13" lo="127" raw="## September 26th" class="anchor hanchor" href="#september-26th" lf="127"><span class="hnumber">1.13</span>&nbsp;<span class="htext">September 26th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">129</span></div>
       </div>
       <div class="block">
-        <ul lo="131" lf="134" class="compact">
+        <ul lo="129" lf="132" class="compact">
+          <li markerlength="2" padlength="0" lo="129" lf="129">
+            <div class="block">
+              <p padlength="0" lo="129" lf="129">Comments on common errors in <a href="hw.html#hw-3">HW #3</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">131</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="130" lf="130">
+            <div class="block">
+              <p padlength="0" lo="130" lf="130">Discuss <a href="hw.html#hw-4">HW #4</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">132</span></div>
+            </div>
+          </li>
           <li markerlength="2" padlength="0" lo="131" lf="131">
             <div class="block">
-              <p padlength="0" lo="131" lf="131">Comments on common errors in <a href="hw.html#hw-3">HW #3</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">134-136</span></div>
+              <p padlength="0" lo="131" lf="131">Polarization, <span len="12" raw="_\mathbf{P}_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">P</span></span></span></span>, and <span len="12" raw="_\mathbf{D}_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">D</span></span></span></span></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">133</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="132" lf="132">
+          <li markerlength="2" padlength="0" lo="132" lf="134">
             <div class="block">
-              <p padlength="0" lo="132" lf="132">Discuss <a href="hw.html#hw-4">HW #4</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">134-136</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="133" lf="133">
-            <div class="block">
-              <p padlength="0" lo="133" lf="133">Polarization, <span len="12" raw="_\mathbf{P}_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">P</span></span></span></span>, and <span len="12" raw="_\mathbf{D}_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">D</span></span></span></span></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">134-136</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="134" lf="136">
-            <div class="block">
-              <p padlength="0" lo="134" lf="134">Computing capacitance with dielectrics.</p>
+              <p padlength="0" lo="132" lf="132">Computing capacitance with dielectrics.</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">134</span></div>
             </div>
           </li>
@@ -1281,32 +1294,32 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="136" lf="136"><a name="september-19th" number="1.14" lo="136" raw="## September 19th" class="anchor hanchor" href="#september-19th" lf="136"><span class="hnumber">1.14</span>&nbsp;<span class="htext">September 19th</span></a></h2>
+        <h2 lo="134" lf="134"><a name="september-19th" number="1.14" lo="134" raw="## September 19th" class="anchor hanchor" href="#september-19th" lf="134"><span class="hnumber">1.14</span>&nbsp;<span class="htext">September 19th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">136</span></div>
       </div>
       <div class="block">
-        <ul lo="138" lf="141" class="compact">
+        <ul lo="136" lf="139" class="compact">
+          <li markerlength="2" padlength="0" lo="136" lf="136">
+            <div class="block">
+              <p padlength="0" lo="136" lf="136">Comments on common errors in <a href="hw.html#hw-2">HW #2</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">138</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="137" lf="137">
+            <div class="block">
+              <p padlength="0" lo="137" lf="137">Discuss <a href="hw.html#hw-3">HW #3</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">139</span></div>
+            </div>
+          </li>
           <li markerlength="2" padlength="0" lo="138" lf="138">
             <div class="block">
-              <p padlength="0" lo="138" lf="138">Comments on common errors in <a href="hw.html#hw-2">HW #2</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">141-143</span></div>
+              <p padlength="0" lo="138" lf="138">Numerical solution of 1-D Laplacian</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">140</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="139" lf="139">
+          <li markerlength="2" padlength="0" lo="139" lf="141">
             <div class="block">
-              <p padlength="0" lo="139" lf="139">Discuss <a href="hw.html#hw-3">HW #3</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">141-143</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="140" lf="140">
-            <div class="block">
-              <p padlength="0" lo="140" lf="140">Numerical solution of 1-D Laplacian</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">141-143</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="141" lf="143">
-            <div class="block">
-              <p padlength="0" lo="141" lf="141">Polarized slab example</p>
+              <p padlength="0" lo="139" lf="139">Polarized slab example</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">141</span></div>
             </div>
           </li>
@@ -1316,33 +1329,33 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="143" lf="143"><a name="september-12th" number="1.15" lo="143" raw="## September 12th" class="anchor hanchor" href="#september-12th" lf="143"><span class="hnumber">1.15</span>&nbsp;<span class="htext">September 12th</span></a></h2>
+        <h2 lo="141" lf="141"><a name="september-12th" number="1.15" lo="141" raw="## September 12th" class="anchor hanchor" href="#september-12th" lf="141"><span class="hnumber">1.15</span>&nbsp;<span class="htext">September 12th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">143</span></div>
       </div>
       <div class="block">
-        <ul lo="145" lf="148" class="compact">
-          <li markerlength="2" padlength="0" lo="145" lf="145">
+        <ul lo="143" lf="146" class="compact">
+          <li markerlength="2" padlength="0" lo="143" lf="143">
             <div class="block">
-              <p padlength="0" lo="145" lf="145">Discuss <a href="hw.html#hw-2">HW #2</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">146-150</span></div>
+              <p padlength="0" lo="143" lf="143">Discuss <a href="hw.html#hw-2">HW #2</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">145</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="146" lf="150">
+          <li markerlength="2" padlength="0" lo="144" lf="148">
             <div class="block">
-              <p padlength="0" lo="146" lf="146">Computing capacitance using</p>
+              <p padlength="0" lo="144" lf="144">Computing capacitance using</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">146</span></div>
             </div>
             <div class="block">
-              <ul lo="147" lf="148" class="compact">
-                <li markerlength="2" padlength="0" lo="147" lf="147">
+              <ul lo="145" lf="146" class="compact">
+                <li markerlength="2" padlength="0" lo="145" lf="145">
                   <div class="block">
-                    <p padlength="0" lo="147" lf="147">Gauss’s law (put <span len="4" raw="_+Q_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">+</span><span class="mord mathnormal">Q</span></span></span></span> on one conductor <span len="4" raw="_-Q_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">−</span><span class="mord mathnormal">Q</span></span></span></span> on another, compute potential difference)</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">148-150</span></div>
+                    <p padlength="0" lo="145" lf="145">Gauss’s law (put <span len="4" raw="_+Q_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">+</span><span class="mord mathnormal">Q</span></span></span></span> on one conductor <span len="4" raw="_-Q_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">−</span><span class="mord mathnormal">Q</span></span></span></span> on another, compute potential difference)</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">147</span></div>
                   </div>
                 </li>
-                <li markerlength="2" padlength="0" lo="148" lf="150">
+                <li markerlength="2" padlength="0" lo="146" lf="148">
                   <div class="block">
-                    <p padlength="0" lo="148" lf="148">Laplace’s equation (put one conductor at a potential of <span len="5" raw="_V_o_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and the other at <span len="3" raw="_0_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>; compute <span len="12" raw="_\mathbf{E}_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span></span></span></span> and use it to find <span len="8" raw="_\sigma_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span></span></span></span>; from <span len="8" raw="_\sigma_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span></span></span></span>, compute <span len="3" raw="_Q_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>)</p>
+                    <p padlength="0" lo="146" lf="146">Laplace’s equation (put one conductor at a potential of <span len="5" raw="_V_o_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and the other at <span len="3" raw="_0_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>; compute <span len="12" raw="_\mathbf{E}_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">E</span></span></span></span> and use it to find <span len="8" raw="_\sigma_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span></span></span></span>; from <span len="8" raw="_\sigma_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span></span></span></span>, compute <span len="3" raw="_Q_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>)</p>
                     <div class="block-info" style="display: none;"><span class="line-numbers">148</span></div>
                   </div>
                 </li>
@@ -1356,32 +1369,32 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="150" lf="150"><a name="september-5th" number="1.16" lo="150" raw="## September 5th" class="anchor hanchor" href="#september-5th" lf="150"><span class="hnumber">1.16</span>&nbsp;<span class="htext">September 5th</span></a></h2>
+        <h2 lo="148" lf="148"><a name="september-5th" number="1.16" lo="148" raw="## September 5th" class="anchor hanchor" href="#september-5th" lf="148"><span class="hnumber">1.16</span>&nbsp;<span class="htext">September 5th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">150</span></div>
       </div>
       <div class="block">
-        <ul lo="152" lf="155" class="compact">
+        <ul lo="150" lf="153" class="compact">
+          <li markerlength="2" padlength="0" lo="150" lf="150">
+            <div class="block">
+              <p padlength="0" lo="150" lf="150">GitHub and Discord</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">152</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="151" lf="151">
+            <div class="block">
+              <p padlength="0" lo="151" lf="151">Discuss <a href="hw.html#hw-1">HW #1</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">153</span></div>
+            </div>
+          </li>
           <li markerlength="2" padlength="0" lo="152" lf="152">
             <div class="block">
-              <p padlength="0" lo="152" lf="152">GitHub and Discord</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">155-157</span></div>
+              <p padlength="0" lo="152" lf="152">Field lines</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">154</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="153" lf="153">
+          <li markerlength="2" padlength="0" lo="153" lf="155">
             <div class="block">
-              <p padlength="0" lo="153" lf="153">Discuss <a href="hw.html#hw-1">HW #1</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">155-157</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="154" lf="154">
-            <div class="block">
-              <p padlength="0" lo="154" lf="154">Field lines</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">155-157</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="155" lf="157">
-            <div class="block">
-              <p padlength="0" lo="155" lf="155">Gauss’s law</p>
+              <p padlength="0" lo="153" lf="153">Gauss’s law</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">155</span></div>
             </div>
           </li>
@@ -1391,141 +1404,141 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="157" lf="157"><a name="august-29th" number="1.17" lo="157" raw="## August 29th" class="anchor hanchor" href="#august-29th" lf="157"><span class="hnumber">1.17</span>&nbsp;<span class="htext">August 29th</span></a></h2>
+        <h2 lo="155" lf="155"><a name="august-29th" number="1.17" lo="155" raw="## August 29th" class="anchor hanchor" href="#august-29th" lf="155"><span class="hnumber">1.17</span>&nbsp;<span class="htext">August 29th</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">157</span></div>
       </div>
       <div class="block">
-        <ul lo="159" lf="176" class="compact">
+        <ul lo="157" lf="174" class="compact">
+          <li markerlength="2" padlength="0" lo="157" lf="157">
+            <div class="block">
+              <p padlength="0" lo="157" lf="157">Introductions</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">159</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="158" lf="158">
+            <div class="block">
+              <p padlength="0" lo="158" lf="158">Syllabus</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">160</span></div>
+            </div>
+          </li>
           <li markerlength="2" padlength="0" lo="159" lf="159">
             <div class="block">
-              <p padlength="0" lo="159" lf="159">Introductions</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+              <p padlength="0" lo="159" lf="159">Overview of Electrostatics</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">161</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="160" lf="160">
+          <li markerlength="2" padlength="0" lo="160" lf="163">
             <div class="block">
-              <p padlength="0" lo="160" lf="160">Syllabus</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="161" lf="161">
-            <div class="block">
-              <p padlength="0" lo="161" lf="161">Overview of Electrostatics</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="162" lf="165">
-            <div class="block">
-              <p padlength="0" lo="162" lf="162">Line of charge along <span len="15" raw="_x=[-l/2, l/2]_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord">/2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord">/2</span><span class="mclose">]</span></span></span></span>, field at <span len="3" raw="_h_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+              <p padlength="0" lo="160" lf="160">Line of charge along <span len="15" raw="_x=[-l/2, l/2]_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord">/2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord">/2</span><span class="mclose">]</span></span></span></span>, field at <span len="3" raw="_h_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">162</span></div>
             </div>
             <div class="block">
-              <ul lo="163" lf="165" class="compact">
+              <ul lo="161" lf="163" class="compact">
+                <li markerlength="2" padlength="0" lo="161" lf="161">
+                  <div class="block">
+                    <p padlength="0" lo="161" lf="161">Set-up</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">163</span></div>
+                  </div>
+                </li>
+                <li markerlength="2" padlength="0" lo="162" lf="162">
+                  <div class="block">
+                    <p padlength="0" lo="162" lf="162">Two limits</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">164</span></div>
+                  </div>
+                </li>
                 <li markerlength="2" padlength="0" lo="163" lf="163">
                   <div class="block">
-                    <p padlength="0" lo="163" lf="163">Set-up</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+                    <p padlength="0" lo="163" lf="163">Exact solution</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">165</span></div>
                   </div>
                 </li>
-                <li markerlength="2" padlength="0" lo="164" lf="164">
-                  <div class="block">
-                    <p padlength="0" lo="164" lf="164">Two limits</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
-                  </div>
-                </li>
+              </ul>
+              <div class="block-info" style="display: none;"><span class="line-numbers">163-165</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="164" lf="166">
+            <div class="block">
+              <p padlength="0" lo="164" lf="164">Line offset by <span len="5" raw="_y=h_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>, find field at origin.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">166</span></div>
+            </div>
+            <div class="block">
+              <ul lo="165" lf="166" class="compact">
                 <li markerlength="2" padlength="0" lo="165" lf="165">
                   <div class="block">
-                    <p padlength="0" lo="165" lf="165">Exact solution</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+                    <p padlength="0" lo="165" lf="165">Solution using same set-up method as before</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">167</span></div>
+                  </div>
+                </li>
+                <li markerlength="2" padlength="0" lo="166" lf="166">
+                  <div class="block">
+                    <p padlength="0" lo="166" lf="166">Solution using answer to non–offset problem</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">168</span></div>
                   </div>
                 </li>
               </ul>
-              <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+              <div class="block-info" style="display: none;"><span class="line-numbers">167-168</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="166" lf="168">
+          <li markerlength="2" padlength="0" lo="167" lf="169">
             <div class="block">
-              <p padlength="0" lo="166" lf="166">Line offset by <span len="5" raw="_y=h_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>, find field at origin.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+              <p padlength="0" lo="167" lf="167">Ring of charge centered on origin and in <span len="3" raw="_x_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>–<span len="3" raw="_y_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> plane.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">169</span></div>
             </div>
             <div class="block">
-              <ul lo="167" lf="168" class="compact">
-                <li markerlength="2" padlength="0" lo="167" lf="167">
-                  <div class="block">
-                    <p padlength="0" lo="167" lf="167">Solution using same set-up method as before</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
-                  </div>
-                </li>
+              <ul lo="168" lf="169" class="compact">
                 <li markerlength="2" padlength="0" lo="168" lf="168">
                   <div class="block">
-                    <p padlength="0" lo="168" lf="168">Solution using answer to non–offset problem</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+                    <p padlength="0" lo="168" lf="168">Solution using formal set-up approach</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">170</span></div>
+                  </div>
+                </li>
+                <li markerlength="2" padlength="0" lo="169" lf="169">
+                  <div class="block">
+                    <p padlength="0" lo="169" lf="169">Solution similified by noting features</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">171</span></div>
                   </div>
                 </li>
               </ul>
-              <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+              <div class="block-info" style="display: none;"><span class="line-numbers">170-171</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="169" lf="171">
+          <li markerlength="2" padlength="0" lo="170" lf="173">
             <div class="block">
-              <p padlength="0" lo="169" lf="169">Ring of charge centered on origin and in <span len="3" raw="_x_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>–<span len="3" raw="_y_" class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> plane.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+              <p padlength="0" lo="170" lf="170">(Not covered) Continuous Charge Distributions, Limits, and Dimensional Analysis</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">172</span></div>
             </div>
             <div class="block">
-              <ul lo="170" lf="171" class="compact">
-                <li markerlength="2" padlength="0" lo="170" lf="170">
+              <ul lo="171" lf="173" class="compact">
+                <li markerlength="2" padlength="0" lo="171" lf="173">
                   <div class="block">
-                    <p padlength="0" lo="170" lf="170">Solution using formal set-up approach</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
-                  </div>
-                </li>
-                <li markerlength="2" padlength="0" lo="171" lf="171">
-                  <div class="block">
-                    <p padlength="0" lo="171" lf="171">Solution similified by noting features</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
-                  </div>
-                </li>
-              </ul>
-              <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="172" lf="175">
-            <div class="block">
-              <p padlength="0" lo="172" lf="172">(Not covered) Continuous Charge Distributions, Limits, and Dimensional Analysis</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
-            </div>
-            <div class="block">
-              <ul lo="173" lf="175" class="compact">
-                <li markerlength="2" padlength="0" lo="173" lf="175">
-                  <div class="block">
-                    <p padlength="0" lo="173" lf="173">Dimensional Analysis References:</p>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+                    <p padlength="0" lo="171" lf="171">Dimensional Analysis References:</p>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">173</span></div>
                   </div>
                   <div class="block">
-                    <ul lo="174" lf="175" class="compact">
-                      <li markerlength="2" padlength="0" lo="174" lf="174">
+                    <ul lo="172" lf="173" class="compact">
+                      <li markerlength="2" padlength="0" lo="172" lf="172">
                         <div class="block">
-                          <p padlength="0" lo="174" lf="174"><a href="https://drive.google.com/file/d/1_up6mplBXCoXJ4oB5rISpRFKCogpdv7a/view?usp=sharing%E2%98%85%E2%98%85%E2%98%85%E2%98%85remove%E2%98%85%E2%98%85%E2%98%85%E2%98%85">A good reference to start with for dimensional analysis</a></p>
-                          <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+                          <p padlength="0" lo="172" lf="172"><a href="https://drive.google.com/file/d/1_up6mplBXCoXJ4oB5rISpRFKCogpdv7a/view?usp=sharing%E2%98%85%E2%98%85%E2%98%85%E2%98%85remove%E2%98%85%E2%98%85%E2%98%85%E2%98%85">A good reference to start with for dimensional analysis</a></p>
+                          <div class="block-info" style="display: none;"><span class="line-numbers">174</span></div>
                         </div>
                       </li>
-                      <li markerlength="2" padlength="0" lo="175" lf="175">
+                      <li markerlength="2" padlength="0" lo="173" lf="173">
                         <div class="block">
-                          <p padlength="0" lo="175" lf="175"><a href="https://drive.google.com/drive/folders/0B6antUcxBPXcZmR1NjJMZ2JnUWM%E2%98%85%E2%98%85%E2%98%85%E2%98%85remove%E2%98%85%E2%98%85%E2%98%85%E2%98%85">My collection of dimensional analysis references</a></p>
-                          <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+                          <p padlength="0" lo="173" lf="173"><a href="https://drive.google.com/drive/folders/0B6antUcxBPXcZmR1NjJMZ2JnUWM%E2%98%85%E2%98%85%E2%98%85%E2%98%85remove%E2%98%85%E2%98%85%E2%98%85%E2%98%85">My collection of dimensional analysis references</a></p>
+                          <div class="block-info" style="display: none;"><span class="line-numbers">175</span></div>
                         </div>
                       </li>
                     </ul>
-                    <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+                    <div class="block-info" style="display: none;"><span class="line-numbers">174-175</span></div>
                   </div>
                 </li>
               </ul>
-              <div class="block-info" style="display: none;"><span class="line-numbers">176-178</span></div>
+              <div class="block-info" style="display: none;"><span class="line-numbers">173-175</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="176" lf="178">
+          <li markerlength="2" padlength="0" lo="174" lf="176">
             <div class="block">
-              <p padlength="0" lo="176" lf="176">Gauss’s law (if time)</p>
+              <p padlength="0" lo="174" lf="174">Gauss’s law (if time)</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">176</span></div>
             </div>
           </li>
@@ -1535,52 +1548,52 @@
     </div>
     <div class="section">
       <div class="block">
-        <h1 lo="178" lf="178"><a name="syllabus" number="2" lo="178" raw="# Syllabus" class="anchor hanchor" href="#syllabus" lf="178"><span class="hnumber">2</span>&nbsp;<span class="htext">Syllabus</span></a></h1>
+        <h1 lo="176" lf="176"><a name="syllabus" number="2" lo="176" raw="# Syllabus" class="anchor hanchor" href="#syllabus" lf="176"><span class="hnumber">2</span>&nbsp;<span class="htext">Syllabus</span></a></h1>
         <div class="block-info" style="display: none;"><span class="line-numbers">178</span></div>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="180" lf="180"><a name="catalog-description" number="2.1" lo="180" raw="## Catalog Description" class="anchor hanchor" href="#catalog-description" lf="180"><span class="hnumber">2.1</span>&nbsp;<span class="htext">Catalog Description</span></a></h2>
+        <h2 lo="178" lf="178"><a name="catalog-description" number="2.1" lo="178" raw="## Catalog Description" class="anchor hanchor" href="#catalog-description" lf="178"><span class="hnumber">2.1</span>&nbsp;<span class="htext">Catalog Description</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">180</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="182" lf="182">Classical electromagnetic theory with applications. Topics include electrostatics, magnetic fields and materials, electromagnetic wave propagation, waveguides, transmission lines, radiation, and antennas.</p>
+        <p padlength="0" lo="180" lf="180">Classical electromagnetic theory with applications. Topics include electrostatics, magnetic fields and materials, electromagnetic wave propagation, waveguides, transmission lines, radiation, and antennas.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">182</span></div>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="184" lf="184"><a name="format" number="2.2" lo="184" raw="## Format" class="anchor hanchor" href="#format" lf="184"><span class="hnumber">2.2</span>&nbsp;<span class="htext">Format</span></a></h2>
+        <h2 lo="182" lf="182"><a name="format" number="2.2" lo="182" raw="## Format" class="anchor hanchor" href="#format" lf="182"><span class="hnumber">2.2</span>&nbsp;<span class="htext">Format</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">184</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="186" lf="186">My primary objective for this course is for students to be able to solve and present advanced electricity and magnetism problems related to the topics given in the catalog description. I will cover topics in chapters 1-6 of <a href="http://www.amazon.ca/Fields-Waves-Communication-Electronics-Simon/dp/0471585513">Fields and Waves in Communication Electronics, third edition by Simon Ramo, John R. Whinnery, Theodore Van Duzer, Wiley, 1994</a>.</p>
+        <p padlength="0" lo="184" lf="184">My primary objective for this course is for students to be able to solve and present advanced electricity and magnetism problems related to the topics given in the catalog description. I will cover topics in chapters 1-6 of <a href="http://www.amazon.ca/Fields-Waves-Communication-Electronics-Simon/dp/0471585513">Fields and Waves in Communication Electronics, third edition by Simon Ramo, John R. Whinnery, Theodore Van Duzer, Wiley, 1994</a>.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">186</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="188" lf="188">Many of the students in this class have had only E&amp;M at the freshman undergraduate level. As a result, not all of the topics in the texbook are covered, and the focus is on a basic understanding of the fundamentals using theoretical and computation problems. In addition, I emphasize problem solving skills: Determining expected features of the solution to a given problem using analogies, limits, or similar problems, using non–dimensionalization to better understand the dependence of solutions on problem parameters, and building computational solutions in small steps with many intermediate checks.</p>
+        <p padlength="0" lo="186" lf="186">Many of the students in this class have had only E&amp;M at the freshman undergraduate level. As a result, not all of the topics in the texbook are covered, and the focus is on a basic understanding of the fundamentals using theoretical and computation problems. In addition, I emphasize problem solving skills: Determining expected features of the solution to a given problem using analogies, limits, or similar problems, using non–dimensionalization to better understand the dependence of solutions on problem parameters, and building computational solutions in small steps with many intermediate checks.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">188</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="190" lf="190">Approximately 1/2 of class time will be a lecture. The rest of the time will be spent with students working on problems or presenting problems using the whiteboard.</p>
+        <p padlength="0" lo="188" lf="188">Approximately 1/2 of class time will be a lecture. The rest of the time will be spent with students working on problems or presenting problems using the whiteboard.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">190</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="192" lf="192">The homework assignments will have two parts:</p>
+        <p padlength="0" lo="190" lf="190">The homework assignments will have two parts:</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">192</span></div>
       </div>
       <div class="block">
-        <ol lo="194" lf="195" class="compact">
-          <li markerlength="3" padlength="0" lo="194" lf="194">
+        <ol lo="192" lf="193" class="compact">
+          <li markerlength="3" padlength="0" lo="192" lf="192">
             <div class="block">
-              <p padlength="0" lo="194" lf="194">Basic problems that cover topics that have not been discussed in class. These problems are intended to prepare the students for the lecture on the topic.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">195-197</span></div>
+              <p padlength="0" lo="192" lf="192">Basic problems that cover topics that have not been discussed in class. These problems are intended to prepare the students for the lecture on the topic.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">194</span></div>
             </div>
           </li>
-          <li markerlength="3" padlength="0" lo="195" lf="197">
+          <li markerlength="3" padlength="0" lo="193" lf="195">
             <div class="block">
-              <p padlength="0" lo="195" lf="195">Advanced problems that cover topics on the previous HWs basic problems and the lecture.</p>
+              <p padlength="0" lo="193" lf="193">Advanced problems that cover topics on the previous HWs basic problems and the lecture.</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">195</span></div>
             </div>
           </li>
@@ -1588,32 +1601,32 @@
         <div class="block-info" style="display: none;"><span class="line-numbers">194-195</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="197" lf="197">Homework assignments are due at 11:59 pm on Thursday so you have 3 hours to revise them after class is finished.</p>
+        <p padlength="0" lo="195" lf="195">Homework assignments are due at 11:59 pm on Thursday so you have 3 hours to revise them after class is finished.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">197</span></div>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="199" lf="199"><a name="grading" number="2.3" lo="199" raw="## Grading" class="anchor hanchor" href="#grading" lf="199"><span class="hnumber">2.3</span>&nbsp;<span class="htext">Grading</span></a></h2>
+        <h2 lo="197" lf="197"><a name="grading" number="2.3" lo="197" raw="## Grading" class="anchor hanchor" href="#grading" lf="197"><span class="hnumber">2.3</span>&nbsp;<span class="htext">Grading</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">199</span></div>
       </div>
       <div class="block">
-        <ul lo="201" lf="203" class="compact">
-          <li markerlength="2" padlength="0" lo="201" lf="201">
+        <ul lo="199" lf="201" class="compact">
+          <li markerlength="2" padlength="0" lo="199" lf="199">
             <div class="block">
-              <p padlength="0" lo="201" lf="201">Homework: 30%</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">203-205</span></div>
+              <p padlength="0" lo="199" lf="199">Homework: 30%</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">201</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="202" lf="202">
+          <li markerlength="2" padlength="0" lo="200" lf="200">
             <div class="block">
-              <p padlength="0" lo="202" lf="202">Mid-term (part in-class, part take-home): 35%</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">203-205</span></div>
+              <p padlength="0" lo="200" lf="200">Mid-term (part in-class, part take-home): 35%</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">202</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="203" lf="205">
+          <li markerlength="2" padlength="0" lo="201" lf="203">
             <div class="block">
-              <p padlength="0" lo="203" lf="203">Final (part in-class, part take-home): 35%</p>
+              <p padlength="0" lo="201" lf="201">Final (part in-class, part take-home): 35%</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">203</span></div>
             </div>
           </li>
@@ -1621,40 +1634,40 @@
         <div class="block-info" style="display: none;"><span class="line-numbers">201-203</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="205" lf="205">The course letter grade is nominally determined using &gt; 97: A+, 93 to 96.999: A, 90 to 92.999: A-, 87 to 89.999: B+, 83 to 86.999: B, 80 to 82.999: B-, 70 to 70.999, 60, to 69.999: D, &lt; 60: F. It is quite likely that these grade cut-offs will change downwards.</p>
+        <p padlength="0" lo="203" lf="203">The course letter grade is nominally determined using &gt; 97: A+, 93 to 96.999: A, 90 to 92.999: A-, 87 to 89.999: B+, 83 to 86.999: B, 80 to 82.999: B-, 70 to 70.999, 60, to 69.999: D, &lt; 60: F. It is quite likely that these grade cut-offs will change downwards.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">205</span></div>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="207" lf="207"><a name="textbook-and-references" number="2.4" lo="207" raw="## Textbook and References" class="anchor hanchor" href="#textbook-and-references" lf="207"><span class="hnumber">2.4</span>&nbsp;<span class="htext">Textbook and References</span></a></h2>
+        <h2 lo="205" lf="205"><a name="textbook-and-references" number="2.4" lo="205" raw="## Textbook and References" class="anchor hanchor" href="#textbook-and-references" lf="205"><span class="hnumber">2.4</span>&nbsp;<span class="htext">Textbook and References</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">207</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="209" lf="209">The textbook for this course is <a href="http://www.amazon.ca/Fields-Waves-Communication-Electronics-Simon/dp/0471585513">Fields and Waves in Communication Electronics, 3rd edition by Simon Ramo, John R. Whinnery, Theodore Van Duzer, Wiley, 1994</a>.</p>
+        <p padlength="0" lo="207" lf="207">The textbook for this course is <a href="http://www.amazon.ca/Fields-Waves-Communication-Electronics-Simon/dp/0471585513">Fields and Waves in Communication Electronics, 3rd edition by Simon Ramo, John R. Whinnery, Theodore Van Duzer, Wiley, 1994</a>.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">209</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="211" lf="211">You will likely need to reference other textbooks in this course. The following is a partial list of books that you may find useful.</p>
+        <p padlength="0" lo="209" lf="209">You will likely need to reference other textbooks in this course. The following is a partial list of books that you may find useful.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">211</span></div>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h3 lo="213" lf="213"><a name="mathematical" number="2.4.1" lo="213" raw="### Mathematical" class="anchor hanchor" href="#mathematical" lf="213"><span class="hnumber">2.4.1</span>&nbsp;<span class="htext">Mathematical</span></a></h3>
+        <h3 lo="211" lf="211"><a name="mathematical" number="2.4.1" lo="211" raw="### Mathematical" class="anchor hanchor" href="#mathematical" lf="211"><span class="hnumber">2.4.1</span>&nbsp;<span class="htext">Mathematical</span></a></h3>
         <div class="block-info" style="display: none;"><span class="line-numbers">213</span></div>
       </div>
       <div class="block">
-        <ul lo="215" lf="216" class="compact">
-          <li markerlength="2" padlength="0" lo="215" lf="215">
+        <ul lo="213" lf="214" class="compact">
+          <li markerlength="2" padlength="0" lo="213" lf="213">
             <div class="block">
-              <p padlength="0" lo="215" lf="215">A<a href="https://www.amazon.com/introduction-Fourier-methods-Laplace-transformation/dp/B0007HQ89I">n Introduction to Fourier Methods and the Laplace Transformation but Philip Franklin</a>. This short book has many examples related to Maxwell’s equations and transmission lines.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">216-218</span></div>
+              <p padlength="0" lo="213" lf="213">A<a href="https://www.amazon.com/introduction-Fourier-methods-Laplace-transformation/dp/B0007HQ89I">n Introduction to Fourier Methods and the Laplace Transformation but Philip Franklin</a>. This short book has many examples related to Maxwell’s equations and transmission lines.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">215</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="216" lf="218">
+          <li markerlength="2" padlength="0" lo="214" lf="216">
             <div class="block">
-              <p padlength="0" lo="216" lf="216"><a href="https://www.roe.ac.uk/~jap/teaching">Fourier Analysis class notes by Peakcock</a>; the <a href="https://www.roe.ac.uk/japwww/teaching/fourier/fourier1415.pdf">Chapter 12 lecture notes</a> provides a review of the mathematical background and justification for solving ODEs using what Ramo calls “the phasor method”.</p>
+              <p padlength="0" lo="214" lf="214"><a href="https://www.roe.ac.uk/~jap/teaching">Fourier Analysis class notes by Peakcock</a>; the <a href="https://www.roe.ac.uk/japwww/teaching/fourier/fourier1415.pdf">Chapter 12 lecture notes</a> provides a review of the mathematical background and justification for solving ODEs using what Ramo calls “the phasor method”.</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">216</span></div>
             </div>
           </li>
@@ -1664,50 +1677,50 @@
     </div>
     <div class="section">
       <div class="block">
-        <h3 lo="218" lf="218"><a name="undergraduate-level" number="2.4.2" lo="218" raw="### Undergraduate-level" class="anchor hanchor" href="#undergraduate-level" lf="218"><span class="hnumber">2.4.2</span>&nbsp;<span class="htext">Undergraduate-level</span></a></h3>
+        <h3 lo="216" lf="216"><a name="undergraduate-level" number="2.4.2" lo="216" raw="### Undergraduate-level" class="anchor hanchor" href="#undergraduate-level" lf="216"><span class="hnumber">2.4.2</span>&nbsp;<span class="htext">Undergraduate-level</span></a></h3>
         <div class="block-info" style="display: none;"><span class="line-numbers">218</span></div>
       </div>
       <div class="block">
-        <ul lo="220" lf="226" class="compact">
+        <ul lo="218" lf="224" class="compact">
+          <li markerlength="2" padlength="0" lo="218" lf="218">
+            <div class="block">
+              <p padlength="0" lo="218" lf="218">Introduction to Electrodynamics by David J. Griffiths - the most commonly used junior-level undergraduate textbook for physics majors.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">220</span></div>
+            </div>
+          </li>
+          <li markerlength="2" padlength="0" lo="219" lf="219">
+            <div class="block">
+              <p padlength="0" lo="219" lf="219">Field and Wave Electromagnetics by David K. Cheng - a commonly used junior-level undergraduate textbook for engineering majors.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">221</span></div>
+            </div>
+          </li>
           <li markerlength="2" padlength="0" lo="220" lf="220">
             <div class="block">
-              <p padlength="0" lo="220" lf="220">Introduction to Electrodynamics by David J. Griffiths - the most commonly used junior-level undergraduate textbook for physics majors.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">226-228</span></div>
+              <p padlength="0" lo="220" lf="220">Elements of Electromagnetics by Matthew N. O. Sadiku - a commonly used junior-level undergraduate textbook for engineering majors.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">222</span></div>
             </div>
           </li>
           <li markerlength="2" padlength="0" lo="221" lf="221">
             <div class="block">
-              <p padlength="0" lo="221" lf="221">Field and Wave Electromagnetics by David K. Cheng - a commonly used junior-level undergraduate textbook for engineering majors.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">226-228</span></div>
+              <p padlength="0" lo="221" lf="221">Electricity and Magnetism (3rd Edition) by Edward M. Purcell and David J. Morin covers the same topics as Griffiths at the same level. If you are looking for an alternative explanation, this textbook will be helpful. The book contains far more examples, discussion, and content than Griffiths. It also includes solutions.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">223</span></div>
             </div>
           </li>
           <li markerlength="2" padlength="0" lo="222" lf="222">
             <div class="block">
-              <p padlength="0" lo="222" lf="222">Elements of Electromagnetics by Matthew N. O. Sadiku - a commonly used junior-level undergraduate textbook for engineering majors.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">226-228</span></div>
+              <p padlength="0" lo="222" lf="222">Schaum’s outline of theory and problems of electromagnetics by Joseph A. Edminister is a useful reference for problems with full solutions and summaries of topics. <a href="https://www.amazon.com/Schaums-Outline-Electromagnetics-4th-Outlines/dp/0071831479/">The 4th edition</a> contains chapters on transmission lines and waveguides.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">224</span></div>
             </div>
           </li>
           <li markerlength="2" padlength="0" lo="223" lf="223">
             <div class="block">
-              <p padlength="0" lo="223" lf="223">Electricity and Magnetism (3rd Edition) by Edward M. Purcell and David J. Morin covers the same topics as Griffiths at the same level. If you are looking for an alternative explanation, this textbook will be helpful. The book contains far more examples, discussion, and content than Griffiths. It also includes solutions.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">226-228</span></div>
+              <p padlength="0" lo="223" lf="223">Div, Grad, Curl, and All That: An Informal Text on Vector Calculus (4th Edition) by H. M. Schey is an excellent reference for the mathematical background that you need to understand for this course. The book contains a concise and clear review of topics that are covered in a vector calculus course (usually “Calculus III”).</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">225</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="224" lf="224">
+          <li markerlength="2" padlength="0" lo="224" lf="226">
             <div class="block">
-              <p padlength="0" lo="224" lf="224">Schaum’s outline of theory and problems of electromagnetics by Joseph A. Edminister is a useful reference for problems with full solutions and summaries of topics. <a href="https://www.amazon.com/Schaums-Outline-Electromagnetics-4th-Outlines/dp/0071831479/">The 4th edition</a> contains chapters on transmission lines and waveguides.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">226-228</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="225" lf="225">
-            <div class="block">
-              <p padlength="0" lo="225" lf="225">Div, Grad, Curl, and All That: An Informal Text on Vector Calculus (4th Edition) by H. M. Schey is an excellent reference for the mathematical background that you need to understand for this course. The book contains a concise and clear review of topics that are covered in a vector calculus course (usually “Calculus III”).</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">226-228</span></div>
-            </div>
-          </li>
-          <li markerlength="2" padlength="0" lo="226" lf="228">
-            <div class="block">
-              <p padlength="0" lo="226" lf="226">The Feynman Lectures on Physics: Mainly Electromagnetism and Matter, Volume 2, 1977 contains excellent lecture-style expositions on Electricity and Magnetism. The full volume is <a href="http://www.feynmanlectures.caltech.edu/II_toc.html">available online</a>.</p>
+              <p padlength="0" lo="224" lf="224">The Feynman Lectures on Physics: Mainly Electromagnetism and Matter, Volume 2, 1977 contains excellent lecture-style expositions on Electricity and Magnetism. The full volume is <a href="http://www.feynmanlectures.caltech.edu/II_toc.html">available online</a>.</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">226</span></div>
             </div>
           </li>
@@ -1717,30 +1730,30 @@
     </div>
     <div class="section">
       <div class="block">
-        <h3 lo="228" lf="228"><a name="graduate-level" number="2.4.3" lo="228" raw="### Graduate-level" class="anchor hanchor" href="#graduate-level" lf="228"><span class="hnumber">2.4.3</span>&nbsp;<span class="htext">Graduate-level</span></a></h3>
+        <h3 lo="226" lf="226"><a name="graduate-level" number="2.4.3" lo="226" raw="### Graduate-level" class="anchor hanchor" href="#graduate-level" lf="226"><span class="hnumber">2.4.3</span>&nbsp;<span class="htext">Graduate-level</span></a></h3>
         <div class="block-info" style="display: none;"><span class="line-numbers">228</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="230" lf="230">Two textbooks that cover applied E&amp;M topics in detail are</p>
+        <p padlength="0" lo="228" lf="228">Two textbooks that cover applied E&amp;M topics in detail are</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">230</span></div>
       </div>
       <div class="block">
-        <ul lo="231" lf="233" class="compact">
-          <li markerlength="2" padlength="0" lo="231" lf="231">
+        <ul lo="229" lf="231" class="compact">
+          <li markerlength="2" padlength="0" lo="229" lf="229">
             <div class="block">
-              <p padlength="0" lo="231" lf="231">Microwave Engineering by David M. Pozar.</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">233-235</span></div>
+              <p padlength="0" lo="229" lf="229">Microwave Engineering by David M. Pozar.</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">231</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="232" lf="232">
+          <li markerlength="2" padlength="0" lo="230" lf="230">
             <div class="block">
-              <p padlength="0" lo="232" lf="232"><a href="https://ocw.mit.edu/resources/res-6-001-electromagnetic-fields-and-energy-spring-2008/front-end-matter/">Electromagnetic Fields and Energy by Hermann Haus and James Melcher. RES.6-001, Spring 2008.</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">233-235</span></div>
+              <p padlength="0" lo="230" lf="230"><a href="https://ocw.mit.edu/resources/res-6-001-electromagnetic-fields-and-energy-spring-2008/front-end-matter/">Electromagnetic Fields and Energy by Hermann Haus and James Melcher. RES.6-001, Spring 2008.</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">232</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="233" lf="235">
+          <li markerlength="2" padlength="0" lo="231" lf="233">
             <div class="block">
-              <p padlength="0" lo="233" lf="233"><a href="https://www.ece.rutgers.edu/~orfanidi/ewa/ewa-2up.pdf">Electromagnetic Waves and Antennas by Sophocles J. Orfanidis</a>. This book is dense and comprehensive, but a supplement such as the course textbook and Microwave Engineering by Pozar is probably needed as a primary reference initially.</p>
+              <p padlength="0" lo="231" lf="231"><a href="https://www.ece.rutgers.edu/~orfanidi/ewa/ewa-2up.pdf">Electromagnetic Waves and Antennas by Sophocles J. Orfanidis</a>. This book is dense and comprehensive, but a supplement such as the course textbook and Microwave Engineering by Pozar is probably needed as a primary reference initially.</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">233</span></div>
             </div>
           </li>
@@ -1748,26 +1761,26 @@
         <div class="block-info" style="display: none;"><span class="line-numbers">231-233</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="235" lf="235">Textbooks that cover advanced E&amp;M theory are</p>
+        <p padlength="0" lo="233" lf="233">Textbooks that cover advanced E&amp;M theory are</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">235</span></div>
       </div>
       <div class="block">
-        <ul lo="236" lf="238" class="compact">
-          <li markerlength="2" padlength="0" lo="236" lf="236">
+        <ul lo="234" lf="236" class="compact">
+          <li markerlength="2" padlength="0" lo="234" lf="234">
             <div class="block">
-              <p padlength="0" lo="236" lf="236">Classical Electrodynamics by David J. Jackson - the most commonly used graduate-level textbook for physics students</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">238-240</span></div>
+              <p padlength="0" lo="234" lf="234">Classical Electrodynamics by David J. Jackson - the most commonly used graduate-level textbook for physics students</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">236</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="237" lf="237">
+          <li markerlength="2" padlength="0" lo="235" lf="235">
             <div class="block">
-              <p padlength="0" lo="237" lf="237">Classical Electricity and Magnetism: Second Edition (Dover Books on Physics) by Wolfgang K. H. Panofsky and Melba Phillips, 2005</p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">238-240</span></div>
+              <p padlength="0" lo="235" lf="235">Classical Electricity and Magnetism: Second Edition (Dover Books on Physics) by Wolfgang K. H. Panofsky and Melba Phillips, 2005</p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">237</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="238" lf="240">
+          <li markerlength="2" padlength="0" lo="236" lf="238">
             <div class="block">
-              <p padlength="0" lo="238" lf="238">Classical Electromagnetism by Richard Fitzpatrick</p>
+              <p padlength="0" lo="236" lf="236">Classical Electromagnetism by Richard Fitzpatrick</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">238</span></div>
             </div>
           </li>
@@ -1777,26 +1790,26 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="240" lf="240"><a name="academic-calendar-and-university-policy" number="2.5" lo="240" raw="## Academic Calendar and University Policy" class="anchor hanchor" href="#academic-calendar-and-university-policy" lf="240"><span class="hnumber">2.5</span>&nbsp;<span class="htext">Academic Calendar and University Policy</span></a></h2>
+        <h2 lo="238" lf="238"><a name="academic-calendar-and-university-policy" number="2.5" lo="238" raw="## Academic Calendar and University Policy" class="anchor hanchor" href="#academic-calendar-and-university-policy" lf="238"><span class="hnumber">2.5</span>&nbsp;<span class="htext">Academic Calendar and University Policy</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">240</span></div>
       </div>
       <div class="block">
-        <ul lo="242" lf="244" class="compact">
-          <li markerlength="2" padlength="0" lo="242" lf="242">
+        <ul lo="240" lf="242" class="compact">
+          <li markerlength="2" padlength="0" lo="240" lf="240">
             <div class="block">
-              <p padlength="0" lo="242" lf="242"><a href="https://registrar.gmu.edu/calendars/">Academic Calendar</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">244-246</span></div>
+              <p padlength="0" lo="240" lf="240"><a href="https://registrar.gmu.edu/calendars/">Academic Calendar</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">242</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="243" lf="243">
+          <li markerlength="2" padlength="0" lo="241" lf="241">
             <div class="block">
-              <p padlength="0" lo="243" lf="243"><a href="http://universitypolicy.gmu.edu/">University Policy</a></p>
-              <div class="block-info" style="display: none;"><span class="line-numbers">244-246</span></div>
+              <p padlength="0" lo="241" lf="241"><a href="http://universitypolicy.gmu.edu/">University Policy</a></p>
+              <div class="block-info" style="display: none;"><span class="line-numbers">243</span></div>
             </div>
           </li>
-          <li markerlength="2" padlength="0" lo="244" lf="246">
+          <li markerlength="2" padlength="0" lo="242" lf="244">
             <div class="block">
-              <p padlength="0" lo="244" lf="244">Last class Thursday, December 5th</p>
+              <p padlength="0" lo="242" lf="242">Last class Thursday, December 5th</p>
               <div class="block-info" style="display: none;"><span class="line-numbers">244</span></div>
             </div>
           </li>
@@ -1806,25 +1819,25 @@
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="246" lf="246"><a name="disability-accommodations" number="2.6" lo="246" raw="## Disability Accommodations" class="anchor hanchor" href="#disability-accommodations" lf="246"><span class="hnumber">2.6</span>&nbsp;<span class="htext">Disability Accommodations</span></a></h2>
+        <h2 lo="244" lf="244"><a name="disability-accommodations" number="2.6" lo="244" raw="## Disability Accommodations" class="anchor hanchor" href="#disability-accommodations" lf="244"><span class="hnumber">2.6</span>&nbsp;<span class="htext">Disability Accommodations</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">246</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="248" lf="248">Disability Services at George Mason University is committed to upholding the letter and spirit of the laws that ensure equal treatment of people with disabilities. Under the administration of University Life, Disability Services implements and coordinates reasonable accommodations and disability-related services that afford equal access to university programs and activities. Students can begin the registration process with Disability Services at any time during their enrollment at George Mason University. If you are seeking accommodations, please visit <a href="http://ds.gmu.edu/">http://ds.gmu.edu/</a> for detailed information about the Disability Services registration process. Disability Services is located in Student Union Building I (SUB I), Suite 2500 | <a href="mailto:ods@gmu.edu">ods@gmu.edu</a> | Phone: (703) 993-2474.</p>
+        <p padlength="0" lo="246" lf="246">Disability Services at George Mason University is committed to upholding the letter and spirit of the laws that ensure equal treatment of people with disabilities. Under the administration of University Life, Disability Services implements and coordinates reasonable accommodations and disability-related services that afford equal access to university programs and activities. Students can begin the registration process with Disability Services at any time during their enrollment at George Mason University. If you are seeking accommodations, please visit <a href="http://ds.gmu.edu/">http://ds.gmu.edu/</a> for detailed information about the Disability Services registration process. Disability Services is located in Student Union Building I (SUB I), Suite 2500 | <a href="mailto:ods@gmu.edu">ods@gmu.edu</a> | Phone: (703) 993-2474.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">248</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="250" lf="250">If you have a learning disability or other condition that may affect academic performance, please: a) make sure documentation is on file with the Office of Disability Services to determine the accommodations you need; and b) talk with me to discuss your accommodation needs.</p>
+        <p padlength="0" lo="248" lf="248">If you have a learning disability or other condition that may affect academic performance, please: a) make sure documentation is on file with the Office of Disability Services to determine the accommodations you need; and b) talk with me to discuss your accommodation needs.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">250</span></div>
       </div>
     </div>
     <div class="section">
       <div class="block">
-        <h2 lo="252" lf="252"><a name="counseling-and-student-support" number="2.7" lo="252" raw="## Counseling and Student Support" class="anchor hanchor" href="#counseling-and-student-support" lf="252"><span class="hnumber">2.7</span>&nbsp;<span class="htext">Counseling and Student Support</span></a></h2>
+        <h2 lo="250" lf="250"><a name="counseling-and-student-support" number="2.7" lo="250" raw="## Counseling and Student Support" class="anchor hanchor" href="#counseling-and-student-support" lf="250"><span class="hnumber">2.7</span>&nbsp;<span class="htext">Counseling and Student Support</span></a></h2>
         <div class="block-info" style="display: none;"><span class="line-numbers">252</span></div>
       </div>
       <div class="block">
-        <p padlength="0" lo="254" lf="254">Counseling and Psychological Services provides confidential psychological services, including 24/7 crisis intervention and consultation to faculty and staff: <a href="http://caps.gmu.edu/">http://caps.gmu.edu/</a>.</p>
+        <p padlength="0" lo="252" lf="252">Counseling and Psychological Services provides confidential psychological services, including 24/7 crisis intervention and consultation to faculty and staff: <a href="http://caps.gmu.edu/">http://caps.gmu.edu/</a>.</p>
         <div class="block-info" style="display: none;"><span class="line-numbers">254</span></div>
       </div>
     </div>

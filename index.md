@@ -54,8 +54,6 @@ No class
 
 ## November 21st
 
-% https://www.desmos.com/calculator/wteuno5c2u
-
 * Discuss final exam
 * Discuss HW #11
 * Discuss visualization of travelling waves

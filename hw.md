@@ -1282,10 +1282,10 @@ L = 1;
 C = 1;
 ZL = 1;
 Xss = ss(w,L,C,ZL,N);
-Xss = Xss(:,[2,3,5]); % I1, I2, V1
+Xss = Xss([2,3,5]); % I1, I2, V1
 for i = 1:size(Xss,2)
     xc = Xss(:,i);
-    phi = atan(imag(xc)/real(xc));
+    phi = atan2(imag(xc),real(xc));
     x(:,i) = abs(xc)*cos(w*t + phi);
 end
 

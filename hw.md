@@ -1045,6 +1045,49 @@ Given an AC power source $V_s(t)=V_o\cos(\omega t)$ that has an internal impedan
 2. Find $\overline{P}_l$, the average of $P_l(t)$ found in part 1. over a time of $2\pi/\omega$
 3. Use the equation $\overline{P}_l$ found in part 2. to show that $\overline{P}(R_l,X_l)$ is a maximum when $R_l=R_s$ and $X_l=-X_s$ (assume $R_s$ and $X_s$ are constants; in this case, $\overline{P}_l$ is a function of the variables $R_l$ and $X_l$).
 
+**Answer**
+
+Let $Z=Z_l+Z_s=(R_l+R_s)+j(X_l+X_s)$. Note that $\widetilde{V}_o=V_o$ because $V_s(t)=\text{Re}\left[\widetilde{V}_oe^{j\omega t}\right]$ defines $\widetilde{V}_o$.
+
+$\ds\widetilde{I}=\frac{\widetilde{V}_o}{Z}$
+
+Using $\widetilde{V}_o=V_o$ and $Z=|Z|e^{i\phi_Z}$
+
+$\ds\widetilde{I} = \frac{V_o}{Z} = \frac{V_o}{|Z|}e^{-j\phi_Z}$.
+
+$\ds\widetilde{V}_l=\widetilde{I}Z_l=V_o\frac{Z_l}{|Z|}e^{-j\phi_Z}=V_o\frac{|Z_l|}{|Z|}e^{-j\phi_Z+j\phi_l}$
+
+By definition, $P_l(t)=I_l(t)V_l(t)$. Using $I_l(t)=I(t)$,
+
+$P_l(t)=I(t)V_l(t)$
+
+$P_l(t)=\text{Re}\left[\widetilde{I}e^{j\omega t}\right]\text{Re}\left[\widetilde{V}_le^{j\omega t}\right]$
+
+Note that $\text{Re}[a+jb]\text{Re}[a'+jb'] \ne \text{Re}[(a+jb)(a'+jb')]$.
+
+Let $\omega t-\phi_Z=\omega t'$, then
+
+$P_l(t)=\text{Re}\left[\frac{V_o}{|Z|}e^{-j\phi_Z}e^{j\omega t}\right]\text{Re}\left[V_o\frac{|Z_l|}{|Z|}e^{-j\phi_Z+j\phi_l}e^{j\omega t}\right]$
+
+$P_l(t)=V_o\frac{|Z_l|}{|Z|^2}\text{Re}\left[e^{-j\phi_Z}e^{j\omega t}\right]\text{Re}\left[e^{-j\phi_Z+j\phi_l}e^{j\omega t}\right]$
+
+$\ds P_l(t)=V_o\frac{|Z_l|}{|Z|^2}\cos\omega t'\cos(\omega t'+\phi_l)$, where $\omega t'\equiv\omega t - \phi_Z$
+
+Using a trig identity, 
+$\ds P_l(t)=V_o\frac{|Z_l|}{|Z|^2}\cos\omega t'(\cos\omega t'\cos\phi_l-\sin\omega t'\sin\phi_l)$
+
+Using $\ds \overline{P}\equiv\frac{1}{T}\int_0^TP(t)dt$ and integrating,
+
+$\ds \overline{P}_l=\frac{V_o}{2}\frac{|Z_l|}{|Z|^2}\cos\phi_l$
+
+Recall that $\phi_l$ is the angle associated with $Z_l=R_l + iX_l$, so although we ususally use $\tan\phi_l=X_l/R_l$, we can also write $\cos\phi_l=R_l/\sqrt{R_l^2+X_l^2}=R_l/Z_l$. Thus
+
+$\ds \overline{P}_l=\frac{V_o}{2}\frac{R_l}{|Z|^2}=\frac{V_o}{2}\frac{R_l}{(R_l+R_s)^2+(X_l+X_s)^2}$
+
+If we assume that the $R_s$ and $X_s$ are constant and $R_l$ and $X_s$ can be varied, we have
+
+$\ds \overline{P}_l(R_l,X_l)$
+
 ## $N$-Step Ladder Circuit
 
 In class, I discussed an iterative method for solving for the steady state currents and voltages in the ladder circuit of HW 9.3.
@@ -1196,7 +1239,7 @@ $$\frac{dI_2}{dt}=\frac{V_1-I_2R}{L}$$
 
 $$\frac{dV_2}{dt}=\frac{I_1-I_2}{C}$$
 
-2\. Use the techniques covered previously for finding the steady state values to find the steady state $I_1(t)$, $I_2(t)$, and $V_1(t)$. (You do not need to find the transient solution; here we only want to confirm that our numerical solution matches the easier-to-compute steady state solution for large $t$. Note that there are [many ways of solving](https://www.ee.hacettepe.edu.tr/~solen/Matlab/MatLab/Matlab%20-%20Electronics%20and%20Circuit%20Analysis%20using%20Matlab.pdf).
+2\. Use the techniques covered previously for finding the steady state values to find the steady state $I_1(t)$, $I_2(t)$, and $V_1(t)$. (You do not need to find the transient solution; here we only want to confirm that our numerical solution matches the easier-to-compute steady state solution for large $t$. Note that there are many ways of solving [1](https://www.ee.hacettepe.edu.tr/~solen/Matlab/MatLab/Matlab%20-%20Electronics%20and%20Circuit%20Analysis%20using%20Matlab.pdf); [2](https://www.math.tamu.edu/reu/comp/matode.pdf)
 
 The following program plots the solution for part 1.; you may use this to check your answer to part 2. (Using Python one would use SciPy's `solve_ivp` in place of `ode45`.)
 

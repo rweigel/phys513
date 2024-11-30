@@ -1047,6 +1047,8 @@ Given an AC power source $V_s(t)=V_o\cos(\omega t)$ that has an internal impedan
 
 **Answer**
 
+1\.
+
 Let $Z=Z_l+Z_s=(R_l+R_s)+j(X_l+X_s)$. Note that $\widetilde{V}_o=V_o$ because $V_s(t)=\text{Re}\left[\widetilde{V}_oe^{j\omega t}\right]$ defines $\widetilde{V}_o$.
 
 $\ds\widetilde{I}=\frac{\widetilde{V}_o}{Z}$
@@ -1055,38 +1057,67 @@ Using $\widetilde{V}_o=V_o$ and $Z=|Z|e^{i\phi_Z}$
 
 $\ds\widetilde{I} = \frac{V_o}{Z} = \frac{V_o}{|Z|}e^{-j\phi_Z}$.
 
-$\ds\widetilde{V}_l=\widetilde{I}Z_l=V_o\frac{Z_l}{|Z|}e^{-j\phi_Z}=V_o\frac{|Z_l|}{|Z|}e^{-j\phi_Z+j\phi_l}$
+$\ds\widetilde{V}_l=\widetilde{I}Z_l=V_o\frac{Z_l}{|Z|}e^{-j\phi_Z}=V_o\frac{|Z_l|}{|Z|}e^{-j\phi_Z+j\phi_l}$, where $Z_l=|Z_l|e^{j\phi_l}$ was used.
 
-By definition, $P_l(t)=I_l(t)V_l(t)$. Using $I_l(t)=I(t)$,
+By definition, $P_l(t)=I_l(t)V_l(t)$. Noting that $I_l(t)=I(t)$,
 
 $P_l(t)=I(t)V_l(t)$
 
 $P_l(t)=\text{Re}\left[\widetilde{I}e^{j\omega t}\right]\text{Re}\left[\widetilde{V}_le^{j\omega t}\right]$
 
-Note that $\text{Re}[a+jb]\text{Re}[a'+jb'] \ne \text{Re}[(a+jb)(a'+jb')]$.
+(Note that $\text{Re}[a+jb]\text{Re}[a'+jb'] \ne \text{Re}[(a+jb)(a'+jb')]$.)
 
-Let $\omega t-\phi_Z=\omega t'$, then
+Substitution gives
 
-$P_l(t)=\text{Re}\left[\frac{V_o}{|Z|}e^{-j\phi_Z}e^{j\omega t}\right]\text{Re}\left[V_o\frac{|Z_l|}{|Z|}e^{-j\phi_Z+j\phi_l}e^{j\omega t}\right]$
+$\ds P_l(t)=\text{Re}\left[\frac{V_o}{|Z|}e^{-j\phi_Z}e^{j\omega t}\right]\text{Re}\left[V_o\frac{|Z_l|}{|Z|}e^{-j\phi_Z+j\phi_l}e^{j\omega t}\right]$
 
-$P_l(t)=V_o\frac{|Z_l|}{|Z|^2}\text{Re}\left[e^{-j\phi_Z}e^{j\omega t}\right]\text{Re}\left[e^{-j\phi_Z+j\phi_l}e^{j\omega t}\right]$
+$\ds P_l(t)=V_o^2\frac{|Z_l|}{|Z|^2}\text{Re}\left[e^{-j\phi_Z}e^{j\omega t}\right]\text{Re}\left[e^{-j\phi_Z+j\phi_l}e^{j\omega t}\right]$
 
-$\ds P_l(t)=V_o\frac{|Z_l|}{|Z|^2}\cos\omega t'\cos(\omega t'+\phi_l)$, where $\omega t'\equiv\omega t - \phi_Z$
+$\ds P_l(t)=V_o^2\frac{|Z_l|}{|Z|^2}\cos\omega t'\cos(\omega t'+\phi_l)$, where $\omega t'\equiv\omega t - \phi_Z$
 
 Using a trig identity, 
-$\ds P_l(t)=V_o\frac{|Z_l|}{|Z|^2}\cos\omega t'(\cos\omega t'\cos\phi_l-\sin\omega t'\sin\phi_l)$
+
+$\ds P_l(t)=V_o^2\frac{|Z_l|}{|Z|^2}\cos\omega t'(\cos\omega t'\cos\phi_l-\sin\omega t'\sin\phi_l)$
+
+2\.
 
 Using $\ds \overline{P}\equiv\frac{1}{T}\int_0^TP(t)dt$ and integrating,
 
-$\ds \overline{P}_l=\frac{V_o}{2}\frac{|Z_l|}{|Z|^2}\cos\phi_l$
+$\ds \overline{P}_l=\frac{V_o^2}{2}\frac{|Z_l|}{|Z|^2}\cos\phi_l$
 
-Recall that $\phi_l$ is the angle associated with $Z_l=R_l + iX_l$, so although we ususally use $\tan\phi_l=X_l/R_l$, we can also write $\cos\phi_l=R_l/\sqrt{R_l^2+X_l^2}=R_l/Z_l$. Thus
+Note that the above can be re-written as $ \overline{P}_l=|\widetilde{I}|^2R_l/2$, which has the form similar to the DC circuit equation $I^2R$ (the factor of 2 arises from averaging the square of a sinusoid, which is 1/2 of its maximum value).
 
-$\ds \overline{P}_l=\frac{V_o}{2}\frac{R_l}{|Z|^2}=\frac{V_o}{2}\frac{R_l}{(R_l+R_s)^2+(X_l+X_s)^2}$
+Alternatively, defining 
+
+Recall that $\phi_l$ is the angle associated with $Z_l=R_l + iX_l$. Although we ususally use $\tan\phi_l=X_l/R_l$, we can also write $\cos\phi_l=R_l/\sqrt{R_l^2+X_l^2}=R_l/|Z_l|$. Thus
+
+$\ds \overline{P}_l =\frac{V_o^2}{2}\frac{R_l}{|Z|^2}=\frac{V_o^2}{2}\frac{R_l}{(R_l+R_s)^2+(X_l+X_s)^2}$
 
 If we assume that the $R_s$ and $X_s$ are constant and $R_l$ and $X_s$ can be varied, we have
 
-$\ds \overline{P}_l(R_l,X_l)$
+$\ds \overline{P}_l =\overline{P}_l(R_l,X_l)$.
+
+$$\overline{P}_l(R_l,X_l)=\frac{V_o^2}{2}\frac{R_l}{|Z|^2}=\frac{V_o^2}{2}\frac{R_l}{(R_l+R_s)^2+(X_l+X_s)^2}$$
+
+To find $R_l$ and $X_l$ that maximize, solve the following two equations for $R_l$ and $X_l$:
+
+$$\frac{\partial\overline{P}}{\partial X_l}=0,\qquad \frac{\partial\overline{P}}{\partial R_l}=0$$
+
+$$\frac{\partial\overline{P}(R_l,X_l)}{\partial X_l}=-\frac{V_o^2}{2}R_l\frac{2(X_l+X_s)}{\big((R_l+R_s)^2+(X_l+X_s)^2\big)^2}$$
+
+Setting this equal to zero gives $X_l=-X_s$. Plugging this into $\overline{P}_l$ gives
+
+$\ds\overline{P}_l(R_l,-X_s)=\frac{V_o^2}{2}\frac{R_l}{(R_s+R_l)^2}$
+
+$$\frac{\partial\overline{P}(R_l,X_l)}{\partial R_l}=\frac{V_o^2}{2}\frac{1}{(R_s+R_l)^2}-\frac{2R_l}{(R_s+R_l)^3}$$
+
+Setting this equal to zero gives $R_l=R_s$. So 
+
+$\ds \overline{P}_l^\text{max} = \frac{1}{8}\frac{V_o^2}{R_s}$
+
+(One should also should verify that this is a maximum by computing second derivatives.)
+
+Note that this is the same answer one obtains for the problem covered in class where $X_s=X_l=0$.
 
 ## $N$-Step Ladder Circuit
 

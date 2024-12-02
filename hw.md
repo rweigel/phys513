@@ -1133,6 +1133,12 @@ Write a program that takes as an input the the number of steps in the ladder, $L
 
 See [HW10_2](solns/H10_2.m).
 
+<img src="solns/HW10_2_1.svg">
+
+<img src="solns/HW10_2_2.svg">
+
+<img src="solns/HW10_2_3.svg">
+
 ## Background Videos
 
 Watch the following three videos before class
@@ -1195,7 +1201,25 @@ $$\widetilde{V}_{1}(x)=
 V_{so}\frac{\widetilde{\tau} e^{-j\beta_1 x}}{e^{j\beta_0 l_0}+\widetilde{\rho}e^{-j\beta_0 l_0}}
 $$
 
-2\. See https://www.desmos.com/calculator/wteuno5c2u
+2\. See https://www.desmos.com/calculator/wteuno5c2u (assumes $\beta_1=\beta_0$)
+
+$$V_0(x,t)=\text{Re}\left[e^{i\omega t}\left(\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)\right)\right]$$
+
+$$V_0(x,0)=\text{Re}\left[\left(\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)\right)\right]=\text{Re}\left[\widetilde{V}_{0}(x)\right]$$
+
+$$\widetilde{V}_{0}(x)=V_{so}\frac{e^{-j\beta_0 x}+\widetilde{\rho}e^{j\beta_0 x}}{e^{j\beta_0 l_0}+\widetilde{\rho}e^{-j\beta_0 l_0}}$$
+
+Using $\beta_0l_o=4\pi$ and $\widetilde{\rho}=1/2$,
+
+$$\widetilde{V}_{0}(x)=V_{so}\frac{e^{-j\beta_0 x}+(1/2)e^{j\beta_0 x}}{3/2}$$
+
+$$\text{Re}\left[\widetilde{V}_{0}(x)\right]=V_{so}\cos(\beta_0x)=V_{so}\cos(4\pi x/l_o)$$
+
+$V_1(x,t)=\text{Re}\left[e^{i\omega t}\widetilde{V}_{1}^+(x)\right]$
+
+$V_1(x,0)=\text{Re}\left[\widetilde{V}_{1}^+(x)\right]$
+
+$$\text{Re}\left[\widetilde{V}_{1}^+(x)\right]=(3/2)V_{so}\frac{\cos\beta_1 x}{3/2}=V_{so}\cos\beta_1 x$$
 
 3\. 
 
@@ -1207,17 +1231,17 @@ $$\widetilde{V}_{0}(x)=V_{so}\frac{2}{3}\left(e^{-j\beta_0x} + \frac{1}{2}e^{j\b
 
 We want to write
 
-$$V_o(x,t)=\text{Re}\left[\widetilde{V}_{0}(x)e^{j\omega t}\right]$$
+$$V_0(x,t)=\text{Re}\left[\widetilde{V}_{0}(x)e^{j\omega t}\right]$$
 
 in the form
 
-$$V_o(x,t)=\text{Re}\left[|\widetilde{V}_{0}(x)|e^{j\phi}e^{j\omega t}\right]$$
+$$V_0(x,t)=\text{Re}\left[|\widetilde{V}_{0}(x)|e^{j\phi}e^{j\omega t}\right]$$
 
 or
 
-$$V_o(x,t)=|\widetilde{V}_{0}(x)|\cos(\omega t + \phi)$$
+$$V_0(x,t)=|\widetilde{V}_{0}(x)|\cos(\omega t + \phi)$$
 
-so that we can determine at a given $x$ what the maximum of $V_o$ will be over one period.
+so that we can determine at a given $x$ what the maximum of $V_0$ will be over one period.
 
 Using $|\widetilde{V}_{0}(x)|=\sqrt{\widetilde{V}_{0}(x)\widetilde{V}_{0}^*(x)}$ gives
 
@@ -1272,8 +1296,6 @@ $$\frac{dV_2}{dt}=\frac{I_1-I_2}{C}$$
 
 2\. Use the techniques covered previously for finding the steady state values to find the steady state $I_1(t)$, $I_2(t)$, and $V_1(t)$. (You do not need to find the transient solution; here we only want to confirm that our numerical solution matches the easier-to-compute steady state solution for large $t$. Note that there are many ways of solving [1](https://www.ee.hacettepe.edu.tr/~solen/Matlab/MatLab/Matlab%20-%20Electronics%20and%20Circuit%20Analysis%20using%20Matlab.pdf); [2](https://www.math.tamu.edu/reu/comp/matode.pdf)
 
-The following program plots the solution for part 1.; you may use this to check your answer to part 2. (Using Python one would use SciPy's `solve_ivp` in place of `ode45`.)
-
 ```bash
 set(0,'defaultTextInterpreter','LaTeX')
 set(0,'defaultLegendInterpreter','LaTeX');
@@ -1319,94 +1341,31 @@ function dXdt = dXdt2(t, X)
 end
 ```
 
-**Answer**: The following program has the steady state solution added.
+**Answer**:
 
-```
-clear
-set(0,'defaultTextInterpreter','LaTeX')
-set(0,'defaultLegendInterpreter','LaTeX');
+See [HW11.m](solns/HW11.m).
 
-T = 2*pi;
+<img src="solns/HW11.svg">
 
-if 0
-% Solution for one ladder step
-figure(1);clf;hold on;grid on;
-[t, X] = ode45(@dXdt1, [0, 5*pi], 0);
-plot(t,cos(t),'k-','LineWidth',2);
-plot(t,X(:,1),'r-','LineWidth',2);
-title_ = '$dx/dt = -x + \cos(t)$';
-title(title_,'FontWeight','bold');
-legend('$\cos(t)$','$x$');
-xlabel('$t$');
-end
+From HW 9.3,
 
-if 1
-% Solution for two ladder steps
-figure(2);clf;hold on;grid on;
-[t, X] = ode45(@dXdt2, [0, 5*T], [0, 0, 0]);
-title('Lines show exact soln.; dots are steady state soln.')
-plot(t/T,X(:,1),'g-','LineWidth',4);
-plot(t/T,X(:,2),'b-','LineWidth',4);
-plot(t/T,X(:,3),'r-','LineWidth',4);
-xlabel('$t/T$');
+$\widetilde{I}_0 = 1+j = \sqrt{2}e^{j\pi/4}$, $\widetilde{I}_1 = 1$, and $\widetilde{I}_2=-j=e^{-j\pi/2}$
 
-N = 3;
-w = 2*pi/T;
-L = 1;
-C = 1;
-ZL = 1;
-Xss = ss(w,L,C,ZL,N);
-Xss = Xss([2,3,5]); % I1, I2, V1
-for i = 1:size(Xss,2)
-    xc = Xss(:,i);
-    phi = atan2(imag(xc),real(xc));
-    x(:,i) = abs(xc)*cos(w*t + phi);
-end
+$\widetilde{V}_0 = 1$, $\widetilde{V}_1 = 1-j= \sqrt{2}e^{-j\pi/4}$, and $\widetilde{V}_2=-j=e^{-j\pi/2}$
 
-plot(t/T,x(:,1),'k.','MarkerSize',10);
-plot(t/T,x(:,2),'g.','MarkerSize',10);
-plot(t/T,x(:,3),'b.','MarkerSize',10);
-legend('$I_1$', '$I_2$', '$V_1$',...
-        '$I_1^{\mbox{ss}}$', '$I_2^{\mbox{ss}}$', '$V_1^{\mbox{ss}}$');
-end
+So
 
-function X = ss(w,L,C,ZL,N)
-    Z = zeros(1, N);
-    Z(end) = ZL;
+$I_1=\cos t$
 
-    V(1) = 1.0; % Source voltage
+$I_2=\cos(t-\pi/2)=\sin(t)$
 
-    % Compute impedances starting at load
-    for n = [N:-1:2]
-        y = 1/(Z(n) + 1j*w*L);
-        Z(n-1) = 1/(y + 1j*w*C);
-    end
+$V_1=\cos(t-\pi/4)$
 
-    I(1) = V(1)/Z(1);
-    for n = [1:N-1]
-        I(n+1) = I(n) - 1j*w*C*V(n);
-        V(n+1) = V(n) - 1j*w*L*I(n+1);        
-    end
-    X = [I,V];
-end
+Note that another method of solution is to solve for $\mathbf{x}$ in
 
-function dXdt = dXdt1(t, X)
-    T = 2*pi; % Note variable defined also above.
-              % Better approach (not used here to keep code simple):
-              % https://www.mathworks.com/matlabcentral/answers/168073-ode45-where-odefun-requires-more-parameters
-    dXdt = -X + cos(2*pi*t/T);
-end    
+$\dot{\mathbf{X}}=A\mathbf{X}+\mathbf{U}$
 
-function dXdt = dXdt2(t, X)
-    T = 2*pi;
-    U = [cos(2*pi*t/T) ; 0 ; 0];    % Time-dependent drivers
-    A = [ 0  0 -1;...
-          0 -1  1;...
-          1 -1  0];
-    B = [1 ; 0 ; 0];
-    dXdt = A*X + B.*U;
-end
-```
+by replacing $\dot{\mathbf{X}}$ with $j\omega\mathbf{X}$ and using matrix inversion to solve for $\mathbf{X}$.
 
 # HW 12 
 

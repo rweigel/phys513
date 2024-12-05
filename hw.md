@@ -1045,6 +1045,80 @@ Given an AC power source $V_s(t)=V_o\cos(\omega t)$ that has an internal impedan
 2. Find $\overline{P}_l$, the average of $P_l(t)$ found in part 1. over a time of $2\pi/\omega$
 3. Use the equation $\overline{P}_l$ found in part 2. to show that $\overline{P}(R_l,X_l)$ is a maximum when $R_l=R_s$ and $X_l=-X_s$ (assume $R_s$ and $X_s$ are constants; in this case, $\overline{P}_l$ is a function of the variables $R_l$ and $X_l$).
 
+**Answer**
+
+1\.
+
+Let $Z=Z_l+Z_s=(R_l+R_s)+j(X_l+X_s)$. Note that $\widetilde{V}_o=V_o$ because $V_s(t)=\text{Re}\left[\widetilde{V}_oe^{j\omega t}\right]$ defines $\widetilde{V}_o$.
+
+$\ds\widetilde{I}=\frac{\widetilde{V}_o}{Z}$
+
+Using $\widetilde{V}_o=V_o$ and $Z=|Z|e^{i\phi_Z}$
+
+$\ds\widetilde{I} = \frac{V_o}{Z} = \frac{V_o}{|Z|}e^{-j\phi_Z}$.
+
+$\ds\widetilde{V}_l=\widetilde{I}Z_l=V_o\frac{Z_l}{|Z|}e^{-j\phi_Z}=V_o\frac{|Z_l|}{|Z|}e^{-j\phi_Z+j\phi_l}$, where $Z_l=|Z_l|e^{j\phi_l}$ was used.
+
+By definition, $P_l(t)=I_l(t)V_l(t)$. Noting that $I_l(t)=I(t)$,
+
+$P_l(t)=I(t)V_l(t)$
+
+$P_l(t)=\text{Re}\left[\widetilde{I}e^{j\omega t}\right]\text{Re}\left[\widetilde{V}_le^{j\omega t}\right]$
+
+(Note that $\text{Re}[a+jb]\text{Re}[a'+jb'] \ne \text{Re}[(a+jb)(a'+jb')]$.)
+
+Substitution gives
+
+$\ds P_l(t)=\text{Re}\left[\frac{V_o}{|Z|}e^{-j\phi_Z}e^{j\omega t}\right]\text{Re}\left[V_o\frac{|Z_l|}{|Z|}e^{-j\phi_Z+j\phi_l}e^{j\omega t}\right]$
+
+$\ds P_l(t)=V_o^2\frac{|Z_l|}{|Z|^2}\text{Re}\left[e^{-j\phi_Z}e^{j\omega t}\right]\text{Re}\left[e^{-j\phi_Z+j\phi_l}e^{j\omega t}\right]$
+
+$\ds P_l(t)=V_o^2\frac{|Z_l|}{|Z|^2}\cos\omega t'\cos(\omega t'+\phi_l)$, where $\omega t'\equiv\omega t - \phi_Z$
+
+Using a trig identity, 
+
+$\ds P_l(t)=V_o^2\frac{|Z_l|}{|Z|^2}\cos\omega t'(\cos\omega t'\cos\phi_l-\sin\omega t'\sin\phi_l)$
+
+2\.
+
+Using $\ds \overline{P}\equiv\frac{1}{T}\int_0^TP(t)dt$ and integrating,
+
+$\ds \overline{P}_l=\frac{V_o^2}{2}\frac{|Z_l|}{|Z|^2}\cos\phi_l$
+
+Note that the above can be re-written as $ \overline{P}_l=|\widetilde{I}|^2R_l/2$, which has the form similar to the DC circuit equation $I^2R$ (the factor of 2 arises from averaging the square of a sinusoid, which is 1/2 of its maximum value).
+
+Alternatively, defining 
+
+Recall that $\phi_l$ is the angle associated with $Z_l=R_l + iX_l$. Although we ususally use $\tan\phi_l=X_l/R_l$, we can also write $\cos\phi_l=R_l/\sqrt{R_l^2+X_l^2}=R_l/|Z_l|$. Thus
+
+$\ds \overline{P}_l =\frac{V_o^2}{2}\frac{R_l}{|Z|^2}=\frac{V_o^2}{2}\frac{R_l}{(R_l+R_s)^2+(X_l+X_s)^2}$
+
+If we assume that the $R_s$ and $X_s$ are constant and $R_l$ and $X_s$ can be varied, we have
+
+$\ds \overline{P}_l =\overline{P}_l(R_l,X_l)$.
+
+$$\overline{P}_l(R_l,X_l)=\frac{V_o^2}{2}\frac{R_l}{|Z|^2}=\frac{V_o^2}{2}\frac{R_l}{(R_l+R_s)^2+(X_l+X_s)^2}$$
+
+To find $R_l$ and $X_l$ that maximize, solve the following two equations for $R_l$ and $X_l$:
+
+$$\frac{\partial\overline{P}}{\partial X_l}=0,\qquad \frac{\partial\overline{P}}{\partial R_l}=0$$
+
+$$\frac{\partial\overline{P}(R_l,X_l)}{\partial X_l}=-\frac{V_o^2}{2}R_l\frac{2(X_l+X_s)}{\big((R_l+R_s)^2+(X_l+X_s)^2\big)^2}$$
+
+Setting this equal to zero gives $X_l=-X_s$. Plugging this into $\overline{P}_l$ gives
+
+$\ds\overline{P}_l(R_l,-X_s)=\frac{V_o^2}{2}\frac{R_l}{(R_s+R_l)^2}$
+
+$$\frac{\partial\overline{P}(R_l,X_l)}{\partial R_l}=\frac{V_o^2}{2}\frac{1}{(R_s+R_l)^2}-\frac{2R_l}{(R_s+R_l)^3}$$
+
+Setting this equal to zero gives $R_l=R_s$. So 
+
+$\ds \overline{P}_l^\text{max} = \frac{1}{8}\frac{V_o^2}{R_s}$
+
+(One should also should verify that this is a maximum by computing second derivatives.)
+
+Note that this is the same answer one obtains for the problem covered in class where $X_s=X_l=0$.
+
 ## $N$-Step Ladder Circuit
 
 In class, I discussed an iterative method for solving for the steady state currents and voltages in the ladder circuit of HW 9.3.
@@ -1058,6 +1132,12 @@ Write a program that takes as an input the the number of steps in the ladder, $L
 **Answer**
 
 See [HW10_2](solns/H10_2.m).
+
+<img src="solns/HW10_2_1.svg">
+
+<img src="solns/HW10_2_2.svg">
+
+<img src="solns/HW10_2_3.svg">
 
 ## Background Videos
 
@@ -1121,7 +1201,25 @@ $$\widetilde{V}_{1}(x)=
 V_{so}\frac{\widetilde{\tau} e^{-j\beta_1 x}}{e^{j\beta_0 l_0}+\widetilde{\rho}e^{-j\beta_0 l_0}}
 $$
 
-2\. See https://www.desmos.com/calculator/wteuno5c2u. Note that $\beta_1$ was chosen to be equal to $\beta_2$.
+2\. See https://www.desmos.com/calculator/wteuno5c2u (assumes $\beta_1=\beta_0$)
+
+$$V_0(x,t)=\text{Re}\left[e^{i\omega t}\left(\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)\right)\right]$$
+
+$$V_0(x,0)=\text{Re}\left[\left(\widetilde{V}_{0}^+(x)+\widetilde{V}_{0}^-(x)\right)\right]=\text{Re}\left[\widetilde{V}_{0}(x)\right]$$
+
+$$\widetilde{V}_{0}(x)=V_{so}\frac{e^{-j\beta_0 x}+\widetilde{\rho}e^{j\beta_0 x}}{e^{j\beta_0 l_0}+\widetilde{\rho}e^{-j\beta_0 l_0}}$$
+
+Using $\beta_0l_o=4\pi$ and $\widetilde{\rho}=1/2$,
+
+$$\widetilde{V}_{0}(x)=V_{so}\frac{e^{-j\beta_0 x}+(1/2)e^{j\beta_0 x}}{3/2}$$
+
+$$\text{Re}\left[\widetilde{V}_{0}(x)\right]=V_{so}\cos(\beta_0x)=V_{so}\cos(4\pi x/l_o)$$
+
+$V_1(x,t)=\text{Re}\left[e^{i\omega t}\widetilde{V}_{1}^+(x)\right]$
+
+$V_1(x,0)=\text{Re}\left[\widetilde{V}_{1}^+(x)\right]$
+
+$$\text{Re}\left[\widetilde{V}_{1}^+(x)\right]=(3/2)V_{so}\frac{\cos\beta_1 x}{3/2}=V_{so}\cos\beta_1 x$$
 
 3\. 
 
@@ -1133,17 +1231,17 @@ $$\widetilde{V}_{0}(x)=V_{so}\frac{2}{3}\left(e^{-j\beta_0x} + \frac{1}{2}e^{j\b
 
 We want to write
 
-$$V_o(x,t)=\text{Re}\left[\widetilde{V}_{0}(x)e^{j\omega t}\right]$$
+$$V_0(x,t)=\text{Re}\left[\widetilde{V}_{0}(x)e^{j\omega t}\right]$$
 
 in the form
 
-$$V_o(x,t)=\text{Re}\left[|\widetilde{V}_{0}(x)|e^{j\phi}e^{j\omega t}\right]$$
+$$V_0(x,t)=\text{Re}\left[|\widetilde{V}_{0}(x)|e^{j\phi}e^{j\omega t}\right]$$
 
 or
 
-$$V_o(x,t)=|\widetilde{V}_{0}(x)|\cos(\omega t + \phi)$$
+$$V_0(x,t)=|\widetilde{V}_{0}(x)|\cos(\omega t + \phi)$$
 
-so that we can determine at a given $x$ what the maximum of $V_o$ will be over one period.
+so that we can determine at a given $x$ what the maximum of $V_0$ will be over one period.
 
 Using $|\widetilde{V}_{0}(x)|=\sqrt{\widetilde{V}_{0}(x)\widetilde{V}_{0}^*(x)}$ gives
 
@@ -1196,9 +1294,7 @@ $$\frac{dI_2}{dt}=\frac{V_1-I_2R}{L}$$
 
 $$\frac{dV_2}{dt}=\frac{I_1-I_2}{C}$$
 
-2\. Use the techniques covered previously for finding the steady state values to find the steady state $I_1(t)$, $I_2(t)$, and $V_1(t)$. (You do not need to find the transient solution; here we only want to confirm that our numerical solution matches the easier-to-compute steady state solution for large $t$. Note that there are [many ways of solving](https://www.ee.hacettepe.edu.tr/~solen/Matlab/MatLab/Matlab%20-%20Electronics%20and%20Circuit%20Analysis%20using%20Matlab.pdf).
-
-The following program plots the solution for part 1.; you may use this to check your answer to part 2. (Using Python one would use SciPy's `solve_ivp` in place of `ode45`.)
+2\. Use the techniques covered previously for finding the steady state values to find the steady state $I_1(t)$, $I_2(t)$, and $V_1(t)$. (You do not need to find the transient solution; here we only want to confirm that our numerical solution matches the easier-to-compute steady state solution for large $t$. Note that there are many ways of solving [1](https://www.ee.hacettepe.edu.tr/~solen/Matlab/MatLab/Matlab%20-%20Electronics%20and%20Circuit%20Analysis%20using%20Matlab.pdf); [2](https://www.math.tamu.edu/reu/comp/matode.pdf)
 
 ```bash
 set(0,'defaultTextInterpreter','LaTeX')
@@ -1245,94 +1341,31 @@ function dXdt = dXdt2(t, X)
 end
 ```
 
-**Answer**: The following program has the steady state solution added.
+**Answer**:
 
-```
-clear
-set(0,'defaultTextInterpreter','LaTeX')
-set(0,'defaultLegendInterpreter','LaTeX');
+See [HW11.m](solns/HW11.m).
 
-T = 2*pi;
+<img src="solns/HW11.svg">
 
-if 0
-% Solution for one ladder step
-figure(1);clf;hold on;grid on;
-[t, X] = ode45(@dXdt1, [0, 5*pi], 0);
-plot(t,cos(t),'k-','LineWidth',2);
-plot(t,X(:,1),'r-','LineWidth',2);
-title_ = '$dx/dt = -x + \cos(t)$';
-title(title_,'FontWeight','bold');
-legend('$\cos(t)$','$x$');
-xlabel('$t$');
-end
+From HW 9.3,
 
-if 1
-% Solution for two ladder steps
-figure(2);clf;hold on;grid on;
-[t, X] = ode45(@dXdt2, [0, 5*T], [0, 0, 0]);
-title('Lines show exact soln.; dots are steady state soln.')
-plot(t/T,X(:,1),'g-','LineWidth',4);
-plot(t/T,X(:,2),'b-','LineWidth',4);
-plot(t/T,X(:,3),'r-','LineWidth',4);
-xlabel('$t/T$');
+$\widetilde{I}_0 = 1+j = \sqrt{2}e^{j\pi/4}$, $\widetilde{I}_1 = 1$, and $\widetilde{I}_2=-j=e^{-j\pi/2}$
 
-N = 3;
-w = 2*pi/T;
-L = 1;
-C = 1;
-ZL = 1;
-Xss = ss(w,L,C,ZL,N);
-Xss = Xss(:,[2,3,5]); % I1, I2, V1
-for i = 1:size(Xss,2)
-    xc = Xss(:,i);
-    phi = atan(imag(xc)/real(xc));
-    x(:,i) = abs(xc)*cos(w*t + phi);
-end
+$\widetilde{V}_0 = 1$, $\widetilde{V}_1 = 1-j= \sqrt{2}e^{-j\pi/4}$, and $\widetilde{V}_2=-j=e^{-j\pi/2}$
 
-plot(t/T,x(:,1),'k.','MarkerSize',10);
-plot(t/T,x(:,2),'g.','MarkerSize',10);
-plot(t/T,x(:,3),'b.','MarkerSize',10);
-legend('$I_1$', '$I_2$', '$V_1$',...
-        '$I_1^{\mbox{ss}}$', '$I_2^{\mbox{ss}}$', '$V_1^{\mbox{ss}}$');
-end
+So
 
-function X = ss(w,L,C,ZL,N)
-    Z = zeros(1, N);
-    Z(end) = ZL;
+$I_1=\cos t$
 
-    V(1) = 1.0; % Source voltage
+$I_2=\cos(t-\pi/2)=\sin(t)$
 
-    % Compute impedances starting at load
-    for n = [N:-1:2]
-        y = 1/(Z(n) + 1j*w*L);
-        Z(n-1) = 1/(y + 1j*w*C);
-    end
+$V_1=\cos(t-\pi/4)$
 
-    I(1) = V(1)/Z(1);
-    for n = [1:N-1]
-        I(n+1) = I(n) - 1j*w*C*V(n);
-        V(n+1) = V(n) - 1j*w*L*I(n+1);        
-    end
-    X = [I,V];
-end
+Note that another method of solution is to solve for $\mathbf{x}$ in
 
-function dXdt = dXdt1(t, X)
-    T = 2*pi; % Note variable defined also above.
-              % Better approach (not used here to keep code simple):
-              % https://www.mathworks.com/matlabcentral/answers/168073-ode45-where-odefun-requires-more-parameters
-    dXdt = -X + cos(2*pi*t/T);
-end    
+$\dot{\mathbf{X}}=A\mathbf{X}+\mathbf{U}$
 
-function dXdt = dXdt2(t, X)
-    T = 2*pi;
-    U = [cos(2*pi*t/T) ; 0 ; 0];    % Time-dependent drivers
-    A = [ 0  0 -1;...
-          0 -1  1;...
-          1 -1  0];
-    B = [1 ; 0 ; 0];
-    dXdt = A*X + B.*U;
-end
-```
+by replacing $\dot{\mathbf{X}}$ with $j\omega\mathbf{X}$ and using matrix inversion to solve for $\mathbf{X}$.
 
 # HW 12 
 

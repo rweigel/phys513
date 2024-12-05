@@ -1121,7 +1121,7 @@ $$\widetilde{V}_{1}(x)=
 V_{so}\frac{\widetilde{\tau} e^{-j\beta_1 x}}{e^{j\beta_0 l_0}+\widetilde{\rho}e^{-j\beta_0 l_0}}
 $$
 
-2\. See https://www.desmos.com/calculator/wteuno5c2u
+2\. See https://www.desmos.com/calculator/wteuno5c2u. Note that $\beta_1$ was chosen to be equal to $\beta_2$.
 
 3\. 
 

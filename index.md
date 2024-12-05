@@ -210,11 +210,12 @@ You will likely need to reference other textbooks in this course. The following 
 
 ### Mathematical
 
-* A[n Introduction to Fourier Methods and the Laplace Transformation but Philip Franklin](https://www.amazon.com/introduction-Fourier-methods-Laplace-transformation/dp/B0007HQ89I). This short book has many examples related to Maxwell's equations and transmission lines.
+* [An Introduction to Fourier Methods and the Laplace Transformation but Philip Franklin](https://www.amazon.com/introduction-Fourier-methods-Laplace-transformation/dp/B0007HQ89I). This short book has many examples related to Maxwell's equations and transmission lines.
 * [Fourier Analysis class notes by Peakcock](https://www.roe.ac.uk/~jap/teaching); the [Chapter 12 lecture notes](https://www.roe.ac.uk/japwww/teaching/fourier/fourier1415.pdf) provides a review of the mathematical background and justification for solving ODEs using what Ramo calls "the phasor method".
 
 ### Undergraduate-level
 
+* [Applied Electromagnetics by Ulaby and Ravaioli](https://em8e.eecs.umich.edu/) - Introductory textbook that begins with waves, transmission lines, phasors, and the Smith chart.
 * Introduction to Electrodynamics by David J. Griffiths - the most commonly used junior-level undergraduate textbook for physics majors.
 * Field and Wave Electromagnetics by David K. Cheng - a commonly used junior-level undergraduate textbook for engineering majors.
 * Elements of Electromagnetics by Matthew N. O. Sadiku - a commonly used junior-level undergraduate textbook for engineering majors.

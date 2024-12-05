@@ -5,14 +5,16 @@ set(0,'DefaultAxesTitleFontWeight','normal');
 set(0,'DefaultTextFontName','Times');
 set(0,'DefaultTextFontSize',16);
 set(0,'DefaultAxesFontSize',16);
+set(0,'defaultTextInterpreter','LaTeX')
 
-opts = 2;
+opts = 1;
 
 if opts == 1
-    N = 3;
+    N = 101;
     L = 1;
     C = 1;
     w = 1;
+    ts = '$Z_l=Z_o$';
     Zo = sqrt(L/C);
     ZL = Zo;
 end
@@ -22,8 +24,9 @@ if opts == 2
     L = 1;
     C = 1;
     w = 1;
-    Zo = 10*sqrt(L/C);
-    ZL = Zo;
+    Zo = sqrt(L/C);
+    ts = '$Z_l=10Z_o$';
+    ZL = 10*Zo;
 end
 
 if opts == 3
@@ -31,32 +34,9 @@ if opts == 3
     L = 1;
     C = 1;
     w = 1;
-    Zo = 10*sqrt(L/C);
+    Zo = sqrt(L/C);
+    ts = '$Z_l=0$';
     ZL = 0;
-end
-
-if opts == 4
-    % Perfectly matched
-    N = 101;
-    Lo = 0.0001;
-    Co = 1e-6;
-    L = Lo/N;
-    C = Co/N;
-    w = 1e6;
-    Zo = sqrt(L/C);
-    ZL = Zo;
-end
-
-if opts == 5
-    % Not perfectly matched (problem 10.5)
-    N = 101;
-    Lo = 0.0001;
-    Co = 1e-6;
-    L = Lo/N;
-    C = Co/N;
-    w = 1e6;
-    Zo = sqrt(L/C);
-    ZL = 3*Zo;
 end
 
 Z = zeros(1, N);
@@ -85,10 +65,24 @@ if N == 3
 %I = 1.0000 + 1.0000i   1.0000 + 0.0000i   0.0000 - 1.0000i
 end
 
-clf;
-plot([0:N-1],abs(V),'r','LineWidth',2);hold on;
-plot([0:N-1],abs(I),'b','LineWidth',2);
-plot([0:N-1],abs(Z)/Z(end),'g','LineWidth',2);
-grid on;
-xlabel('$n$','Interpreter','Latex')
-legend('$|\widetilde{V}|$ [V]','$|\widetilde{I}|$ [A]','$|Z|/Z_L$','Interpreter','Latex','Orientation','Horizontal')
+figure(1);clf
+subplot(2,1,1);grid on;hold on;
+title(ts)
+plot([0:N-1],abs(V),'k','LineWidth',2);hold on;
+xlabel('$n$')
+ylabel('$|\widetilde{V}|$ [V]');
+subplot(2,1,2);grid on;hold on;
+plot([0:N-1],(180/pi)*angle(V),'k','LineWidth',2);hold on;
+ylabel('$\angle\mbox{ }\widetilde{V}\mbox{ [degrees]}$');
+xlabel('$n$')
+set(gca,'YLim',[-180, 180])
+set(gca,'YTick',[-180:60:180])
+
+fname = sprintf('HW10_2_%d',opts);
+print(sprintf('%s.svg',fname), '-dsvg');
+print(sprintf('%s.png',fname), '-dpng', '-r300'); 
+
+p = get(gcf,'Position');
+orient tall
+set(gcf,'PaperSize',[8.5,8])
+print(sprintf('%s.pdf',fname), '-dpdf');

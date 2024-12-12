@@ -1131,7 +1131,7 @@ Write a program that takes as an input the the number of steps in the ladder, $L
 
 **Answer**
 
-See [HW10_2](solns/H10_2.m).
+See [HW10_2](solns/HW10_2.m).
 
 <img src="solns/HW10_2_1.svg">
 

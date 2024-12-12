@@ -60,6 +60,8 @@ No class
   * [PHET animation](https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html)
   * [MATLAB animation](http://mag.gmu.edu/git-data/phys513/misc/data/)
   * [Desmos animation](https://www.desmos.com/calculator/wteuno5c2u)
+  * [Transmission line](https://helloworld922.blogspot.com/2013/04/online-transmission-line-simulation.html)
+  * [RC ladder](https://www.falstad.com/circuit/e-ladder.html)
 * Find reflection coefficient for coaxial cable terminated by 
   1. $Z_L=0$ (short at end)
   2. $Z_0/Z_L=0$ (end is open)

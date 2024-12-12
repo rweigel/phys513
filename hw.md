@@ -1389,6 +1389,12 @@ Notes:
 * In the derivation for the continuous transmission line, $L$ and $C$ are inductances and capacitances per unit length.
 * The lumped capacitances and inductances for the circuit problem can be computed using the given parameters and and arbitrary non--zero value of $\omega$.
 
+**Solution**
+
+See [HW12_1](solns/HW12_1.m).
+
+<img src="solns/HW12_1.svg">
+
 ## Transient Response
 
 Starting with HW 11.2, create a function `dXdt3` that is a generalization of `dXdt2` that allows the solution to work for an $3$--step ladder.
@@ -1438,3 +1444,36 @@ I_{\text{encl}}(s) =
     0                 & \text{if } s > c
 \end{cases}
 $$
+
+# Final
+
+**1. Ampere's law** (25 pts)
+
+Use Ampere's law to find the magnetic field of a long cylinder of radius $b$ that carries a uniform surface current density $K_o$. Starting with the most general solution
+
+$\mathbf{B}(s,\phi,z) = B_s(s,\phi,z)\hat{\mathbf{s}} + B_\phi(s,\phi,z)\hat{\boldsymbol{\phi}} + B_z(s,\phi,z)\hat{\mathbf{z}}$,
+
+1. Provide the justifications needed to claim that the solution must have a simpler form that allows one or more component of $\mathbf{B}$ to be found using Ampere's law (16 pts)
+2. Find $\mathbf{B}$ for all $s$ (4 pts)
+3. Show mathematically why a square Amperian loop could not be used to find the magnetic field using Ampere's law (5 pts)
+
+<img src="figures/long_cylinder.svg" width=50%/>
+
+----
+
+**2. Continuous Transmission Line** (25 pts)
+
+<img src="figures/Transmission_Line_Load_Terminated.svg" width="50%">
+
+The above transmission line has a characteristic impecance of $Z_0$ and a characteristic wavenumber of $\beta_0$ $(=2\pi/\lambda_0)$. Assume $\beta_0l_0=\pi$.
+
+Derive $\widetilde{\rho}$ and compute it for the following cases
+
+1. $Z_l=0$
+2. $Z_o/Z_l \ll 1$
+3. $Z_l$ is a inductor.
+
+For $Z_l=0$, show that
+
+1. $V(x,t)=0$ at $x=-n\lambda_0/2$, where $n=0, 1, ...$
+2. If $V(x,t)$ and $I(x,t)$ are measured at a given $x=x_o$ over a long period of time, the ratio of the maximum measured value of $V(x_o,t)$ to the maximum measured $I(x_o,t)$ is $Z_0$.

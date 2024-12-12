@@ -35,7 +35,7 @@ Xss = ss(w,L,C,R,N); % I0, I1, I2, V0, V1, V2
 Xss = Xss([2,3,5]);  %     I1, I2,     V1
 for i = 1:size(Xss,2)
     xc = Xss(:,i);
-    phi = atan(imag(xc)/real(xc));
+    phi = atan(imag(xc)/real(xc))
     x(:,i) = abs(xc)*cos(w*t + phi);
 end
 

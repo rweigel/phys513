@@ -16,7 +16,7 @@ legend('$\cos(t)$','$x$');
 xlabel('$t$');
 end
 
-if 1
+if 0
 % Solution for two ladder steps
 figure(2);clf;hold on;grid on;
 [t, X] = ode45(@dXdt2, [0, 5*T], [0, 0, 0]);
@@ -57,7 +57,7 @@ x = A\U
 transpose(Xss)
 end
 
-if 0 % Solution for three ladder steps
+if 1 % Solution for three ladder steps
 [t, X] = ode45(@dXdt3, [0, 8*T], [0, 0, 0, 0, 0]);
 
 N = 4;
@@ -87,7 +87,8 @@ plot(t/T,x(:,2),'g.','MarkerSize',10);
 plot(t/T,x(:,3),'b.','MarkerSize',10);
 xlabel('$t/T$');
 legend('$I_1$', '$I_2$', '$I_3$',...
-        '$I_1^{\mbox{ss}}$', '$I_2^{\mbox{ss}}$', '$I_3^{\mbox{ss}}$');
+        '$I_1^{\mbox{ss}}$', '$I_2^{\mbox{ss}}$', '$I_3^{\mbox{ss}}$', ...
+        'Orientation','horizontal');
 
 subplot(2,1,2);hold on;grid on;
 plot(t/T,X(:,4),'g-','LineWidth',4);
@@ -95,7 +96,10 @@ plot(t/T,X(:,5),'b-','LineWidth',4);
 plot(t/T,x(:,4),'k.','MarkerSize',10);
 plot(t/T,x(:,5),'g.','MarkerSize',10);
 xlabel('$t/T$');
-legend('$V_1$', '$V_2$','$V_1^{\mbox{ss}}$', '$V_2^{\mbox{ss}}$');
+legend('$V_1$', '$V_2$','$V_1^{\mbox{ss}}$', '$V_2^{\mbox{ss}}$',...
+       'Orientation','horizontal');
+
+print('HW12_2.svg', '-dsvg');
 end
 
 

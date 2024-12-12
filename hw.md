@@ -1401,6 +1401,10 @@ Starting with HW 11.2, create a function `dXdt3` that is a generalization of `dX
 
 Plot $V_1(t)$ and $V_2(t)$. Also plot $V_1^{\text{ss}}(t)$ and $V_2^{\text{ss}}(t)$ on the same axes, where the $\text{ss}$ superscript indicates the solution found using the phasor method to find the steady state solution.
 
+See [HW12_2](solns/HW12_2.m).
+
+<img src="solns/HW12_2.svg">
+
 # Midterm
 
 PHYS 513 Midterm Exam. Closed book and notes. 4:30 -- 6:00 pm Thursday, October 17th.
